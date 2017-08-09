@@ -110,18 +110,18 @@
     </section>
 
 
-
+@foreach($profiles as $profile)
     <section class="pull-right col-sm-6 col-xs-12 col-md-4"><img class="me img-responsive" src="images/front/me.jpg" alt="me">
     </section>
     <section class="pull-right col-xs-12 col-md-4 texth1">
-        <h1>name</h1>
-        <p class="textp">about</p>
-        <p>شغل : <span class="p-text">توسعه دهنده ی در وب </span>
+        <h1>{{$profile->first_name}} {{$profile->last_name}} </h1>
+        <p class="textp">{{$profile->summary}} </p>
+        <p>شغل : <span class="p-text">{{$profile->job}} </span>
             <button id="tagrobe" class="btn btn-head">
         <p>بیشتر</p>
         </button>
         </p>
-        <p class="p-text2">تحصیلات : <span class="p-text3">توسعه دهنده ی در اپیکیشن </span>
+        <p class="p-text2">تحصیلات : <span class="p-text3">{{$profile->last_degree}} </span>
             <button id="tahsilat" class="btn btn-head">
         <p>بیشتر</p>
         </button>
@@ -138,9 +138,11 @@
                 <p class="icon-animate">اطلاعات تماس</p>
             </a> <a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i>
                 <p class="icon-animate">پیام فرستادن</p>
-            </a> <a style="border-right:none;" href="images/Jobinja-QT-2796631.pdf" download><i class="fa fa-diamond"
+            </a> <a style="border-right:none;" href="{{$profile->pdf}}" download><i class="fa fa-diamond"
                                                                                                 aria-hidden="true"></i>
                 <p> دانلود رزومه</p>
             </a></aside>
     </section>
 </main>
+
+@endforeach

@@ -14,7 +14,8 @@
 
                 <div class="form-group{{ $errors->has('type') ? ' has-error': ''}}">
                     <fieldset>
-                        <input placeholder="نوع" type="text" name="type" tabindex="1" required autofocus>
+                        <input placeholder="نوع" type="text"
+                               value="{{ Request::old('type') ?: ''}}" name="type" tabindex="1" required autofocus>
                     </fieldset>
                     @if($errors->has('type'))
                         <span class="help-block">{{ $errors->first('type')}}</span>
@@ -23,7 +24,8 @@
 
                 <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
                     <fieldset>
-                        <input placeholder="نام " type="text" name="name" tabindex="1" required autofocus>
+                        <input placeholder="نام " type="text"
+                               value="{{ Request::old('name') ?: ''}}" name="name" tabindex="1" required autofocus>
                     </fieldset>
                     @if($errors->has('name'))
                         <span class="help-block">{{ $errors->first('name')}}</span>

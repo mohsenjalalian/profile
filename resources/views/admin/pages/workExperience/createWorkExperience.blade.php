@@ -13,7 +13,8 @@
 
                 <div class="form-group{{ $errors->has('title') ? ' has-error': ''}}">
                     <fieldset>
-                        <input placeholder="نام شغل" type="text" name="title" tabindex="1" required autofocus>
+                        <input placeholder="نام شغل" type="text" name="title"
+                               value="{{ Request::old('title') ?: ''}}" tabindex="1" required autofocus>
                     </fieldset>
                     @if($errors->has('title'))
                         <span class="help-block">{{ $errors->first('title')}}</span>
@@ -22,7 +23,8 @@
 
                 <div class="form-group{{ $errors->has('company') ? ' has-error': ''}}">
                     <fieldset>
-                        <input placeholder="شرکت" type="text" name="company" tabindex="1" required autofocus>
+                        <input placeholder="شرکت" type="text" name="company"
+                               value="{{ Request::old('company') ?: ''}}" tabindex="1" required autofocus>
                     </fieldset>
                     @if($errors->has('company'))
                         <span class="help-block">{{ $errors->first('company')}}</span>
@@ -76,7 +78,7 @@
                     <div class="form-group{{ $errors->has('start_date') ? ' has-error': ''}}">
                         <fieldset>
                             <label class="control-label" for="datepicker1">ماه و سال شروع</label>
-                            <input name="start_date" class="input-small datepicker4" type="text">
+                            <input name="start_date" value="{{ Request::old('start_date') ?: ''}}" class="input-small datepicker4" type="text">
                         </fieldset>
                         @if($errors->has('start_date'))
                             <span class="help-block">{{ $errors->first('start_date')}}</span>
@@ -89,7 +91,8 @@
                     <div class="form-group{{ $errors->has('finish_date') ? ' has-error': ''}}">
                         <fieldset>
                             <label class="control-label" for="datepicker1">ماه و سال پایان</label>
-                            <input name="finish_date" class="input-small datepicker4" type="text">
+                            <input name="finish_date" class="input-small datepicker4"
+                                   value="{{ Request::old('finish_date') ?: ''}}" type="text">
                         </fieldset>
                         @if($errors->has('finish_date'))
                             <span class="help-block">{{ $errors->first('finish_date')}}</span>
@@ -99,7 +102,8 @@
 
                 <div class="form-group{{ $errors->has('about') ? ' has-error': ''}}">
                     <fieldset>
-                        <input placeholder="توضیحات" type="text" name="about" tabindex="1" required autofocus>
+                        <input placeholder="توضیحات" type="text" name="about"
+                               value="{{ Request::old('about') ?: ''}}" tabindex="1" required autofocus>
                     </fieldset>
                     @if($errors->has('about'))
                         <span class="help-block">{{ $errors->first('about')}}</span>

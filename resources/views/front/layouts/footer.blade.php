@@ -1,33 +1,48 @@
 <!-- form-->
 
 <main>
+
+
     <section class="pull-left col-xs-12 col-sm-6 col-md-6 contact1">
         <h2>پیام برسان</h2>
+        <form action="{{route('saveMessage')}}" method="post">
+            {{csrf_field()}}
         <section class="content bgcolor-1"> <span class="input input--nao">
-      <input class="input__field input__field--nao" type="text" id="input-1"/>
-      <label class="input__label input__label--nao" for="input-1"> <span
-                  class="input__label-content input__label-content--nao">نام</span> </label>
+      <input class="input__field input__field--nao" name="name"
+             value="{{ Request::old('name') ?: ''}}" type="text" id="input-1"/>
+      <label class="input__label input__label--nao" for="input-1">
+          <span class="input__label-content input__label-content--nao">نام</span>
+      </label>
+      <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+      </svg>
+
+      </span>
+            <span class="input input--nao">
+      <input class="input__field input__field--nao" name="email"
+             value="{{ Request::old('email') ?: ''}}" type="text" id="input-2"/>
+      <label class="input__label input__label--nao" for="input-2">
+          <span class="input__label-content input__label-content--nao">ایمیل</span>
+      </label>
       <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
       </svg>
       </span> <span class="input input--nao">
-      <input class="input__field input__field--nao" type="text" id="input-2"/>
-      <label class="input__label input__label--nao" for="input-2"> <span
-                  class="input__label-content input__label-content--nao">ایمیل</span> </label>
+      <input class="input__field input__field--nao" name="message"
+             value="{{ Request::old('message') ?: ''}}" type="text" id="input-3"/>
+      <label class="input__label input__label--nao" for="input-3">
+          <span class="input__label-content input__label-content--nao">پیام</span>
+      </label>
       <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
       </svg>
-      </span> <span class="input input--nao">
-      <input class="input__field input__field--nao" type="text" id="input-3"/>
-      <label class="input__label input__label--nao" for="input-3"> <span
-                  class="input__label-content input__label-content--nao">پیام</span> </label>
-      <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-      </svg>
+
       </span>
             <button class="btn btn-form">ارسال</button>
         </section>
+        </form>
     </section>
+
     <section class="pull-right col-xs-12 col-sm-6 col-md-6 contact2">
         <div class="web"><i class="fa fa-envelope-o" aria-hidden="true"></i>
             <p class="text-for"> ایمیل</p>

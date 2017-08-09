@@ -165,6 +165,7 @@ return [
         'password' => 'رمز عبور',
         'description' => 'توضیحات',
         'date' => 'تاریخ',
+        'answer' => 'پاسخ',
 
     ],
 

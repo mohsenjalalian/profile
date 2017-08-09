@@ -16,7 +16,8 @@
 
                 <div class="form-group{{ $errors->has('email') ? ' has-error': ''}}">
                     <fieldset>
-                        <input placeholder="ایمیل" id="email" class="form-control" type="text" name="email" tabindex="1"
+                        <input placeholder="ایمیل" id="email"
+                               value="{{ Request::old('email') ?: ''}}" class="form-control" type="text" name="email" tabindex="1"
                                autofocus>
                     </fieldset>
                     @if($errors->has('email'))
@@ -26,7 +27,7 @@
 
                 <div class="form-group{{ $errors->has('phone_number') ? ' has-error': ''}}">
                     <fieldset>
-                        <input placeholder="شماره تلفن" type="text" name="phone_number" tabindex="1" autofocus>
+                        <input placeholder="شماره تلفن" value="{{ Request::old('phone_number') ?: ''}}" type="text" name="phone_number" tabindex="1" autofocus>
                     </fieldset>
                     @if($errors->has('phone_number'))
                         <span class="help-block">{{ $errors->first('phone_number')}}</span>
@@ -35,7 +36,8 @@
 
                 <div class="form-group{{ $errors->has('mobile') ? ' has-error': ''}}">
                     <fieldset>
-                        <input placeholder="تلفن همراه" type="text" name="mobile" tabindex="1" autofocus>
+                        <input placeholder="تلفن همراه" type="text" name="mobile"
+                               value="{{ Request::old('mobile') ?: ''}}" tabindex="1" autofocus>
                     </fieldset>
                     @if($errors->has('mobile'))
                         <span class="help-block">{{ $errors->first('mobile')}}</span>
@@ -44,7 +46,8 @@
 
                 <div class="form-group{{ $errors->has('office_number') ? ' has-error': ''}}">
                     <fieldset>
-                        <input placeholder="تلفن دفتر" type="text" name="office_number" tabindex="1" autofocus>
+                        <input placeholder="تلفن دفتر" type="text"
+                               value="{{ Request::old('office_number') ?: ''}}" name="office_number" tabindex="1" autofocus>
                     </fieldset>
                     @if($errors->has('office_number'))
                         <span class="help-block">{{ $errors->first('office_number')}}</span>
@@ -55,7 +58,8 @@
                 <div class="form-group{{ $errors->has('qr_code') ? ' has-error': ''}}">
                     <fieldset>
                         <button id="upfile1">کد QR</button>
-                        <input type="file" id="file1" name="qr_code" style="display:none"/>
+                        <input type="file" id="file1" name="qr_code"
+                               value="{{ Request::old('qr_code') ?: ''}}" style="display:none"/>
                     </fieldset>
                     @if($errors->has('qr_code'))
                         <span class="help-block">{{ $errors->first('qr_code')}}</span>

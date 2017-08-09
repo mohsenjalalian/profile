@@ -16,7 +16,8 @@
 
                 <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
                     <fieldset>
-                        <input placeholder="نام کتاب" type="text" name="name" tabindex="1" required autofocus>
+                        <input placeholder="نام کتاب" type="text" name="name"
+                               value="{{ Request::old('name') ?: ''}}" tabindex="1" required autofocus>
                     </fieldset>
                     @if($errors->has('name'))
                         <span class="help-block">{{ $errors->first('name')}}</span>
@@ -25,7 +26,8 @@
 
                 <div class="form-group{{ $errors->has('published_place') ? ' has-error': ''}}">
                     <fieldset>
-                        <input placeholder="شرکت انتشاراتی" type="text" name="published_place" tabindex="1" required
+                        <input placeholder="شرکت انتشاراتی"
+                               value="{{ Request::old('published_place') ?: ''}}" type="text" name="published_place" tabindex="1" required
                                autofocus>
                     </fieldset>
                     @if($errors->has('published_place'))
@@ -38,7 +40,8 @@
                     <div class="form-group{{ $errors->has('published_year') ? ' has-error': ''}}">
                         <fieldset>
                             <label class="control-label" for="datepicker1">تاریخ انتشار</label>
-                            <input name="published_year" class="input-small datepicker4" type="text">
+                            <input name="published_year"
+                                   value="{{ Request::old('published_year') ?: ''}}" class="input-small datepicker4" type="text">
                         </fieldset>
                         @if($errors->has('published_year'))
                             <span class="help-block">{{ $errors->first('published_year')}}</span>
@@ -48,7 +51,8 @@
 
                 <div class="form-group{{ $errors->has('link') ? ' has-error': ''}}">
                     <fieldset>
-                        <input placeholder="لینک به مقاله" type="text" name="link" tabindex="1" required autofocus>
+                        <input placeholder="لینک به مقاله" type="text"
+                               value="{{ Request::old('link') ?: ''}}"   name="link" tabindex="1" required autofocus>
                     </fieldset>
                     @if($errors->has('link'))
                         <span class="help-block">{{ $errors->first('link')}}</span>
@@ -58,7 +62,8 @@
                 <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
                     <fieldset>
                         <button id="upfile1">عکس</button>
-                        <input type="file" id="file1" name="photo" style="display:none"/>
+                        <input type="file" id="file1"
+                               value="{{ Request::old('photo') ?: ''}}" name="photo" style="display:none"/>
                     </fieldset>
                     @if($errors->has('photo'))
                         <span class="help-block">{{ $errors->first('photo')}}</span>

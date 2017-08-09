@@ -16,7 +16,8 @@
 
                 <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
                     <fieldset>
-                        <input placeholder="نام گواهی" type="text" name="name" tabindex="1" required autofocus>
+                        <input placeholder="نام گواهی" type="text" name="name"
+                               value="{{ Request::old('name') ?: ''}}" tabindex="1" required autofocus>
                     </fieldset>
                     @if($errors->has('name'))
                         <span class="help-block">{{ $errors->first('name')}}</span>
@@ -25,7 +26,8 @@
 
                 <div class="form-group{{ $errors->has('info') ? ' has-error': ''}}">
                     <fieldset>
-                        <input placeholder="توضیحات" type="text" name="info" tabindex="1" required autofocus>
+                        <input placeholder="توضیحات" type="text" name="info"
+                               value="{{ Request::old('info') ?: ''}}" tabindex="1" required autofocus>
                     </fieldset>
                     @if($errors->has('info'))
                         <span class="help-block">{{ $errors->first('info')}}</span>
@@ -35,7 +37,8 @@
                 <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
                     <fieldset>
                         <button id="upfile1">عکس</button>
-                        <input type="file" id="file1" name="photo" style="display:none"/>
+                        <input type="file" id="file1"
+                               value="{{ Request::old('photo') ?: ''}}" name="photo" style="display:none"/>
                     </fieldset>
                     @if($errors->has('photo'))
                         <span class="help-block">{{ $errors->first('photo')}}</span>
@@ -45,7 +48,7 @@
                 <div class="form-group{{ $errors->has('type') ? ' has-error': ''}}">
                     <fieldset>
                         <p>نوع</p>
-                        <input type="radio" name="type" value="دوره" tabindex="2" checked>دوره<br>
+                        <input type="radio" name="type" value="دوره"  tabindex="2" checked>دوره<br>
                         <input type="radio" name="type" value="جایزه" tabindex="2">جایزه<br>
                         <input type="radio" name="type" value="گواهی" tabindex="2">گواهی<br>
                     </fieldset>

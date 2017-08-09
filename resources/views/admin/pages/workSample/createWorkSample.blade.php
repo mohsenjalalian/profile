@@ -15,7 +15,8 @@
 
                 <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
                 <fieldset>
-                    <input placeholder="نام" type="text" name="name" tabindex="1" required autofocus>
+                    <input placeholder="نام" type="text" name="name"
+                           value="{{ Request::old('name') ?: ''}}" tabindex="1" required autofocus>
                 </fieldset>
                     @if($errors->has('name'))
                         <span class="help-block">{{ $errors->first('name')}}</span>
@@ -58,7 +59,8 @@
                 <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
                 <fieldset>
                     <button id="upfile1">عکس  </button>
-                    <input type="file" id="file1"  name="photo" style="display:none" />
+                    <input type="file" id="file1"  name="photo"
+                           value="{{ Request::old('photo') ?: ''}}" style="display:none" />
                 </fieldset>
                     @if($errors->has('photo'))
                         <span class="help-block">{{ $errors->first('photo')}}</span>

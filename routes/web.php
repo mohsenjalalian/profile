@@ -92,6 +92,8 @@ Route::group(['middleware' => 'auth'], function () {
         ]
     ]);
 
+    Route::post('message/save', 'MessageController@save')->name('saveMessage');
+
     Route::resource('message', 'MessageController', [
         'names' => [
             'index' => 'message',

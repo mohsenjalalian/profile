@@ -74,8 +74,15 @@ class WorkSampleController extends Controller
         $workSample = WorkSample::find($id);
         $categories = Category::all();
         $skills = Skills::all();
-
-        return view('admin.pages.workSample.update', compact('workSample', 'categories', 'skills'));
+        $ws = [];
+        $sw = [];
+        foreach ($workSample->category as $category) {
+            $ws[$category['id']] = $category;
+        }
+        foreach ($workSample->skills as $skill) {
+            $sw[$skill['id']] = $skill;
+        }
+        return view('admin.pages.workSample.update', compact('workSample', 'ws','sw','categories', 'skills'));
     }
 
     /**
@@ -106,20 +113,20 @@ class WorkSampleController extends Controller
 
             // store
             $workSample = WorkSample::find($id);
+
+
             $workSample->name = Input::get('name');
             if ($file) {
                 $workSample->photo = $photo;
             }
             $workSample->save();
 
-            $workSample->category()->attach(request('category_id'));
-            $workSample->skills()->attach(request('skill_id'));
+            $workSample->category()->sync(request('category_id'));
+            $workSample->skills()->sync(request('skill_id'));
 
             // redirect
             return redirect()->route('work-sample')->with('success', 'پروفایل شما با موفقیت اصلاح شد');
         }
-
-
     }
 
     /**
@@ -142,5 +149,4 @@ class WorkSampleController extends Controller
 
         return redirect()->back()->withErrors('متاسفانه نمونه کار حذف نشد');
     }
-
 }

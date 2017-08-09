@@ -38,9 +38,19 @@
 
 
 
-
 <script src="/js/bootstrap-datepicker.min.js"></script>
 <script src="/js/bootstrap-datepicker.fa.min.js"></script>
+
+{{--CkEditor--}}
+<script>
+    CKEDITOR.replace( 'answer',{
+        uiColor: '#2F4050',
+        contentsLangDirection : 'rtl',
+        width:'600px',
+    } );
+//        config.contentsLangDirection = 'rtl',
+
+</script>
 
 <script>
     $(document).ready(function () {

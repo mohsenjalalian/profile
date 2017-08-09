@@ -30,24 +30,21 @@
                 @if(count($categories) > 0)
                     <fieldset>
                         <h5>دسته بند ی</h5>
-                        @foreach($workSample->category as $cat)
-                            دسته بندی انتخاب شده    {{$cat->name}}
-
-                            <br>
-                        @endforeach
 
                         @foreach($categories as $category )
-                            @foreach($workSample->category as $cat)
-                                @if($cat->name !== $category->name)
-                                    <div class="form-group{{ $errors->has('category_id[]') ? ' has-error': ''}}">
-                                        <input type="checkbox" name="category_id[]"
+
+                            <div class="form-group{{ $errors->has('category_id[]') ? ' has-error': ''}}">
+                                        <input type="checkbox"
+                                               @if(in_array($category->id, array_keys($ws)))
+                                                       checked="checked"
+                                               @endif
+                                               name="category_id[]"
                                                value="{{$category->id}}">{{$category->name}}<br>
-                                        @if($errors->has('category_id[]'))
+                                    @if($errors->has('category_id[]'))
                                             <span class="help-block">{{ $errors->first('category_id[]')}}</span>
                                         @endif
                                     </div>
-                                @endif
-                            @endforeach
+
                         @endforeach
 
                     </fieldset>
@@ -58,23 +55,21 @@
                 @if(count($skills) > 0)
                     <fieldset>
                         <h5>مهارت</h5>
-                        @foreach($workSample->skills as $skill)
-                            دسته بندی انتخاب شده    {{$skill->name}}
-                            <br>
-                            @foreach($skills as $skill2 )
-                                @if($skill->name !== $skill2->name)
-                                    <div class="form-group{{ $errors->has('skill_id[]') ? ' has-error': ''}}">
-                                        <input type="checkbox" name="skill_id[]"
-                                               value="{{$skill2->id}}">{{$skill2->name}}<br>
-                                        @if($errors->has('skill_id[]'))
-                                            <span class="help-block">{{ $errors->first('skill_id[]')}}</span>
-                                        @endif
-                                    </div>
-                                @endif
-                            @endforeach
-                        @endforeach
+                        @foreach($skills as $skill )
 
-                    </fieldset>
+                        <div class="form-group{{ $errors->has('skill_id[]') ? ' has-error': ''}}">
+                            <input type="checkbox"
+                                   @if(in_array($skill->id, array_keys($sw)))
+                                   checked="checked"
+                                   @endif
+                                   name="skill_id[]"
+                                   value="{{$skill->id}}">{{$skill->name}}<br>
+                            @if($errors->has('skill_id[]'))
+                                <span class="help-block">{{ $errors->first('skill_id[]')}}</span>
+                            @endif
+                        </div>
+
+                        @endforeach
                 @else
                     <p>شما هیچ مهارتی نساخته اید</p>
                 @endif

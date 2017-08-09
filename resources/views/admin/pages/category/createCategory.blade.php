@@ -15,7 +15,8 @@
 
                 <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
                 <fieldset>
-                    <input placeholder="نام" type="text" name="name" tabindex="1" required autofocus>
+                    <input placeholder="نام" type="text"
+                           value="{{ Request::old('name') ?: ''}}" name="name" tabindex="1" required autofocus>
                 </fieldset>
                     @if($errors->has('name'))
                         <span class="help-block">{{ $errors->first('name')}}</span>

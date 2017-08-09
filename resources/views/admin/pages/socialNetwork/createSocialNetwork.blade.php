@@ -15,7 +15,8 @@
                 <div class="form-group{{ $errors->has('twitter') ? ' has-error': ''}}">
                     <fieldset class="">
                         <i class="fa fa-twitter" aria-hidden="true"></i>
-                        <input  placeholder="توییتر" type="text" name="twitter" tabindex="1" required autofocus>
+                        <input  placeholder="توییتر" type="text"
+                                value="{{ Request::old('twitter') ?: ''}}" name="twitter" tabindex="1" required autofocus>
                     </fieldset>
                     @if($errors->has('twitter'))
                         <span class="help-block">{{ $errors->first('twitter')}}</span>
@@ -26,7 +27,8 @@
                 <div class="form-group{{ $errors->has('facebook') ? ' has-error': ''}}">
                     <fieldset>
                         <i class="fa fa-facebook" aria-hidden="true"></i>
-                        <input placeholder="فیس بوک " type="text" name="facebook" tabindex="1" required autofocus>
+                        <input placeholder="فیس بوک " type="text" name="facebook"
+                               value="{{ Request::old('facebook') ?: ''}}" tabindex="1" required autofocus>
                     </fieldset>
                     @if($errors->has('facebook'))
                         <span class="help-block">{{ $errors->first('facebook')}}</span>
@@ -36,7 +38,8 @@
                 <div class="form-group{{ $errors->has('instagram') ? ' has-error': ''}}">
                     <fieldset>
                         <i class="fa fa-instagram" aria-hidden="true"></i>
-                        <input placeholder="اینستاگرام" type="text" name="instagram" tabindex="1" required autofocus>
+                        <input placeholder="اینستاگرام" type="text"
+                               value="{{ Request::old('instagram') ?: ''}}" name="instagram" tabindex="1" required autofocus>
                     </fieldset>
                     @if($errors->has('instagram'))
                         <span class="help-block">{{ $errors->first('instagram')}}</span>
@@ -46,7 +49,8 @@
                 <div class="form-group{{ $errors->has('telegram') ? ' has-error': ''}}">
                     <fieldset>
                         <i class="fa fa-telegram" aria-hidden="true"></i>
-                        <input placeholder="تلگرام" type="text" name="telegram" tabindex="1" required autofocus>
+                        <input placeholder="تلگرام" type="text" name="telegram"
+                               value="{{ Request::old('telegram') ?: ''}}" tabindex="1" required autofocus>
                     </fieldset>
                     @if($errors->has('telegram'))
                         <span class="help-block">{{ $errors->first('telegram')}}</span>
@@ -56,7 +60,8 @@
                 <div class="form-group{{ $errors->has('google_plus') ? ' has-error': ''}}">
                     <fieldset>
                         <i class="fa fa-google-plus" aria-hidden="true"></i>
-                        <input placeholder="گوگل پلاس" type="text" name="google_plus" tabindex="1" required autofocus>
+                        <input placeholder="گوگل پلاس" type="text" name="google_plus"
+                               value="{{ Request::old('google_plus') ?: ''}}" tabindex="1" required autofocus>
                     </fieldset>
                     @if($errors->has('google_plus'))
                         <span class="help-block">{{ $errors->first('google_plus')}}</span>
@@ -66,7 +71,8 @@
                 <div class="form-group{{ $errors->has('linkedin') ? ' has-error': ''}}">
                     <fieldset>
                         <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-                        <input placeholder="لینکدین" type="text" name="linkedin" tabindex="1" required autofocus>
+                        <input placeholder="لینکدین" type="text" name="linkedin"
+                               value="{{ Request::old('linkedin') ?: ''}}" tabindex="1" required autofocus>
                     </fieldset>
                     @if($errors->has('linkedin'))
                         <span class="help-block">{{ $errors->first('linkedin')}}</span>
@@ -76,7 +82,8 @@
                 <div class="form-group{{ $errors->has('skype') ? ' has-error': ''}}">
                     <fieldset>
                         <i class="fa fa-skype" aria-hidden="true"></i>
-                        <input placeholder="اسکایپ" type="text" name="skype" tabindex="1" required autofocus>
+                        <input placeholder="اسکایپ" type="text"
+                               value="{{ Request::old('skype') ?: ''}}" name="skype" tabindex="1" required autofocus>
                     </fieldset>
                     @if($errors->has('skype'))
                         <span class="help-block">{{ $errors->first('skype')}}</span>

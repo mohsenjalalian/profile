@@ -16,7 +16,8 @@
 
                 <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
                     <fieldset>
-                        <input placeholder="نام شخص" type="text" name="name" tabindex="1" required autofocus>
+                        <input placeholder="نام شخص" type="text" name="name"
+                               value="{{ Request::old('name') ?: ''}}" tabindex="1" required autofocus>
                     </fieldset>
                     @if($errors->has('name'))
                         <span class="help-block">{{ $errors->first('name')}}</span>
@@ -25,7 +26,8 @@
 
                 <div class="form-group{{ $errors->has('position') ? ' has-error': ''}}">
                     <fieldset>
-                        <input placeholder="موقعیت شغلی" type="text" name="position" tabindex="1" required autofocus>
+                        <input placeholder="موقعیت شغلی" type="text"
+                               value="{{ Request::old('position') ?: ''}}" name="position" tabindex="1" required autofocus>
                     </fieldset>
                     @if($errors->has('position'))
                         <span class="help-block">{{ $errors->first('position')}}</span>
@@ -34,7 +36,8 @@
 
                 <div class="form-group{{ $errors->has('company') ? ' has-error': ''}}">
                     <fieldset>
-                        <input placeholder="شرکت" type="text" name="company" tabindex="1" required autofocus>
+                        <input placeholder="شرکت" type="text"
+                               value="{{ Request::old('company') ?: ''}}" name="company" tabindex="1" required autofocus>
                     </fieldset>
                     @if($errors->has('company'))
                         <span class="help-block">{{ $errors->first('company')}}</span>
@@ -43,7 +46,8 @@
 
                 <div class="form-group{{ $errors->has('info') ? ' has-error': ''}}">
                     <fieldset>
-                        <input placeholder="توضیحات" type="text" name="info" tabindex="1" required autofocus>
+                        <input placeholder="توضیحات" type="text" name="info"
+                               value="{{ Request::old('info') ?: ''}}" tabindex="1" required autofocus>
                     </fieldset>
                     @if($errors->has('info'))
                         <span class="help-block">{{ $errors->first('info')}}</span>
@@ -53,7 +57,8 @@
                 <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
                     <fieldset>
                         <button id="upfile1">عکس شخص</button>
-                        <input type="file" id="file1" name="photo" style="display:none"/>
+                        <input type="file" id="file1" name="photo"
+                               value="{{ Request::old('photo') ?: ''}}" style="display:none"/>
                     </fieldset>
                     @if($errors->has('photo'))
                         <span class="help-block">{{ $errors->first('photo')}}</span>

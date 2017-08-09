@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Reply;
 use App\Model\Messages;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use Mockery\Exception;
 
 /**
  * Class MessageController
@@ -23,14 +26,38 @@ class MessageController extends Controller
     }
 
     /**
+     * Save user Messages
+     */
+    public function save(Request $request)
+    {
+        $this->validate($request, [
+           'name' => 'required|min:3|max:40|regex:/^[\pL\s\-\0-9]+$/u',
+           'email' => 'required|email',
+           'message' => 'required|min:3|max:120|regex:/^[\pL\s\-\0-9]+$/u',
+        ]);
+        $data = Messages::create([
+           'name' => $request->input('name'),
+           'email' => $request->input('email'),
+           'message' => $request->input('message'),
+        ]);
+
+        if ($data) {
+            return redirect()->back()->with('info', 'با سپاس ارسال شد');
+        }
+        return redirect()->back()->with('error', 'ارسال نشد');
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Messages $message)
     {
-        return view('admin.pages.message.createMessage');
+        //
     }
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -40,7 +67,19 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+           'email' => 'email',
+           'answer' => 'required',
+        ]);
+
+        $data = $request->all();
+        try {
+            Mail::to($data['email'])->send(new Reply($data['answer']));
+
+            return redirect()->back()->with('success', 'پیغام شما ارسال شد');
+        } catch (Exception $e) {
+            return redirect()->back()->with('errors', 'متاسفانه پیغام شما ارسال نشد');
+        }
     }
 
     /**
@@ -49,9 +88,9 @@ class MessageController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Messages $message)
     {
-        //
+        return view('admin.pages.message.showMessage', compact('message'));
     }
 
     /**
@@ -60,9 +99,9 @@ class MessageController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Messages $message)
     {
-        //
+        return view('admin.pages.message.createMessage', compact('message'));
     }
 
     /**
