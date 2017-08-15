@@ -164,11 +164,12 @@
                             <tr>
 
                                 <td class="text-center">
+
                                     @if(!empty($blogs[0]->album[0]->photo))
                                         <img width="50" height="50"
                                              src="{{\App\Http\Controllers\BlogController::ALBUM_PATH.'/'.$blogs[0]->album[0]->photo}}"
                                              alt=""></td>
-                                @endif
+                                   @endif
 
                                 <td style=" vertical-align: middle;"
                                     class="text-center">{{$blog->title}}</td>
