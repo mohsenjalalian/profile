@@ -176,7 +176,7 @@
                                     <div class="col-sm-10 col-md-12">
                                 <textarea style="height: 130px;" name="about_me" rows="8" cols="80"
                                           placeholder="درباره من" tabindex="1"
-                                          class="form-control m-b">{{ Request::old('birth_place') ?: ''}}</textarea>
+                                          class="form-control m-b">{{ Request::old('about_me') ?: ''}}</textarea>
                                         @if($errors->has('about_me'))
                                             <span class="help-block">{{ $errors->first('about_me')}}</span>
                                         @endif
@@ -191,7 +191,9 @@
                                                     class="fileinput-new"> بارگذاری عکس</span>
                                            <span class="fileinput-exists"><span class="fileinput-exists"><span
                                                            style="color: #2aca76;">بارگذاری شد</span></span></span>
-                                            <input type="file" name="photo" value="{{ Request::session()->getOldInput('photo') ? : ''}}"
+
+
+                                            <input type="file" name="photo" value="{{Request::file('photo')  ?: ''}}"
                                                    onchange="readURL1(this)"></span>
 
                                             </div>
@@ -280,7 +282,7 @@
                                             <input type="text" value="{{$profile->summary}}"
                                                    placeholder="یه خط درباره من ..." class="form-control m-b"
                                                    name="summary"
-                                                   tabindex="1"  autofocus>
+                                                   tabindex="1" autofocus>
                                             @if($errors->has('company'))
                                                 <span class="help-block">{{ $errors->first('company')}}</span>
                                             @endif
@@ -419,7 +421,8 @@
                                                 <h4>شما هیچ عکسی آپلود نکرده اید</h4>
                                             @endif
                                             <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
-                                                <img style="width: 50px;height: 50px" id="photo1" src="{{asset($profile->photo)}}" alt="{{$profile->photo}}">
+                                                <img style="width: 50px;height: 50px" id="photo1"
+                                                     src="{{asset($profile->photo)}}" alt="{{$profile->photo}}">
                                                 <div class="fileinput fileinput-new" data-provides="fileinput">
                                         <span class="btn btn-default btn-file"><span
                                                     class="fileinput-new"> بارگذاری عکس</span>
@@ -442,7 +445,8 @@
                                                 <i style="font-size: 52px;" class="fa fa-book"></i>
                                                 <div class="fileinput fileinput-new" data-provides="fileinput">
                                         <span class="btn btn-default btn-file"><span
-                                                    class="fileinput-new"> بارگذاری pdf</span><span class="fileinput-exists"><span
+                                                    class="fileinput-new"> بارگذاری pdf</span><span
+                                                    class="fileinput-exists"><span
                                                         style="color: #2aca76;">بارگذاری شد</span></span>
                                             <input type="file" value="{{$profile->pdf}}" name="pdf"
                                                    onchange="readURL3(this)"></span>
@@ -456,9 +460,11 @@
                                     <div class="col-md-4">
                                         <div class="ibox float-e-margins">
                                             <div class="form-group{{ $errors->has('cover') ? ' has-error': ''}}">
-                                                <img style="width: 50px;height: 50px" id="photo2" src="{{asset($profile->cover)}}" alt="{{$profile->cover}}">
+                                                <img style="width: 50px;height: 50px" id="photo2"
+                                                     src="{{asset($profile->cover)}}" alt="{{$profile->cover}}">
                                                 <div class="fileinput fileinput-new" data-provides="fileinput">
-                                        <span class="btn btn-default btn-file"><span class="fileinput-new"> بارگذاری کاور</span><span class="fileinput-exists"><span
+                                        <span class="btn btn-default btn-file"><span class="fileinput-new"> بارگذاری کاور</span><span
+                                                    class="fileinput-exists"><span
                                                         style="color: #2aca76;">بارگذاری شد</span></span>
                                             <input value="{{$profile->cover}}" type="file" name="cover"
                                                    onchange="readURL2(this)"></span>
@@ -501,8 +507,8 @@
                         <div class="col-md-12">
                             @foreach($profiles as $profile)
                                 <div style="height: 200px" class="col-md-12">
-                                <img width="100%" height="100%" class="m-b-md" src="{{asset($profile->cover)}}"
-                                     alt="{{$profile->cover}}"></div>
+                                    <img width="100%" height="100%" class="m-b-md" src="{{asset($profile->cover)}}"
+                                         alt="{{$profile->cover}}"></div>
                                 <div style="float: left !important; margin-top: -30px;"
                                      class="profile-image col-md-3 pull-left">
                                     <img class="img-circle circle-border m-b-md" src="{{asset($profile->photo)}}"
@@ -511,9 +517,9 @@
                                 <div class="profile-info">
                                     <div>
                                         <div>
-                                            <h2 style="margin-right: 20px !important; class="no-margins">
-                                                <span>{{$profile->first_name}}</span>
-                                                <span>{{$profile->last_name}}</span>
+                                            <h2 style="margin-right: 20px !important; class=" no-margins">
+                                            <span>{{$profile->first_name}}</span>
+                                            <span>{{$profile->last_name}}</span>
                                             </h2>
                                             <p style="margin-right: 23px; margin-top: 5px;">{{$profile->job}}</p>
 
