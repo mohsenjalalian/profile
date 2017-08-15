@@ -16,7 +16,7 @@ class CreateCertificationsTable extends Migration
         Schema::create('certifications', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('info')->nullable();
+            $table->text('info')->nullable();
             $table->string('photo')->nullable();
             $table->enum('type',['دوره','جایزه','گواهی'])->nullable();
 

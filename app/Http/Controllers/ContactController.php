@@ -77,7 +77,7 @@ class ContactController extends Controller
     public function update($id)
     {
         $rules = array(
-            'email' => 'required|email|min:3|regex:/^[\pL\s\-\0-9]+$/u',
+            'email' => 'required|email|min:3',
             'phone_number' => 'required|min:5|integer',
             'mobile' => 'required|min:5|integer',
             'office_number' => 'required|min:5|integer',
@@ -112,8 +112,6 @@ class ContactController extends Controller
             // redirect
             return redirect()->route('contact')->with('success', 'پروفایل شما با موفقیت اصلاح شد');
         }
-
-
     }
 
     /**

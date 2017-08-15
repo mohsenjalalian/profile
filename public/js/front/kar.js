@@ -185,10 +185,13 @@ $(document).ready(function(e) {
 	});
 
 
-
+var about = $('#about2');
+console.log( about.position().top);
+console.log( about.height());
 
 $(document).scroll(function(e) {
     p = $(document).scrollTop();
+	// if(p<350){
 	if(p<350){
 		$("#icon1").css("background-color","#fff");
 	}else{
@@ -203,6 +206,8 @@ $(document).scroll(function(e) {
 	
 	j = $(document).scrollTop();
 	if(j>750 & j<1650){
+
+    // if(j > about.position().top && j < about.position().top + about.height()){
 		$("#icon3").css("background-color","#fff");
 	}else{
 		$("#icon3").css("background-color","#ffd93e");
@@ -315,6 +320,12 @@ $(document).ready(function(e) {
     });
 });
 
+$(document).ready(function (e) {
+    $("#contact").click(function(e) {
+        z = $("#scrollcontact").offset();
+        $("body,html").animate({scrollTop:z.top},1500);
+    });
+});
 
 $(document).ready(function(e) {
 	$("#tagrobe").click(function(e) {

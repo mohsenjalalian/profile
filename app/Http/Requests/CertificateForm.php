@@ -27,9 +27,9 @@ class CertificateForm extends FormRequest
     {
         return [
             'name' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
-            'info' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
+            'info' => 'required|min:3',
             'photo' => 'file|mimes:jpeg,bmp,png|max:5000',
-            'type' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u'
+            'type' => 'required|min:3'
             ];
     }
 

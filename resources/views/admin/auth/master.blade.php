@@ -7,6 +7,11 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/bower_components/bootstrap/dist/css/bootstrap.min.css">
 
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/front/bootstrap-rtl.min.css" rel="stylesheet">
+
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="/css/bower_components/font-awesome/css/font-awesome.min.css">
     <!-- Ionicons -->

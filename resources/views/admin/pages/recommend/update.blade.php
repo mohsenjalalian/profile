@@ -10,15 +10,15 @@
             @include('admin.layouts.errors')
             <form id="contact" action="{{route('recommend.update',$recommend->id)}}" method="post"
                   enctype="multipart/form-data">
-                <h3>فرم اصلاح نظرات مدیران</h3>
-                <h4>اطلاعات این فرم در صفحه ایندکس شما نمایش داده میشود</h4>
                 {{csrf_field()}}
                 {{ method_field('PUT') }}
                 <input type="hidden" name="old_pic" value="{{ $recommend->photo }}">
-
+<div class="row">
+    <div class="col-md-3">
                 <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
                     <fieldset>
-                        <input placeholder="نام شخص" value="{{$recommend->name}}" type="text" name="name" tabindex="1"
+                        <input class="form-control m-b" placeholder="نام شخص" value="{{$recommend->name}}"
+                               type="text" name="name" tabindex="1"
                                required autofocus>
                     </fieldset>
                     @if($errors->has('name'))
@@ -28,17 +28,20 @@
 
                 <div class="form-group{{ $errors->has('position') ? ' has-error': ''}}">
                     <fieldset>
-                        <input placeholder="موقعیت شغلی" type="text" value="{{$recommend->position}}" name="position"
+                        <input class="form-control m-b" placeholder="موقعیت شغلی" type="text"
+                               value="{{$recommend->position}}" name="position"
                                tabindex="1" required autofocus>
                     </fieldset>
                     @if($errors->has('position'))
                         <span class="help-block">{{ $errors->first('position')}}</span>
                     @endif
                 </div>
-
+    </div>
+</div>
                 <div class="form-group{{ $errors->has('company') ? ' has-error': ''}}">
                     <fieldset>
-                        <input placeholder="شرکت" type="text" name="company" value="{{$recommend->company}}"
+                        <input class="form-control m-b col-md-3" placeholder="شرکت" type="text" name="company"
+                               value="{{$recommend->company}}"
                                tabindex="1" required autofocus>
                     </fieldset>
                     @if($errors->has('company'))
@@ -48,36 +51,50 @@
 
                 <div class="form-group{{ $errors->has('info') ? ' has-error': ''}}">
                     <fieldset>
-                        <input placeholder="توضیحات" type="text" name="info" value="{{$recommend->info}}" tabindex="1"
-                               required autofocus>
+                        <textarea class="form-control m-b col-md-4" placeholder="توضیحات" type="text" name="info"
+                                   tabindex="1" required autofocus>
+                            {{$recommend->info}}
+                        </textarea>
                     </fieldset>
                     @if($errors->has('info'))
                         <span class="help-block">{{ $errors->first('info')}}</span>
                     @endif
                 </div>
 
-                @if(isset($recommend->photo))
-                    <img width="50" height="50" src="{{asset($recommend->photo)}}">
-                @else
-                    <h4>شما هیچ عکسی آپلود نکرده اید</h4>
-                @endif
 
-                <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
-                    <fieldset>
-                        <button id="upfile1">عکس شخص</button>
-                        <input type="file" id="file1" name="photo" style="display:none" value="{{$recommend->photo}}"/>
-                    </fieldset>
-                    @if($errors->has('photo'))
-                        <span class="help-block">{{ $errors->first('photo')}}</span>
+                <div class="col-md-12">
+                    @if(isset($recommend->photo))
+                        <img width="50" height="50" src="{{asset($recommend->photo)}}">
+                    @else
+                        <h4>شما هیچ عکسی آپلود نکرده اید</h4>
                     @endif
+                    <div class="ibox float-e-margins">
+                        <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
+                            <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <span class="btn btn-default btn-file"><span
+                                                    class="fileinput-new">بارگذاری</span><span class="fileinput-exists"><span
+                                                        style="color: #2aca76;">بارگذاری شد</span></span>
+                                            <input type="file" value="{{$recommend->photo}}" name="photo"></span>
+                            </div>
+                            @if($errors->has('photo'))
+                                <span class="help-block">{{ $errors->first('photo')}}</span>
+                            @endif
+                        </div>
+                    </div>
+                    <div style="margin-top: -20px;" class="modal-footer col-md-5">
+                        <button type="button" class="btn btn-white" data-dismiss="modal">بستن</button>
+                        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending"
+                                class="btn btn-primary">اعمال تغییرات
+                        </button>
+                    </div>
                 </div>
-
-                <fieldset>
-                    <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">ارسال</button>
-                </fieldset>
-
             </form>
 
         </div>
     </div>
+
 @endsection
+
+@section('script')
+
+@stop

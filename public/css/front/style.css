@@ -19,7 +19,7 @@ body {
 }
 
 .content-a2 {
-    height: 70px !important;
+    height: 120px !important;
 }
 
 .content-a3 {
@@ -556,10 +556,12 @@ a:hover {
 .background {
     min-height: 480px;
     height: auto;
-    background-image: url(../../images/front/background.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    position: absolute;
+    top:0px;
+
 }
 
 .box-languge p {
@@ -574,7 +576,7 @@ a:hover {
     z-index: 1000;
     background-color: #fff;
     position: relative;
-    left: -15px;
+    left: -165px;
 }
 
 .box-social1 i {
@@ -623,7 +625,7 @@ a:hover {
     margin-top: 150px;
     cursor: pointer;
     position: relative;
-    left: -55px;
+    left: -205px;
 }
 
 .social1 i {
@@ -646,7 +648,7 @@ a:hover {
     margin-top: 189px;
     cursor: pointer;
     position: relative;
-    left: -95px;
+    left: -245px;
 }
 
 .social2 i {
@@ -667,9 +669,10 @@ a:hover {
     height: 40px;
     background-color: #964b00;
     margin-top: 229px;
+    float: left;
     cursor: pointer;
     position: relative;
-    left: -135px;
+    left: -285px;
 }
 
 .social3 i {
@@ -711,7 +714,7 @@ a:hover {
 .texth1 {
     color: #ffd93e;
     margin-top: 170px;
-    margin-right: -60px;
+    margin-right: 0px;
 }
 
 .texth1 p {
@@ -1121,7 +1124,7 @@ progress::-moz-progress-bar {
     float: right;
     position: relative;
     top: 120px;
-    right: -208px;
+    right: -190px;
 }
 
 .text-book2 {

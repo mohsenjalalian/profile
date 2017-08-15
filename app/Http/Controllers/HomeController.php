@@ -31,7 +31,7 @@ class HomeController extends Controller
     public function index()
     {
         $albums = Album::all();
-        $blog = Blog::all();
+        $blogs = Blog::all();
         $categories = Category::all();
         $certifications = Certification::all();
         $contacts = Contacts::all();
@@ -47,7 +47,7 @@ class HomeController extends Controller
 
         return view('front.index', compact([
             'albums',
-            'blog',
+            'blogs',
             'categories',
             'certifications',
             'contacts',

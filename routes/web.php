@@ -13,7 +13,7 @@
 
 
 //Home Page
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('home');
 //login
 Route::get('login', 'UserController@login')->name('login');
 Route::post('login', 'UserController@store')->name('storeAdmin');

@@ -17,12 +17,12 @@ class CreateProfilesTable extends Migration
             $table->increments('id');
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('summary');
-            $table->text('about_me');
+            $table->string('summary')->nullable();
+            $table->text('about_me')->nullable();
             $table->string('last_degree');
             $table->string('birth_day');
-            $table->enum('marriage', ['مجرد', 'متاهل']);
-            $table->enum('military', ['تمام شده', 'معاف', 'معاف پزشکی']);
+            $table->enum('marriage', ['متاهل','مجرد']);
+            $table->enum('military', ['تمام شده','معاف','معاف پزشکی']);
             $table->string('birth_place');
             $table->enum('gender', ['مرد', 'زن']);
             $table->string('job');

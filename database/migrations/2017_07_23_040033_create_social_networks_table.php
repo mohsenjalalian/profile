@@ -22,7 +22,7 @@ class CreateSocialNetworksTable extends Migration
             $table->string('google_plus')->nullable();
             $table->string('linkedin')->nullable();
             $table->string('skype')->nullable();
-
+            $table->string('site')->nullable();
 
             $table->timestamps();
         });

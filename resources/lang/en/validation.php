@@ -67,7 +67,7 @@ return [
     'not_in' => 'The selected :attribute is invalid.',
     'numeric' => 'The :attribute must be a number.',
     'present' => 'The :attribute field must be present.',
-    'regex' => 'The :attribute format is invalid.',
+    'regex' => 'فرمت :attribute  اشتباه است.',
     'required' => ' :attribute ضروری می باشد',
     'required_if' => 'The :attribute field is required when :other is :value.',
     'required_unless' => 'The :attribute field is required unless :other is in :values.',
@@ -78,15 +78,15 @@ return [
     'same' => 'The :attribute and :other must match.',
     'size' => [
         'numeric' => 'The :attribute must be :size.',
-        'file' => 'The :attribute must be :size kilobytes.',
+        'file' => 'سایز :attribute باید باشد :size کیلوبایت.',
         'string' => 'The :attribute must be :size characters.',
         'array' => 'The :attribute must contain :size items.',
     ],
-    'string' => 'The :attribute must be a string.',
-    'timezone' => 'The :attribute must be a valid zone.',
-    'unique' => 'The :attribute has already been taken.',
-    'uploaded' => 'The :attribute failed to upload.',
-    'url' => 'The :attribute format is invalid.',
+    'string' => 'فرمت :attribute  اشتباه است.',
+    'timezone' => 'فرمت :attribute  اشتباه است.',
+    'unique' => 'فرمت :attribute  اشتباه است.',
+    'uploaded' => 'فرمت :attribute  اشتباه است.',
+    'url' => 'فرمت :attribute  اشتباه است.',
 
     /*
     |--------------------------------------------------------------------------
@@ -123,6 +123,7 @@ return [
         'about_me' => 'دباره من',
         'birth_day' => 'تاریخ تولد',
         'marriage' => 'ازدواج',
+        'last_degree' => 'آخرین مدرک تحصیلی',
         'military' => 'خدمت',
         'birth_place' => 'محل تولد',
         'gender' => 'جنسیت',

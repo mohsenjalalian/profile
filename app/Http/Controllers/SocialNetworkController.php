@@ -43,7 +43,7 @@ class SocialNetworkController extends Controller
     public function store(SocialForm $form)
     {
         $form->process();
-        return redirect()->route('social-network')->with('success', 'شبکه های اجتماعی شما با موفقیت ساخته شد');
+        return redirect()->route('social-network');
     }
 
     /**
@@ -79,13 +79,14 @@ class SocialNetworkController extends Controller
     public function update($id)
     {
         $rules = array(
-            'twitter' => 'required',
-            'facebook' => 'required',
-            'instagram' => 'required',
-            'telegram' => 'required',
-            'google_plus' => 'required',
-            'linkedin' => 'required',
-            'skype' => 'required',
+//            'twitter' => 'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/',
+//            'facebook' => 'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/',
+//            'instagram' => 'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/',
+//            'telegram' => 'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/',
+//            'google_plus' => 'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/',
+//            'linkedin' => 'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/',
+//            'skype' => 'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/',
+//            'site' => 'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/',
         );
 
         $validator = Validator::make(Input::all(), $rules);
@@ -103,6 +104,7 @@ class SocialNetworkController extends Controller
             $profile->google_plus = Input::get('google_plus');
             $profile->linkedin = Input::get('linkedin');
             $profile->skype = Input::get('skype');
+            $profile->site = Input::get('site');
 
             $profile->save();
 

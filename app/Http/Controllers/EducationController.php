@@ -67,7 +67,7 @@ class EducationController extends Controller
     public function edit($id)
     {
         $education = Education::find($id);
-        return view('admin.pages.education.update', compact('education'));
+        return view('admin.pages.education.update', compact('education'))->renderSections()['content'];
     }
 
     /**

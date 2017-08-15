@@ -25,8 +25,9 @@ class WorkSampleController extends Controller
     public function index()
     {
         $workSamples = WorkSample::all();
-
-        return view('admin.pages.workSample.workSample', compact('workSamples'));
+        $categories = Category::all();
+        $skills = Skills::all();
+        return view('admin.pages.workSample.workSample', compact('workSamples','categories','skills'));
     }
 
     /**
@@ -82,7 +83,7 @@ class WorkSampleController extends Controller
         foreach ($workSample->skills as $skill) {
             $sw[$skill['id']] = $skill;
         }
-        return view('admin.pages.workSample.update', compact('workSample', 'ws','sw','categories', 'skills'));
+        return view('admin.pages.workSample.update', compact('workSample', 'ws','sw','categories', 'skills'))->renderSections()['content'];
     }
 
     /**

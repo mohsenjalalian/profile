@@ -3,47 +3,64 @@
 
 
 @section('content')
-    <div class="login-box">
-        <div class="login-logo">
-            <a href="#"><b>تارنما</b></a>
-        </div>
-        <!-- /.login-logo -->
-        <div class="login-box-body">
-            <p class="login-box-msg">لطفا ایمیل و رمز عبور خود را وارد کنید</p>
-            <form action="{{route('storeAdmin')}}" method="post">
-                {{csrf_field()}}
-                <div class="form-group has-feedback {{ $errors->has('email') ? ' has-error': ''}}">
-                    <input type="email" class="form-control" name="email" placeholder="ایمیل">
-                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                    @if($errors->has('email'))
-                        <span class="help-block">{{ $errors->first('email')}}</span>
-                    @endif
-                </div>
-                <div class="form-group has-feedback {{ $errors->has('password') ? ' has-error': ''}}">
-                    <input type="password" class="form-control" name="password" placeholder="رمز عبور">
-                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                    @if($errors->has('password'))
-                        <span class="help-block">{{ $errors->first('password')}}</span>
-                    @endif
-                </div>
-                <div class="row">
+    <body style="background-color: #f3f3f4 !important;">
+    <div class="loginColumns animated fadeInDown">
+        <div class="row">
 
-                    <div class="col-xs-4">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">ورود</button>
-                    </div>
-                    <!-- /.col -->
-                </div>
-            </form>
-            <hr>
-            <div class="social-auth-links text-center">
+            <div class="col-md-6">
+                <h2 class="font-bold">تارنما</h2>
 
-                <a href="{{route('showLinkRequestForm')}}" class="btn btn-block btn-social btn-google btn-flat">
-رمز عبور خود را فراموش کرده اید؟
-                </a>
+                <p>
+                    لورم ایپسوم یک سایت گرافیکی است که در زمینه وب مشغول به کار است لورم ایپسوم برای طراح های گرافیکی طراحی شده
+                </p>
+
+                <p>
+                    لورم ایپسوم یک سایت گرافیکی است که در زمینه وب مشغول به کار است لورم ایپسوم برای طراح های گرافیکی طراحی شده لورم ایپسوم یک سایت گرافیکی است که در زمینه وب مشغول به کار است لورم ایپسوم برای طراح های گرافیکی طراحی شده
+                </p>
+
+                <p>
+                    لورم ایپسوم یک سایت گرافیکی است که در زمینه وب مشغول به کار است لورم ایپسوم برای طراح های گرافیکی طراحی شده
+                </p>
+
             </div>
-            <!-- /.social-auth-links -->
+            <div class="col-md-6">
+                <div class="ibox-content">
+                    <form action="{{route('storeAdmin')}}" method="post">
+                        {{csrf_field()}}
+                        <div class="form-group has-feedback {{ $errors->has('email') ? ' has-error': ''}}">
+                            <div class="form-group">
+                                <input name="email" placeholder="ایمیل" class="form-control" required="">
+                                @if($errors->has('email'))
+                                    <span class="help-block">{{ $errors->first('email')}}</span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group has-feedback {{ $errors->has('password') ? ' has-error': ''}}">
+                            <div class="form-group">
+                                <input type="password" class="form-control" name="password" placeholder="Password" required="">
+                                @if($errors->has('password'))
+                                    <span class="help-block">{{ $errors->first('password')}}</span>
+                                @endif
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary block full-width m-b">ورود</button>
 
+                        <a href="{{route('showLinkRequestForm')}}">
+                            <small>رمز عبور خود را فراموش کرده اید؟</small>
+                        </a>
+
+                    </form>
+                    <p class="m-t">
+                    <p id="hiden" style="color: #222; margin-top: 30px;" class="text-center">Design By<a href="http://cotint.ir"
+                                                                                                          target="_blank"><span
+                                    style="color: #239963; margin-left: 10px;"><strong>CO </strong></span><strong>|</strong><span
+                                    style="color:#222;"><strong> tint</strong></span></a></p>
+                    </p>
+                </div>
+            </div>
         </div>
-        <!-- /.login-box-body -->
     </div>
+    </body>
 @endsection
+
+

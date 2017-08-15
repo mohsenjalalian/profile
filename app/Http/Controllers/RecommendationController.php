@@ -64,10 +64,12 @@ class RecommendationController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
         $recommend = Recommendation::find($id);
-        return view('admin.pages.recommend.update', compact('recommend'));
+        if ($request->ajax()) {
+            return view('admin.pages.recommend.update', compact('recommend'))->renderSections()['content'];
+        }
     }
 
     /**
@@ -82,7 +84,7 @@ class RecommendationController extends Controller
             'name' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
             'position' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
             'company' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
-            'info' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
+            'info' => 'required|min:3',
             'photo' => 'file|mimes:jpeg,bmp,png|max:5000',
         );
 

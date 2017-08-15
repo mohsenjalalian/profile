@@ -27,11 +27,12 @@ class BlogForm extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
-            'description' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
-            'date' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
+            'title' => 'required',
+            'description' => 'required',
+            'date' => 'required',
             'photo[]' => 'file|mimes:jpeg,bmp,png|max:5000',
         ];
+
     }
 
     /**
@@ -43,11 +44,14 @@ class BlogForm extends FormRequest
             'title' => request('title'),
             'description' => request('description'),
             'date' => request('date'),
-
         ]);
 
+
         $photos = $this->uploadPhoto($blog->id);
-        DB::table('albums')->insert($photos);
+
+        if (!empty($photos)){
+            DB::table('albums')->insert($photos);
+        }
     }
 
     /**
@@ -56,7 +60,9 @@ class BlogForm extends FormRequest
      */
     private function uploadPhoto($blog_id)
     {
+        $file =null;
         $photos = request()->file('photo');
+
         if ($photos) {
             foreach ($photos as $photo) {
                 //Change File name
@@ -71,6 +77,7 @@ class BlogForm extends FormRequest
                     'updated_at' => date('Y-m-d H:i:s')
                 ];
             }
+
             return $file;
         }
     }

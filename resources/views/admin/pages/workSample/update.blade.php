@@ -13,19 +13,16 @@
                 {{csrf_field()}}
                 {{ method_field('PUT') }}
                 <input type="hidden" name="old_pic" value="{{ $workSample->photo }}">
-
-                <h3>فرم اصلاح نمونه کار</h3>
-                <h4>اطلاعات این فرم در صفحه ایندکس شما نمایش داده میشود</h4>
-
                 <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
                     <fieldset>
-                        <input placeholder="نام" value="{{$workSample->name}}" type="text" name="name" tabindex="1"
+                        <input class="form-control m-b col-md-4" placeholder="نام" value="{{$workSample->name}}" type="text" name="name" tabindex="1"
                                required autofocus>
                     </fieldset>
                     @if($errors->has('name'))
                         <span class="help-block">{{ $errors->first('name')}}</span>
                     @endif
                 </div>
+
 
                 @if(count($categories) > 0)
                     <fieldset>
@@ -83,7 +80,7 @@
 
                 <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
                     <fieldset>
-                        <button id="upfile1">عکس</button>
+                        <button id="file1">عکس</button>
                         <input type="file" id="file1" value="{{$workSample->photo}}" name="photo" style="display:none"/>
                     </fieldset>
                     @if($errors->has('photo'))

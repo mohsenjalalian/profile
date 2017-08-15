@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Model\Profile;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +14,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->composer('admin.layouts.sidebar',function ($view){
+            $view->with('profiles',Profile::first());
+        });
     }
 
     /**

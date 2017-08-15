@@ -11,14 +11,11 @@
                   method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
                 {{ method_field('PUT') }}
-
-                <h3>فرم اصلاح مقالات و کتب</h3>
-                <h4>اطلاعات این فرم در صفحه ایندکس شما نمایش داده میشود</h4>
                 <input type="hidden" name="old_pic" value="{{ $docs->photo }}">
 
                 <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
                     <fieldset>
-                        <input placeholder="نام کتاب" type="text" name="name" value="{{$docs->name}}" tabindex="1"
+                        <input class="form-control m-b col-md-3" placeholder="نام کتاب" type="text" name="name" value="{{$docs->name}}" tabindex="1"
                                required autofocus>
                     </fieldset>
                     @if($errors->has('name'))
@@ -28,56 +25,68 @@
 
                 <div class="form-group{{ $errors->has('published_place') ? ' has-error': ''}}">
                     <fieldset>
-                        <input placeholder="شرکت انتشاراتی" type="text" value="{{$docs->published_place}}"
+                        <input class="form-control m-b col-md-3" placeholder="شرکت انتشاراتی" type="text" value="{{$docs->published_place}}"
                                name="published_place" tabindex="1" required autofocus>
                     </fieldset>
                     @if($errors->has('published_place'))
                         <span class="help-block">{{ $errors->first('published_place')}}</span>
                     @endif
                 </div>
-
-                <div class="col-xs-6 pull-right">
-                    <div class="form-group{{ $errors->has('published_year') ? ' has-error': ''}}">
-                        <fieldset>
-                            <label class="control-label" for="datepicker1">تاریخ انتشار</label>
-                            <input name="published_year" value="{{$docs->published_year}}"
-                                   class="input-small datepicker4" type="text">
-                        </fieldset>
-                        @if($errors->has('published_year'))
-                            <span class="help-block">{{ $errors->first('published_year')}}</span>
-                        @endif
-                    </div>
-                </div>
-
+<div class="row">
                 <div class="form-group{{ $errors->has('link') ? ' has-error': ''}}">
                     <fieldset>
-                        <input placeholder="لینک به مقاله" type="text" value="{{$docs->link}}" name="link" tabindex="1"
+                        <input class="form-control m-b col-md-3" placeholder="لینک به مقاله" type="text" value="{{$docs->link}}" name="link" tabindex="1"
                                 autofocus>
                     </fieldset>
                     @if($errors->has('link'))
                         <span class="help-block">{{ $errors->first('link')}}</span>
                     @endif
                 </div>
+</div>
 
-                @if(isset($docs->photo))
-                    <img width="50" height="50" src="{{asset($docs->photo)}}">
-                @else
-                    <h4>شما هیچ عکسی آپلود نکرده اید</h4>
-                @endif
-
-                <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
-                    <fieldset>
-                        <button id="upfile1">عکس</button>
-                        <input type="file" id="file1" value="{{$docs->photo}}" name="photo" style="display:none"/>
-                    </fieldset>
-                    @if($errors->has('photo'))
-                        <span class="help-block">{{ $errors->first('photo')}}</span>
-                    @endif
+                <div class="container col-md-3">
+                    <div class="form-group">
+                        <div class="form-group{{ $errors->has('published_year') ? ' has-error': ''}}">
+                            <div class="input-group">
+                                <div data-mdpersiandatetimepickershowing="false" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:10,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" style="cursor: pointer;" class="input-group-addon" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#fromDate1" data-groupid="group1" data-fromdate="true" data-enabletimepicker="false" data-placement="left">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </div>
+                                <input data-mdpersiandatetimepickershowing="false" value="{{$docs->published_year}}" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:9,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" class="form-control" id="fromDate1" placeholder="تاریخ انتشار" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#fromDate1" data-groupid="group1" data-fromdate="true" data-enabletimepicker="false" data-placement="right" name="published_year" type="text">
+                                @if($errors->has('published_year'))
+                                    <span class="help-block">{{ $errors->first('published_year')}}</span>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                <div class="row">
+                <div class="col-md-8">
+                    <div class="ibox float-e-margins">
+                        @if(isset($docs->photo))
+                            <img width="50" height="50" src="{{asset($docs->photo)}}">
+                        @else
+                            <h4>شما هیچ عکسی آپلود نکرده اید</h4>
+                        @endif
+                        <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
+                            <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <span class="btn btn-default btn-file"><span class="fileinput-new">بارگذاری عکس</span>
+                                             <span class="fileinput-exists"><span class="fileinput-exists"><span
+                                                        style="color: #2aca76;">بارگذاری شد</span></span> </span>
+                                            <input type="file"
+                                                   value="{{$docs->photo}}"name="photo"></span>
+                            </div>
+                            @if($errors->has('photo'))
+                                <span class="help-block">{{ $errors->first('photo')}}</span>
+                            @endif
+                        </div>
+                    </div>
                 </div>
-
-                <fieldset>
-                    <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">ارسال</button>
-                </fieldset>
+                </div>
+                    <div style="margin-top: -20px;" class="modal-footer col-md-12">
+                        <button type="button" class="btn btn-white" data-dismiss="modal">بستن</button>
+                        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending"
+                                class="btn btn-primary">اعمال تغیرات
+                        </button>
+                    </div>
             </form>
 
         </div>

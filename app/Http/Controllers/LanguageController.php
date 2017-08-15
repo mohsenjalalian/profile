@@ -66,7 +66,9 @@ class LanguageController extends Controller
     public function edit($id)
     {
         $language = Language::find($id);
-        return view('admin.pages.language.update', compact('language'));
+        return view('admin.pages.language.update', compact('language'))
+            ->renderSections()['content'];
+            ;
     }
 
     /**

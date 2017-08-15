@@ -43,6 +43,7 @@ class BlogController extends Controller
      */
     public function store(BlogForm $form)
     {
+
         $form->process();
         return redirect()->route('blog')->with('success', 'بلاگ شما با موفقیت ساخته شد');
     }
@@ -67,7 +68,7 @@ class BlogController extends Controller
     public function edit($id)
     {
         $blog = Blog::find($id);
-        return view('admin.pages.blog.update', compact('blog'));
+        return view('admin.pages.blog.update', compact('blog'))->renderSections()['content'];
     }
 
     /**
@@ -79,9 +80,9 @@ class BlogController extends Controller
     public function update($id)
     {
         $rules = array(
-            'title' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
-            'description' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
-            'date' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
+            'title' => 'required|min:3',
+            'description' => 'required|min:3',
+            'date' => 'required|min:3',
         );
 
         $validator = Validator::make(Input::all(), $rules);

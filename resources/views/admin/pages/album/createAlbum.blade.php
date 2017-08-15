@@ -17,7 +17,8 @@
                 <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
                     <fieldset>
                         <button id="upfile1">عکس</button>
-                        <input type="file" id="file1" name="photo" style="display:none" >
+                        <input type="file" id="file1"
+                               value="{{ Request::old('photo') ?: ''}}" name="photo" style="display:none" >
                     </fieldset>
                     @if($errors->has('photo'))
                         <span class="help-block">{{ $errors->first('photo')}}</span>

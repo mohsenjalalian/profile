@@ -13,12 +13,9 @@
                 {{csrf_field()}}
                 {{ method_field('PUT') }}
                 <input type="hidden" name="old_pic" value="{{ $certificate->photo }}">
-                <h3>فرم اطلاح گواهی</h3>
-                <h4>اطلاعات این فرم در صفحه ایندکس شما نمایش داده میشود</h4>
-
                 <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
                     <fieldset>
-                        <input placeholder="نام گواهی" value="{{$certificate->name}}" type="text" name="name"
+                        <input class="form-control m-b col-md-3" placeholder="نام گواهی" value="{{$certificate->name}}" type="text" name="name"
                                tabindex="1"
                                required autofocus>
                     </fieldset>
@@ -29,47 +26,56 @@
 
                 <div class="form-group{{ $errors->has('info') ? ' has-error': ''}}">
                     <fieldset>
-                        <input placeholder="توضیحات" type="text" name="info" value="{{$certificate->info}}" tabindex="1"
-                               required autofocus>
+                        <textarea style="width: 400px; height: 100px;" class="form-control m-b" placeholder="توضیحات" type="text" name="info" tabindex="1"
+                                  required autofocus>{{$certificate->info}}</textarea>
                     </fieldset>
                     @if($errors->has('info'))
                         <span class="help-block">{{ $errors->first('info')}}</span>
                     @endif
                 </div>
 
-                @if(isset($certificate->photo))
-                    <img width="50" height="50" src="{{asset($certificate->photo)}}">
-                @else
-                    <h4>شما هیچ عکسی آپلود نکرده اید</h4>
-                @endif
-
-                <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
-                    <fieldset>
-                        <button id="upfile1">عکس</button>
-                        <input type="file" id="file1" name="photo" style="display:none"
-                               value="{{$certificate->photo}}"/>
-                    </fieldset>
-                    @if($errors->has('photo'))
-                        <span class="help-block">{{ $errors->first('photo')}}</span>
-                    @endif
-                </div>
-
+                <p>نوع</p>
                 <div class="form-group{{ $errors->has('type') ? ' has-error': ''}}">
-                    <fieldset>
-                        <p>نوع</p>
-                        <input type="radio" name="type" value="دوره" tabindex="2" checked>دوره<br>
-                        <input type="radio" name="type" value="جایزه" tabindex="2">جایزه<br>
-                        <input type="radio" name="type" value="گواهی" tabindex="2">گواهی<br>
-                    </fieldset>
+                    <div class="i-checks col-md-1"><label>
+                            <input type="radio" name="type" value="دوره"
+
+                                                         tabindex="2" checked> <i></i>دوره </label>
+                    </div>
+                    <div class="i-checks col-md-1"><label>
+                            <input type="radio" name="type" value="جایزه"
+                                                         tabindex="2"> <i></i> جایزه </label></div>
+                    <div class="i-checks col-md-1"><label>
+                            <input type="radio" name="type" value="گواهی"
+                                                         tabindex="2"> <i></i> گواهی </label></div>
                     @if($errors->has('type'))
                         <span class="help-block">{{ $errors->first('type')}}</span>
                     @endif
                 </div>
 
-
-                <fieldset>
-                    <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">ارسال</button>
-                </fieldset>
+                    <div class="ibox float-e-margins">
+                        @if(isset($certificate->photo))
+                            <img width="50" height="50" src="{{asset($certificate->photo)}}">
+                        @else
+                            <h4>شما هیچ عکسی آپلود نکرده اید</h4>
+                        @endif
+                        <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
+                            <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <span class="btn btn-default btn-file"><span class="fileinput-new">بارگذاری</span><span class="fileinput-exists"><span
+                                                        style="color: #2aca76;">بارگذاری شد</span>
+                                            </span>
+                                            <input type="file" value="{{$certificate->photo}}" name="photo"></span>
+                            </div>
+                            @if($errors->has('photo'))
+                                <span class="help-block">{{ $errors->first('photo')}}</span>
+                            @endif
+                        </div>
+                    </div>
+                <div style="margin-top: -20px;" class="modal-footer col-md-5">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">بستن</button>
+                    <button name="submit" type="submit" id="contact-submit" data-submit="...Sending"
+                            class="btn btn-primary">اعمال تغییرات
+                    </button>
+                </div>
 
             </form>
 

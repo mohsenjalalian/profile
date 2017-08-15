@@ -30,7 +30,7 @@ class WorkExperienceForm extends FormRequest
             'city' => 'required',
             'start_date' => 'required',
             'finish_date' => 'required',
-            'about' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
+            'about' => 'required|min:3',
         ];
     }
 

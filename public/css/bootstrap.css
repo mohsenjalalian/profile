@@ -6137,15 +6137,19 @@ button.close {
 }
 .popover.top {
   margin-top: -10px;
+  z-index: 10000;
 }
 .popover.right {
   margin-left: 10px;
+  z-index: 10000;
 }
 .popover.bottom {
   margin-top: 10px;
+  z-index: 10000;
 }
 .popover.left {
   margin-left: -10px;
+  z-index: 10000;
 }
 .popover-title {
   padding: 8px 14px;

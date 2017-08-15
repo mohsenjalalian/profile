@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use App\Model\SocialNetwork;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\DB;
 
 class SocialForm extends FormRequest
 {
@@ -25,31 +26,42 @@ class SocialForm extends FormRequest
     public function rules()
     {
         return [
-            'twitter'  => 'required',
-            'facebook' => 'required',
-            'instagram' => 'required',
-            'telegram' => 'required',
-            'google_plus' => 'required',
-            'linkedin' => 'required',
-            'skype' => 'required',
+//            'twitter' => 'url',
+//            'facebook' => 'url',
+//            'instagram' => 'url',
+//            'telegram' => 'url',
+//            'google_plus' => 'url',
+//            'linkedin' => 'url',
+//            'skype' => 'url',
+//            'site' => 'url',
         ];
     }
 
     public function process()
     {
 
-        $profile = SocialNetwork::create(
-            [
+        $socials = request(['twitter', 'facebook', 'telegram', 'instagram',
+            'google_plus', 'linkedin', 'skype', 'site']);
 
-                'twitter'      => request('twitter'),
-                'facebook'     => request('facebook'),
-                'instagram'     => request('instagram'),
-                'telegram'     => request('telegram'),
-                'google_plus'     => request('google_plus'),
-                'linkedin'     => request('linkedin'),
-                'skype'     => request('skype'),
 
-            ]);
-
+//        $data = [
+//            'twitter' => request('twitter'),
+//            'facebook' => request('facebook'),
+//            'instagram' => request('instagram'),
+//            'telegram' => request('telegram'),
+//            'google_plus' => request('google_plus'),
+//            'linkedin' => request('linkedin'),
+//            'skype' => request('skype'),
+//            'site' => request('site'),
+//        ];
+        foreach ($socials as $social) {
+            if (empty($social)) {
+              return redirect()->back();
+            } else {
+                SocialNetwork::updateOrCreate($socials);
+            }
+        }
     }
+
+
 }

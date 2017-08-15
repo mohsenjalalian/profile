@@ -1,8 +1,7 @@
 <!--menu mobile-->
-
 <div style="direction:rtl;" class="container hidden-md hidden-lg">
     <div class="main">
-        <nav style="direction:rtl;" id="menu3" class="menu3">
+        <nav style="direction:rtl;" id="menu3" class="menu3"
             <div class="morph-shape"
                  data-morph-open="M260,500H0c0,0,8-120,8-250C8,110,0,0,0,0h260c0,0-8,110-8,250C252,380,260,500,260,500z">
                 <svg width="100%" height="100%" viewBox="0 0 260 500" preserveAspectRatio="none">
@@ -37,16 +36,20 @@
 </div>
 
 <!--home-->
-
+@foreach($profiles as $profile)
+<img src="{{$profile->cover}}" height="480px" width="100%" alt="cover">
+@endforeach
 <main class="container-fluid background">
     <div class="box-social1 pull-left"><a href="#"><i class="fa fa-language" aria-hidden="true"></i></a>
         <div class="box-languge pull-left">
-            <p class="text-center">English</p>
+            <p class="text-center">English</ >
         </div>
     </div>
-    <div class="social1 pull-left hidden-xs"><i class="fa fa-paper-plane" aria-hidden="true"></i></div>
-    <div class="social2 pull-left hidden-xs"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-    <div class="social3 pull-left hidden-xs"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+    @foreach($socialNetworks as $socialNetwork)
+        <a href="{{$socialNetwork->telegram}}"><div class="social1 pull-left hidden-xs"><i class="fa fa-paper-plane" aria-hidden="true"></i></div></a>
+        <a href="{{$socialNetwork->linkedin}}"><div class="social2 pull-left hidden-xs"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a>
+        <a href="{{$socialNetwork->instagram}}"><div class="social3 pull-left hidden-xs"><i class="fa fa-instagram" aria-hidden="true"></i></div></a>
+    @endforeach
     <section class="pull-right hidden-xs col-md-1 nav-left">
         <div class="navbar-tunel">
             <section class="pull-right col-md-6">
@@ -111,7 +114,7 @@
 
 
 @foreach($profiles as $profile)
-    <section class="pull-right col-sm-6 col-xs-12 col-md-4"><img class="me img-responsive" src="images/front/me.jpg" alt="me">
+    <section class="pull-right col-sm-6 col-xs-12 col-md-4"><img class="me img-responsive" width="370px" height="200px" src="{{$profile->photo}}" alt="me">
     </section>
     <section class="pull-right col-xs-12 col-md-4 texth1">
         <h1>{{$profile->first_name}} {{$profile->last_name}} </h1>

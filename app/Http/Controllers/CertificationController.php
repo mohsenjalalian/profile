@@ -68,7 +68,7 @@ class CertificationController extends Controller
     public function edit($id)
     {
         $certificate = Certification::find($id);
-        return view('admin.pages.certificate.update', compact('certificate'));
+        return view('admin.pages.certificate.update', compact('certificate'))->renderSections()['content'];
     }
 
     /**
@@ -80,9 +80,10 @@ class CertificationController extends Controller
     public function update($id)
     {
         $rules = array(
-            'info' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
+            'name' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
+            'info' => 'required|min:3',
             'photo' => 'file|mimes:jpeg,bmp,png|max:5000',
-            'type' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
+            'type' => 'required|min:3',
         );
 
         $validator = Validator::make(Input::all(), $rules);

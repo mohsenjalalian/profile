@@ -68,7 +68,7 @@ class DocsController extends Controller
     public function edit($id)
     {
         $docs = Docs::find($id);
-        return view('admin.pages.docs.update', compact('docs'));
+        return view('admin.pages.docs.update', compact('docs'))->renderSections()['content'];
     }
 
     /**

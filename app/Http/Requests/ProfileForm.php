@@ -29,8 +29,6 @@ class ProfileForm extends FormRequest
         return [
             'first_name' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
             'last_name' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
-            'summary' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
-            'about_me' => 'required|min:3',
             'last_degree' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
             'birth_day' => 'required',
             'marriage' => 'required',

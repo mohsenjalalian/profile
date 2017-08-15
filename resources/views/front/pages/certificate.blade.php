@@ -4,75 +4,22 @@
     <section class="container">
         <h2 class="text-ex">گواهی</h2>
         <div id="owl4" class="owl-carousel" style="direction:ltr">
+           @foreach($certifications as $certification)
             <div class="item">
                 <div class="grid-go">
-                    <figure class="effect-ming"><img
-                                src="images/front/certification-Partner-Training-Ipswitch-Network-Management-Intl.jpg">
+                    <figure class="effect-ming"><img width="100%" height="100%"
+                                src="{{$certification->photo}}">
                         <figcaption>
-                            <p class="text-center">مهندسی برق</p>
-                            <p class="text-center">دکترا</p>
-                            <p style="padding-left:20px; padding-right:20px;" class="text-center hid-p">لورم ایپسوم
-                                متن
-                                ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها
-                                و
-                                متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
-                                مورد
-                                نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای</p>
+                            <p class="text-center">{{$certification->name}}</p>
+                            <p class="text-center">{{$certification->type}}</p>
+                            <p style="padding-left:20px; padding-right:20px;" class="text-center hid-p">
+                                {{$certification->info}}
+                            </p>
                         </figcaption>
                     </figure>
                 </div>
             </div>
-            <div class="item">
-                <div class="grid-go">
-                    <figure class="effect-ming"><img src="images/front/JJHH.png">
-                        <figcaption>
-                            <p class="text-center">مهندسی برق</p>
-                            <p class="text-center">دکترا</p>
-                            <p style="padding-left:20px; padding-right:20px;" class="text-center hid-p">لورم ایپسوم
-                                متن
-                                ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها
-                                و
-                                متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
-                                مورد
-                                نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای</p>
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
-            <div class="item">
-                <div class="grid-go">
-                    <figure class="effect-ming"><img src="images/front/JJHH.png">
-                        <figcaption>
-                            <p class="text-center">مهندسی برق</p>
-                            <p class="text-center">دکترا</p>
-                            <p style="padding-left:20px; padding-right:20px;" class="text-center hid-p">لورم ایپسوم
-                                متن
-                                ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها
-                                و
-                                متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
-                                مورد
-                                نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای</p>
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
-            <div class="item">
-                <div class="grid-go">
-                    <figure class="effect-ming"><img src="images/front/JJHH.png">
-                        <figcaption>
-                            <p class="text-center">مهندسی برق</p>
-                            <p class="text-center">دکترا</p>
-                            <p style="padding-left:20px; padding-right:20px;" class="text-center hid-p">لورم ایپسوم
-                                متن
-                                ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها
-                                و
-                                متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
-                                مورد
-                                نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای</p>
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
+            @endforeach
         </div>
     </section>
 </main>

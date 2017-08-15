@@ -3,31 +3,42 @@
 
 
 @section('content')
-    <div class="login-box">
-        <div class="login-logo">
-            <a href="#"><b>  تارنما</b></a>
-            <hr>
-            <a href="#"><b>فراموشی رمز </b></a>
-        </div>
-        <!-- /.login-logo -->
-        <div class="login-box-body">
-            <p class="login-box-msg">لطفا ایمیل خود را وارد کنید</p>
-            <form action="{{route('sendResetLinkEmail')}}" method="post">
-                {{csrf_field()}}
-                <div class="form-group has-feedback {{ $errors->has('email') ? ' has-error': ''}}">
-                    <input type="email" class="form-control" name="email" placeholder="ایمیل">
-                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                    @if($errors->has('email'))
-                        <span class="help-block">{{ $errors->first('email')}}</span>
-                    @endif
-                </div>
-                <div class="row">
-                    <div class="col-xs-4">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">ارسال</button>
+
+    <body style="background-color: #f3f3f4 !important;">
+    <div class="passwordBox animated fadeInDown">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="ibox-content">
+
+                    <h2 class="font-bold">فراموشی رمز</h2>
+
+                    <p>
+                        لطفا ایمیل خود را وارد کنید
+                    </p>
+
+                    <div class="row">
+
+                        <div class="col-lg-12">
+                            <form action="{{route('storeAdmin')}}" method="post">
+                                {{csrf_field()}}
+                                <div class="form-group has-feedback {{ $errors->has('email') ? ' has-error': ''}}">
+                                    <div class="form-group">
+                                        <input type="email" name="email" class="form-control" placeholder="ادرس ایمیل">
+                                        @if($errors->has('email'))
+                                            <span class="help-block">{{ $errors->first('email')}}</span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary block full-width m-b">ارسال</button>
+
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
-        <!-- /.login-box-body -->
     </div>
+    </body>
 @endsection

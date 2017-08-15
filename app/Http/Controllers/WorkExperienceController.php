@@ -69,7 +69,8 @@ class WorkExperienceController extends Controller
     public function edit($id)
     {
         $work = WorkExperince::find($id);
-        return view('admin.pages.workExperience.update', compact('work'));
+        return view('admin.pages.workExperience.update', compact('work'))
+            ->renderSections()['content'];
     }
 
     /**

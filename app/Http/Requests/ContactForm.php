@@ -27,9 +27,9 @@ class ContactForm extends FormRequest
     {
         return [
             'email' => 'required|email|min:3',
-            'phone_number' => 'required|min:5|numeric',
-            'mobile' => 'required|min:5|numeric',
-            'office_number' => 'required|min:5|numeric',
+            'phone_number' => 'required|min:5',
+            'mobile' => 'required|min:5',
+            'office_number' => 'required|min:5',
             'qr_code' => 'file|mimes:jpeg,bmp,png|max:5000',
         ];
     }

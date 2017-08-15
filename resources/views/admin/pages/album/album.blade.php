@@ -7,78 +7,43 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-             <span class="pull-right">
-            <h1>
-            <a href="{{route('createAlbum')}}">
-                <button class="btn btn-success pull-left"> اضافه کردن </button>
-            </a>
-                آلبوم
-            </h1>
-
-                 </span>
-        </section>
-        @include('admin.layouts.success')
-        @include('admin.layouts.errors')
-        <br>
-        <br>
-
-        <!-- Main content -->
-        <section class="invoice" style="direction: rtl">
 
 
-            <!-- Table row -->
+        <div class="wrapper wrapper-content">
             <div class="row">
-                <div class="col-xs-12 table-responsive">
-                    <table class="table table-striped">
-                        <thead>
-                        <tr>
-                            <th>عکس</th>
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
 
-                        </tr>
-                        </thead>
+                        <div class="ibox-content">
 
-                        <tbody>
-                        @foreach($albums as $album)
+                            <h2>گالری </h2>
 
-                            <tr>
-                                <td><img width="50" height="50" src="{{$album->photo}}" alt="{{$album->photo}}"></td>
-                                <td>
-                                    <a href="{{route('album.edit',$album->id)}}">
-                                        <button class="btn btn-warning">اصلاح</button>
+                            <div class="lightBoxGallery">
+                                @foreach($albums as $album)
+
+                                    <a href="{{\App\Http\Controllers\BlogController::ALBUM_PATH.'/'.$album->photo}}"  data-gallery="">
+                                        <img src="{{\App\Http\Controllers\BlogController::ALBUM_PATH.'/'.$album->photo}}" width="100" height="100" alt="{{$album->photo}}">
                                     </a>
-                                </td>
+                                 @endforeach
+                                <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+                                <div id="blueimp-gallery" class="blueimp-gallery">
+                                    <div class="slides"></div>
+                                    <h3 class="title"></h3>
+                                    <a class="prev">‹</a>
+                                    <a class="next">›</a>
+                                    <a class="close">×</a>
+                                    <a class="play-pause"></a>
+                                    <ol class="indicator"></ol>
+                                </div>
 
+                            </div>
 
-                                <form action="{{ route('album.destroy', $album->id) }}" method="POST">
-                                    {{ method_field('DELETE') }}
-                                    {{ csrf_field() }}
-                                    <td>
-                                        <button class="btn btn-danger">پاک کردن</button>
-                                    </td>
-                                </form>
-
-
-                                </td>
-
-
-                            </tr>
-
-                        @endforeach
-                        </tbody>
-                    </table>
+                        </div>
+                    </div>
                 </div>
-                <!-- /.col -->
+
             </div>
-            <!-- /.row -->
-
-
-        </section>
-
-    </div>
-
-
+        </div>
 
 
 @endsection

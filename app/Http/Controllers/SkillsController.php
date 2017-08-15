@@ -67,7 +67,7 @@ class SkillsController extends Controller
     public function edit($id)
     {
         $skills = Skills::find($id);
-        return view('admin.pages.skills.update', compact('skills'));
+        return view('admin.pages.skills.update', compact('skills'))->renderSections()['content'];
     }
 
     /**

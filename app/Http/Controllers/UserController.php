@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
@@ -18,7 +19,8 @@ class UserController extends Controller
     public function index()
     {
         if (Auth::check()) {
-            return view('admin.index');
+            $profiles = Profile::all();
+            return view('admin.pages.profile.profile',compact('profiles'));
         }
 
         return redirect()->route('login');
@@ -51,8 +53,8 @@ class UserController extends Controller
                 'message' => 'اطلاعات وارد شده نادرست است.'
             ]);
         }
-
-        return redirect()->route('admin');
+        $profiles = Profile::all();
+        return view('admin.pages.profile.profile',compact('profiles'));
     }
 
     /**

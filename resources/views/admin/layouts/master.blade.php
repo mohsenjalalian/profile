@@ -18,7 +18,7 @@
 
     @yield('content')
 
-    @include('admin.layouts.footer')
+    @yield('script')
 
     @include('admin.layouts.chat')
 
