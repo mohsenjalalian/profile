@@ -1,0 +1,158 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element"> <span>
+
+                            @if(!empty($profiles->photo))
+                            <p class="text-center">
+                                  <img alt="{{$profiles->photo}}" style="width: 100px; height:100px"
+                                       class="img-circle" src="{{asset($profiles->photo)}}"/>
+                                @else
+                                    <img alt="image/admin.png" style="width: 100px; height:100px" class="img-circle"
+                                         src="{{asset('/image/admin.png')}}"/>
+                        </p>
+                        @endif
+                             </span>
+                    @if(!empty($profiles))
+                        <span class="clear"> <span class="block m-t-xs"> <strong
+                                        class="font-bold text-center">
+                                    <p class="text-center">
+                                        {{$profiles->first_name}} {{$profiles->last_name}}
+                                    </p></strong>
+                                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+     </span> <span class="text-muted text-xs block text-center">
+                                {{$profiles->job}}
+                                <b class="caret"></b>
+                            </span>
+                        </span>
+                        </a>
+                    @else
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <span class="clear">
+                            <span class="block m-t-xs">
+                                <strong class="font-bold text-center"><p class="text-center">ادمین</p></strong>
+                            <span class="text-muted text-xs block text-center">
+                                مدیریت
+                                <b class="caret"></b>
+                            </span>
+                        </a>
+                        </span>
+                    @endif
+
+                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                        <li><a href="{{route('contact')}}">تماس</a></li>
+                        <li><a href="{{route('message')}}">پیام</a></li>
+                        <li>
+                            <a href="{{route('social-network')}}"><span
+                                        class="nav-label">شبکه اجتماعی</span></a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="{{route('logout')}}">بیرون رفتن</a></li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    CO
+                </div>
+            </li>
+            <li id="li1">
+                <a href="{{route('profile')}}"><i class="fa fa-th-large"></i> <span class="nav-label">پروفایل</span></a>
+
+            </li>
+
+
+            <li>
+                <a href="#"><i class="fa fa-file-photo-o"></i> <span class="nav-label">پیشینه شغلی</span><span
+                            class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li id="li2">
+                        <a href="{{route('recommend')}}"><i class="fa fa-pie-chart"></i> <span
+                                    class="nav-label"></span>نظرات مدیران </a>
+                    </li>
+                    <li>
+                        <a href="{{route('work-experience')}}"><i class="fa fa-flask"></i> <span
+                                    class="nav-label"></span>سوابق کاری</a>
+                    </li>
+
+                </ul>
+            </li>
+
+
+            <li>
+                <a href="#"><i class="fa fa-sitemap"></i> <span class="nav-label">توامندی ها </span><span
+                            class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li id="li10">
+                        <a href="{{route('language')}}"><i class="fa fa-desktop"></i> <span
+                                    class="nav-label"></span>زبان
+                        </a>
+                    </li>
+                    <li id="li11">
+                        <a href="{{route('skills')}}"><i class="fa fa-flask"></i> <span class="nav-label"></span>مهارت
+                            ها</a>
+                    </li>
+                    <li id="li12">
+                        <a href="{{route('certification')}}"><i class="fa fa-diamond"></i> <span
+                                    class="nav-label"></span>گواهی</a>
+                    </li>
+                    <li id="li14">
+                        <a href="{{route('education')}}"><i class="fa fa-envelope"></i> <span
+                                    class="nav-label"></span>تحصیلات
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li>
+                <a><i class="fa fa-book"></i> <span class="nav-label">نمونه کار</span><span
+                            class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li id="li4">
+                        <a href="{{route('work-sample')}}"><i class="fa fa-globe"></i> <span
+                                    class="nav-label"></span>نمونه کار</a>
+
+                    </li>
+                    <li id="5">
+                        <a href="{{route('docs')}}"><i class="fa fa-edit"></i> <span
+                                    class="nav-label"></span>مقالات کتاب</a>
+
+                    </li>
+                    <li id="6">
+                        <a href="{{route('category')}}"><i class="fa fa-files-o"></i> <span
+                                    class="nav-label"></span>دسته بندی
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
+
+            <li>
+                <a href="#"><i class="fa fa-picture-o"></i> <span class="nav-label">بلاگ</span><span
+                            class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li id="li7">
+                        <a href="{{route('blog')}}"><i class="fa fa-globe"></i> <span
+                                    class="nav-label"></span>بلاگ</a>
+
+                    </li>
+                    <li id="li8">
+                        <a href="{{route('album')}}"><i class="fa fa-edit"></i> <span
+                                    class="nav-label"></span>البوم</a>
+
+                    </li>
+
+                </ul>
+            </li>
+
+
+        </ul>
+    </div>
+    <p id="hiden" style="color: #fff; margin-top: 120px;" class="text-center">Powerd By <a href="http://cotint.ir"
+                                                                                           target="_blank"><span
+                    style="color: #239963;"><strong>CO </strong></span><strong>|</strong><span
+                    style="color:#fff;"><strong> tint</strong></span></a></p>
+</nav>
+
+
