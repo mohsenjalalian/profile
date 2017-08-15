@@ -209,11 +209,14 @@
                                         <div class="form-group{{ $errors->has('pdf') ? ' has-error': ''}}">
                                             <div class="fileinput fileinput-new" data-provides="fileinput">
                                         <span class="btn btn-default btn-file"><span
-                                                    class="fileinput-new"> بارگذاری pdf</span><span
-                                                    class="fileinput-exists"><span class="fileinput-exists"><span
+                                                    class="fileinput-new"> بارگذاری pdf</span>
+                                            <span class="fileinput-exists">
+                                                <span class="fileinput-exists"><span
                                                             style="color: #2aca76;">بارگذاری شد</span></span> </span>
+
                                             <input type="file" value="{{ Request::old('pdf') ?: ''}}" name="pdf"
-                                                   onchange="readURL3(this)"></span>
+                                                   onchange="readURL3(this)">
+                                        </span>
                                             </div>
                                             @if($errors->has('pdf'))
                                                 <span class="help-block">{{ $errors->first('pdf')}}</span>
@@ -442,7 +445,9 @@
                                     <div class="col-md-4">
                                         <div class="ibox float-e-margins">
                                             <div class="form-group{{ $errors->has('pdf') ? ' has-error': ''}}">
+                                                @if(count($profile->pdf) != 0)
                                                 <i style="font-size: 52px;" class="fa fa-book"></i>
+                                                @endif
                                                 <div class="fileinput fileinput-new" data-provides="fileinput">
                                         <span class="btn btn-default btn-file"><span
                                                     class="fileinput-new"> بارگذاری pdf</span><span
@@ -507,12 +512,23 @@
                         <div class="col-md-12">
                             @foreach($profiles as $profile)
                                 <div style="height: 200px" class="col-md-12">
+                                  @if(count($profile->cover) != 0)
                                     <img width="100%" height="100%" class="m-b-md" src="{{asset($profile->cover)}}"
-                                         alt="{{$profile->cover}}"></div>
+                                         alt="{{$profile->cover}}">
+                                    @else
+                                        <img width="100%" height="100%" class="m-b-md" src="{{asset('/image/admin.png')}}"
+                                             alt="">
+                                   @endif
+                                </div>
                                 <div style="float: left !important; margin-top: -30px;"
                                      class="profile-image col-md-3 pull-left">
+                                    @if(count($profile->photo) != 0)
                                     <img class="img-circle circle-border m-b-md" src="{{asset($profile->photo)}}"
                                          alt="{{$profile->photo}}">
+                                    @else
+                                        <img width="100%" height="100%" class="m-b-md" src="{{asset('/image/admin.png')}}"
+                                             alt="">
+                                    @endif
                                 </div>
                                 <div class="profile-info">
                                     <div>
@@ -568,6 +584,7 @@
 
                         <div class="col-md-6">
 
+                            @if(count($profile->pdf) != 0)
                             <td class="pull-left">
                                 <a href="{{asset($profile->pdf)}}" download><i
                                             style="color: #222; float: left; padding-left: 45px; margin-top: 30px; font-size: 20px;"
@@ -577,6 +594,7 @@
                                     </i>
 
                                 </a></td>
+                                @endif
 
                         </div>
 
