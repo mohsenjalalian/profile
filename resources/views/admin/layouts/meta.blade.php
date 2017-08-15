@@ -49,6 +49,7 @@
         <link href="css/plugins/bootstrap-markdown/bootstrap-markdown.min.css" rel="stylesheet">
         <link href="css/editor.css" rel="stylesheet">
         <link href="css/detacheker.css" rel="stylesheet">
+        <link href="css/component.css" rel="stylesheet">
         {{--CkEditor--}}
         <script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script>
 
