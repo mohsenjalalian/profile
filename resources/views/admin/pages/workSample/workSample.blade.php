@@ -106,7 +106,7 @@
                                                     class="fileinput-exists"><span class="fileinput-exists"><span
                                                             style="color: #2aca76;">بارگذاری شد</span></span> </span>
                                             <input type="file"
-                                                   value="{{ Request::old('photo') ?: ''}}" name="photo"></span>
+                                                   value="{{ Request::old('photo') ?: ''}}" required name="photo"></span>
                                             </div>
                                             @if($errors->has('photo'))
                                                 <span class="help-block">{{ $errors->first('photo')}}</span>

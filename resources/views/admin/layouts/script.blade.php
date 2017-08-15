@@ -101,6 +101,9 @@
 <script src="js/time.js"></script>
 <script src="js/plugins/chosen/chosen.jquery.js"></script>
 <script src="js/jeditor.js"></script>
+<script src="js/main.js"></script>
+<script src="js/charming.min.js"></script>
+<script src="anime.min.js"></script>
 
 {{--<script src="js/plugins/summernote/summernote.min.js"></script>--}}
 {{--<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>--}}
@@ -119,6 +122,14 @@
     $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip();
     });
+</script>
+<script>
+        $(document).ready(function(){
+            $('a.menu').click(function(){
+                $('a.menu').removeClass("active");
+                $(this).addClass("active");
+            });
+        });
 </script>
 {{--<script>--}}
     {{--$(document).ready(function () {--}}
@@ -146,26 +157,7 @@
         });
 
     } );
-</script>
-{{--<script>--}}
-    {{--$( function() {--}}
-        {{--$( document ).tooltip({--}}
-            {{--position: {--}}
-                {{--my: "center bottom-20",--}}
-                {{--at: "center top",--}}
-                {{--using: function( position, feedback ) {--}}
-                    {{--$( this ).css( position );--}}
-                    {{--$( "<div>" )--}}
-                        {{--.addClass( "arrowss" )--}}
-                        {{--.addClass( feedback.vertical )--}}
-                        {{--.addClass( feedback.horizontal )--}}
-                        {{--.appendTo( this );--}}
-                {{--}--}}
-            {{--}--}}
-        {{--});--}}
-    {{--} );--}}
-{{--</script>--}}
-<script>
+
     $(document).ready(function() {
 
         $('.footable').footable();
@@ -496,73 +488,6 @@
 
 
 </script>
-<script>
-    Dropzone.options.dropzoneForm = {
-        paramName: "file", // The name that will be used to transfer the file
-        maxFilesize: 2, // MB
-        dictDefaultMessage: "<strong>Drop files here or click to upload. </strong></br> (This is just a demo dropzone. Selected files are not actually uploaded.)"
-    };
-
-    $(document).ready(function(){
-
-        var editor_one = CodeMirror.fromTextArea(document.getElementById("code1"), {
-            lineNumbers: true,
-            matchBrackets: true
-        });
-
-        var editor_two = CodeMirror.fromTextArea(document.getElementById("code2"), {
-            lineNumbers: true,
-            matchBrackets: true
-        });
-
-        var editor_two = CodeMirror.fromTextArea(document.getElementById("code3"), {
-            lineNumbers: true,
-            matchBrackets: true
-        });
-
-    });
-</script>
-<script>
-    $(document).ready(function () {
-        $("#datepicker0").datepicker();
-
-        $("#datepicker1").datepicker();
-        $("#datepicker1btn").click(function (event) {
-            event.preventDefault();
-            $("#datepicker1").focus();
-        })
-
-        $("#datepicker2").datepicker({
-            showOtherMonths: true,
-            selectOtherMonths: true
-        });
-
-        $("#datepicker3").datepicker({
-            numberOfMonths: 3,
-            showButtonPanel: true
-        });
-
-        $(".datepicker4").datepicker({
-            yearRange: "1310:1396",
-            changeMonth: true,
-            changeYear: true,
-            dateFormat: "yy/mm/dd",
-            Default: [],
-            Accepts: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
-        });
-
-        $("#datepicker5").datepicker({
-            minDate: 0,
-            maxDate: "+14D"
-        });
-
-        $("#datepicker6").datepicker({
-            isRTL: true,
-            dateFormat: "d/m/yy"
-        });
-    });
-</script>
-
 
 <script type='text/javascript'>
     $(function () {

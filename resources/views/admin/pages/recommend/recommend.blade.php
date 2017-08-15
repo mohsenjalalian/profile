@@ -3,7 +3,8 @@
 
 
 @section('content')
-    <div class="content-wrapper clearfix">
+
+        <div class="content-wrapper clearfix">
         <div class="row wrapper border-bottom white-bg page-heading">
             <div class="col-lg-10">
                 <h2>نظرات مدیران</h2>
@@ -128,11 +129,8 @@
                             {{--<i style="color: #239963; font-size: 25px;" class="fa fa-check"></i>--}}
                             {{$recommend->company}}
                         </td>
-                        <td style="vertical-align: middle; width: 300px;" class="text-center">
-                            <a href="#" data-toggle="tooltip" data-placement="left" title="{{$recommend->info}}">
-                                <i style="color: #239963; font-size: 22px;" class="fa fa-check"></i>
-                            </a>
-
+                        <td style="text-align: center; vertical-align: middle; width: 30px">
+                                <i data-toggle="tooltip" data-placement="left" title="{{$recommend->info}}" style="color: #239963; font-size: 22px;" class="fa fa-check"></i>
                         </td>
 
                         <td style="border: none;">

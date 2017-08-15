@@ -3,7 +3,6 @@
         <ul class="nav metismenu" id="side-menu">
             <li class="nav-header">
                 <div class="dropdown profile-element"> <span>
-
                             @if(!empty($profiles->photo))
                             <p class="text-center">
                                   <img alt="{{$profiles->photo}}" style="width: 100px; height:100px"
@@ -14,24 +13,32 @@
                         </p>
                         @endif
                              </span>
+
+
+
+
                     @if(!empty($profiles))
-                        <span class="clear"> <span class="block m-t-xs"> <strong
-                                        class="font-bold text-center">
-                                    <p class="text-center">
-                                        {{$profiles->first_name}} {{$profiles->last_name}}
-                                    </p></strong>
-                                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-     </span> <span class="text-muted text-xs block text-center">
+                        <span class="clear">
+                            <span class="block m-t-xs"> <strong class="font-bold text-center">
+                                    <p class="text-center">{{$profiles->first_name}} {{$profiles->last_name}}</p></strong>
+                            </span>
+                              <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="text-muted text-xs block text-center">
                                 {{$profiles->job}}
                                 <b class="caret"></b>
                             </span>
-                        </span>
                         </a>
+                        </span>
                     @else
+
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="clear">
                             <span class="block m-t-xs">
-                                <strong class="font-bold text-center"><p class="text-center">ادمین</p></strong>
+                                <strong class="font-bold text-center">
+                                    <p class="text-center">ادمین</p>
+                                </strong>
+                            </span>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="text-muted text-xs block text-center">
                                 مدیریت
                                 <b class="caret"></b>
@@ -39,7 +46,6 @@
                         </a>
                         </span>
                     @endif
-
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
                         <li><a href="{{route('contact')}}">تماس</a></li>
                         <li><a href="{{route('message')}}">پیام</a></li>
@@ -55,22 +61,26 @@
                     CO
                 </div>
             </li>
-            <li id="li1">
-                <a href="{{route('profile')}}"><i class="fa fa-th-large"></i> <span class="nav-label">پروفایل</span></a>
+            <li>
+                <a class="menu" href="{{route('profile')}}"><i class="fa fa-th-large"></i> <span class="nav-label">پروفایل</span></a>
 
             </li>
 
 
             <li>
-                <a href="#"><i class="fa fa-file-photo-o"></i> <span class="nav-label">پیشینه شغلی</span><span
-                            class="fa arrow"></span></a>
+                <a class="menu" href="#">
+                    <i class="fa fa-file-photo-o"></i>
+                    <span class="nav-label">پیشینه شغلی</span>
+                    <span class="fa arrow"></span>
+                </a>
+
                 <ul class="nav nav-second-level collapse">
-                    <li id="li2">
-                        <a href="{{route('recommend')}}"><i class="fa fa-pie-chart"></i> <span
+                    <li>
+                        <a class="menu" href="{{route('recommend')}}"><i class="fa fa-pie-chart"></i> <span
                                     class="nav-label"></span>نظرات مدیران </a>
                     </li>
                     <li>
-                        <a href="{{route('work-experience')}}"><i class="fa fa-flask"></i> <span
+                        <a class="menu" href="{{route('work-experience')}}"><i class="fa fa-flask"></i> <span
                                     class="nav-label"></span>سوابق کاری</a>
                     </li>
 
@@ -79,24 +89,24 @@
 
 
             <li>
-                <a href="#"><i class="fa fa-sitemap"></i> <span class="nav-label">توامندی ها </span><span
+                <a class="menu" href="#"><i class="fa fa-sitemap"></i> <span class="nav-label">توامندی ها </span><span
                             class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
-                    <li id="li10">
-                        <a href="{{route('language')}}"><i class="fa fa-desktop"></i> <span
+                    <li>
+                        <a class="menu" href="{{route('language')}}"><i class="fa fa-desktop"></i> <span
                                     class="nav-label"></span>زبان
                         </a>
                     </li>
-                    <li id="li11">
-                        <a href="{{route('skills')}}"><i class="fa fa-flask"></i> <span class="nav-label"></span>مهارت
+                    <li>
+                        <a class="menu" href="{{route('skills')}}"><i class="fa fa-flask"></i> <span class="nav-label"></span>مهارت
                             ها</a>
                     </li>
-                    <li id="li12">
-                        <a href="{{route('certification')}}"><i class="fa fa-diamond"></i> <span
+                    <li>
+                        <a class="menu" href="{{route('certification')}}"><i class="fa fa-diamond"></i> <span
                                     class="nav-label"></span>گواهی</a>
                     </li>
-                    <li id="li14">
-                        <a href="{{route('education')}}"><i class="fa fa-envelope"></i> <span
+                    <li>
+                        <a class="menu" href="{{route('education')}}"><i class="fa fa-envelope"></i> <span
                                     class="nav-label"></span>تحصیلات
                         </a>
                     </li>
