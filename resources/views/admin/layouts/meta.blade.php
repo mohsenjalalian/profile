@@ -4,7 +4,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
         <title>INSPINIA | Dashboard</title>
-
         <link href="{{asset('/css/bootstrap.css')}}" rel="stylesheet">
         <link href="/font-awesome/css/font-awesome.css" rel="stylesheet">
 
@@ -49,9 +48,9 @@
         <link href="css/plugins/bootstrap-markdown/bootstrap-markdown.min.css" rel="stylesheet">
         <link href="css/editor.css" rel="stylesheet">
         <link href="css/detacheker.css" rel="stylesheet">
-        <link href="css/component.css" rel="stylesheet">
+        {{--<link href="css/component.css" rel="stylesheet">--}}
         {{--CkEditor--}}
-        <script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script>
+        {{--<script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script>--}}
 
         {{--<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />--}}
     {{--<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>--}}
