@@ -21,7 +21,29 @@ class ContactController extends Controller
     public function index()
     {
         $contacts = Contacts::all();
+
         return view('admin.pages.contact.contact', compact('contacts'));
+    }
+
+    public static function englishToPersian($num)
+    {
+        $persian_num_array = [
+            '0'=>'۰',
+            '1'=>'۱',
+            '2'=>'۲',
+            '3'=>'۳',
+            '4'=>'۴',
+            '5'=>'۵',
+            '6'=>'۶',
+            '7'=>'۷',
+            '8'=>'۸',
+            '9'=>'۹',
+        ];
+
+        $num = (float) $num;
+
+//        return $persian_num_array;
+        return strtr($num, $persian_num_array);
     }
 
     /**
