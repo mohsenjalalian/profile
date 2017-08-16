@@ -32,7 +32,7 @@
 
                             <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
                                 <div class="col-sm-10 col-md-12">
-                                    <input type="text" placeholder="نام "
+                                    <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="نام "
                                            value="{{ Request::old('name') ?: ''}}" class="form-control m-b" name="name" tabindex="1" required autofocus>
                                     @if($errors->has('name'))
                                         <span class="help-block">{{ $errors->first('name')}}</span>
@@ -41,7 +41,7 @@
                             </div>
                             <div class="form-group{{ $errors->has('type') ? ' has-error': ''}}">
                                 <div class="col-sm-10 col-md-12">
-                                    <input type="text" placeholder="نوع"
+                                    <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="نوع"
                                            value="{{ Request::old('type') ?: ''}}" class="form-control m-b"  name="type" tabindex="1" required autofocus>
                                     @if($errors->has('type'))
                                         <span class="help-block">{{ $errors->first('type')}}</span>
@@ -51,7 +51,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group{{ $errors->has('point') ? ' has-error': ''}}">
-                                        <select name="point" class="select2_demo_1 form-control">
+                                        <select oninvalid="return chek(this)" oninput="return chek2(this)" required style="margin-right: 15px; width: 280px;" name="point" class="select2_demo_1 form-control">
                                             <option value="{{ Request::old('point') ?: ''}}">امتیاز</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>

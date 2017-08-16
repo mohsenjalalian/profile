@@ -32,7 +32,7 @@
                                 {{csrf_field()}}
                                 <div class="form-group{{ $errors->has('first_name') ? ' has-error': ''}}">
                                     <div class="col-sm-10 col-md-6">
-                                        <input type="text" placeholder="نام"
+                                        <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="نام"
                                                value="{{ Request::old('first_name') ?  : ''}}"
                                                class="form-control m-b" name="first_name"
                                                tabindex="1" required autofocus>
@@ -43,7 +43,7 @@
                                 </div>
                                 <div class="form-group{{ $errors->has('last_name') ? ' has-error': ''}}">
                                     <div class="col-sm-10 col-md-6">
-                                        <input type="text" placeholder="نام خانوادگی"
+                                        <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="نام خانوادگی"
                                                value="{{ Request::old('last_name') ?: ''}}" class="form-control m-b"
                                                name="last_name" tabindex="1" required autofocus>
                                         @if($errors->has('last_name'))
@@ -63,7 +63,7 @@
                                 </div>
                                 <div class="form-group{{ $errors->has('last_degree') ? ' has-error': ''}}">
                                     <div class="col-sm-10 col-md-6">
-                                        <input type="text" value="{{ Request::old('last_degree') ?: ''}}"
+                                        <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" value="{{ Request::old('last_degree') ?: ''}}"
                                                placeholder="اخرین مدرک تحصیلی" class="form-control m-b"
                                                name="last_degree"
                                                tabindex="1" required autofocus>
@@ -74,13 +74,13 @@
                                 </div>
                                 <div class="form-group{{ $errors->has('birth_place') ? ' has-error': ''}}">
                                     <div class="col-sm-10 col-md-6">
-                                        <input type="text" value="{{ Request::old('birth_place') ?: ''}}"
+                                        <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" value="{{ Request::old('birth_place') ?: ''}}"
                                                placeholder="محل تولد" class="form-control m-b" name="birth_place"
                                                tabindex="1" required autofocus>
-                                        @if($errors->has('birth_place'))
-                                            <span class="help-block">{{ $errors->first('birth_place')}}</span>
-                                        @endif
                                     </div>
+                                    @if($errors->has('birth_place'))
+                                        <span class="help-block">{{ $errors->first('birth_place')}}</span>
+                                    @endif
                                 </div>
                                 <div class="container col-md-6">
                                     <div class="form-group">
@@ -119,7 +119,7 @@
 
                                 <div class="form-group{{ $errors->has('job') ? ' has-error': ''}}">
                                     <div class="col-sm-10 col-md-12">
-                                        <input type="text" placeholder="شغل" value="{{ Request::old('job') ?: ''}}"
+                                        <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="شغل" value="{{ Request::old('job') ?: ''}}"
                                                class="form-control m-b" name="job" tabindex="1" required autofocus>
                                         @if($errors->has('job'))
                                             <span class="help-block">{{ $errors->first('job')}}</span>
@@ -174,7 +174,7 @@
                                 </div>
                                 <div class="form-group{{ $errors->has('about_me') ? ' has-error': ''}}">
                                     <div class="col-sm-10 col-md-12">
-                                <textarea style="height: 130px;" name="about_me" rows="8" cols="80"
+                                <textarea style="height: 130px; max-height: 200px; max-width: 470px;" name="about_me" rows="8" cols="80"
                                           placeholder="درباره من" tabindex="1"
                                           class="form-control m-b">{{ Request::old('about_me') ?: ''}}</textarea>
                                         @if($errors->has('about_me'))
@@ -407,7 +407,7 @@
                                     </div>
                                     <div class="form-group{{ $errors->has('about_me') ? ' has-error': ''}}">
                                         <div class="col-sm-10 col-md-12">
-                                <textarea style="height: 130px;" name="about_me" rows="8" cols="80"
+                                <textarea style="height: 130px; max-width: 470px; max-height: 200px;" name="about_me" rows="8" cols="80"
                                           placeholder="درباره من" tabindex="1"
                                           class="form-control m-b">{{$profile->about_me}}</textarea>
                                             @if($errors->has('about_me'))
@@ -417,11 +417,8 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="ibox float-e-margins">
-                                            @if(empty($profile->photo))
-                                                <h4>شما هیچ عکسی آپلود نکرده اید</h4>
-                                            @endif
                                             <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
-                                                <img style="width: 50px;height: 50px" id="photo1"
+                                                <img style="width: 50px;height: 50px; position: relative; right: 25px;" id="photo1"
                                                      src="{{asset($profile->photo)}}" alt="{{$profile->photo}}">
                                                 <div class="fileinput fileinput-new" data-provides="fileinput">
                                         <span class="btn btn-default btn-file"><span
@@ -442,7 +439,8 @@
                                     <div class="col-md-4">
                                         <div class="ibox float-e-margins">
                                             <div class="form-group{{ $errors->has('pdf') ? ' has-error': ''}}">
-                                                <i style="font-size: 52px;" class="fa fa-book"></i>
+
+                                                <i style="font-size: 52px; position: relative; right: 20px;" class="fa fa-book"></i>
                                                 <div class="fileinput fileinput-new" data-provides="fileinput">
                                         <span class="btn btn-default btn-file"><span
                                                     class="fileinput-new"> بارگذاری pdf</span><span
@@ -460,8 +458,8 @@
                                     <div class="col-md-4">
                                         <div class="ibox float-e-margins">
                                             <div class="form-group{{ $errors->has('cover') ? ' has-error': ''}}">
-                                                <img style="width: 50px;height: 50px" id="photo2"
-                                                     src="{{asset($profile->cover)}}" alt="{{$profile->cover}}">
+                                               <img style="width: 50px;height: 50px; position: relative; right: 20px;" id="photo2"
+                                                                             src="{{asset($profile->cover)}}" alt="{{$profile->cover}}">
                                                 <div class="fileinput fileinput-new" data-provides="fileinput">
                                         <span class="btn btn-default btn-file"><span class="fileinput-new"> بارگذاری کاور</span><span
                                                     class="fileinput-exists"><span
@@ -477,7 +475,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button class="btn btn-primary col-md-4" name="submit" type="submit"
+                                    <button style="margin-top: 20px; position: relative; right: -315px; float: right !important;" class="btn btn-primary col-md-4" name="submit" type="submit"
                                             id="contact-submit"
                                             data-submit="...Sending">
                                         اصلاح
@@ -488,7 +486,7 @@
                                     {{ csrf_field() }}
 
                                     <span class="text-center"><button
-                                                style="width: 30px; height: 30px; position: relative; top: 287px; right:-200px;"
+                                                style="width: 30px; height: 32.555px; position: relative; top: 306px; right: -310px;"
                                                 class="btn btn-danger"><i style="margin-right: -3px" class="fa fa-trash"
                                                                           aria-hidden="true"></i></button></span>
 

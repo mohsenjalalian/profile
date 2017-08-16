@@ -27,7 +27,7 @@
                         {{csrf_field()}}
                         <div class="form-group{{ $errors->has('title') ? ' has-error': ''}}">
                             <div class="col-sm-10 col-md-12">
-                                <input value="{{ Request::old('title') ?: ''}}" type="text" placeholder="تیتر"
+                                <input oninvalid="return chek(this)" oninput="return chek2(this)" value="{{ Request::old('title') ?: ''}}" type="text" placeholder="تیتر"
                                        class="form-control m-b" name="title"
                                        tabindex="1" required autofocus>
                                 @if($errors->has('title'))
@@ -55,10 +55,10 @@
                                                data-targetselector="#fromDate1" data-groupid="group1"
                                                data-fromdate="true" data-enabletimepicker="false" data-placement="right"
                                                name="date" type="text">
-                                        @if($errors->has('date'))
-                                            <span class="help-block">{{ $errors->first('date')}}</span>
-                                        @endif
                                     </div>
+                                    @if($errors->has('date'))
+                                        <span class="help-block">{{ $errors->first('date')}}</span>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -66,7 +66,7 @@
 
                         <div class="form-group{{ $errors->has('description') ? ' has-error': ''}}">
                             <div class="col-sm-10 col-md-12">
-                                    <textarea style="height: 100px;" type="text" class="form-control m-b"
+                                    <textarea oninvalid="return chek(this)" oninput="return chek2(this)" style="height: 70px; max-height: 80px; max-width: 280px;" type="text" class="form-control m-b"
                                               name="description" rows="8" cols="80"
                                               placeholder="توضیحات"
                                               tabindex="1" required

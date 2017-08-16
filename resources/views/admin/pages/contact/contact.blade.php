@@ -32,7 +32,7 @@
                             {{csrf_field()}}
                             <div class="form-group{{ $errors->has('email') ? ' has-error': ''}}">
                                 <div class="col-sm-10 col-md-12">
-                                    <input type="text" placeholder="ایمیل"
+                                    <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="ایمیل"
                                            value="{{ Request::old('email') ?: ''}}" class="form-control m-b"
                                            name="email"
                                            tabindex="1" required autofocus>
@@ -43,7 +43,7 @@
                             </div>
                             <div class="form-group{{ $errors->has('phone_number') ? ' has-error': ''}}">
                                 <div class="col-sm-10 col-md-12">
-                                    <input type="text" placeholder="موبایل"
+                                    <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="موبایل"
                                            value="{{ Request::old('phone_number') ?: ''}}" class="form-control m-b"
                                            name="phone_number"
                                            tabindex="1" required autofocus>
@@ -54,7 +54,7 @@
                             </div>
                             <div class="form-group{{ $errors->has('mobile') ? ' has-error': ''}}">
                                 <div class="col-sm-10 col-md-12">
-                                    <input type="text" placeholder="تلفن"
+                                    <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="تلفن"
                                            value="{{ Request::old('mobile') ?: ''}}" class="form-control m-b"
                                            name="mobile"
                                            tabindex="1" required autofocus>
@@ -65,7 +65,7 @@
                             </div>
                             <div class="form-group{{ $errors->has('office_number') ? ' has-error': ''}}">
                                 <div class="col-sm-10 col-md-12">
-                                    <input type="text" placeholder="تلفن دفتر"
+                                    <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="تلفن دفتر"
                                            value="{{ Request::old('office_number') ?: ''}}" class="form-control m-b"
                                            name="office_number"
                                            tabindex="1" required autofocus>

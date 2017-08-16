@@ -339,6 +339,28 @@
                     <tr>
                         <td>
                             @foreach($socials as $social)
+                                <a style="color: #222222;" href="{{$social->twitter}}">
+                                    <button style="width: 40px !important;" type="button" class="btn btn-info m-r-sm">
+                                        <i style="font-size: 18px; vertical-align: middle;" class="fa fa-twitter"></i>
+                                    </button>
+                                    تویتر
+                                </a>
+                            @endforeach
+                        </td>
+                        <td>
+                            @foreach($socials as $social)
+                                <a style="color: #222222;" href="{{$social->instagram}}">
+                                    <button style="width: 40px !important;" type="button" class="btn btn-warning m-r-sm">
+
+                                        <i style="font-size: 18px; vertical-align: middle;" class="fa fa-instagram"></i>
+
+                                    </button>
+                                    اینستاگرام
+                                </a>
+                            @endforeach
+                        </td>
+                        <td>
+                            @foreach($socials as $social)
                                 <a style="color: #222222;" href="{{$social->google_plus}}">
                                     <button style="width: 40px !important;" type="button" class="btn btn-danger m-r-sm">
                                         <i style="font-size: 18px; vertical-align: middle" class="fa fa-google-plus"></i>
@@ -348,6 +370,8 @@
                                 </a>
                             @endforeach
                         </td>
+                    </tr>
+                    <tr>
                         <td>
                             @foreach($socials as $social)
                                 <a style="color: #222222;" href="{{$social->skype}}">
@@ -355,28 +379,6 @@
                                         <i style="font-size: 18px; vertical-align: middle;" class="fa fa-skype"></i>
                                     </button>
                                     اسکایپ
-                                </a>
-                            @endforeach
-                        </td>
-                        <td>
-                            @foreach($socials as $social)
-                                <a style="color: #222222;" href="{{$social->linkedin}}">
-                                    <button style="width: 40px !important;" type="button" class="btn btn-info m-r-sm">
-                                        <i style="font-size: 18px; vertical-align: middle;" class="fa fa-linkedin"></i>
-                                    </button>
-                                    لینکدین
-                                </a>
-                            @endforeach
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            @foreach($socials as $social)
-                                <a style="color: #222222;" href="{{$social->twitter}}">
-                                    <button style="width: 40px !important;" type="button" class="btn btn-info m-r-sm">
-                                        <i style="font-size: 18px; vertical-align: middle;" class="fa fa-twitter"></i>
-                                    </button>
-                                    تویتر
                                 </a>
                             @endforeach
                         </td>
@@ -390,6 +392,7 @@
                                 </a>
                             @endforeach
                         </td>
+
                         <td>
                             @foreach($socials as $social)
                                 <a style="color: #222222;" href="{{$social->telegram}}">
@@ -404,13 +407,11 @@
                     <tr>
                         <td>
                             @foreach($socials as $social)
-                                <a style="color: #222222;" href="{{$social->instagram}}">
-                                    <button style="width: 40px !important;" type="button" class="btn btn-warning m-r-sm">
-
-                                        <i style="font-size: 18px; vertical-align: middle;" class="fa fa-instagram"></i>
-
+                                <a style="color: #222222;" href="{{$social->linkedin}}">
+                                    <button style="width: 40px !important;" type="button" class="btn btn-info m-r-sm">
+                                        <i style="font-size: 18px; vertical-align: middle;" class="fa fa-linkedin"></i>
                                     </button>
-                                    اینستاگرام
+                                    لینکدین
                                 </a>
                             @endforeach
                         </td>

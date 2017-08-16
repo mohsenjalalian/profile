@@ -32,7 +32,7 @@
 
                             <div class="form-group{{ $errors->has('university_name') ? ' has-error': ''}}">
                                 <div class="col-sm-10 col-md-12">
-                                    <input type="text" placeholder="نام دانشگاه"
+                                    <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="نام دانشگاه"
                                            value="{{ Request::old('university_name') ?: ''}}" class="form-control m-b"
                                            name="university_name" tabindex="1" required>
                                     @if($errors->has('university_name'))
@@ -44,7 +44,7 @@
 
                             <div class="form-group{{ $errors->has('field') ? ' has-error': ''}}">
                                 <div class="col-sm-10 col-md-12">
-                                    <input type="text" placeholder="رشته"
+                                    <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="رشته"
                                            value="{{ Request::old('field') ?: ''}}" class="form-control m-b" name="field" tabindex="1"
                                            required autofocus>
                                     @if($errors->has('field'))
@@ -55,7 +55,7 @@
 
                             <div class="form-group{{ $errors->has('tendency') ? ' has-error': ''}}">
                                 <div class="col-sm-10 col-md-12">
-                                    <input type="text" placeholder="گرایش"
+                                    <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="گرایش"
                                            value="{{ Request::old('tendency') ?: ''}}" class="form-control m-b" name="tendency"
                                            tabindex="1" required autofocus>
                                     @if($errors->has('tendency'))
@@ -73,28 +73,27 @@
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                             </div>
                                             <input data-mdpersiandatetimepickershowing="false" value="{{ Request::old('start_date') ?: ''}}"  title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:9,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" class="form-control" id="fromDate1" placeholder="از تاریخ" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#fromDate1" data-groupid="group1" data-fromdate="true" data-enabletimepicker="false" data-placement="right" name="start_date" type="text">
-                                            @if($errors->has('start_date'))
-                                                <span class="help-block">{{ $errors->first('start_date')}}</span>
-                                            @endif
                                         </div>
+                                        @if($errors->has('start_date'))
+                                            <span class="help-block">{{ $errors->first('start_date')}}</span>
+                                        @endif
                                     </div>
-                                    <br>
                                     <div class="form-group{{ $errors->has('finish_date') ? ' has-error': ''}}">
                                         <div class="input-group">
                                             <div data-mdpersiandatetimepickershowing="false" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:10,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" style="cursor: pointer;" class="input-group-addon" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#toDate1" data-groupid="group1" data-todate="true" data-placement="left">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                             </div>
                                             <input data-mdpersiandatetimepickershowing="false" name="finish_date"
-                                                   value="{{ Request::old('finish_date') ?: ''}}" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:23,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" class="form-control" id="toDate1" placeholder="تا تاریخ" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#toDate1" data-groupid="group1" data-todate="true" data-enabletimepicker="true" data-placement="right" type="text">
-                                            @if($errors->has('finish_date'))
-                                                <span class="help-block">{{ $errors->first('finish_date')}}</span>
-                                            @endif
+                                                   value="{{ Request::old('finish_date') ?: ''}}" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:23,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" class="form-control" id="toDate1" placeholder="تا تاریخ" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#toDate1" data-groupid="group1" data-todate="true" data-enabletimepicker="false" data-placement="right" type="text">
                                         </div>
+                                        @if($errors->has('finish_date'))
+                                            <span class="help-block">{{ $errors->first('finish_date')}}</span>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                            <div class="col-md-6">
+                            <div style="margin-right: 15px;" class="col-md-6">
                                 <div class="ibox float-e-margins">
                                     <div class="form-group{{ $errors->has('logo') ? ' has-error': ''}}">
                                         <div class="fileinput fileinput-new" data-provides="fileinput">

@@ -36,7 +36,7 @@
 
                                 <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
                                     <div class="col-sm-10 col-md-12">
-                                        <input type="text" placeholder="نام "
+                                        <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="نام "
                                                value="{{ Request::old('name') ?: ''}}" class="form-control m-b" name="name"
                                                tabindex="1" required autofocus>
                                         @if($errors->has('name'))
@@ -46,15 +46,15 @@
                                 </div>
                                 <div class="form-group{{ $errors->has('info') ? ' has-error': ''}}">
                                     <div class="col-sm-10 col-md-12">
-                                        <textarea type="text" placeholder="توضیحات" class="form-control m-b" name="info"
+                                        <textarea oninvalid="return chek(this)" oninput="return chek2(this)" style="max-width: 280px; max-height: 70px;" type="text" placeholder="توضیحات" class="form-control m-b" name="info"
                                                   tabindex="1" required autofocus>{{ Request::old('info') ?: ''}}</textarea>
                                         @if($errors->has('info'))
                                             <span class="help-block">{{ $errors->first('info')}}</span>
                                         @endif
                                     </div>
                                 </div>
-                                <p>نوع</p>
-                                <div class="form-group{{ $errors->has('type') ? ' has-error': ''}}">
+                                <p style="margin-right: 15px;">نوع</p>
+                                <div style="margin-right: 15px;" class="form-group{{ $errors->has('type') ? ' has-error': ''}}">
                                     <div class="i-checks"><label> <input type="radio" name="type" value="دوره"
 
                                                                          tabindex="2" checked> <i></i>دوره </label>
@@ -64,6 +64,7 @@
                                     <div class="i-checks"><label> <input type="radio" name="type" value="گواهی"
                                                                          tabindex="2"> <i></i> گواهی </label></div>
                                 </div>
+
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="ibox float-e-margins">

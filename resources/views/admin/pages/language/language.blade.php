@@ -33,7 +33,7 @@
 
                             <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
                                 <div class="col-sm-10 col-md-12">
-                                    <input type="text" placeholder="نام زبان"
+                                    <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="نام زبان"
                                            value="{{ Request::old('name') ?: ''}}" class="form-control m-b"  name="name" tabindex="1" required autofocus>
                                     @if($errors->has('title'))
                                         <span class="help-block">{{ $errors->first('title')}}</span>
@@ -43,7 +43,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group{{ $errors->has('reading') ? ' has-error': ''}}">
-                                    <select name="reading" required class="select2_demo_1 form-control">
+                                    <select oninvalid="return chek(this)" oninput="return chek2(this)" name="reading" required class="select2_demo_1 form-control">
                                         <option value="{{ Request::old('reading') ?: ''}}">خواندن</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -60,7 +60,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group{{ $errors->has('writing') ? ' has-error': ''}}">
-                                    <select name="writing" required class="select2_demo_1 form-control">
+                                    <select oninvalid="return chek(this)" oninput="return chek2(this)" name="writing" required class="select2_demo_1 form-control">
                                         <option value="{{ Request::old('writing') ?: ''}}">نوشتن </option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -77,7 +77,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group{{ $errors->has('speaking') ? ' has-error': ''}}">
-                                    <select name="speaking" required class="select2_demo_1 form-control">
+                                    <select oninvalid="return chek(this)" oninput="return chek2(this)" name="speaking" required class="select2_demo_1 form-control">
                                         <option value="{{ Request::old('speaking') ?: ''}}">صحبت کردن</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -93,7 +93,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group{{ $errors->has('listening') ? ' has-error': ''}}">
-                                    <select name="listening" class="select2_demo_1 form-control">
+                                    <select oninvalid="return chek(this)" oninput="return chek2(this)" required name="listening" class="select2_demo_1 form-control">
                                         <option value="{{ Request::old('listening') ?: ''}}">گوش کردن</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>

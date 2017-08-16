@@ -31,7 +31,7 @@
                             {{csrf_field()}}
                             <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
                                 <div class="col-sm-10 col-md-12">
-                                    <input type="text" placeholder="نام کتاب"
+                                    <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="نام کتاب"
                                            value="{{ Request::old('name') ?: ''}}" class="form-control m-b" name="name" tabindex="1" required autofocus>
                                     @if($errors->has('name'))
                                         <span class="help-block">{{ $errors->first('name')}}</span>
@@ -40,7 +40,7 @@
                             </div>
                             <div class="form-group{{ $errors->has('published_place') ? ' has-error': ''}}">
                                 <div class="col-sm-10 col-md-12">
-                                    <input type="text" placeholder="شرکت انتشاراتی"
+                                    <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="شرکت انتشاراتی"
                                            value="{{ Request::old('published_place') ?: ''}}" class="form-control m-b" name="published_place" tabindex="1" required>
                                     @if($errors->has('published_place'))
                                         <span class="help-block">{{ $errors->first('published_place')}}</span>
@@ -56,17 +56,17 @@
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                             </div>
                                             <input data-mdpersiandatetimepickershowing="false" value="{{ Request::old('published_year') ?: ''}}" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:9,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" class="form-control" id="fromDate1" placeholder="تاریخ انتشار" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#fromDate1" data-groupid="group1" data-fromdate="true" data-enabletimepicker="false" data-placement="right" name="published_year" type="text">
-                                            @if($errors->has('published_year'))
-                                                <span class="help-block">{{ $errors->first('published_year')}}</span>
-                                            @endif
                                         </div>
+                                        @if($errors->has('published_year'))
+                                            <span class="help-block">{{ $errors->first('published_year')}}</span>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group{{ $errors->has('link') ? ' has-error': ''}}">
                                 <div class="col-sm-10 col-md-12">
-                                    <input type="text" placeholder="لینک به مقاله"
+                                    <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="لینک به مقاله"
                                            value="{{ Request::old('link') ?: ''}}"   class="form-control m-b" name="link" tabindex="1" required autofocus>
                                     @if($errors->has('link'))
                                         <span class="help-block">{{ $errors->first('link')}}</span>

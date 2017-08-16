@@ -60,7 +60,7 @@
                             {{csrf_field()}}
                             <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
                                 <div class="col-sm-10 col-md-12">
-                                    <input type="text" placeholder="نام"
+                                    <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="نام"
                                            value="{{ Request::old('name') ?: ''}}" class="form-control m-b" name="name" tabindex="1" required autofocus>
                                     @if($errors->has('name'))
                                         <span class="help-block">{{ $errors->first('name')}}</span>

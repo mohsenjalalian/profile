@@ -18,7 +18,6 @@
                 </ol>
             </div>
         </div>
-
         <div style="margin-top: 20px;" class="col-lg-4">
             <div class="panel panel-primary">
                 <div class="panel-heading">
@@ -30,9 +29,9 @@
                         {{csrf_field()}}
                         <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
                             <div class="col-sm-10 col-md-12">
-                                <input type="text" placeholder="نام شخص"
+                                <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="نام شخص"
                                        value="{{ Request::old('name') ?: ''}}" class="form-control m-b" name="name"
-                                       tabindex="1" required autofocus>
+                                       tabindex="1" required="required" autofocus>
                                 @if($errors->has('name'))
                                     <span class="help-block">{{ $errors->first('name')}}</span>
                                 @endif
@@ -40,9 +39,9 @@
                         </div>
                         <div class="form-group{{ $errors->has('position') ? ' has-error': ''}}">
                             <div class="col-sm-10 col-md-12">
-                                <input type="text" placeholder="موقعیت شغلی"
+                                <input oninvalid="return chek(this)" oninput="return chek2(this)"  type="text" placeholder="موقعیت شغلی"
                                        value="{{ Request::old('position') ?: ''}}" class="form-control m-b" name="position"
-                                       tabindex="1" required autofocus>
+                                       tabindex="1" required="required" autofocus>
                                 @if($errors->has('position'))
                                     <span class="help-block">{{ $errors->first('position')}}</span>
                                 @endif
@@ -50,9 +49,9 @@
                         </div>
                         <div class="form-group{{ $errors->has('company') ? ' has-error': ''}}">
                             <div class="col-sm-10 col-md-12">
-                                <input type="text" placeholder="شرکت"
+                                <input oninvalid="return chek(this)" oninput="return chek2(this)"  type="text" placeholder="شرکت"
                                        value="{{ Request::old('company') ?: ''}}" class="form-control m-b" name="company"
-                                       tabindex="1" required autofocus>
+                                       tabindex="1" required="required" autofocus>
                                 @if($errors->has('company'))
                                     <span class="help-block">{{ $errors->first('company')}}</span>
                                 @endif
@@ -60,7 +59,7 @@
                         </div>
                         <div class="form-group{{ $errors->has('info') ? ' has-error': ''}}">
                             <div class="col-sm-10 col-md-12">
-                                <textarea style="height: 60px;" type="text" placeholder="توضیحات"
+                                <textarea oninvalid="return chek(this)" oninput="return chek2(this)"  style="height: 60px; max-width: 280px; max-height: 100px;" type="text" placeholder="توضیحات"
                                           class="form-control m-b" name="info" tabindex="1" required
                                           autofocus>{{ Request::old('info') ?: ''}}</textarea>
                                 @if($errors->has('info'))
@@ -133,21 +132,29 @@
                                 <i data-toggle="tooltip" data-placement="left" title="{{$recommend->info}}" style="color: #239963; font-size: 22px;" class="fa fa-check"></i>
                         </td>
 
-                        <td style="border: none;">
-                            {{--<a href="{{route('recommend.edit',$recommend->id)}}" class="edit">--}}
-                            <button style="margin-top: 12px; width:30px; height: 30px;" data-toggle="modal"
+                        <td style="border: none; display: flex; width: 20px;">
+
+                            <a style="margin-top: 12px; width:30px; height: 30px;"
                                     data-href="{{route('recommend.edit',$recommend->id)}}"
-                                    data-target="#myModal2" class="btn btn-warning edit">
+                                    class="btn btn-warning edit md-trigger">
                                 <i style="margin-right: -3px;" class="fa fa-paint-brush" aria-hidden="true">
                                 </i>
-                            </button>
+                            </a>
+                            {{--<a href="{{route('recommend.edit',$recommend->id)}}" class="edit">--}}
+                            {{--<button style="margin-top: 12px; width:30px; height: 30px;" data-toggle="modal"--}}
+                                    {{--data-href="{{route('recommend.edit',$recommend->id)}}"--}}
+                                    {{--data-target="#myModal2" class="btn btn-warning edit">--}}
+                                {{--<i style="margin-right: -3px;" class="fa fa-paint-brush" aria-hidden="true">--}}
+                                {{--</i>--}}
+                            {{--</button>--}}
+
                             {{--</a>--}}
                             <form action="{{ route('recommend.destroy', $recommend->id) }}"
                                   method="POST">
                                 {{ method_field('DELETE') }}
                                 {{ csrf_field() }}
 
-                                <button style=" margin-top: 3px; width: 30px; height: 30px"
+                                <button style=" margin-top: 12px; margin-right: 10px; width: 30px; height: 30px"
                                         class="btn btn-danger"><i style="margin-right: -3px" class="fa fa-trash"
                                                                   aria-hidden="true"></i></button>
 
@@ -233,30 +240,46 @@
                 {{--</div>--}}
             {{--</div>--}}
         {{--</div>--}}
-    </div>
-    <div class="modal inmodal" id="myModal2" tabindex="-1" role="dialog"
-         aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content animated flipInY">
-                <div class="modal-header">
-                    <button type="button" class="close"
-                            data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                                class="sr-only">Close</span></button>
-                    <h4 class="modal-title">ویرایش فرم</h4>
-                    <small class="font-bold">این فرم در صفحه اصلی شما نشان
-                        داده میشود
-                    </small>
-                </div>
-                <div style="background-color: #fff !important; height: 470px;" class="modal-body col-md-12">
-                    <div class="container">
 
-                    </div>
-                </div>
+
+
+    {{--<div class="modal inmodal" id="myModal2" tabindex="-1" role="dialog"--}}
+         {{--aria-hidden="true">--}}
+        {{--<div class="modal-dialog">--}}
+            {{--<div class="modal-content animated flipInY">--}}
+                {{--<div class="modal-header">--}}
+                    {{--<button type="button" class="close"--}}
+                            {{--data-dismiss="modal"><span aria-hidden="true">&times;</span><span--}}
+                                {{--class="sr-only">Close</span></button>--}}
+                    {{--<h4 class="modal-title">ویرایش فرم</h4>--}}
+                    {{--<small class="font-bold">این فرم در صفحه اصلی شما نشان--}}
+                        {{--داده میشود--}}
+                    {{--</small>--}}
+                {{--</div>--}}
+                {{--<div style="background-color: #fff !important; height: 470px;" class="modal-body col-md-12">--}}
+                    {{--<div class="container">--}}
+
+                    {{--</div>--}}
+                {{--</div>--}}
+
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+
+        <div class="md-modal md-effect-13" id="modal-13">
+            <div class="md-content">
+                <h3>Modal Dialog</h3>
 
             </div>
         </div>
-    </div>
+        <div class="container">
+            <div >
 
+            </div>
+        </div>
+        <div class="md-overlay"></div>
+        </div>
+        </div>
     @include('admin.layouts.success')
     @include('admin.layouts.errors')
 @endsection

@@ -30,7 +30,7 @@
 
                         <div class="form-group{{ $errors->has('title') ? ' has-error': ''}}">
                             <div class="col-sm-10 col-md-12">
-                                <input type="text" placeholder="نام شغل"
+                                <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="نام شغل"
                                        value="{{ Request::old('title') ?: ''}}" class="form-control m-b" name="title" tabindex="1" required autofocus>
                                 @if($errors->has('name'))
                                     <span class="help-block">{{ $errors->first('name')}}</span>
@@ -41,7 +41,7 @@
 
                         <div class="form-group{{ $errors->has('company') ? ' has-error': ''}}">
                             <div class="col-sm-10 col-md-12">
-                                <input type="text" placeholder="شرکت"
+                                <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="شرکت"
                                        value="{{ Request::old('company') ?: ''}}" class="form-control m-b" name="company" tabindex="1" required autofocus>
                                 @if($errors->has('company'))
                                     <span class="help-block">{{ $errors->first('company')}}</span>
@@ -51,7 +51,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group{{ $errors->has('city') ? ' has-error': ''}}">
-                                    <select name="city" class="select2_demo_1 form-control">
+                                    <select oninvalid="return chek(this)" oninput="return chek2(this)" style="width: 275px; margin-right: 15px;" name="city" class="select2_demo_1 form-control">
                                         <option value="{{ Request::old('city') ?: '0'}}">استان را انتخاب کنید</option>
                                         <option value="آذربایجان شرقی">آذربایجان شرقی</option>
                                         <option value="آذربایجان غربی">آذربایجان غربی</option>
@@ -105,13 +105,25 @@
                                         <span class="help-block">{{ $errors->first('start_date')}}</span>
                                     @endif
                                 </div>
+                                {{--<div class="form-group{{ $errors->has('finish_date') ? ' has-error': ''}}">--}}
+                                    {{--<div class="input-group">--}}
+                                        {{--<div data-mdpersiandatetimepickershowing="false" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:10,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" style="cursor: pointer;" class="input-group-addon" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#fromDate1" data-groupid="group1" data-fromdate="true" data-enabletimepicker="false" data-placement="left">--}}
+                                            {{--<span class="glyphicon glyphicon-calendar"></span>--}}
+                                        {{--</div>--}}
+                                        {{--<input data-mdpersiandatetimepickershowing="false" name="finish_date"--}}
+                                               {{--value="{{ Request::old('finish_date') ?: ''}}" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:9,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" class="form-control" id="toDate1" placeholder="تا تاریخ" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#fromDate1" data-groupid="group1" data-fromdate="true" data-enabletimepicker="false" data-placement="right" type="text">--}}
+                                    {{--</div>--}}
+                                    {{--@if($errors->has('finish_date'))--}}
+                                        {{--<span class="help-block">{{ $errors->first('finish_date')}}</span>--}}
+                                    {{--@endif--}}
+                                {{--</div>--}}
                                 <div class="form-group{{ $errors->has('finish_date') ? ' has-error': ''}}">
                                     <div class="input-group">
                                         <div data-mdpersiandatetimepickershowing="false" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:10,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" style="cursor: pointer;" class="input-group-addon" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#toDate1" data-groupid="group1" data-todate="true" data-placement="left">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                         </div>
                                         <input data-mdpersiandatetimepickershowing="false" name="finish_date"
-                                               value="{{ Request::old('finish_date') ?: ''}}" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:23,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" class="form-control" id="toDate1" placeholder="تا تاریخ" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#toDate1" data-groupid="group1" data-todate="true" data-enabletimepicker="true" data-placement="right" type="text">
+                                               value="{{ Request::old('finish_date') ?: ''}}" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:23,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" class="form-control" id="toDate1" placeholder="تا تاریخ" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#toDate1" data-groupid="group1" data-todate="true" data-enabletimepicker="false" data-placement="right" type="text">
                                     </div>
                                     @if($errors->has('finish_date'))
                                         <span class="help-block">{{ $errors->first('finish_date')}}</span>
@@ -121,7 +133,7 @@
                             <div class="row">
                             <div class="form-group{{ $errors->has('about') ? ' has-error': ''}}">
                                 <div class="col-sm-10 col-md-12">
-                                <textarea style="height: 80px;" type="text"
+                                <textarea oninvalid="return chek(this)" oninput="return chek2(this)" style="height: 70px; max-height: 80px; max-width: 280px;" type="text"
                                           value="{{ Request::old('about') ?: ''}}" name="about" placeholder="توضیحات" tabindex="1" required autofocus
                                           class="form-control m-b"></textarea>
                                     @if($errors->has('about'))

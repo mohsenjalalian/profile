@@ -31,7 +31,7 @@
                             {{csrf_field()}}
                             <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
                                 <div class="col-sm-10 col-md-12">
-                                    <input type="text" placeholder="نام"
+                                    <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="نام"
                                            value="{{ Request::old('name') ?  : ''}}" class="form-control m-b"
                                            name="name"
                                            tabindex="1" required autofocus>
@@ -105,7 +105,7 @@
                                                     class="fileinput-new">بارگذاری عکس</span> <span
                                                     class="fileinput-exists"><span class="fileinput-exists"><span
                                                             style="color: #2aca76;">بارگذاری شد</span></span> </span>
-                                            <input type="file"
+                                            <input oninvalid="return chek(this)" oninput="return chek2(this)" type="file"
                                                    value="{{ Request::old('photo') ?: ''}}" required name="photo"></span>
                                             </div>
                                             @if($errors->has('photo'))
@@ -317,6 +317,7 @@
 
 
 @section('scripts')
+    <script>
     $(document).ready(function(){
     $('.chosen-select').chosen({width: "100%"});
 
@@ -372,4 +373,5 @@
 
     $(".dial").knob();
     });
+    </script>
 @endsection
