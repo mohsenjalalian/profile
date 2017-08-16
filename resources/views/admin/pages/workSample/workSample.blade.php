@@ -106,7 +106,7 @@
                                                     class="fileinput-exists"><span class="fileinput-exists"><span
                                                             style="color: #2aca76;">بارگذاری شد</span></span> </span>
                                             <input type="file"
-                                                   value="{{ Request::old('photo') ?: ''}}" name="photo"></span>
+                                                   value="{{ Request::old('photo') ?: ''}}" required name="photo"></span>
                                             </div>
                                             @if($errors->has('photo'))
                                                 <span class="help-block">{{ $errors->first('photo')}}</span>
@@ -317,10 +317,59 @@
 
 
 @section('scripts')
-    $('button.edit').click(function(e){
-    e.preventDefault();
-    $.get($(this).attr('data-href'),function(data){
-    $('#myModal2').find('.modal-body').html(data);
-    })
+    $(document).ready(function(){
+    $('.chosen-select').chosen({width: "100%"});
+
+    $("#ionrange_1").ionRangeSlider({
+    min: 0,
+    max: 5000,
+    type: 'double',
+    prefix: "$",
+    maxPostfix: "+",
+    prettify: false,
+    hasGrid: true
+    });
+
+    $("#ionrange_2").ionRangeSlider({
+    min: 0,
+    max: 10,
+    type: 'single',
+    step: 0.1,
+    postfix: " carats",
+    prettify: false,
+    hasGrid: true
+    });
+
+    $("#ionrange_3").ionRangeSlider({
+    min: -50,
+    max: 50,
+    from: 0,
+    postfix: "°",
+    prettify: false,
+    hasGrid: true
+    });
+
+    $("#ionrange_4").ionRangeSlider({
+    values: [
+    "January", "February", "March",
+    "April", "May", "June",
+    "July", "August", "September",
+    "October", "November", "December"
+    ],
+    type: 'single',
+    hasGrid: true
+    });
+
+    $("#ionrange_5").ionRangeSlider({
+    min: 10000,
+    max: 100000,
+    step: 100,
+    postfix: " km",
+    from: 55000,
+    hideMinMax: true,
+    hideFromTo: false
+    });
+
+    $(".dial").knob();
     });
 @endsection

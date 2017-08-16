@@ -43,7 +43,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group{{ $errors->has('reading') ? ' has-error': ''}}">
-                                    <select name="reading" class="select2_demo_1 form-control">
+                                    <select name="reading" required class="select2_demo_1 form-control">
                                         <option value="{{ Request::old('reading') ?: ''}}">خواندن</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -60,7 +60,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group{{ $errors->has('writing') ? ' has-error': ''}}">
-                                    <select name="writing" class="select2_demo_1 form-control">
+                                    <select name="writing" required class="select2_demo_1 form-control">
                                         <option value="{{ Request::old('writing') ?: ''}}">نوشتن </option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -77,7 +77,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group{{ $errors->has('speaking') ? ' has-error': ''}}">
-                                    <select name="speaking" class="select2_demo_1 form-control">
+                                    <select name="speaking" required class="select2_demo_1 form-control">
                                         <option value="{{ Request::old('speaking') ?: ''}}">صحبت کردن</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
