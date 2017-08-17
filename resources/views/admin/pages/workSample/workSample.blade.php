@@ -42,9 +42,9 @@
                                 </div>
                             </div>
                             @if(count($categories) > 0)
-                                <p style="position: relative; top: 10px; right: 15px;">دسته بندی</p>
-                                <div class="form-group{{ $errors->has('category_id[]') ? ' has-error': ''}}">
-                                    <div style="margin-top: -10px; margin-right: 15px; width: 280px;" class="ibox float-e-margins">
+                                <p style="position:relative; height: 22px; top: 20px; right: 15px;">دسته بندی</p>
+                                <div style="margin-top: 70px;" class="form-group{{ $errors->has('category_id[]') ? ' has-error': ''}}">
+                                    <div style="margin-top: 0px; margin-right: 15px; width: 280px;" class="ibox float-e-margins">
                                             <div class="form-group">
                                                 <label class="font-noraml text-center"></label>
                                                 <div>
@@ -95,29 +95,50 @@
                                 <p class="text-center">شما هیچ دسته بندی نساخته اید</p>
                             @endif
 
-
                             <div class="row">
-                                <div style="margin-top: 3px; margin-right: 15px;" class="col-md-6">
+                                <div class="col-lg-12">
                                     <div class="ibox float-e-margins">
-                                        <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
-                                            <div class="fileinput fileinput-new" data-provides="fileinput">
-                                        <span class="btn btn-default btn-file"><span
-                                                    class="fileinput-new">بارگذاری عکس</span> <span
-                                                    class="fileinput-exists"><span class="fileinput-exists"><span
-                                                            style="color: #2aca76;">بارگذاری شد</span></span> </span>
-                                            <input oninvalid="return chek(this)" oninput="return chek2(this)" type="file"
-                                                   value="{{ Request::old('photo') ?: ''}}" required name="photo"></span>
+                                       <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
+                                            <div style="width: 280px; margin-right: 15px;" class="fileinput fileinput-new input-group" data-provides="fileinput">
+                                                <div class="form-control" data-trigger="fileinput">
+                                                    <p class="fileinput-exists" style="color: #2aca76;">بارگذاری شد</p>
+                                                </div>
+                                                <span style="border: 1px solid #e5e6e7;" class="input-group-addon btn btn-default btn-file">
+                                                    <span class="fileinput-new">بارگذاری</span>
+                                                    <span class="fileinput-exists">عوض کردن</span>
+                                                    <input type="file" value="{{ Request::old('photo') ?: ''}}" required name="photo">
+                                                </span>
+                                                <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">پاک کردن</a>
                                             </div>
-                                            @if($errors->has('photo'))
-                                                <span class="help-block">{{ $errors->first('photo')}}</span>
-                                            @endif
-                                        </div>
+                                           @if($errors->has('photo'))
+                                               <span class="help-block">{{ $errors->first('photo')}}</span>
+                                           @endif
                                     </div>
                                 </div>
                             </div>
+                            </div>
+                            {{--<div class="row">--}}
+                                {{--<div style="margin-top: 3px; margin-right: 15px;" class="col-md-6">--}}
+                                    {{--<div class="ibox float-e-margins">--}}
+                                        {{--<div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">--}}
+                                            {{--<div class="fileinput fileinput-new" data-provides="fileinput">--}}
+                                        {{--<span class="btn btn-default btn-file"><span--}}
+                                                    {{--class="fileinput-new">بارگذاری عکس</span> <span--}}
+                                                    {{--class="fileinput-exists"><span class="fileinput-exists"><span--}}
+                                                            {{--style="color: #2aca76;">بارگذاری شد</span></span> </span>--}}
+                                            {{--<input type="file"--}}
+                                                   {{--value="{{ Request::old('photo') ?: ''}}" required name="photo"></span>--}}
+                                            {{--</div>--}}
+                                            {{--@if($errors->has('photo'))--}}
+                                                {{--<span class="help-block">{{ $errors->first('photo')}}</span>--}}
+                                            {{--@endif--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
 
 
-                            <button style="font-family: webmdesign; margin-top: -20px; margin-right: 15px;" class="btn btn-primary col-md-4" name="submit" type="submit" id="contact-submit"
+                            <button style="font-family: webmdesign; margin-top: 5px; margin-right: 15px;" class="btn btn-primary col-md-4" name="submit" type="submit" id="contact-submit"
                                     data-submit="...Sending">ارسال
                             </button>
 
