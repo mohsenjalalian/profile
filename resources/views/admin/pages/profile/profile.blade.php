@@ -441,8 +441,9 @@
                                     <div class="col-md-4">
                                         <div class="ibox float-e-margins">
                                             <div class="form-group{{ $errors->has('pdf') ? ' has-error': ''}}">
-
+                                                @if(($profile->pdf) != 0)
                                                 <i style="font-size: 52px; position: relative; right: 20px;" class="fa fa-book"></i>
+                                                @endif
                                                 <div class="fileinput fileinput-new" data-provides="fileinput">
                                         <span class="btn btn-default btn-file"><span
                                                     class="fileinput-new"> بارگذاری pdf</span><span
