@@ -158,7 +158,7 @@
             </li>
 
             <a style="color: #fff; position: relative; top: 130px; right: 50px;" class="menu" href="#">
-               <span class="nav-label">powerd by <a style="color: #fff; position: relative; top: 130px; right: 50px;" class="menu" href="http://cotint.ir" target="_blank">
+               <span class="nav-label">Powerd By <a style="color: #fff; position: relative; top: 130px; right: 50px;" class="menu" href="http://cotint.ir" target="_blank">
                        <span class="nav-label" style="color: #239963;"><strong>CO </strong></span><strong class="nav-label">|</strong>
                        <span class="nav-label" style="color:#fff;"><strong> tint</strong>
                        </span>

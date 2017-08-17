@@ -96,7 +96,7 @@
                             </div>
 
 
-                            <button class="btn btn-primary col-md-4" name="submit" type="submit" id="contact-submit"
+                            <button style="font-family: webmdesign;" class="btn btn-primary col-md-4" name="submit" type="submit" id="contact-submit"
                                     data-submit="...Sending">ارسال
                             </button>
                         </form>
@@ -157,13 +157,13 @@
 
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="ibox float-e-margins">
+                                <div style="margin-right: 15px;" class="ibox float-e-margins">
                                     <div class="form-group{{ $errors->has('qr_code') ? ' has-error': ''}}">
 
                                         @if(isset($contact->qr_code))
                                             <img width="50" height="50" src="{{asset($contact->qr_code)}}">
                                         @else
-                                            <h4>شما هیچ عکسی آپلود نکرده اید</h4>
+                                            <h4 style="width: 200px;">شما عکسی بارگذاری نکرده اید</h4>
                                         @endif
                                         <div class="fileinput fileinput-new" data-provides="fileinput">
                                         <span class="btn btn-default btn-file"><span
@@ -189,8 +189,8 @@
                         {{ csrf_field() }}
 
                         <span class="text-center"><button
-                                    style="width: 30px; height: 30px; position: relative; top: 2px; right: 10px;"
-                                    class="btn btn-danger"><i style="margin-right: -3px" class="fa fa-trash"
+                                    style="width: 30px; height: 33px; position: relative; top: 1px; right: 5px;"
+                                    class="btn btn-danger"><i style="margin-right: -4px; position: relative; top: px;" class="fa fa-trash"
                                                               aria-hidden="true"></i></button></span>
 
                     </form>

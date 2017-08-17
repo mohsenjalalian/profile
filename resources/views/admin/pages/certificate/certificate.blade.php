@@ -88,7 +88,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button class="btn btn-primary col-md-6" name="submit" type="submit"
+                                        <button style="font-family: webmdesign;" class="btn btn-primary col-md-6" name="submit" type="submit"
                                                 id="contact-submit" data-submit="...Sending">ارسال
                                         </button>
                                     </div>
@@ -109,7 +109,7 @@
                             <thead>
                             <tr>
                                 <th class="text-center">عکس</th>
-                                <th style="width: 30px;" class="text-center">نام</th>
+                                <th  class="text-center">نام</th>
                                 <th class="text-center">نوع</th>
                                 <th class="text-center">توضیحات</th>
                                 <th style="width: 30px;" class="text-center">تغییرات</th>
@@ -120,27 +120,26 @@
 
                                 <tr>
                                     <td style="vertical-align: middle; width: 30px;" class="text-center">
-                                        <img style="width: 50px;height: 50px" ;
+                                        <img style="height: 50px;"
                                              src="{{$certificate->photo}}"
                                              alt="{{$certificate->photo}}"></td>
-                                    <td style="vertical-align: middle; width: 100px;"
+                                    <td style="vertical-align: middle;"
                                         class="text-center">{{$certificate->name}}</td>
-                                    <td style="vertical-align: middle; width: 100px;"
+                                    <td style="vertical-align: middle;"
                                         class="text-center">{{$certificate->type}}</td>
                                     <td style="vertical-align: middle;" class="text-center">
-                                        <a href="#" title=" {{$certificate->info}}">
+                                        {{--<a href="#" title=" {{$certificate->info}}">--}}
                                             <i style="color: #239963; font-size: 22px;" class="fa fa-check"></i>
-                                        </a>
+                                        {{--</a>--}}
                                     </td>
 
                                     <td style="display: flex; border: none;">
-                                        <button style="margin-top: 12px; width:30px; height: 30px;" data-toggle="modal"
-                                                data-href="{{ route('certification.edit', $certificate->id) }}"
-                                                data-target="#myModal2" class="btn btn-warning edit">
-                                            <i style="margin-right: -3px;" class="fa fa-paint-brush" aria-hidden="true">
+                                        <button style="margin-top: 12px; width:30px; height: 30px;" data-toggle="modal" data-target="#myModal4"
+                                                data-href="{{route('certification.edit', $certificate->id)}}"
+                                                class="btn btn-warning edit md-trigger">
+                                            <i style="margin-right: -5px; position: relative; top: -2px;" class="fa fa-paint-brush" aria-hidden="true">
                                             </i>
                                         </button>
-
 
                     </div>
                 </div>
@@ -151,11 +150,9 @@
                 {{ method_field('DELETE') }}
                 {{ csrf_field() }}
 
-                <button style="margin-right: 10px; margin-top: 12px; width: 30px; height: 30px"
-                        class="btn btn-danger"><i style="margin-right: -3px"
-                                                  class="fa fa-trash"
-                                                  aria-hidden="true"></i>
-                </button>
+                <button style=" margin-top: 12px; margin-right: 10px; width: 30px; height: 30px"
+                        class="btn btn-danger"><i style="margin-right: -4px; position: relative; top: -2px;" class="fa fa-trash"
+                                                  aria-hidden="true"></i></button>
 
             </form>
 
@@ -171,88 +168,11 @@
                 </table>
             </div>
         </div>
-    </div>
-    </div>
 
-            {{--<div class="wrapper wrapper-content animated fadeInRight col-md-8">--}}
-                {{--<div class="row">--}}
-                    {{--<div>--}}
-                        {{--<div class="ibox float-e-margins">--}}
-
-                            {{--<div class="ibox-content">--}}
-
-                                {{--<div class="table-responsive">--}}
-                                    {{--<table class="table table-striped table-bordered table-hover dataTables-example">--}}
-                                        {{--<thead>--}}
-                                        {{--<tr>--}}
-                                            {{--<th class="text-center">عکس</th>--}}
-                                            {{--<th style="width: 30px;" class="text-center">نام</th>--}}
-                                            {{--<th class="text-center">نوع</th>--}}
-                                            {{--<th class="text-center">توضیحات</th>--}}
-                                            {{--<th style="width: 30px;" class="text-center">تغییرات</th>--}}
-                                        {{--</tr>--}}
-                                        {{--</thead>--}}
-                                        {{--<tbody>--}}
-                                        {{--@foreach($certificates as $certificate)--}}
-
-                                            {{--<tr>--}}
-                                                {{--<td style="vertical-align: middle; width: 30px;" class="text-center">--}}
-                                                    {{--<img style="width: 50px;height: 50px" ;--}}
-                                                         {{--src="{{$certificate->photo}}"--}}
-                                                         {{--alt="{{$certificate->photo}}"></td>--}}
-                                                {{--<td style="vertical-align: middle; width: 100px;"--}}
-                                                    {{--class="text-center">{{$certificate->name}}</td>--}}
-                                                {{--<td style="vertical-align: middle; width: 100px;"--}}
-                                                    {{--class="text-center">{{$certificate->type}}</td>--}}
-                                                {{--<td class="text-justify">{{$certificate->info}}</td>--}}
-
-                                                {{--<td style="display: flex; border: none;">--}}
-                                                    {{--<button style="margin-top: 12px; width:30px; height: 30px;" data-toggle="modal"--}}
-                                                            {{--data-href="{{ route('certification.edit', $certificate->id) }}"--}}
-                                                            {{--data-target="#myModal2" class="btn btn-warning edit">--}}
-                                                        {{--<i style="margin-right: -3px;" class="fa fa-paint-brush" aria-hidden="true">--}}
-                                                        {{--</i>--}}
-                                                    {{--</button>--}}
-
-
-                                                            {{--</div>--}}
-                                                        {{--</div>--}}
-                                                    {{--</div>--}}
-
-                                                    {{--<form action="{{ route('certification.destroy', $certificate->id) }}"--}}
-                                                          {{--method="POST">--}}
-                                                        {{--{{ method_field('DELETE') }}--}}
-                                                        {{--{{ csrf_field() }}--}}
-
-                                                        {{--<button style="margin-right: 10px; margin-top: 12px; width: 30px; height: 30px"--}}
-                                                                {{--class="btn btn-danger"><i style="margin-right: -3px"--}}
-                                                                                          {{--class="fa fa-trash"--}}
-                                                                                          {{--aria-hidden="true"></i>--}}
-                                                        {{--</button>--}}
-
-                                                    {{--</form>--}}
-                                                {{--</td>--}}
-
-
-                                                {{--</td>--}}
-
-
-                                            {{--</tr>--}}
-
-                                        {{--@endforeach--}}
-                                        {{--</tbody>--}}
-                                    {{--</table>--}}
-                                {{--</div>--}}
-
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-    <div class="modal inmodal" id="myModal2" tabindex="-1" role="dialog"
+    <div class="modal inmodal" id="myModal4" tabindex="-1" role="dialog"
          aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content animated flipInY">
+            <div class="modal-content animated fadeIn">
                 <div class="modal-header">
                     <button type="button" class="close"
                             data-dismiss="modal"><span aria-hidden="true">&times;</span><span
@@ -262,7 +182,7 @@
                         داده میشود
                     </small>
                 </div>
-                <div style="background-color: #fff !important; height:auto;" class="modal-body">
+                <div style="background-color: #fff !important; height: 490px;" class="modal-body col-md-12">
                     <div class="container">
 
                     </div>

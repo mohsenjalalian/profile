@@ -51,7 +51,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group{{ $errors->has('city') ? ' has-error': ''}}">
-                                    <select oninvalid="return chek(this)" oninput="return chek2(this)" style="width: 275px; margin-right: 15px;" name="city" class="select2_demo_1 form-control">
+                                    <select oninvalid="return chek(this)" oninput="return chek2(this)" style="width: 279px; margin-right: 15px;" name="city" class="select2_demo_1 form-control">
                                         <option value="{{ Request::old('city') ?: '0'}}">استان را انتخاب کنید</option>
                                         <option value="آذربایجان شرقی">آذربایجان شرقی</option>
                                         <option value="آذربایجان غربی">آذربایجان غربی</option>
@@ -143,7 +143,7 @@
                             </div>
                             </div>
                             <fieldset>
-                                <button class="btn btn-primary col-md-4" name="submit" type="submit" id="contact-submit" data-submit="...Sending">ارسال</button>
+                                <button style="font-family: webmdesign;" class="btn btn-primary col-md-4" name="submit" type="submit" id="contact-submit" data-submit="...Sending">ارسال</button>
                             </fieldset>
                         </div>
 
@@ -180,23 +180,25 @@
                                 <td style="vertical-align: middle;" class="text-center">{{$workExperience->start_date}}</td>
                                 <td style="vertical-align: middle;" class="text-center">{{$workExperience->finish_date}}</td>
                                 <td style="vertical-align: middle;" class="text-center">
-                                    <a href="#" title="{{$workExperience->about}}">
+                                    {{--<a href="#" title="{{$workExperience->about}}">--}}
                                         <i style="color: #239963; font-size: 22px;" class="fa fa-check"></i>
-                                    </a>
+                                    {{--</a>--}}
                                 </td>
 
                                 <td style="border: none; text-align: center; width: 10px;">
                                     {{--<a href="{{route('work-experience.edit',$workExperience->id)}}">--}}
-                                    <button style="margin-top: 10px; width: 30px; height: 30px;" data-toggle="modal"
+                                    <button style="margin-top: 12px; width:30px; height: 30px;" data-toggle="modal" data-target="#myModal4"
                                             data-href="{{route('work-experience.edit',$workExperience->id)}}"
-                                            data-target="#myModal2" class="btn btn-warning edit"><i style="margin-right: -4px;"
-                                                                                                    class="fa fa-paint-brush" aria-hidden="true"></i></button>
+                                             class="btn btn-warning edit md-trigger">
+                                        <i style="margin-right: -5px; position: relative; top: -2px;" class="fa fa-paint-brush" aria-hidden="true">
+                                        </i>
+                                    </button>
                                     {{--</a>--}}
                                     <form action="{{ route('work-experience.destroy',$workExperience->id) }}" method="POST">
                                         {{ method_field('DELETE') }}
                                         {{ csrf_field() }}
                                         <button style="margin-top: 0px;  width: 30px; height: 30px;"
-                                                class="btn btn-danger"><i style="margin-right: -3px;" class="fa fa-trash"
+                                                class="btn btn-danger"><i style="margin-right: -4px; position: relative; top: -2px;" class="fa fa-trash"
                                                                           aria-hidden="true"></i></button>
                                     </form>
                                 </td>
@@ -274,11 +276,20 @@
     {{--</div>--}}
 
 
+    {{--<div class="md-modal md-effect-13" id="modal-13">--}}
+        {{--<div class="md-content">--}}
+            {{--<h3>Modal Dialog</h3>--}}
+        {{--</div>--}}
+    {{--</div>--}}
 
-    <div class="modal inmodal" id="myModal2" tabindex="-1" role="dialog"
+    {{--<div class="container">--}}
+
+    {{--</div>--}}
+    {{--<div class="md-overlay"></div>--}}
+    <div class="modal inmodal" id="myModal4" tabindex="-1" role="dialog"
          aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content animated flipInY">
+            <div class="modal-content animated fadeIn">
                 <div class="modal-header">
                     <button type="button" class="close"
                             data-dismiss="modal"><span aria-hidden="true">&times;</span><span
@@ -288,14 +299,16 @@
                         داده میشود
                     </small>
                 </div>
-                <div style="background-color: #fff !important; height:auto;" class="modal-body">
+                <div style="background-color: #fff !important; height: 470px;" class="modal-body col-md-12">
                     <div class="container">
 
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
+
     @include('admin.layouts.success')
     @include('admin.layouts.errors')
 @endsection

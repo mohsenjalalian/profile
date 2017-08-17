@@ -29,8 +29,9 @@
                         <form id="contact" action="{{route('work-sample.store')}}" method="post"
                               enctype="multipart/form-data">
                             {{csrf_field()}}
-                            <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
+                            <div style="margin-top: -20px;" class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
                                 <div class="col-sm-10 col-md-12">
+                                    <label>نام</label>
                                     <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="نام"
                                            value="{{ Request::old('name') ?  : ''}}" class="form-control m-b"
                                            name="name"
@@ -40,11 +41,10 @@
                                     @endif
                                 </div>
                             </div>
-
                             @if(count($categories) > 0)
-                                <p>دسته بندی</p>
+                                <p style="position: relative; top: 10px; right: 15px;">دسته بندی</p>
                                 <div class="form-group{{ $errors->has('category_id[]') ? ' has-error': ''}}">
-                                    <div style="margin-top: -10px;" class="ibox float-e-margins">
+                                    <div style="margin-top: -10px; margin-right: 15px; width: 280px;" class="ibox float-e-margins">
                                             <div class="form-group">
                                                 <label class="font-noraml text-center"></label>
                                                 <div>
@@ -69,9 +69,9 @@
 
 
                             @if(count($skills) > 0)
-                                <p>مهارت ها</p>
+                                <p style="position: relative; top: 2px; right: 15px;">مهارت ها</p>
                                 <div class="form-group{{ $errors->has('skill_id[]') ? ' has-error': ''}}">
-                                    <div style="margin-top: -10px;" class="ibox float-e-margins">
+                                    <div style="margin-top: -15px; margin-right: 15px; width: 280px; " class="ibox float-e-margins">
 
                                             <div class="form-group">
                                                 <label class="font-noraml text-center"></label>
@@ -97,7 +97,7 @@
 
 
                             <div class="row">
-                                <div style="margin-top: 20px;" class="col-md-6">
+                                <div style="margin-top: 3px; margin-right: 15px;" class="col-md-6">
                                     <div class="ibox float-e-margins">
                                         <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
                                             <div class="fileinput fileinput-new" data-provides="fileinput">
@@ -117,7 +117,7 @@
                             </div>
 
 
-                            <button class="btn btn-primary col-md-4" name="submit" type="submit" id="contact-submit"
+                            <button style="font-family: webmdesign; margin-top: -20px; margin-right: 15px;" class="btn btn-primary col-md-4" name="submit" type="submit" id="contact-submit"
                                     data-submit="...Sending">ارسال
                             </button>
 
@@ -168,10 +168,10 @@
 
 
                                     <td style="border: none;">
-                                        <button style="margin-top: 12px; width:30px; height: 30px;" data-toggle="modal"
+                                        <button style="margin-top: 12px; margin-right: 10px; width:30px; height: 30px;" data-toggle="modal" data-target="#myModal4"
                                                 data-href="{{ route('work-sample.edit', $workSample->id) }}"
-                                                data-target="#myModal2" class="btn btn-warning edit">
-                                            <i style="margin-right: -3px;" class="fa fa-paint-brush" aria-hidden="true">
+                                                class="btn btn-warning edit md-trigger">
+                                            <i style="margin-right: -5px; position: relative; top: -2px;" class="fa fa-paint-brush" aria-hidden="true">
                                             </i>
                                         </button>
 
@@ -180,11 +180,9 @@
                                             {{ method_field('DELETE') }}
                                             {{ csrf_field() }}
 
-                                            <button style="margin-top: 3px; width: 30px; height: 30px"
-                                                    class="btn btn-danger"><i style="margin-right: -3px"
-                                                                              class="fa fa-trash"
-                                                                              aria-hidden="true"></i>
-                                            </button>
+                                            <button style=" margin-top: 1px; margin-right: 10px; width: 30px; height: 30px"
+                                                    class="btn btn-danger"><i style="margin-right: -4px; position: relative; top: -2px;" class="fa fa-trash"
+                                                                              aria-hidden="true"></i></button>
 
                                         </form>
                                     </td>
@@ -288,10 +286,10 @@
             {{--</section>--}}
 
         {{--</div>--}}
-    <div class="modal inmodal" id="myModal2" tabindex="-1" role="dialog"
+    <div class="modal inmodal" id="myModal4" tabindex="-1" role="dialog"
          aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content animated flipInY">
+            <div class="modal-content animated fadeIn">
                 <div class="modal-header">
                     <button type="button" class="close"
                             data-dismiss="modal"><span aria-hidden="true">&times;</span><span
@@ -301,7 +299,7 @@
                         داده میشود
                     </small>
                 </div>
-                <div style="background-color: #fff !important; height: 470px;" class="modal-body">
+                <div style="background-color: #fff !important; height: 470px;" class="modal-body col-md-12">
                     <div class="container">
 
                     </div>
@@ -310,6 +308,7 @@
             </div>
         </div>
     </div>
+
 
     @include('admin.layouts.success')
     @include('admin.layouts.errors')

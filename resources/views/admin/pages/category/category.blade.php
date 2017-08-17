@@ -70,7 +70,7 @@
 
 
                             <fieldset class="col-md-12">
-                                <button class="btn btn-primary col-md-4" name="submit" type="submit" id="contact-submit" data-submit="...Sending">ارسال</button>
+                                <button style="font-family: webmdesign;" class="btn btn-primary col-md-4" name="submit" type="submit" id="contact-submit" data-submit="...Sending">ارسال</button>
                             </fieldset>
 
                         </form>
@@ -97,16 +97,21 @@
                                     <td style="padding-top: 22px;" class="text-center">{{$category->name}}</td>
 
                                     <td style="display: flex;">
-                                        <button style="margin-top: 12px; width:30px; height: 30px;" data-toggle="modal" data-href="{{ route('category.edit', $category->id) }}"
-                                                data-target="#myModal2" class="btn btn-warning edit">
-                                            <i style="margin-right: -3px;" class="fa fa-paint-brush" aria-hidden="true"></i></button>
+                                        <button style="margin-top: 12px; width:30px; height: 30px;" data-toggle="modal" data-target="#myModal4"
+                                                data-href="{{ route('category.edit', $category->id) }}"
+                                                class="btn btn-warning edit md-trigger">
+                                            <i style="margin-right: -5px; position: relative; top: -2px;" class="fa fa-paint-brush" aria-hidden="true">
+                                            </i>
+                                        </button>
 
                                         <p class="text-center">
                                         <form action="{{ route('category.destroy', $category->id) }}" method="POST">
                                             {{ method_field('DELETE') }}
                                             {{ csrf_field() }}
 
-                                            <button style="margin-right: 20px; margin-top: 12px; width: 30px; height: 30px;" class="btn btn-danger text-center"><i style="margin-right: -3px;" class="fa fa-trash" aria-hidden="true"></i></button>
+                                            <button style=" margin-top: 12px; margin-right: 10px; width: 30px; height: 30px"
+                                                    class="btn btn-danger"><i style="margin-right: -4px; position: relative; top: -2px;" class="fa fa-trash"
+                                                                              aria-hidden="true"></i></button>
 
                                         </form>
                                     </td>
@@ -175,28 +180,29 @@
             {{--</div>--}}
         {{--</div>--}}
     {{--</div>--}}
-    <div class="modal inmodal" id="myModal2" tabindex="-1" role="dialog"
-         aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content animated flipInY">
-                <div class="modal-header">
-                    <button type="button" class="close"
-                            data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                                class="sr-only">Close</span></button>
-                    <h4 class="modal-title">ویرایش فرم</h4>
-                    <small class="font-bold">این فرم در صفحه اصلی شما نشان
-                        داده میشود
-                    </small>
-                </div>
-                <div style="background-color: #fff !important; height:auto" class="modal-body">
-                    <div class="container">
 
+        <div class="modal inmodal" id="myModal4" tabindex="-1" role="dialog"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content animated fadeIn">
+                    <div class="modal-header">
+                        <button type="button" class="close"
+                                data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                                    class="sr-only">Close</span></button>
+                        <h4 class="modal-title">ویرایش فرم</h4>
+                        <small class="font-bold">این فرم در صفحه اصلی شما نشان
+                            داده میشود
+                        </small>
                     </div>
-                </div>
+                    <div style="background-color: #fff !important; height: 270px;" class="modal-body col-md-12">
+                        <div class="container">
 
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
-    </div>
 
     @include('admin.layouts.success')
     @include('admin.layouts.errors')

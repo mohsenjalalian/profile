@@ -195,7 +195,7 @@
 
                                             <input type="file" name="photo" value="{{Request::file('photo')  ?: ''}}"
                                                    onchange="readURL1(this)"></span>
-
+                                                <p style="font-size: 10px;" class="text-center colorpicker">۲۰۰ * ۳۷۰</p>
                                             </div>
                                             @if($errors->has('photo'))
                                                 <span class="help-block">{{ $errors->first('photo')}}</span>
@@ -225,11 +225,13 @@
                                     <div class="ibox float-e-margins">
                                         <div class="form-group{{ $errors->has('cover') ? ' has-error': ''}}">
                                             <div class="fileinput fileinput-new" data-provides="fileinput">
-                                        <span class="btn btn-default btn-file"><span class="fileinput-new"> بارگذاری کاور</span><span
+                                        <span class="btn btn-default btn-file"><span class="fileinput-new"> بارگذاری کاور</span>
+                                            <span
                                                     class="fileinput-exists"><span class="fileinput-exists"><span
                                                             style="color: #2aca76;">بارگذاری شد</span></span> </span>
                                             <input value="{{ Request::old('cover') ?: ''}}" type="file" name="cover"
                                                    onchange="readURL2(this)"></span>
+                                                <p style="font-size: 10px;" class="-warning text-center">۴۸۰ * ۱۰۰٪</p>
                                                 {{--<span class="fileinput-filename"></span>--}}
                                                 {{--<a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>--}}
                                             </div>

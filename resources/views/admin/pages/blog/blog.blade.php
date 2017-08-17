@@ -88,6 +88,7 @@
                                                             style="color: #2aca76;">بارگذاری شد</span></span> </span>
                                             <input type="file" name="photo[]"
                                                    value="{{ Request::old('photo1') ?: ''}}" onchange="readURL1(this)"></span>
+                                        <p style="font-size: 10px;" class="text-center colorpicker">۲۰۰ * ۳۷۰</p>
                                     </div>
                                     @if($errors->has('photo1'))
                                         <span class="help-block">{{ $errors->first('photo1')}}</span>
@@ -107,6 +108,7 @@
                                                             style="color: #2aca76;">بارگذاری شد</span></span> </span>
                                             <input type="file" name="photo[]"
                                                    value="{{ Request::old('photo2') ?: ''}}" onchange="readURL2(this)"></span>
+                                        <p style="font-size: 10px;" class="text-center colorpicker">۲۰۰ * ۳۷۰</p>
                                     </div>
                                     @if($errors->has('photo2'))
                                         <span class="help-block">{{ $errors->first('photo2')}}</span>
@@ -124,7 +126,9 @@
                                                     class="fileinput-exists"><span class="fileinput-exists"><span
                                                             style="color: #2aca76;">بارگذاری شد</span></span> </span>
                                             <input type="file" name="photo[]"
-                                                   value="{{ Request::old('photo3') ?: ''}}" onchange="readURL3(this)"></span>
+                                                   value="{{ Request::old('photo3') ?: ''}}" onchange="readURL3(this)">
+                                        </span>
+                                        <p style="font-size: 10px;" class="text-center colorpicker">۲۰۰ * ۳۷۰</p>
                                     </div>
                                     @if($errors->has('photo3'))
                                         <span class="help-block">{{ $errors->first('photo3')}}</span>
@@ -134,7 +138,7 @@
                         </div>
 
 
-                        <button class="btn btn-primary col-md-3" name="submit" type="submit" id="contact-submit"
+                        <button style="font-family: webmdesign;" class="btn btn-primary col-md-3" name="submit" type="submit" id="contact-submit"
                                 data-submit="...Sending">ارسال
                         </button>
 
@@ -176,18 +180,18 @@
                                 <td style="vertical-align: middle;" class="text-center">{{$blog->date}}</td>
                                 <td style="vertical-align: middle;"
                                     class="text-center">
-                                    <a href="#" title="{{$blog->description}}">
+                                    {{--<a href="#" title="{{$blog->description}}">--}}
                                         <i style="color: #239963; font-size: 22px;" class="fa fa-check"></i>
-                                    </a>
+                                    {{--</a>--}}
                                 </td>
 
                                 <td style="display: flex; border: none;">
                                     {{--<a href="{{route('recommend.edit',$recommend->id)}}" class="edit">--}}
-                                    <button style="margin-top: 12px; width:30px; height: 30px;"
-                                            data-toggle="modal" data-href="{{route('blog.edit',$blog->id)}}"
-                                            data-target="#myModal2" class="btn btn-warning edit">
-                                        <i style="margin-right: -3px;" class="fa fa-paint-brush"
-                                           aria-hidden="true">
+
+                                    <button style="margin-top: 12px; width:30px; height: 30px;" data-toggle="modal" data-target="#myModal4"
+                                            data-href="{{route('blog.edit',$blog->id)}}"
+                                            class="btn btn-warning edit md-trigger">
+                                        <i style="margin-right: -5px; position: relative; top: -2px;" class="fa fa-paint-brush" aria-hidden="true">
                                         </i>
                                     </button>
                                     {{--</a>--}}
@@ -196,9 +200,8 @@
                                         {{ method_field('DELETE') }}
                                         {{ csrf_field() }}
 
-                                        <button style="margin-right: 10px; margin-top: 12px; width: 30px; height: 30px"
-                                                class="btn btn-danger"><i style="margin-right: -3px"
-                                                                          class="fa fa-trash"
+                                        <button style=" margin-top: 12px; margin-right: 10px; width: 30px; height: 30px"
+                                                class="btn btn-danger"><i style="margin-right: -4px; position: relative; top: -2px;" class="fa fa-trash"
                                                                           aria-hidden="true"></i></button>
 
                                     </form>
@@ -219,82 +222,10 @@
             </div>
         </div>
     </div>
-
-    {{--<div class="wrapper wrapper-content animated fadeInRight col-md-8">--}}
-    {{--<div class="row">--}}
-    {{--<div style="margin-top: 0px;">--}}
-    {{--<div class="ibox float-e-margins">--}}
-
-    {{--<div class="ibox-content">--}}
-
-    {{--<div class="table-responsive">--}}
-    {{--<table class="table table-striped table-bordered table-hover dataTables-example">--}}
-    {{--<thead>--}}
-    {{--<tr>--}}
-    {{--<th class="text-center">عکس 1</th>--}}
-    {{--<th class="text-center">عکس 2</th>--}}
-    {{--<th class="text-center">عکس 3</th>--}}
-    {{--<th class="text-center">تیتر</th>--}}
-    {{--<th class="text-center">تاریخ</th>--}}
-    {{--<th class="text-center">توضیحات</th>--}}
-    {{--<th style="width: 20px;" class="text-center">تغییرات</th>--}}
-    {{--</tr>--}}
-    {{--</thead>--}}
-    {{--<tbody>--}}
-    {{--@foreach($blogs as $blog)--}}
-
-    {{--<tr>--}}
-    {{--@foreach($blog->album as $album)--}}
-    {{--<td><img width="50" height="50"--}}
-    {{--src="{{\App\Http\Controllers\BlogController::ALBUM_PATH.'/'.$album->photo}}"--}}
-    {{--alt="{{$album->photo}}"></td>--}}
-    {{--@endforeach--}}
-    {{--<td style=" vertical-align: middle;"--}}
-    {{--class="text-center">{{$blog->title}}</td>--}}
-    {{--<td style="vertical-align: middle;" class="text-center">{{$blog->date}}</td>--}}
-    {{--<td style="vertical-align: middle;"--}}
-    {{--class="text-center">{{$blog->description}}</td>--}}
-
-    {{--<td style="display: flex; border: none;">--}}
-    {{--<a href="{{route('recommend.edit',$recommend->id)}}" class="edit">--}}
-    {{--<button style="margin-top: 12px; width:30px; height: 30px;"--}}
-    {{--data-toggle="modal" data-href="{{route('blog.edit',$blog->id)}}"--}}
-    {{--data-target="#myModal2" class="btn btn-warning edit">--}}
-    {{--<i style="margin-right: -3px;" class="fa fa-paint-brush"--}}
-    {{--aria-hidden="true">--}}
-    {{--</i>--}}
-    {{--</button>--}}
-    {{--</a>--}}
-    {{--<form action="{{ route('blog.destroy', $blog->id) }}"--}}
-    {{--method="POST">--}}
-    {{--{{ method_field('DELETE') }}--}}
-    {{--{{ csrf_field() }}--}}
-
-    {{--<button style="margin-right: 10px; margin-top: 12px; width: 30px; height: 30px"--}}
-    {{--class="btn btn-danger"><i style="margin-right: -3px"--}}
-    {{--class="fa fa-trash"--}}
-    {{--aria-hidden="true"></i></button>--}}
-
-    {{--</form>--}}
-    {{--</td>--}}
-    {{--</tr>--}}
-
-    {{--@endforeach--}}
-
-    {{--</tbody>--}}
-
-    {{--</table>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    <div class="modal inmodal" id="myModal2" tabindex="-1" role="dialog"
+    <div class="modal inmodal" id="myModal4" tabindex="-1" role="dialog"
          aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content animated flipInY">
+            <div class="modal-content animated fadeIn">
                 <div class="modal-header">
                     <button type="button" class="close"
                             data-dismiss="modal"><span aria-hidden="true">&times;</span><span
@@ -304,7 +235,7 @@
                         داده میشود
                     </small>
                 </div>
-                <div style="background-color: #fff !important; height: auto;" class="modal-body">
+                <div style="background-color: #fff !important; height: 470px;" class="modal-body col-md-12">
                     <div class="container">
 
                     </div>
@@ -313,6 +244,8 @@
             </div>
         </div>
     </div>
+
+
 
     @include('admin.layouts.success')
     @include('admin.layouts.errors')

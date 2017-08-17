@@ -3,7 +3,6 @@
 
 
 @section('content')
-
         <div class="content-wrapper clearfix">
         <div class="row wrapper border-bottom white-bg page-heading">
             <div class="col-lg-10">
@@ -83,7 +82,7 @@
                                 </div>
                             </div>
                             <fieldset>
-                                <button class="btn btn-primary col-md-12" name="submit" type="submit" id="contact-submit"
+                                <button style="font-family: webmdesign" class="btn btn-primary col-md-12" name="submit" type="submit" id="contact-submit"
                                         data-submit="...Sending">ارسال
                                 </button>
                             </fieldset>
@@ -112,7 +111,6 @@
                 </thead>
                 <tbody>
                 @foreach($recommends as $recommend)
-
                     <tr>
                         <td style="vertical-align: middle; width: 50px;" class="text-center">
                             {{--<i style="font-size: 25px; color: #239963;" class="fa fa-check"></i>--}}
@@ -128,37 +126,38 @@
                             {{--<i style="color: #239963; font-size: 25px;" class="fa fa-check"></i>--}}
                             {{$recommend->company}}
                         </td>
+
                         <td style="text-align: center; vertical-align: middle; width: 30px">
-                                <i data-toggle="tooltip" data-placement="left" title="{{$recommend->info}}" style="color: #239963; font-size: 22px;" class="fa fa-check"></i>
+                            <i style="color: #239963; font-size: 22px;" class="fa fa-check"></i>
+                                {{--<span class="tooltiptext text-justify">{{$recommend->info}}</span>--}}
                         </td>
-
                         <td style="border: none; display: flex; width: 20px;">
-
-                            <a style="margin-top: 12px; width:30px; height: 30px;"
-                                    data-href="{{route('recommend.edit',$recommend->id)}}"
-                                    class="btn btn-warning edit md-trigger">
-                                <i style="margin-right: -3px;" class="fa fa-paint-brush" aria-hidden="true">
-                                </i>
-                            </a>
-                            {{--<a href="{{route('recommend.edit',$recommend->id)}}" class="edit">--}}
-                            {{--<button style="margin-top: 12px; width:30px; height: 30px;" data-toggle="modal"--}}
+                            {{--<a style="margin-top: 12px; width:30px; height: 30px;" data-modal="modal-13" data-target="modal-13"--}}
                                     {{--data-href="{{route('recommend.edit',$recommend->id)}}"--}}
-                                    {{--data-target="#myModal2" class="btn btn-warning edit">--}}
+                                    {{--class="btn btn-warning edit md-trigger">--}}
                                 {{--<i style="margin-right: -3px;" class="fa fa-paint-brush" aria-hidden="true">--}}
                                 {{--</i>--}}
-                            {{--</button>--}}
-
+                            {{--</a>--}}
+                            {{--<a href="{{route('recommend.edit',$recommend->id)}}" class="edit">--}}
+                                <button style="margin-top: 12px; width:30px; height: 30px;" data-toggle="modal" data-target="#myModal4"
+                                        data-href="{{route('recommend.edit',$recommend->id)}}"
+                                       class="btn btn-warning edit md-trigger">
+                                    <i style="margin-right: -5px; position: relative; top: -2px;" class="fa fa-paint-brush" aria-hidden="true">
+                                    </i>
+                                </button>
                             {{--</a>--}}
                             <form action="{{ route('recommend.destroy', $recommend->id) }}"
                                   method="POST">
                                 {{ method_field('DELETE') }}
                                 {{ csrf_field() }}
-
-                                <button style=" margin-top: 12px; margin-right: 10px; width: 30px; height: 30px"
-                                        class="btn btn-danger"><i style="margin-right: -3px" class="fa fa-trash"
-                                                                  aria-hidden="true"></i></button>
-
+                                    {{--<div class="col-lg-6 h-100 p-lg">--}}
+                                        {{--<button class="btn btn-warning btn-sm demo3">Run example</button>--}}
+                                    {{--</div>--}}
                             </form>
+
+                            <button style=" margin-top: 12px; margin-right: 10px; width: 30px; height: 30px"
+                                    class="btn btn-danger demo3"><i style="margin-right: -4px; position: relative; top: -2px;" class="fa fa-trash"
+                                                                    aria-hidden="true"></i></button>
                         </td>
                     </tr>
 
@@ -176,7 +175,6 @@
     </div>
     </div>
     </div>
-
         {{--<div class="wrapper wrapper-content animated fadeInRight col-md-8">--}}
             {{--<div class="row">--}}
                 {{--<div style="margin-top: 0px;">--}}
@@ -243,53 +241,69 @@
 
 
 
-    {{--<div class="modal inmodal" id="myModal2" tabindex="-1" role="dialog"--}}
-         {{--aria-hidden="true">--}}
-        {{--<div class="modal-dialog">--}}
-            {{--<div class="modal-content animated flipInY">--}}
-                {{--<div class="modal-header">--}}
-                    {{--<button type="button" class="close"--}}
-                            {{--data-dismiss="modal"><span aria-hidden="true">&times;</span><span--}}
-                                {{--class="sr-only">Close</span></button>--}}
-                    {{--<h4 class="modal-title">ویرایش فرم</h4>--}}
-                    {{--<small class="font-bold">این فرم در صفحه اصلی شما نشان--}}
-                        {{--داده میشود--}}
-                    {{--</small>--}}
-                {{--</div>--}}
-                {{--<div style="background-color: #fff !important; height: 470px;" class="modal-body col-md-12">--}}
-                    {{--<div class="container">--}}
+    <div class="modal inmodal" id="myModal4" tabindex="-1" role="dialog"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close"
+                            data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                                class="sr-only">Close</span></button>
+                    <h4 class="modal-title">ویرایش فرم</h4>
+                    <small class="font-bold">این فرم در صفحه اصلی شما نشان
+                        داده میشود
+                    </small>
+                </div>
+                <div style="background-color: #fff !important; height: 470px;" class="modal-body col-md-12">
+                    <div class="container">
 
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+        {{--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal4">--}}
+            {{--Basic fadeIn effect--}}
+        {{--</button>--}}
+        {{--<div class="modal inmodal" id="myModal4" tabindex="-1" role="dialog"  aria-hidden="true">--}}
+            {{--<div class="modal-dialog">--}}
+                {{--<div class="modal-content animated fadeIn">--}}
+                    {{--<div class="modal-header">--}}
+                        {{--<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>--}}
+                        {{--<i class="fa fa-clock-o modal-icon"></i>--}}
+                        {{--<h4 class="modal-title">Modal title</h4>--}}
+                        {{--<small>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>--}}
+                    {{--</div>--}}
+                    {{--<div class="modal-body">--}}
+                        {{--<p><strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown--}}
+                            {{--printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,--}}
+                            {{--remaining essentially unchanged.</p>--}}
+                    {{--</div>--}}
+                    {{--<div class="modal-footer">--}}
+                        {{--<button type="button" class="btn btn-white" data-dismiss="modal">Close</button>--}}
+                        {{--<button type="button" class="btn btn-primary">Save changes</button>--}}
                     {{--</div>--}}
                 {{--</div>--}}
-
             {{--</div>--}}
         {{--</div>--}}
-    {{--</div>--}}
 
-        <div class="md-modal md-effect-13" id="modal-13">
-            <div class="md-content">
-                <h3>Modal Dialog</h3>
+        {{--</div>--}}
 
-            </div>
-        </div>
-        <div class="container">
-            <div >
+        {{--<div class="md-modal md-effect-13" id="modal-13">--}}
+            {{--<div class="md-content">--}}
+                {{--<h3>Modal Dialog</h3>--}}
+            {{--</div>--}}
+        {{--</div>--}}
 
-            </div>
-        </div>
-        <div class="md-overlay"></div>
-        </div>
-        </div>
+        {{--<div class="container">--}}
+
+        {{--</div>--}}
+        {{--<div class="md-overlay"></div>--}}
+
+
+
+
     @include('admin.layouts.success')
     @include('admin.layouts.errors')
-@endsection
-
-
-@section('scripts')
-    $('button.edit').click(function(e){
-    e.preventDefault();
-    $.get($(this).attr('data-href'),function(data){
-    $('#myModal2').find('.modal-body').html(data);
-    })
-    });
 @endsection

@@ -66,7 +66,7 @@
                                 </div>
                             </div>
                             <fieldset>
-                                <button class="btn btn-primary col-md-4" name="submit" type="submit" id="contact-submit" data-submit="...Sending">ارسال</button>
+                                <button style="font-family: webmdesign;" class="btn btn-primary col-md-4" name="submit" type="submit" id="contact-submit" data-submit="...Sending">ارسال</button>
                             </fieldset>
                         </form>
                     </div>
@@ -97,9 +97,14 @@
                                     <td style="padding-top: 22px;" class="text-center">{{$skill->point}}</td>
 
                                     <td style="display: flex;">
-                                        <button style="margin-top: 10px; width: 30px; height: 30px;" data-toggle="modal" data-href="{{route('skills.edit',$skill->id)}}"
-                                                data-target="#myModal2" class="btn btn-warning edit"><i style="margin-right: -3px;"
-                                                                                                        class="fa fa-paint-brush" aria-hidden="true"></i></button>
+                                        <button style="margin-top: 12px; width:30px; height: 30px;" data-toggle="modal" data-target="#myModal4"
+                                              data-href="{{route('skills.edit',$skill->id)}}"
+                                                 class="btn btn-warning edit md-trigger">
+                                            <i style="margin-right: -5px; position: relative; top: -2px;" class="fa fa-paint-brush" aria-hidden="true">
+                                            </i>
+                                        </button>
+
+
 
 
                     </div>
@@ -107,8 +112,8 @@
                 <form action="{{ route('skills.destroy', $skill->id) }}" method="POST">
                     {{ method_field('DELETE') }}
                     {{ csrf_field() }}
-                    <button style="margin-right: 10px; margin-top: 10px; width: 30px; height: 30px;"
-                            class="btn btn-danger"><i style="margin-right: -3px;" class="fa fa-trash"
+                    <button style=" margin-top: 12px; margin-right: 10px; width: 30px; height: 30px"
+                            class="btn btn-danger"><i style="margin-right: -4px; position: relative; top: -2px;" class="fa fa-trash"
                                                       aria-hidden="true"></i></button>
 
                 </form>
@@ -188,10 +193,11 @@
         {{--</div>--}}
     {{--</div>--}}
 
-    <div class="modal inmodal" id="myModal2" tabindex="-1" role="dialog"
+
+    <div class="modal inmodal" id="myModal4" tabindex="-1" role="dialog"
          aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content animated flipInY">
+            <div class="modal-content animated fadeIn">
                 <div class="modal-header">
                     <button type="button" class="close"
                             data-dismiss="modal"><span aria-hidden="true">&times;</span><span
@@ -201,7 +207,7 @@
                         داده میشود
                     </small>
                 </div>
-                <div style="background-color: #fff !important; height:auto;" class="modal-body">
+                <div style="background-color: #fff !important; height: 300px;" class="modal-body col-md-12">
                     <div class="container">
 
                     </div>
