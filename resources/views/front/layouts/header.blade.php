@@ -1,7 +1,7 @@
 <!--menu mobile-->
 <div style="direction:rtl;" class="container hidden-md hidden-lg">
     <div class="main">
-        <nav style="direction:rtl;" id="menu3" class="menu3"
+        <nav style="direction:rtl;" id="menu3" class="menu3">
             <div class="morph-shape"
                  data-morph-open="M260,500H0c0,0,8-120,8-250C8,110,0,0,0,0h260c0,0-8,110-8,250C252,380,260,500,260,500z">
                 <svg width="100%" height="100%" viewBox="0 0 260 500" preserveAspectRatio="none">
@@ -37,7 +37,7 @@
 
 <!--home-->
 @foreach($profiles as $profile)
-<img src="{{$profile->cover}}" height="480px" width="100%" alt="cover">
+<img class="cover-img" src="{{$profile->cover}}" height="480px" width="100%" alt="cover">
 @endforeach
 <main id="home11" class="container-fluid background">
     <div class="box-social1 pull-left"><a href="#"><i class="fa fa-language" aria-hidden="true"></i></a>

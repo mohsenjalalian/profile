@@ -2676,7 +2676,10 @@ figure.effect-ming:hover img {
     .test3 {
         width: 310px;
     }
-
+.btn-form {
+    position: relative;
+    top: -50px;
+}
     .text-book {
         position: relative;
         right: -200px;
@@ -2790,5 +2793,8 @@ figure.effect-ming:hover img {
     .img-fo {
         margin-top: 0px;
         margin-right: 0px;
+    }
+    .cover-img{
+        height: 800px;
     }
 }
