@@ -9,7 +9,7 @@
         {{--<hr/>--}}
         {{--<button type="submit" class="btn">Submit</button>--}}
     {{--</form>--}}
-    <!-- Content Wrapper. Contains page content -->
+    {{--<!-- Content Wrapper. Contains page content -->--}}
     <div class="content-wrapper">
 
         <div class="container">
@@ -28,14 +28,14 @@
                         <span class="help-block">{{ $errors->first('email')}}</span>
                     @endif
                 </div>
-                {{--<div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">--}}
-                    {{--<a class="btn btn-large" data-edit="bold"><i class="icon-bold"></i></a>--}}
-                {{--</div>--}}
-                {{--<a data-edit="fontName Arial">...</a>--}}
-                {{--<input type="text" data-edit="createLink">--}}
-                {{--<input type="file" data-edit="insertImage">--}}
+                <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
+                    <a class="btn btn-large" data-edit="bold"><i class="icon-bold"></i></a>
+                </div>
+                <a data-edit="fontName Arial">...</a>
+                <input type="text" data-edit="createLink">
+                <input type="file" data-edit="insertImage">
 
-                {{--<textarea style="direction: rtl !important;" class="col-md-8"></textarea>--}}
+                <textarea style="direction: rtl !important;" class="col-md-8"></textarea>
 
                 <div class="form-group{{ $errors->has('answer') ? ' has-error': ''}}">
                     <fieldset >
@@ -45,9 +45,8 @@
                         <span class="help-block">{{ $errors->first('answer')}}</span>
                     @endif
                 </div>
-
                 <fieldset>
-                    <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">ارسال</button>
+                    <button style="font-family: webmdesign;" name="submit" type="submit" id="contact-submit" data-submit="...Sending">ارسال</button>
                 </fieldset>
 
             </form>

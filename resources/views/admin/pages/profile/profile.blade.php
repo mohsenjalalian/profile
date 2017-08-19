@@ -242,7 +242,7 @@
                                     </div>
                                 </div>
 
-                                <button class="btn btn-primary col-md-4" name="submit" type="submit" id="contact-submit"
+                                <button style="font-family: webmdesign;" class="btn btn-primary col-md-4" name="submit" type="submit" id="contact-submit"
                                         data-submit="...Sending">
                                     ارسال
                                 </button>
@@ -478,7 +478,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button style="margin-top: 20px; position: relative; right: -315px; float: right !important;" class="btn btn-primary col-md-4" name="submit" type="submit"
+                                    <button style="margin-top: 20px; font-family: webmdesign; position: relative; right: -315px; float: right !important;" class="btn btn-primary col-md-4" name="submit" type="submit"
                                             id="contact-submit"
                                             data-submit="...Sending">
                                         اصلاح

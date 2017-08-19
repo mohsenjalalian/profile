@@ -43,7 +43,7 @@
                 </div>
                 </div>
                 <div class="row">
-                <div style="margin-top: -10px;" class="col-md-3">
+                <div style="margin-top: -10px;" class="col-md-2">
                 <div class="form-group{{ $errors->has('company') ? ' has-error': ''}}">
                     <label>شرکت</label>
                     <fieldset>
@@ -56,27 +56,54 @@
                     @endif
                 </div>
                 </div>
-                <div style="margin-top: 5px;" class="col-md-6">
-                    <div class="ibox float-e-margins">
-                        <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
-                            @if(isset($recommend->photo))
-                                <img style="position: relative;" width="50" height="50" src="{{asset($recommend->photo)}}">
-                            @else
-                                <h4>شما هیچ عکسی آپلود نکرده اید</h4>
-                            @endif
-                            <div class="fileinput fileinput-new" data-provides="fileinput">
-                                        <span class="btn btn-default btn-file"><span
-                                                    class="fileinput-new">بارگذاری عکس جدید</span><span class="fileinput-exists"><span
-                                                        style="color: #2aca76;">بارگذاری شد</span></span>
-                                            <input type="file" value="{{$recommend->photo}}" name="photo"></span>
+                    <div style="position: absolute; top: 73px; right: 255px;" class="col-md-5">
+                            <div class="ibox float-e-margins">
+                                <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
+                                    @if(isset($recommend->photo))
+                                        <img style="position: relative; top: 40px; right: -48px;" width="50" height="50" src="{{asset($recommend->photo)}}">
+                                    @else
+                                        <h4>شما هیچ عکسی آپلود نکرده اید</h4>
+                                    @endif
+                                    <div style="width: 280px; margin-right: 15px;" class="fileinput fileinput-new input-group" data-provides="fileinput">
+                                        <div class="form-control" data-trigger="fileinput">
+                                            <p class="fileinput-exists" style="color: #2aca76;">بارگذاری شد</p>
+                                        </div>
+                                        <span style="border: 1px solid #e5e6e7;" class="input-group-addon btn btn-default btn-file">
+                                                    <span class="fileinput-new">بارگذاری</span>
+                                                    <span class="fileinput-exists">عوض کردن</span>
+                                                    <input type="file"  value="{{$recommend->photo}}" name="photo">
+                                                </span>
+                                        <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">پاک کردن</a>
+                                    </div>
+                                        @if($errors->has('photo'))
+                                            <span class="help-block">{{ $errors->first('photo')}}</span>
+                                        @endif
+                                </div>
                             </div>
-                            @if($errors->has('photo'))
-                                <span class="help-block">{{ $errors->first('photo')}}</span>
-                            @endif
                         </div>
-                    </div>
                 </div>
-                </div>
+
+                {{--<div style="margin-top: 5px;" class="col-md-6">--}}
+                    {{--<div class="ibox float-e-margins">--}}
+                        {{--<div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">--}}
+                            {{--@if(isset($recommend->photo))--}}
+                                {{--<img style="position: relative;" width="50" height="50" src="{{asset($recommend->photo)}}">--}}
+                            {{--@else--}}
+                                {{--<h4>شما هیچ عکسی آپلود نکرده اید</h4>--}}
+                            {{--@endif--}}
+                            {{--<div class="fileinput fileinput-new" data-provides="fileinput">--}}
+                                        {{--<span class="btn btn-default btn-file"><span--}}
+                                                    {{--class="fileinput-new">بارگذاری عکس جدید</span><span class="fileinput-exists"><span--}}
+                                                        {{--style="color: #2aca76;">بارگذاری شد</span></span>--}}
+                                            {{--<input type="file" value="{{$recommend->photo}}" name="photo"></span>--}}
+                            {{--</div>--}}
+                            {{--@if($errors->has('photo'))--}}
+                                {{--<span class="help-block">{{ $errors->first('photo')}}</span>--}}
+                            {{--@endif--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
                 <div class="row">
                     <div style="margin-top: -20px;" class="col-md-12">
                 <label>توضیحات</label>

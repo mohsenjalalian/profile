@@ -23,7 +23,7 @@
                     <fieldset class="col-md-12">
                         <textarea class="form-control m-b" name="message" rows="8" cols="80"  tabindex="1" disabled>{{$message->message}}</textarea>
                     </fieldset>
-                    <a href="{{route('message.edit',$message->id)}}"> <button class="btn btn-primary col-md-2" name="submit" type="submit" id="contact-submit"
+                    <a href="{{route('message.edit',$message->id)}}"> <button style="font-family: webmdesign;" class="btn btn-primary col-md-2" name="submit" type="submit" id="contact-submit"
                             data-submit="...Sending">پاسخ
                     </button>
                     </a>

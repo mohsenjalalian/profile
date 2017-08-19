@@ -6107,9 +6107,7 @@ button.close {
   left: 0;
   z-index: 1060;
   display: none;
-  max-width: 300px;
-  padding: 1px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  max-width: 295px;
   font-size: 14px;
   font-style: normal;
   font-weight: normal;

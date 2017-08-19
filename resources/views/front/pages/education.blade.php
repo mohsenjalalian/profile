@@ -1,6 +1,6 @@
 <!--EDUCATION-->
 
-<main id="about3" class="container-fluid background-three">
+<main id="about3"  class="container-fluid background-three">
     <section class="container">
         <h2 class="text-ex">تحصیلات</h2>
         <aside class="col-xs-12 col-md-12">

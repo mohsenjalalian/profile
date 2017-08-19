@@ -315,8 +315,8 @@
                                 </div>
 
 
-                                <div class="col-md-6">
-                                    <button style="min-width: 200px" name="submit" type="submit" id="contact-submit"
+                                <div class="col-md-4">
+                                    <button style="min-width: 170px; font-family: webmdesign;" name="submit" type="submit" id="contact-submit"
                                             data-submit="...Sending" class="btn btn-primary">اصلاح
                                     </button>
                                 </div>
@@ -327,8 +327,8 @@
                                 {{ method_field('DELETE') }}
                                 {{ csrf_field() }}
                                 <div class="col-md-4">
-                                    <button style="margin-top: 5px; width: 30px; height: 31px; position: relative; right: -38px;"
-                                            class="btn btn-danger"><i style="margin-right: -4px; position: relative; top: -2px;" class="fa fa-trash"
+                                    <button style="margin-top: 4px; width: 30px; height: 33px; position: relative; right: 10px;"
+                                            class="btn btn-danger"><i style="margin-right: -4px; position: relative; top: -1px;" class="fa fa-trash"
                                                                       aria-hidden="true"></i></button>
                                 </div>
                             </form>
@@ -347,7 +347,7 @@
                         <td>
                             @foreach($socials as $social)
                                 @if($social->twitter)
-                                    <a style="color: #222222;" href="{{$social->twitter}}">
+                                    <a style="color: #222222;" href="{{$social->twitter}}" target="_blank">
                                         <button style="width: 40px !important;" type="button"
                                                 class="btn btn-info m-r-sm">
                                             <i style="font-size: 18px; margin-right: -2px; vertical-align: middle;"
@@ -368,7 +368,7 @@
                         <td>
                             @foreach($socials as $social)
                                 @if($social->instagram)
-                                    <a style="color: #222222;" href="{{$social->instagram}}">
+                                    <a style="color: #222222;" href="{{$social->instagram}}" target="_blank">
                                         <button style="width: 40px !important;" type="button"
                                                 class="btn btn-warning m-r-sm">
 
@@ -394,7 +394,7 @@
                         <td>
                             @foreach($socials as $social)
                                 @if($social->google_plus)
-                                <a style="color: #222222;" href="{{$social->google_plus}}">
+                                <a style="color: #222222;" href="{{$social->google_plus}}" target="_blank">
                                     <button style="width: 40px !important;" type="button" class="btn btn-danger m-r-sm">
                                         <i style="font-size: 18px; margin-right: -2px; vertical-align: middle"
                                            class="fa fa-google-plus"></i>
@@ -418,7 +418,7 @@
                         <td>
                             @foreach($socials as $social)
                                 @if($social->skype)
-                                <a style="color: #222222;" href="{{$social->skype}}">
+                                <a style="color: #222222;" href="{{$social->skype}}" target="_blank">
                                     <button style="width: 40px !important;" type="button"
                                             class="btn btn-primary m-r-sm">
                                         <i style="font-size: 18px; margin-right: -2px; vertical-align: middle;" class="fa fa-skype"></i>
@@ -437,7 +437,7 @@
                         <td>
                             @foreach($socials as $social)
                                 @if($social->facebook)
-                                <a style="color: #222222;" href="{{$social->facebook}}">
+                                <a style="color: #222222;" href="{{$social->facebook}}" target="_blank">
                                     <button style="width: 40px !important;" type="button"
                                             class="btn btn-success m-r-sm">
                                         <i style="font-size: 18px; vertical-align: middle;" class="fa fa-facebook"></i>
@@ -457,7 +457,7 @@
                         <td>
                             @foreach($socials as $social)
                                 @if($social->telegram)
-                                <a style="color: #222222;" href="{{$social->telegram}}">
+                                <a style="color: #222222;" href="{{$social->telegram}}" target="_blank">
                                     <button style="width: 40px !important;" type="button"
                                             class="btn btn-success m-r-sm">
                                         <i style="font-size: 18px; margin-right: -2px; vertical-align: middle;"
@@ -480,7 +480,7 @@
                         <td>
                             @foreach($socials as $social)
                                 @if($social->linkedin)
-                                <a style="color: #222222;" href="{{$social->linkedin}}">
+                                <a style="color: #222222;" href="{{$social->linkedin}}" target="_blank">
                                     <button style="width: 40px !important;" type="button" class="btn btn-info m-r-sm">
                                         <i style="font-size: 18px; margin-right: -2px; vertical-align: middle;" class="fa fa-linkedin"></i>
                                     </button>
@@ -497,7 +497,7 @@
                         <td>
                             @foreach($socials as $social)
                                 @if($social->site)
-                                <a style="color: #222222;" href="{{$social->site}}">
+                                <a style="color: #222222;" href="{{$social->site}}" target="_blank">
                                     <button style="width: 40px !important;" type="button" class="btn btn-danger m-r-sm">
                                         <i style="font-size: 18px; margin-right: -2px; vertical-align: middle;" class="fa fa-book"></i>
                                     </button>

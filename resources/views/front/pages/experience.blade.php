@@ -1,6 +1,6 @@
 <!--EXPERIENCE-->
 <main id="about2" class="container-fluid products">
-    <section class="container">
+    <section class="container mCustomScrollbar content-a5" data-mcs-theme="minimal-dark">
 
         <h2 class="text-ex">تجربه ها</h2>
 
@@ -23,9 +23,9 @@
                             </section>
                             <section class="col-xs-12 col-md-8 yellow-lg">
                                 <h2 class="pull-right text-lg1">{{$experience->title}}</h2>
-                                <pre class="pull-right text-justify text-lg2 mCustomScrollbar content-a2" data-mcs-theme="minimal-dark">
+                                <p class="pull-right text-justify text-lg2 mCustomScrollbar content-a2" data-mcs-theme="minimal-dark">
                                     {{$experience->about}}
-                                </pre>
+                                </p>
                             </section>
                         </div>
                     </li>

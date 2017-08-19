@@ -8,39 +8,45 @@
 <script src="/js/plugins/pace/pace.min.js"></script>
 <script src="/js/plugins/gritter/jquery.gritter.min.js"></script>
 <script src="/js/plugins/sparkline/jquery.sparkline.min.js"></script>
-<script src="/js/demo/sparkline-demo.js"></script>
-<script src="/js/plugins/toastr/toastr.min.js"></script>
-<script src="/js/bootstrap-datepicker.min.js"></script>
-<script src="/js/bootstrap-datepicker.fa.min.js"></script>
+{{--<script src="/js/demo/sparkline-demo.js"></script>--}}
+{{--<script src="/js/plugins/toastr/toastr.min.js"></script>--}}
+{{--<script src="/js/bootstrap-datepicker.min.js"></script>--}}
+{{--<script src="/js/bootstrap-datepicker.fa.min.js"></script>--}}
 <script src="js/plugins/jasny/jasny-bootstrap.min.js"></script>
 <script src="js/plugins/codemirror/codemirror.js"></script>
-<script src="js/plugins/codemirror/mode/xml/xml.js"></script>
-<script src="js/plugins/jsKnob/jquery.knob.js"></script>
-<script src="js/plugins/jasny/jasny-bootstrap.min.js"></script>
-<script src="js/plugins/datapicker/bootstrap-datepicker.js"></script>
-<script src="js/plugins/nouslider/jquery.nouislider.min.js"></script>
-<script src="js/plugins/switchery/switchery.js"></script>
-<script src="js/plugins/ionRangeSlider/ion.rangeSlider.min.js"></script>
+{{--<script src="js/plugins/codemirror/mode/xml/xml.js"></script>--}}
+{{--<script src="js/plugins/jsKnob/jquery.knob.js"></script>--}}
+{{--<script src="js/plugins/jasny/jasny-bootstrap.min.js"></script>--}}
+{{--<script src="js/plugins/datapicker/bootstrap-datepicker.js"></script>--}}
+{{--<script src="js/plugins/nouslider/jquery.nouislider.min.js"></script>--}}
+{{--<script src="js/plugins/switchery/switchery.js"></script>--}}
+{{--<script src="js/plugins/ionRangeSlider/ion.rangeSlider.min.js"></script>--}}
 <script src="js/plugins/iCheck/icheck.min.js"></script>
-<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-<script src="js/plugins/fullcalendar/moment.min.js"></script>
-<script src="js/plugins/daterangepicker/daterangepicker.js"></script>
-<script src="js/plugins/select2/select2.full.min.js"></script>
-<script src="js/plugins/touchspin/jquery.bootstrap-touchspin.min.js"></script>
-<script src="js/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
-<script src="js/plugins/dualListbox/jquery.bootstrap-duallistbox.js"></script>
-<script src="js/plugins/pace/pace.min.js"></script>
+{{--<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>--}}
+{{--<script src="js/plugins/fullcalendar/moment.min.js"></script>--}}
+{{--<script src="js/plugins/daterangepicker/daterangepicker.js"></script>--}}
+{{--<script src="js/plugins/select2/select2.full.min.js"></script>--}}
+{{--<script src="js/plugins/touchspin/jquery.bootstrap-touchspin.min.js"></script>--}}
+{{--<script src="js/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>--}}
+{{--<script src="js/plugins/dualListbox/jquery.bootstrap-duallistbox.js"></script>--}}
 <script src="js/plugins/footable/footable.all.min.js"></script>
 <script src="js/plugins/blueimp/jquery.blueimp-gallery.min.js"></script>
 <script src="js/cheouts.js"></script>
 <script src="js/time.js"></script>
 <script src="js/plugins/chosen/chosen.jquery.js"></script>
-<script src="js/anime.min.js"></script>
+{{--<script src="js/plugins/anime.min.js"></script>--}}
 <script src="js/classie.js"></script>
-<script src="js/modalEffects.js"></script>
-<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-<script src="js/plugins/sweetalert/sweetalert.min.js"></script>
+{{--<script src="js/modalEffects.js"></script>--}}
+{{--<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>--}}
+{{--<script src="js/plugins/sweetalert/sweetalert.min.js"></script>--}}
+<script src="js/plugins/bootstrap-markdown/bootstrap-markdown.js"></script>
+<script src="js/plugins/bootstrap-markdown/markdown.js"></script>
+<script>
 
+    $(document).ready(function(){
+        $('.alert22').fadeOut(5000)
+    });
+</script>
 <script>
     function chek(obj) {
         obj.setCustomValidity('لطفا این قسمت را پر کنید')
@@ -49,32 +55,12 @@
         obj.setCustomValidity('');
     }
 </script>
-{{--<script>--}}
-    {{--$(document).ready(function () {--}}
-        {{--$('#side-menu li').click( function () {--}}
-            {{--console.log('clicked');--}}
-            {{--$('li .menu').removeClass("active");--}}
-            {{--$(this).addClass("active");--}}
-        {{--});--}}
-
-    {{--});--}}
-{{--</script>--}}
 <script>
-    $('.demo3').click(function () {
-        swal({
-            title: "میخوای پاک کنی",
-            text: "شما مطمنی که میخوای پاک کنی",
-            type: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#DD6B55",
-            confirmButtonText: "پاک کن",
-            closeOnConfirm: false
-        }, function () {
-            swal("پاک شد", "با موافقیت پاک شد", "success");
-        });
+    $(document).ready(function(){
+        $("#some-textarea").markdown({autofocus:false,savable:false})
     });
-
 </script>
+
 <script>
 
     $(document).ready(function(){
@@ -157,12 +143,6 @@
         $(".dial").knob();
     });
 </script>
-
-{{--<script>--}}
-    {{--$(document).ready(function(){--}}
-        {{--$('[data-toggle="tooltipss"]').tooltipss();--}}
-    {{--});--}}
-{{--</script>--}}
 
 <script>
 
