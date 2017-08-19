@@ -42,10 +42,27 @@
 <script src="js/plugins/bootstrap-markdown/bootstrap-markdown.js"></script>
 <script src="js/plugins/bootstrap-markdown/markdown.js"></script>
 <script src="js/plugins/iCheck/icheck.min.js"></script>
-
+<script src="js/plugins/sweetalert/sweetalert.min.js"></script>
 
 <script>
-    $(document).ready(function () {
+    $('.demo3').click(function () {
+    swal({
+    title: "Are you sure?",
+    text: "You will not be able to recover this imaginary file!",
+    type: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#DD6B55",
+    confirmButtonText: "Yes, delete it!",
+    closeOnConfirm: false
+    }, function () {
+    swal("Deleted!", "Your imaginary file has been deleted.", "success");
+    });
+    });
+
+
+
+</script>
+<script>
         var close = document.getElementsByClassName("closebtn");
         var i;
         for (i = 0; i < close.length; i++) {
@@ -57,7 +74,10 @@
                 }, 600);
             }
         }
-    });
+//    $('.close-alert').click(function () {
+//        $('.myAlert').removeClass('hide')
+//    })
+
 </script>
 
 <script>
@@ -97,6 +117,19 @@
 </script>
 <script>
     $(document).ready(function () {
+
+//        $('.delete').click(function (e)  {
+//
+//        })
+        $('form.frm').submit(function () {
+           if(confirm("OK?")){
+               return true;
+           }
+
+           return false;
+        });
+
+
         $('.i-checks').iCheck({
             checkboxClass: 'icheckbox_square-green',
             radioClass: 'iradio_square-green',

@@ -132,7 +132,9 @@
                     <div class="ibox-content">
                         <input type="text" class="form-control input-sm m-b-xs" id="filter"
                                placeholder="سرچ کردن">
-
+                        <div class="col-lg-6 h-100 p-lg">
+                            <button class="btn btn-warning btn-sm demo3">Run example</button>
+                        </div>
                         <table class="footable table table-stripped" data-page-size="3" data-filter=#filter>
                             <thead>
                             <tr>
@@ -173,14 +175,16 @@
             </div>
 
             <form action="{{ route('certification.destroy', $certificate->id) }}"
-                  method="POST">
+                  method="POST" class="frm" >
+
+
                 {{ method_field('DELETE') }}
                 {{ csrf_field() }}
 
                 <button style=" margin-top: 12px; margin-right: 10px; width: 30px; height: 30px"
-                        class="btn btn-danger"><i style="margin-right: -4px; position: relative; top: -2px;" class="fa fa-trash"
+                        class="btn btn-danger delete">
+                    <i style="margin-right: -4px; position: relative; top: -2px;" class="fa fa-trash"
                                                   aria-hidden="true"></i></button>
-
             </form>
 
             @endforeach
