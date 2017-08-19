@@ -258,14 +258,13 @@
 
 
         @foreach($contacts as $contact)
-
             <div style="margin-top: 20px; direction: ltr !important;" class="col-lg-6">
                 <div class="contact-box">
                         <div class="col-md-9">
                             <h3><strong>{{$contact->email}}</strong></h3>
-                            <p>{{$contact->phone_number}}</p>
-                            <p>{{$contact->mobile}}</p>
-                            <p>{{$contact->office_number}}</p>
+                            <p>{{\App\Http\Controllers\ContactController::englishToPersian($contact->phone_number)}}</p>
+                            <p>{{\App\Http\Controllers\ContactController::englishToPersian($contact->mobile)}}</p>
+                            <p>{{\App\Http\Controllers\ContactController::englishToPersian($contact->office_number)}}</p>
                         </div>
 
                 <div class="col-md-3">

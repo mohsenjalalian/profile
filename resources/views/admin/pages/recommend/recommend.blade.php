@@ -196,7 +196,6 @@
     </div>
     </div>
     </div>
-
         {{--<div class="wrapper wrapper-content animated fadeInRight col-md-8">--}}
             {{--<div class="row">--}}
                 {{--<div style="margin-top: 0px;">--}}
