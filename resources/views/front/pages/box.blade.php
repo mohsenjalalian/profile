@@ -1,7 +1,7 @@
 <!--box yellow-->
 <div id="owl2" class="owl-carousel" style="direction:ltr">
     @foreach($recommendations as $recommendation)
-    <div id="about5" class="item-tunel">
+    <div id="about555" class="item-tunel">
         <aside class="col-xs-12 col-md-12">
             <section class="container">
                 <p class="text-center"><img class="img-yellow img-circle" src="{{$recommendation->photo}}" height="100px" width="100px;"></p>

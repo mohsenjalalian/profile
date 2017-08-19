@@ -1,3 +1,4 @@
+
 <main id="about6" class="container">
     <h2 class="text-ex2">بلاگ من</h2>
     @foreach($blogs as $blog)

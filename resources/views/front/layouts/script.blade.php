@@ -137,4 +137,11 @@
             });
         });
     })(jQuery);
+    (function ($) {
+        $(window).on("load", function () {
+            $(".content-a5").mCustomScrollbar({
+                axis: "yx"
+            });
+        });
+    })(jQuery);
 </script>

@@ -32,7 +32,7 @@
                             {{csrf_field()}}
                             <div class="form-group{{ $errors->has('email') ? ' has-error': ''}}">
                                 <div class="col-sm-10 col-md-12">
-                                    <input type="text" placeholder="ایمیل"
+                                    <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="ایمیل"
                                            value="{{ Request::old('email') ?: ''}}" class="form-control m-b"
                                            name="email"
                                            tabindex="1" required autofocus>
@@ -43,7 +43,7 @@
                             </div>
                             <div class="form-group{{ $errors->has('phone_number') ? ' has-error': ''}}">
                                 <div class="col-sm-10 col-md-12">
-                                    <input type="text" placeholder="موبایل"
+                                    <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="موبایل"
                                            value="{{ Request::old('phone_number') ?: ''}}" class="form-control m-b"
                                            name="phone_number"
                                            tabindex="1" required autofocus>
@@ -54,7 +54,7 @@
                             </div>
                             <div class="form-group{{ $errors->has('mobile') ? ' has-error': ''}}">
                                 <div class="col-sm-10 col-md-12">
-                                    <input type="text" placeholder="تلفن"
+                                    <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="تلفن"
                                            value="{{ Request::old('mobile') ?: ''}}" class="form-control m-b"
                                            name="mobile"
                                            tabindex="1" required autofocus>
@@ -65,7 +65,7 @@
                             </div>
                             <div class="form-group{{ $errors->has('office_number') ? ' has-error': ''}}">
                                 <div class="col-sm-10 col-md-12">
-                                    <input type="text" placeholder="تلفن دفتر"
+                                    <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="تلفن دفتر"
                                            value="{{ Request::old('office_number') ?: ''}}" class="form-control m-b"
                                            name="office_number"
                                            tabindex="1" required autofocus>
@@ -75,18 +75,23 @@
                                 </div>
                             </div>
 
-
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-lg-12">
                                     <div class="ibox float-e-margins">
                                         <div class="form-group{{ $errors->has('qr_code') ? ' has-error': ''}}">
-                                            <div class="fileinput fileinput-new" data-provides="fileinput">
-                                        <span class="btn btn-default btn-file"><span
-                                                    class="fileinput-new">بارگذاری</span><span class="fileinput-exists"><span
-                                                        style="color: #2aca76;">بارگذاری شد</span></span>
-                                            <input type="file"
-                                                   value="{{ Request::old('qr_code') ?: ''}}" name="qr_code"></span>
+                                            <div style="width: 280px; margin-right: 15px;" class="fileinput fileinput-new input-group" data-provides="fileinput">
+                                                <div class="form-control" data-trigger="fileinput">
+                                                    <p class="fileinput-exists" style="color: #2aca76;">بارگذاری شد</p>
+                                                </div>
+                                                <span style="border: 1px solid #e5e6e7;" class="input-group-addon btn btn-default btn-file">
+                                                    <span class="fileinput-new">بارگذاری</span>
+                                                    <span class="fileinput-exists">عوض کردن</span>
+                                                    <input type="file"
+                                                           value="{{ Request::old('qr_code') ?: ''}}" name="qr_code">
+                                                </span>
+                                                <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">پاک کردن</a>
                                             </div>
+                                            <p style="font-size: 12px; margin-left: 15px;" class="pull-right colorpicker">۱۰۰ * ۱۰۰</p>
                                             @if($errors->has('qr_code'))
                                                 <span class="help-block">{{ $errors->first('qr_code')}}</span>
                                             @endif
@@ -95,8 +100,27 @@
                                 </div>
                             </div>
 
+                            {{--<div class="row">--}}
+                                {{--<div class="col-md-6">--}}
+                                    {{--<div class="ibox float-e-margins">--}}
+                                        {{--<div class="form-group{{ $errors->has('qr_code') ? ' has-error': ''}}">--}}
+                                            {{--<div class="fileinput fileinput-new" data-provides="fileinput">--}}
+                                        {{--<span class="btn btn-default btn-file"><span--}}
+                                                    {{--class="fileinput-new">بارگذاری</span><span class="fileinput-exists"><span--}}
+                                                        {{--style="color: #2aca76;">بارگذاری شد</span></span>--}}
+                                            {{--<input type="file"--}}
+                                                   {{--value="{{ Request::old('qr_code') ?: ''}}" name="qr_code"></span>--}}
+                                            {{--</div>--}}
+                                            {{--@if($errors->has('qr_code'))--}}
+                                                {{--<span class="help-block">{{ $errors->first('qr_code')}}</span>--}}
+                                            {{--@endif--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
 
-                            <button class="btn btn-primary col-md-4" name="submit" type="submit" id="contact-submit"
+
+                            <button style="font-family: webmdesign;" class="btn btn-primary col-md-4" name="submit" type="submit" id="contact-submit"
                                     data-submit="...Sending">ارسال
                             </button>
                         </form>
@@ -153,17 +177,43 @@
                                 @endif
                             </div>
                         </div>
-
-
+                        {{--<div class="row">--}}
+                        {{--<div style=" margin-right: 0px; margin-top: -30px;" class="col-md-4">--}}
+                            {{--<div class="ibox float-e-margins">--}}
+                                {{--<div class="form-group{{ $errors->has('qr_code') ? ' has-error': ''}}">--}}
+                                    {{--@if(isset($contact->qr_code))--}}
+                                        {{--<img style="position: relative; top: 40px;" width="50" height="50" src="{{asset($contact->qr_code)}}">--}}
+                                    {{--@else--}}
+                                        {{--<h4 style="width: 200px;">شما عکسی بارگذاری نکرده اید</h4>--}}
+                                    {{--@endif--}}
+                                    {{--<div style="width: 280px; margin-right: 15px;" class="fileinput fileinput-new input-group" data-provides="fileinput">--}}
+                                        {{--<div class="form-control" data-trigger="fileinput">--}}
+                                            {{--<p class="fileinput-exists" style="color: #2aca76;">بارگذاری شد</p>--}}
+                                        {{--</div>--}}
+                                        {{--<span style="border: 1px solid #e5e6e7;" class="input-group-addon btn btn-default btn-file">--}}
+                                                    {{--<span class="fileinput-new">بارگذاری</span>--}}
+                                                    {{--<span class="fileinput-exists">عوض کردن</span>--}}
+                                                    {{--<input type="file"--}}
+                                                           {{--value="{{$contact->qr_code}}" name="qr_code">--}}
+                                                {{--</span>--}}
+                                        {{--<a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">پاک کردن</a>--}}
+                                    {{--</div>--}}
+                                        {{--@if($errors->has('qr_code'))--}}
+                                            {{--<span class="help-block">{{ $errors->first('qr_code')}}</span>--}}
+                                        {{--@endif--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--</div>--}}
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="ibox float-e-margins">
+                                <div style="margin-right: 15px;" class="ibox float-e-margins">
                                     <div class="form-group{{ $errors->has('qr_code') ? ' has-error': ''}}">
 
                                         @if(isset($contact->qr_code))
                                             <img width="50" height="50" src="{{asset($contact->qr_code)}}">
                                         @else
-                                            <h4>شما هیچ عکسی آپلود نکرده اید</h4>
+                                            <h4 style="width: 200px;">شما عکسی بارگذاری نکرده اید</h4>
                                         @endif
                                         <div class="fileinput fileinput-new" data-provides="fileinput">
                                         <span class="btn btn-default btn-file"><span
@@ -179,7 +229,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button class="btn btn-primary col-md-4" name="submit" type="submit" id="contact-submit"
+                        <button style="font-family: webmdesign;" class="btn btn-primary col-md-4" name="submit" type="submit" id="contact-submit"
                                 data-submit="...Sending">اصلاح
                         </button>
 
@@ -189,8 +239,8 @@
                         {{ csrf_field() }}
 
                         <span class="text-center"><button
-                                    style="width: 30px; height: 30px; position: relative; top: 2px; right: 10px;"
-                                    class="btn btn-danger"><i style="margin-right: -3px" class="fa fa-trash"
+                                    style="width: 30px; height: 33px; position: relative; top: 1px; right: 5px;"
+                                    class="btn btn-danger"><i style="margin-right: -4px; position: relative; top: px;" class="fa fa-trash"
                                                               aria-hidden="true"></i></button></span>
 
                     </form>
@@ -228,5 +278,8 @@
     </div>
     @include('admin.layouts.success')
     @include('admin.layouts.errors')
+
+@endsection
+@section('script')
 
 @endsection

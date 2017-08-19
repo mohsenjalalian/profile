@@ -11,8 +11,8 @@
             <form id="contact" action="{{route('language.update',$language->id)}}" method="post">
                 {{csrf_field()}}
                 {{ method_field('PUT') }}
-
                 <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
+                    <label>نام</label>
                     <fieldset>
                         <input class="form-control m-b col-md-3" placeholder="نام زبان" value="{{$language->name}}" type="text" name="name" tabindex="1"
                                required autofocus>
@@ -22,7 +22,7 @@
                     @endif
                 </div>
 <div class="row">
-                <div class="col-md-2">
+                <div class="col-md-1">
                     <div class="form-group{{ $errors->has('reading') ? ' has-error': ''}}">
                         <select name="reading" class="select2_demo_1 form-control">
                             <option value="{{$language->reading}}">{{$language->reading}}</option>
@@ -38,7 +38,7 @@
                     </div>
                 </div>
 
-                    <div class="col-md-2">
+                    <div class="col-md-1">
                         <div class="form-group{{ $errors->has('writing') ? ' has-error': ''}}">
                             <select name="writing" class="select2_demo_1 form-control">
                             <option value="{{$language->writing}}">{{$language->writing}}</option>
@@ -53,9 +53,7 @@
                     @endif
                 </div>
                     </div>
-</div>
-                <div class="row">
-                 <div class="col-md-2">
+                 <div class="col-md-1">
                 <div class="form-group{{ $errors->has('speaking') ? ' has-error': ''}}">
                         <select name="speaking" class="select2_demo_1 form-control">
                             <option value="{{$language->speaking}}">{{$language->speaking}}</option>
@@ -70,7 +68,7 @@
                     @endif
                 </div>
                  </div>
-                <div class="col-md-2">
+                <div class="col-md-1">
                 <div class="form-group{{ $errors->has('listening') ? ' has-error': ''}}">
                             <select name="listening" class="select2_demo_1 form-control">
                             <option value="{{$language->listening}}">{{$language->listening}}</option>
@@ -87,9 +85,9 @@
                 </div>
                 </div>
 
-                <div class="modal-footer col-md-3">
-                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                    <button name="submit" type="submit" id="contact-submit" data-submit="...Sending" class="btn btn-primary">Save changes</button>
+                <div style="margin-top: 20px;" class="modal-footer col-md-5">
+                    <button  style="font-family: webmdesign;" type="button" class="btn btn-white" data-dismiss="modal">بستن</button>
+                    <button style="font-family: webmdesign;" name="submit" type="submit" id="contact-submit" data-submit="...Sending" class="btn btn-primary">اعمال تغییرات</button>
                 </div>
             </form>
 

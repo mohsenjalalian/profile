@@ -1,17 +1,19 @@
 <!--portfolio-->
-
 <main id="about4" class="container-fluid background-four">
     <section class="container">
         <h2 style="font-size:25px;margin-top:50px;"><strong>نمونه کار</strong></h2>
         <main class="container tabs-tunel">
             <ul class="nav nav-pills">
                 @foreach($workSamples as $sample)
-                <li style="margin-top:20px;" class="active"><a class="fade1" data-toggle="tab" href="#menu1"> {{$sample->name}}</a>
-                </li>
+                    <ul id="filter-options">
+                        <li><input type="checkbox" value="filter_red" data-filter_id="red"> {{$sample->name}}</li>
+                    </ul>
+                {{--<li style="margin-top:20px;" class="active"><a class="fade1" data-toggle="tab" href="#menu1"> {{$sample->name}}</a>--}}
+                {{--</li>--}}
                  @endforeach
             </ul>
             @foreach($workSamples as $workSample)
-            <div class="tab-content">
+            <div class="tab-content" class="filter_red" id="product-list">
                 <div id="menu1" class="tab-pane fade in active">
                     <ul class="grid cs-style-4">
                         <section class="col-md-4">
@@ -35,8 +37,8 @@
                         </section>
                     </ul>
                 </div>
-                @endforeach
             </div>
+            @endforeach
             <ul class="page-nav">
                 <li><a href="#">1</a></li>
             </ul>
