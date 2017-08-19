@@ -20,7 +20,7 @@
         <div style="margin-top: 20px;" class="col-lg-4">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    افزودن نظر
+                    افزودن
                 </div>
                 <div class="panel-body">
                     <form id="contact" action="{{route('blog.store')}}" method="post" enctype="multipart/form-data">

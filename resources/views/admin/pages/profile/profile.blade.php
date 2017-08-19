@@ -478,7 +478,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button style="margin-top: 20px; font-family: webmdesign; position: relative; right: -315px; float: right !important;" class="btn btn-primary col-md-4" name="submit" type="submit"
+                                    <button style="margin-top: 20px; font-family: webmdesign; position: relative; right: 5px; float: right !important;" class="btn btn-primary col-md-4" name="submit" type="submit"
                                             id="contact-submit"
                                             data-submit="...Sending">
                                         اصلاح
@@ -489,8 +489,8 @@
                                     {{ csrf_field() }}
 
                                     <span class="text-center"><button
-                                                style="width: 30px; height: 32.555px; position: relative; top: 306px; right: -310px;"
-                                                class="btn btn-danger"><i style="margin-right: -3px" class="fa fa-trash"
+                                                style="width: 30px; height: 33px; position: relative; top: 303px; right: -310px;"
+                                                class="btn btn-danger"><i style="margin-right: -5px" class="fa fa-trash"
                                                                           aria-hidden="true"></i></button></span>
 
                                 </form>

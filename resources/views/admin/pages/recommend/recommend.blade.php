@@ -78,7 +78,7 @@
                                             <span style="border: 1px solid #e5e6e7;" class="input-group-addon btn btn-default btn-file">
                                                     <span class="fileinput-new">بارگذاری</span>
                                                     <span class="fileinput-exists">عوض کردن</span>
-                                                    <input type="file" value="{{ Request::old('photo') ?: ''}}" name="photo">
+                                                    <input type="file" value="{{ Request::old('photo') ?: ''}}" name="photo" required>
                                                 </span>
                                             <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">پاک کردن</a>
                                         </div>
@@ -173,19 +173,11 @@
                                   method="POST">
                                 {{ method_field('DELETE') }}
                                 {{ csrf_field() }}
-                                    {{--<div class="col-lg-6 h-100 p-lg">--}}
-                                        {{--<button class="btn btn-warning btn-sm demo3">Run example</button>--}}
-                                    {{--</div>--}}
-
-                            <div class="text-center">
-                                <button style=" margin-top: 12px; margin-right: 10px; width: 30px; height: 30px" type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal6">
-                                    <i style="margin-right: -4px; position: relative; top: -2px;" class="fa fa-trash"
-                                       aria-hidden="true"></i>
-                                </button>
-                            {{--<button style=" margin-top: 12px; margin-right: 10px; width: 30px; height: 30px"--}}
-                                    {{--class="btn btn-danger"><i style="margin-right: -4px; position: relative; top: -2px;" class="fa fa-trash"--}}
-                                                                    {{--aria-hidden="true"></i></button>--}}
-                            </div>
+                                <div class="text-center">
+                                    <button style=" margin-top: 12px; margin-right: 10px; width: 30px; height: 30px"
+                                            class="btn btn-danger"><i style="margin-right: -4px; position: relative; top: -2px;" class="fa fa-trash"
+                                                                      aria-hidden="true"></i></button>
+                                </div>
                             </form>
                         </td>
                     </tr>
@@ -204,31 +196,6 @@
     </div>
     </div>
     </div>
-
-        <div class="modal inmodal fade" id="myModal6" tabindex="-1" role="dialog"  aria-hidden="true">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    </div>
-                    <div class="modal-body">
-                        <p class="text-center">مطمن هستی که میخوای پاک کنی</p>
-                    </div>
-                    <div class="modal-footer">
-                        <form action="{{ route('recommend.destroy', $recommend->id) }}"
-                              method="POST">
-                            {{ method_field('DELETE') }}
-                            {{ csrf_field() }}
-                            <div class="text-center">
-                                <button style=" margin-top: 12px; margin-right: 10px; width: 30px; height: 30px"
-                                class="btn btn-danger"><i style="margin-right: -4px; position: relative; top: -2px;" class="fa fa-trash"
-                                aria-hidden="true"></i></button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         {{--<div class="wrapper wrapper-content animated fadeInRight col-md-8">--}}
             {{--<div class="row">--}}

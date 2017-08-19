@@ -39,7 +39,7 @@
 @foreach($profiles as $profile)
 <img src="{{$profile->cover}}" height="480px" width="100%" alt="cover">
 @endforeach
-<main id="home1" class="container-fluid background">
+<main id="home11" class="container-fluid background">
     <div class="box-social1 pull-left"><a href="#"><i class="fa fa-language" aria-hidden="true"></i></a>
         <div class="box-languge pull-left">
             <p class="text-center">English</ >

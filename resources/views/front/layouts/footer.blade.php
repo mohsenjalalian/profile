@@ -1,8 +1,6 @@
 <!-- form-->
 
-<main>
-
-
+<main id="about7">
     <section id="scrollcontact" class="pull-left col-xs-12 col-sm-6 col-md-6 contact1">
         <h2>پیام برسان</h2>
         <form action="{{route('saveMessage')}}" method="post">
@@ -61,7 +59,7 @@
                 <p class="text-for"> تلفن</p>
                 <p class="text-for2">{{$contact->phone_number}}</p>
             </div>
-            <div class="web"><i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+            <div class="web"><i class="fa fa-phone" aria-hidden="true"></i>
                 <p class="text-for"> تلفن همراه</p>
                 <p class="text-for2">{{$contact->mobile}}</p>
             </div>
@@ -77,6 +75,10 @@
                                                              aria-hidden="true"></i></a>
                     <a href="{{$socialNetwork->facebook}}"><i id="social-fo3" class="fa fa-facebook"
                                                               aria-hidden="true"></i></a>
+                    <a href="{{$socialNetwork->site}}"><i id="social-fo4" class="fa fa-book"
+                                                              aria-hidden="true"></i></a>
+                    <a href="{{$socialNetwork->skype}}"><i id="social-fo5" class="fa fa-skype"
+                                                          aria-hidden="true"></i></a>
                 @endforeach
             </div>
             <div class="pull-left"><img class="img-qr hidden-xs" src="{{$contact->qr_code}}" alt="{{$contact->qr_code}}"
@@ -88,7 +90,7 @@
 
 <!--footer-->
 
-<footer id="about7" class="container-fluid background-five">
+<footer class="container-fluid background-five">
     <section class="container">
         <section class="col-md-4 pull-left web-footer"><span class="pull-left text-fo">۰۲۱-۲۲۷۴۸۵۴۳<i
                         class="fa fa-phone" aria-hidden="true"></i></span></section>

@@ -199,9 +199,9 @@ $(document).ready(function(e) {
 	
 	});
 
-var home1 = $('#home1');
-console.log( home1.position().top);
-console.log( home1.height());
+var home11 = $('#home11');
+console.log( home11.position().top);
+console.log( home11.height());
 
 var about1 = $('#about1');
 console.log( about1.position().top);
@@ -223,10 +223,6 @@ var about4 = $('#about4');
 console.log( about4.position().top);
 console.log( about4.height());
 
-var about5 = $('#about5');
-console.log( about5.position().top);
-console.log( about5.height());
-
 var about55 = $('#about55');
 console.log( about55.position().top);
 console.log( about55.height());
@@ -234,16 +230,24 @@ console.log( about55.height());
 var about56 = $('#about56');
 console.log( about56.position().top);
 console.log( about56.height());
+//
+// var about5 = $('#about5');
+// console.log( about5.position().top);
+// console.log( about5.height());
 
 var about6 = $('#about6');
 console.log( about6.position().top);
 console.log( about6.height());
 
+var about7 = $('#about7');
+console.log( about7.position().top);
+console.log( about7.height());
+
 $(document).scroll(function(e) {
     p = $(document).scrollTop();
 	// if(p<350){
 	// if(p<350){
-        if(p > home1.position().top && p < home1.position().top + home1.height()){
+        if(p > home11.position().top && p < home11.position().top + home11.height()){
 		$("#icon1").css("background-color","#fff");
 	}else{
 		$("#icon1").css("background-color","#ffd93e");
@@ -302,13 +306,13 @@ $(document).scroll(function(e) {
 	}
 	
 	
-		z = $(document).scrollTop();
-	// if(z>4500 & z<5050){
-    if(m > about5.position().top && m < about5.position().top + about5.height()){
-		$("#icon6").css("background-color","#fff");
-	}else{
-		$("#icon6").css("background-color","#ffd93e");
-	}
+	// 	z = $(document).scrollTop();
+	// // if(z>4500 & z<5050){
+    // if(z > about5.position().top && z < about5.position().top + about5.height()){
+	// 	$("#icon6").css("background-color","#fff");
+	// }else{
+	// 	$("#icon6").css("background-color","#ffd93e");
+	// }
 			w = $(document).scrollTop();
 	// if(w>5050 & w<5850){
     if(m > about6.position().top && m < about6.position().top + about6.height()){
@@ -318,7 +322,7 @@ $(document).scroll(function(e) {
 	}
 	k = $(document).scrollTop();
 		// if(k>5850 & k<6690){
-    if(m > about8.position().top && m < about8.position().top + about8.height()){
+    if(k > about7.position().top && k < about7.position().top + about7.height()){
 		$("#icon8").css("background-color","#fff");
 	}else{
 		$("#icon8").css("background-color","#ffd93e");
