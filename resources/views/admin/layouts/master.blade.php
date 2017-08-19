@@ -18,7 +18,6 @@
 
     @yield('content')
 
-    @yield('script')
 
     @include('admin.layouts.chat')
 
@@ -27,5 +26,7 @@
 </div>
 
 @include('admin.layouts.script')
+@yield('script')
+
 </body>
 </html>

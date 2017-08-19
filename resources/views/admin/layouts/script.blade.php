@@ -21,7 +21,7 @@
 {{--<script src="js/plugins/nouslider/jquery.nouislider.min.js"></script>--}}
 {{--<script src="js/plugins/switchery/switchery.js"></script>--}}
 {{--<script src="js/plugins/ionRangeSlider/ion.rangeSlider.min.js"></script>--}}
-<script src="js/plugins/iCheck/icheck.min.js"></script>
+
 {{--<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>--}}
 {{--<script src="js/plugins/fullcalendar/moment.min.js"></script>--}}
 {{--<script src="js/plugins/daterangepicker/daterangepicker.js"></script>--}}
@@ -41,26 +41,27 @@
 {{--<script src="js/plugins/sweetalert/sweetalert.min.js"></script>--}}
 <script src="js/plugins/bootstrap-markdown/bootstrap-markdown.js"></script>
 <script src="js/plugins/bootstrap-markdown/markdown.js"></script>
+<script src="js/plugins/iCheck/icheck.min.js"></script>
 
 
 <script>
-    $(document).ready(function(){
-   var close = document.getElementsByClassName("closebtn");
-   var i;
-   for (i = 0; i < close.length; i++) {
-   close[i].onclick = function () {
-   var div = this.parentElement;
-   div.style.opacity = "0";
-   setTimeout(function () {
-   div.style.display = "none";
-    }, 600);
-   }
-}
+    $(document).ready(function () {
+        var close = document.getElementsByClassName("closebtn");
+        var i;
+        for (i = 0; i < close.length; i++) {
+            close[i].onclick = function () {
+                var div = this.parentElement;
+                div.style.opacity = "0";
+                setTimeout(function () {
+                    div.style.display = "none";
+                }, 600);
+            }
+        }
     });
 </script>
 
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
         $('.alert22').fadeOut(5000)
     });
 </script>
@@ -68,25 +69,21 @@
     function chek(obj) {
         obj.setCustomValidity('لطفا این قسمت را پر کنید')
     }
+
     function chek2(obj) {
         obj.setCustomValidity('');
     }
 </script>
 <script>
-    $(document).ready(function(){
-        $("#some-textarea").markdown({autofocus:false,savable:false})
+    $(document).ready(function () {
+        $("#some-textarea").markdown({autofocus: false, savable: false})
     });
 </script>
 
 <script>
 
-    $(document).ready(function(){
-        $('button.edit').click(function(e){
-            e.preventDefault();
-            $.get($(this).attr('data-href'),function(data){
-                $('#myModal4').find('.modal-body').html(data);
-            })
-        });
+    $(document).ready(function () {
+
     });
 </script>
 <script>
@@ -104,7 +101,12 @@
             checkboxClass: 'icheckbox_square-green',
             radioClass: 'iradio_square-green',
         });
-
+        $(document).on('click', 'button.edit', function (e) {
+            e.preventDefault();
+            $.get($(this).attr('data-href'), function (data) {
+                $('#myModal4').find('.modal-body').html(data);
+            })
+        });
         $('.chosen-select').chosen({width: "100%"});
 
         $("#ionrange_1").ionRangeSlider({
@@ -163,50 +165,47 @@
 
 <script>
 
-//    $(document).ready(function () {
-//        $(document).on('click', 'a.edit',    function (e) {
-//            e.preventDefault();
-//            $.get($(this).attr('data-href'), function (data) {
-//                $('#modal-13').modal('toggle');
-//                $('#modal-13').find('.md-content').html(data);
-//            })
-//        });
-//        });
+    //    $(document).ready(function () {
+    //        $(document).on('click', 'a.edit',    function (e) {
+    //            e.preventDefault();
+    //            $.get($(this).attr('data-href'), function (data) {
+    //                $('#modal-13').modal('toggle');
+    //                $('#modal-13').find('.md-content').html(data);
+    //            })
+    //        });
+    //        });
 
 
-        $('.i-checks').iCheck({
-            checkboxClass: 'icheckbox_square-green',
-            radioClass: 'iradio_square-green'
-        });
+    $('.i-checks').iCheck({
+        checkboxClass: 'icheckbox_square-green',
+        radioClass: 'iradio_square-green'
+    });
 
 
-        $(".touchspin1").TouchSpin({
-            buttondown_class: 'btn btn-white',
-            buttonup_class: 'btn btn-white'
-        });
+    $(".touchspin1").TouchSpin({
+        buttondown_class: 'btn btn-white',
+        buttonup_class: 'btn btn-white'
+    });
 
-        $(".touchspin2").TouchSpin({
-            min: 0,
-            max: 100,
-            step: 0.1,
-            decimals: 2,
-            boostat: 5,
-            maxboostedstep: 10,
-            postfix: '%',
-            buttondown_class: 'btn btn-white',
-            buttonup_class: 'btn btn-white'
-        });
+    $(".touchspin2").TouchSpin({
+        min: 0,
+        max: 100,
+        step: 0.1,
+        decimals: 2,
+        boostat: 5,
+        maxboostedstep: 10,
+        postfix: '%',
+        buttondown_class: 'btn btn-white',
+        buttonup_class: 'btn btn-white'
+    });
 
-        $(".touchspin3").TouchSpin({
-            verticalbuttons: true,
-            buttondown_class: 'btn btn-white',
-            buttonup_class: 'btn btn-white'
-        });
+    $(".touchspin3").TouchSpin({
+        verticalbuttons: true,
+        buttondown_class: 'btn btn-white',
+        buttonup_class: 'btn btn-white'
+    });
 
-        $('.dual_select').bootstrapDualListbox({selectorMinimalHeight: 160});
-
-
-
+    $('.dual_select').bootstrapDualListbox({selectorMinimalHeight: 160});
 
 
     var basic_slider = document.getElementById('basic_slider');
