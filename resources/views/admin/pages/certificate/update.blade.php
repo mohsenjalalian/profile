@@ -3,7 +3,6 @@
 
 
 @section('content')
-    <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
 
         <div class="container">
@@ -79,27 +78,6 @@
                     </div>
                 </div>
 
-{{--<div style="margin-top: 15px;" class="col-md-3">--}}
-                    {{--<div class="ibox float-e-margins">--}}
-                        {{--<div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">--}}
-                            {{--@if(isset($certificate->photo))--}}
-                                {{--<img width="50" height="50" src="{{asset($certificate->photo)}}">--}}
-                            {{--@else--}}
-                                {{--<h4 style="width: 200px;">شما هیچ عکسی آپلود نکرده اید</h4>--}}
-                            {{--@endif--}}
-                            {{--<div class="fileinput fileinput-new" data-provides="fileinput">--}}
-                                        {{--<span style="margin-top: 10px;" class="btn btn-default btn-file"><span class="fileinput-new">بارگذاری عکس جدید</span><span class="fileinput-exists"><span--}}
-                                                        {{--style="color: #2aca76;">بارگذاری شد</span>--}}
-                                            {{--</span>--}}
-                                            {{--<input type="file" value="{{$certificate->photo}}" name="photo"></span>--}}
-                            {{--</div>--}}
-                            {{--@if($errors->has('photo'))--}}
-                                {{--<span class="help-block">{{ $errors->first('photo')}}</span>--}}
-                            {{--@endif--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-{{--</div>--}}
-
                 <div class="row">
                     <div style="margin-top: 20px;" class="col-md-3">
                         <div class="form-group{{ $errors->has('info') ? ' has-error': ''}}">
@@ -120,7 +98,7 @@
                 </div>
             </form>
         </div>
-
+    </div>
 <script>
     $(document).ready(function () {
         $('.i-checks').iCheck({

@@ -118,22 +118,6 @@
                                     </div>
                                 </div>
                             </div>
-                            {{--<div class="col-md-12">--}}
-                                {{--<div class="ibox float-e-margins">--}}
-                                    {{--<div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">--}}
-                                        {{--<div class="fileinput fileinput-new" data-provides="fileinput">--}}
-                                        {{--<span class="btn btn-default btn-file"><span--}}
-                                                    {{--class="fileinput-new">بارگذاری</span><span class="fileinput-exists"><span--}}
-                                                        {{--style="color: #2aca76;">بارگذاری شد</span></span>--}}
-                                            {{--<input type="file"--}}
-                                                   {{--value="{{ Request::old('photo') ?: ''}}" name="photo"></span>--}}
-                                        {{--</div>--}}
-                                        {{--@if($errors->has('photo'))--}}
-                                            {{--<span class="help-block">{{ $errors->first('photo')}}</span>--}}
-                                        {{--@endif--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-
                                 <fieldset>
                                     <button style="font-family: webmdesign;" class="btn btn-primary col-md-4" name="submit" type="submit"
                                             id="contact-submit" data-submit="...Sending">ارسال
@@ -187,7 +171,7 @@
                                         </button>
 
 
-                                        <form action="{{ route('docs.destroy', $doc->id) }}" method="POST">
+                                        <form action="{{ route('docs.destroy', $doc->id) }}" method="POST" class="frm">
                                             {{ method_field('DELETE') }}
                                             {{ csrf_field() }}
 
@@ -243,11 +227,7 @@
         @endsection
 
 
-        @section('scripts')
-            $('button.edit').click(function(e){
-            e.preventDefault();
-            $.get($(this).attr('data-href'),function(data){
-            $('#myModal2').find('.modal-body').html(data);
-            })
-            });
+@section('script')
+    <script src="js/cheouts.js"></script>
+    <script src="js/time.js"></script>
 @endsection

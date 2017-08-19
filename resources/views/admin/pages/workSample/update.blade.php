@@ -1,18 +1,12 @@
 @extends('admin.layouts.master')
-
-
-
 @section('content')
-    <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-
         <div class="container">
             @include('admin.layouts.errors')
             <form id="contact" action="{{route('work-sample.update',$workSample->id)}}"
                   method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
                 {{ method_field('PUT') }}
-
                 <input type="hidden" name="old_pic" value="{{ $workSample->photo }}">
                 <div class="row">
                 <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
@@ -51,7 +45,6 @@
                         </div>
                     </div>
                 </div>
-
                 @if(count($categories) > 0)
                     <fieldset>
                         <h5>دسته بند ی</h5>
@@ -97,34 +90,7 @@
                 @else
                     <p>شما هیچ مهارتی نساخته اید</p>
                 @endif
-
-
-                        {{--<div class="col-md-12">--}}
-                            {{--<div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">--}}
-                            {{--<div class="ibox float-e-margins">--}}
-                                {{--<div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">--}}
-                                    {{--@if(isset($workSample->photo))--}}
-                                        {{--<img width="50" height="50" src="{{asset($workSample->photo)}}">--}}
-                                    {{--@else--}}
-                                        {{--<h4>شما هیچ عکسی آپلود نکرده اید</h4>--}}
-                                    {{--@endif--}}
-                                    {{--<div class="fileinput fileinput-new" data-provides="fileinput">--}}
-                                        {{--<span class="btn btn-default btn-file"><span--}}
-                                                    {{--class="fileinput-new">بارگذاری عکس جدید</span><span class="fileinput-exists"><span--}}
-                                                        {{--style="color: #2aca76;">بارگذاری شد</span></span>--}}
-                                            {{--<input type="file" value="{{$workSample->photo}}" name="photo"></span>--}}
-                                    {{--</div>--}}
-                                    {{--@if($errors->has('photo'))--}}
-                                        {{--<span class="help-block">{{ $errors->first('photo')}}</span>--}}
-                                    {{--@endif--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
                     </fieldset>
-
-
-
                     <div style="margin-top: 20px;" class="modal-footer col-md-5">
                         <button  style="font-family: webmdesign;" type="button" class="btn btn-white" data-dismiss="modal">بستن</button>
                         <button style="font-family: webmdesign;" name="submit" type="submit" id="contact-submit" data-submit="...Sending" class="btn btn-primary">اعمال تغییرات</button>

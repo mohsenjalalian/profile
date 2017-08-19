@@ -3,7 +3,6 @@
 
 
 @section('content')
-    <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <div class="container">
             <form id="contact" action="{{route('education.update',$education->id)}}"
@@ -106,27 +105,6 @@
                         </div>
                     </div>
                 </div>
-{{--<div class="row">--}}
-    {{--<div class="col-md-6">--}}
-                    {{--<div class="ibox float-e-margins">--}}
-                        {{--<div class="form-group{{ $errors->has('logo') ? ' has-error': ''}}">--}}
-                            {{--@if(isset($education->logo))--}}
-                                {{--<img width="50" height="50" src="{{asset($education->logo)}}">--}}
-                            {{--@else--}}
-                                {{--<h4>شما هیچ عکسی آپلود نکرده اید</h4>--}}
-                            {{--@endif--}}
-                            {{--<div class="fileinput fileinput-new" data-provides="fileinput">--}}
-                                        {{--<span class="btn btn-default btn-file"><span class="fileinput-new">بارگذاری عکس جدید</span><span class="fileinput-exists"><span--}}
-                                                        {{--style="color: #2aca76;">بارگذاری شد</span></span>--}}
-                                            {{--<input type="file" value="{{$education->logo}}" name="logo"></span>--}}
-                            {{--</div>--}}
-                            {{--@if($errors->has('logo'))--}}
-                                {{--<span class="help-block">{{ $errors->first('logo')}}</span>--}}
-                            {{--@endif--}}
-                    {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-{{--</div>--}}
                 <div style="margin-top: 100px;" class="modal-footer col-md-5">
                     <button  style="font-family: webmdesign;" type="button" class="btn btn-white" data-dismiss="modal">بستن</button>
                     <button style="font-family: webmdesign;" name="submit" type="submit" id="contact-submit" data-submit="...Sending" class="btn btn-primary">اعمال تغییرات</button>
@@ -134,4 +112,6 @@
             </form>
         </div>
     </div>
+    <script src="js/cheouts.js"></script>
+    <script src="js/time.js"></script>
 @endsection

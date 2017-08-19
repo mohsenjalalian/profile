@@ -94,31 +94,6 @@
                     </div>
                 </div>
                 </div>
-
-
-                {{--<div class="row">--}}
-                {{--<div class="col-md-8">--}}
-                    {{--<div class="ibox float-e-margins">--}}
-                        {{--<div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">--}}
-                            {{--@if(isset($docs->photo))--}}
-                                {{--<img width="50" height="50" src="{{asset($docs->photo)}}">--}}
-                            {{--@else--}}
-                                {{--<h4>شما هیچ عکسی آپلود نکرده اید</h4>--}}
-                            {{--@endif--}}
-                            {{--<div class="fileinput fileinput-new" data-provides="fileinput">--}}
-                                        {{--<span class="btn btn-default btn-file"><span class="fileinput-new">بارگذاری عکس</span>--}}
-                                             {{--<span class="fileinput-exists"><span class="fileinput-exists"><span--}}
-                                                        {{--style="color: #2aca76;">بارگذاری شد</span></span> </span>--}}
-                                            {{--<input type="file"--}}
-                                                   {{--value="{{$docs->photo}}"name="photo"></span>--}}
-                            {{--</div>--}}
-                            {{--@if($errors->has('photo'))--}}
-                                {{--<span class="help-block">{{ $errors->first('photo')}}</span>--}}
-                            {{--@endif--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--</div>--}}
                 <div class="row">
                     <div style="margin-top: 20px;" class="modal-footer col-md-5">
                         <button  style="font-family: webmdesign;" type="button" class="btn btn-white" data-dismiss="modal">بستن</button>
@@ -126,7 +101,8 @@
                     </div>
                 </div>
             </form>
-
         </div>
     </div>
+    <script src="js/cheouts.js"></script>
+    <script src="js/time.js"></script>
 @endsection

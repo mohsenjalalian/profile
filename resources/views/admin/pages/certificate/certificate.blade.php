@@ -132,9 +132,6 @@
                     <div class="ibox-content">
                         <input type="text" class="form-control input-sm m-b-xs" id="filter"
                                placeholder="سرچ کردن">
-                        <div class="col-lg-6 h-100 p-lg">
-                            <button class="btn btn-warning btn-sm demo3">Run example</button>
-                        </div>
                         <table class="footable table table-stripped" data-page-size="3" data-filter=#filter>
                             <thead>
                             <tr>
@@ -158,9 +155,7 @@
                                     <td style="vertical-align: middle;"
                                         class="text-center">{{$certificate->type}}</td>
                                     <td style="vertical-align: middle;" class="text-center">
-                                        {{--<a href="#" title=" {{$certificate->info}}">--}}
                                             <i style="color: #239963; font-size: 22px;" class="fa fa-check"></i>
-                                        {{--</a>--}}
                                     </td>
                                     <td style="display: flex; border: none;">
                                         <button style="margin-top: 12px; width:30px; height: 30px;" data-toggle="modal" data-target="#myModal4"
@@ -229,5 +224,11 @@
 
 
 @section('script')
-
+    <script src="js/plugins/iCheck/icheck.min.js"></script>
+    <script>
+    $('.i-checks').iCheck({
+    checkboxClass: 'icheckbox_square-green',
+    radioClass: 'iradio_square-green',
+    });
+    </script>
 @endsection

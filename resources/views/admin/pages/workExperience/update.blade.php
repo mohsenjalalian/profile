@@ -134,6 +134,8 @@
             </form>
         </div>
     </div>
+    <script src="js/cheouts.js"></script>
+    <script src="js/time.js"></script>
 @endsection
 @section('script')
 

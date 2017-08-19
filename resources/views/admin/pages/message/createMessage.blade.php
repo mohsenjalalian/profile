@@ -3,22 +3,11 @@
 
 
 @section('content')
-    {{--<form>--}}
-        {{--<input name="title" type="text" placeholder="Title?" />--}}
-        {{--<textarea name="content" data-provide="markdown" rows="10"></textarea>--}}
-        {{--<hr/>--}}
-        {{--<button type="submit" class="btn">Submit</button>--}}
-    {{--</form>--}}
-    {{--<!-- Content Wrapper. Contains page content -->--}}
     <div class="content-wrapper">
-
         <div class="container">
-
             <form id="contact" action="{{route('message.store')}}" method="post" enctype="multipart/form-data">
                 <h3>فرم پاسخ</h3>
-
                 {{csrf_field()}}
-
                 <div class="form-group{{ $errors->has('email') ? ' has-error': ''}}">
                     <fieldset>
                         <label for="email">ایمیل</label>

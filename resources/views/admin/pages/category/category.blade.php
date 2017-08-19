@@ -18,35 +18,6 @@
                 </ol>
             </div>
         </div>
-
-        {{--<div class="ibox float-e-margins">--}}
-            {{--<div class="ibox-content">--}}
-                {{--<div class="form-group">--}}
-                    {{--<form id="contact" action="{{route('storeCategory')}}" method="post">--}}
-                        {{--{{csrf_field()}}--}}
-                        {{--<div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">--}}
-                    {{--<label class="font-noraml text-center">لطفا روی کادر زیر کلیک کنید و دسته بندی خود را انتخاب کنید</label>--}}
-                    {{--<div>--}}
-                        {{--<select data-placeholder="انتخاب کنید" name="name" class="chosen-select" multiple style="width:350px;" tabindex="4">--}}
-                            {{--<option value="">Select</option>--}}
-                            {{--<option value="United States">United States</option>--}}
-                            {{--<option value="United Kingdom">United Kingdom</option>--}}
-                            {{--<option value="Afghanistan">Afghanistan</option>--}}
-                            {{--<option value="Aland Islands">Aland Islands</option>--}}
-                            {{--<option value="Albania">Albania</option>--}}
-                            {{--<option value="Algeria">Algeria</option>--}}
-                        {{--</select>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                        {{--@if($errors->has('name'))--}}
-                            {{--<span class="help-block">{{ $errors->first('name')}}</span>--}}
-                        {{--@endif--}}
-                    {{--</form>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-
-        <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
 
             <div style="margin-top: 50px;" class="col-lg-6">
@@ -105,7 +76,7 @@
                                         </button>
 
                                         <p class="text-center">
-                                        <form action="{{ route('category.destroy', $category->id) }}" method="POST">
+                                        <form action="{{ route('category.destroy', $category->id) }}" method="POST" class="frm">
                                             {{ method_field('DELETE') }}
                                             {{ csrf_field() }}
 
@@ -131,56 +102,6 @@
                 </div>
             </div>
         </div>
-            {{--<div class="wrapper wrapper-content animated fadeInRight col-md-6">--}}
-                {{--<div class="row">--}}
-                    {{--<div style="margin-top: 30px;">--}}
-                        {{--<div class="ibox float-e-margins">--}}
-
-                            {{--<div class="ibox-content">--}}
-
-                                {{--<div class="table-responsive">--}}
-                                    {{--<table class="table table-striped table-bordered table-hover dataTables-example" >--}}
-                                        {{--<thead>--}}
-                                        {{--<tr>--}}
-                                            {{--<th class="text-center">نام</th>--}}
-                                            {{--<th style="width: 30px;" class="text-center">تغیرات</th>--}}
-                                        {{--</tr>--}}
-                                        {{--</thead>--}}
-                                        {{--<tbody>--}}
-                                        {{--@foreach($categories as $category)--}}
-
-                                            {{--<tr>--}}
-                                                {{--<td style="padding-top: 22px;" class="text-center">{{$category->name}}</td>--}}
-
-                                                {{--<td style="display: flex;">--}}
-                                                    {{--<button style="margin-top: 12px; width:30px; height: 30px;" data-toggle="modal" data-href="{{ route('category.edit', $category->id) }}"--}}
-                                                            {{--data-target="#myModal2" class="btn btn-warning edit">--}}
-                                                        {{--<i style="margin-right: -3px;" class="fa fa-paint-brush" aria-hidden="true"></i></button>--}}
-
-                                                    {{--<p class="text-center">--}}
-                                                    {{--<form action="{{ route('category.destroy', $category->id) }}" method="POST">--}}
-                                                        {{--{{ method_field('DELETE') }}--}}
-                                                        {{--{{ csrf_field() }}--}}
-
-                                                        {{--<button style="margin-right: 20px; margin-top: 12px; width: 30px; height: 30px;" class="btn btn-danger text-center"><i style="margin-right: -3px;" class="fa fa-trash" aria-hidden="true"></i></button>--}}
-
-                                                    {{--</form>--}}
-                                                {{--</td>--}}
-                                            {{--</tr>--}}
-
-                                        {{--@endforeach--}}
-                                        {{--</tbody>--}}
-                                    {{--</table>--}}
-                                {{--</div>--}}
-
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-
         <div class="modal inmodal" id="myModal4" tabindex="-1" role="dialog"
              aria-hidden="true">
             <div class="modal-dialog">
@@ -203,17 +124,10 @@
                 </div>
             </div>
         </div>
-
+    </div>
     @include('admin.layouts.success')
     @include('admin.layouts.errors')
+
 @endsection
 
 
-@section('scripts')
-    $('button.edit').click(function(e){
-    e.preventDefault();
-    $.get($(this).attr('data-href'),function(data){
-    $('#myModal2').find('.modal-body').html(data);
-    })
-    });
-@endsection

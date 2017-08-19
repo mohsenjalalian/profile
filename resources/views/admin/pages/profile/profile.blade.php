@@ -174,7 +174,8 @@
                                 </div>
                                 <div class="form-group{{ $errors->has('about_me') ? ' has-error': ''}}">
                                     <div class="col-sm-10 col-md-12">
-                                <textarea style="height: 130px; max-height: 200px; max-width: 470px;" name="about_me" rows="8" cols="80"
+                                <textarea style="height: 130px; max-height: 200px; max-width: 470px;" name="about_me"
+                                          rows="8" cols="80"
                                           placeholder="درباره من" tabindex="1"
                                           class="form-control m-b">{{ Request::old('about_me') ?: ''}}</textarea>
                                         @if($errors->has('about_me'))
@@ -195,7 +196,8 @@
 
                                             <input type="file" name="photo" value="{{Request::file('photo')  ?: ''}}"
                                                    onchange="readURL1(this)"></span>
-                                                <p style="font-size: 10px;" class="text-center colorpicker">۲۰۰ * ۳۷۰</p>
+                                                <p style="font-size: 10px;" class="text-center colorpicker">۲۰۰ *
+                                                    ۳۷۰</p>
                                             </div>
                                             @if($errors->has('photo'))
                                                 <span class="help-block">{{ $errors->first('photo')}}</span>
@@ -232,8 +234,6 @@
                                             <input value="{{ Request::old('cover') ?: ''}}" type="file" name="cover"
                                                    onchange="readURL2(this)"></span>
                                                 <p style="font-size: 10px;" class="-warning text-center">۴۸۰ * ۱۰۰٪</p>
-                                                {{--<span class="fileinput-filename"></span>--}}
-                                                {{--<a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>--}}
                                             </div>
                                             @if($errors->has('cover'))
                                                 <span class="help-block">{{ $errors->first('cover')}}</span>
@@ -242,7 +242,8 @@
                                     </div>
                                 </div>
 
-                                <button style="font-family: webmdesign;" class="btn btn-primary col-md-4" name="submit" type="submit" id="contact-submit"
+                                <button style="font-family: webmdesign;" class="btn btn-primary col-md-4" name="submit"
+                                        type="submit" id="contact-submit"
                                         data-submit="...Sending">
                                     ارسال
                                 </button>
@@ -409,7 +410,8 @@
                                     </div>
                                     <div class="form-group{{ $errors->has('about_me') ? ' has-error': ''}}">
                                         <div class="col-sm-10 col-md-12">
-                                <textarea style="height: 130px; max-width: 470px; max-height: 200px;" name="about_me" rows="8" cols="80"
+                                <textarea style="height: 130px; max-width: 470px; max-height: 200px;" name="about_me"
+                                          rows="8" cols="80"
                                           placeholder="درباره من" tabindex="1"
                                           class="form-control m-b">{{$profile->about_me}}</textarea>
                                             @if($errors->has('about_me'))
@@ -423,7 +425,8 @@
                                                 <h4>شما هیچ عکسی آپلود نکرده اید</h4>
                                             @endif
                                             <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
-                                                <img style="width: 50px;height: 50px; position: relative; right: 25px;" id="photo1"
+                                                <img style="width: 50px;height: 50px; position: relative; right: 25px;"
+                                                     id="photo1"
                                                      src="{{asset($profile->photo)}}" alt="{{$profile->photo}}">
                                                 <div class="fileinput fileinput-new" data-provides="fileinput">
                                         <span class="btn btn-default btn-file"><span
@@ -445,7 +448,8 @@
                                         <div class="ibox float-e-margins">
                                             <div class="form-group{{ $errors->has('pdf') ? ' has-error': ''}}">
                                                 @if(($profile->pdf) != 0)
-                                                <i style="font-size: 52px; position: relative; right: 20px;" class="fa fa-book"></i>
+                                                    <i style="font-size: 52px; position: relative; right: 20px;"
+                                                       class="fa fa-book"></i>
                                                 @endif
                                                 <div class="fileinput fileinput-new" data-provides="fileinput">
                                         <span class="btn btn-default btn-file"><span
@@ -464,16 +468,15 @@
                                     <div class="col-md-4">
                                         <div class="ibox float-e-margins">
                                             <div class="form-group{{ $errors->has('cover') ? ' has-error': ''}}">
-                                               <img style="width: 50px;height: 50px; position: relative; right: 20px;" id="photo2"
-                                                                             src="{{asset($profile->cover)}}" alt="{{$profile->cover}}">
+                                                <img style="width: 50px;height: 50px; position: relative; right: 20px;"
+                                                     id="photo2"
+                                                     src="{{asset($profile->cover)}}" alt="{{$profile->cover}}">
                                                 <div class="fileinput fileinput-new" data-provides="fileinput">
                                         <span class="btn btn-default btn-file"><span class="fileinput-new"> بارگذاری کاور</span><span
                                                     class="fileinput-exists"><span
                                                         style="color: #2aca76;">بارگذاری شد</span></span>
                                             <input value="{{$profile->cover}}" type="file" name="cover"
                                                    onchange="readURL2(this)"></span>
-                                                    {{--<span class="fileinput-filename"></span>--}}
-                                                    {{--<a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>--}}
                                                 </div>
                                                 @if($errors->has('cover'))
                                                     <span class="help-block">{{ $errors->first('cover')}}</span>
@@ -481,7 +484,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button style="margin-top: 20px; font-family: webmdesign; position: relative; right: 5px; float: right !important;" class="btn btn-primary col-md-4" name="submit" type="submit"
+                                    <button style="margin-top: 20px; font-family: webmdesign; position: relative; right: 5px; float: right !important;"
+                                            class="btn btn-primary col-md-4" name="submit" type="submit"
                                             id="contact-submit"
                                             data-submit="...Sending">
                                         اصلاح
@@ -596,6 +600,15 @@
     @include('admin.layouts.success')
     @include('admin.layouts.errors')
 @endsection
-
-
+@section('script')
+    <script src="js/cheouts.js"></script>
+    <script src="js/time.js"></script>
+    <script src="js/plugins/iCheck/icheck.min.js"></script>
+    <script>
+        $('.i-checks').iCheck({
+            checkboxClass: 'icheckbox_square-green',
+            radioClass: 'iradio_square-green',
+        });
+    </script>
+@endsection
 
