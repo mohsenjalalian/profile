@@ -304,7 +304,7 @@ $(document).scroll(function(e) {
 	}else{
 		$("#icon56").css("background-color","#ffd93e");
 	}
-	
+
 	
 	// 	z = $(document).scrollTop();
 	// // if(z>4500 & z<5050){

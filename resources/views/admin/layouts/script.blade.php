@@ -41,8 +41,25 @@
 {{--<script src="js/plugins/sweetalert/sweetalert.min.js"></script>--}}
 <script src="js/plugins/bootstrap-markdown/bootstrap-markdown.js"></script>
 <script src="js/plugins/bootstrap-markdown/markdown.js"></script>
-<script>
 
+
+<script>
+    $(document).ready(function(){
+   var close = document.getElementsByClassName("closebtn");
+   var i;
+   for (i = 0; i < close.length; i++) {
+   close[i].onclick = function () {
+   var div = this.parentElement;
+   div.style.opacity = "0";
+   setTimeout(function () {
+   div.style.display = "none";
+    }, 600);
+   }
+}
+    });
+</script>
+
+<script>
     $(document).ready(function(){
         $('.alert22').fadeOut(5000)
     });

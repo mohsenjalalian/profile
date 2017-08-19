@@ -1,31 +1,4 @@
 <!--portfolio-->
-{{--<ul id="filter-options">--}}
-    {{--<li><input type="checkbox" value="filter_red" data-filter_id="red"> Red</li>--}}
-    {{--<li><input type="checkbox" value="filter_green" data-filter_id="green"> Green</li>--}}
-    {{--<li><input type="checkbox" value="filter_blue" data-filter_id="blue"> Blue</li>--}}
-    {{--<li><input type="checkbox" value="filter_orange" data-filter_id="orange"> Orange</li>--}}
-    {{--<li><input type="checkbox" value="filter_yellow" data-filter_id="yellow"> Yellow</li>--}}
-{{--</ul>--}}
-
-
-{{--<ul id="product-list">--}}
-    {{--<li class="filter_red">--}}
-        {{--<h2>Red Fire Truck</h2>--}}
-        {{--<p></p>--}}
-    {{--</li>--}}
-    {{--<li class="filter_blue">--}}
-        {{--<h2>Blue Kite</h2>--}}
-        {{--<p></p>--}}
-    {{--</li>--}}
-    {{--<li class="filter_blue filter_green">--}}
-        {{--<h2>Green & Blue Parot</h2>--}}
-        {{--<p></p>--}}
-    {{--</li>--}}
-    {{--<li class="filter_yellow">--}}
-        {{--<h2>Yellow Canary</h2>--}}
-        {{--<p></p>--}}
-    {{--</li>--}}
-{{--</ul>--}}
 <main id="about4" class="container-fluid background-four">
     <section class="container">
         <h2 style="font-size:25px;margin-top:50px;"><strong>نمونه کار</strong></h2>
