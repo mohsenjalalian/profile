@@ -48,8 +48,15 @@
             itemsDesktop: [1199, 3],
             itemsDesktopSmall: [979, 3]
         });
+        $("#owl7").owlCarousel({
+            autoPlay: 5000, //Set AutoPlay to 3 seconds
+            items: 2,
+            itemsDesktop: [1199, 3],
+            itemsDesktopSmall: [979, 3]
+        });
     });
 </script>
+
 <script>
     new WOW().init();
 </script>
