@@ -87,7 +87,7 @@
                                                     <span class="fileinput-new">بارگذاری</span>
                                                     <span class="fileinput-exists">عوض کردن</span>
                                                     <input type="file" value="{{ Request::old('photo') ?: ''}}"
-                                                           name="photo" >
+                                                           name="photo">
                                                 </span>
                                             <a href="#" class="input-group-addon btn btn-default fileinput-exists"
                                                data-dismiss="fileinput">پاک کردن</a>
@@ -132,15 +132,8 @@
                         @foreach($recommends as $recommend)
                             <tr>
                                 <td style="vertical-align: middle; width: 50px;" class="text-center">
-                                    @if(empty($recommend->photo))
-                                        <img style="width: 50px;height: 50px" src="/image/admin.png"
-                                             alt="نظر مدیران">
-                                    @else
                                     <img style="width: 50px;height: 50px" src="{{$recommend->photo}}"
-                                         alt="{{$recommend->photo}}">
-                                    @endif
-                                </td>
-
+                                         alt="{{$recommend->photo}}"></td>
                                 <td style=" vertical-align: middle; width: 100px;"
                                     class="text-center">{{$recommend->name}}</td>
                                 <td style="vertical-align: middle; width: 100px;" class="text-center">

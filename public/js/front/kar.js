@@ -230,10 +230,10 @@ console.log( about55.height());
 var about56 = $('#about56');
 console.log( about56.position().top);
 console.log( about56.height());
-//
-// var about5 = $('#about5');
-// console.log( about5.position().top);
-// console.log( about5.height());
+
+var about555 = $('#about555');
+console.log( about555.position().top);
+console.log( about555.height());
 
 var about6 = $('#about6');
 console.log( about6.position().top);
@@ -246,8 +246,8 @@ console.log( about7.height());
 $(document).scroll(function(e) {
     p = $(document).scrollTop();
 	// if(p<350){
-	// if(p<350){
-        if(p > home11.position().top && p < home11.position().top + home11.height()){
+	if(p<350){
+     //    if(p > home11.position().top && p < home11.position().top + home11.height()){
 		$("#icon1").css("background-color","#fff");
 	}else{
 		$("#icon1").css("background-color","#ffd93e");
@@ -283,7 +283,7 @@ $(document).scroll(function(e) {
 		$("#icon57").css("background-color","#ffd93e");
 	}
 	
-	m = $(document).scrollTop();
+	o = $(document).scrollTop();
 	// if(m>2450 & m<3300){
     if(o > about4.position().top && o < about4.position().top + about4.height()){
 		$("#icon5").css("background-color","#fff");
@@ -306,13 +306,13 @@ $(document).scroll(function(e) {
 	}
 
 	
-	// 	z = $(document).scrollTop();
-	// // if(z>4500 & z<5050){
-    // if(z > about5.position().top && z < about5.position().top + about5.height()){
-	// 	$("#icon6").css("background-color","#fff");
-	// }else{
-	// 	$("#icon6").css("background-color","#ffd93e");
-	// }
+		z = $(document).scrollTop();
+	// if(z>4500 & z<5050){
+    if(z > about555.position().top && z < about555.position().top + about555.height()){
+		$("#icon6").css("background-color","#fff");
+	}else{
+		$("#icon6").css("background-color","#ffd93e");
+	}
 			w = $(document).scrollTop();
 	// if(w>5050 & w<5850){
     if(m > about6.position().top && m < about6.position().top + about6.height()){
@@ -354,11 +354,13 @@ $(document).ready(function(e) {
 	$("#icon5").click(function(e) {
 		x = $("#about4").offset();
         $("body,html").animate({scrollTop:x.top},1500);
-    }); 
+    });
+
 	$("#icon6").click(function(e) {
-        y = $("#about5").offset();
+        y = $("#about555").offset();
         $("body,html").animate({scrollTop:y.top},1500);
-    }); 
+    });
+
 	$("#icon7").click(function(e) {
         z = $("#about6").offset();
         $("body,html").animate({scrollTop:z.top},1500);
