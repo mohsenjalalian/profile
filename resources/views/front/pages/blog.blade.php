@@ -30,11 +30,11 @@
                 <a href="https://www.facebook.com/sharer/sharer.php?u=#blog">
                     <span class="face-bl">فیس بوک</span>
                 </a>
-                <a href="https://twitter.com/home?status=#blog">
-                    <span class="twit">تویتر</span>
-                </a>
                 <a href="https://plus.google.com/share?url=#blog">
                     <span class="google">گوگل بلاس</span>
+                </a>
+                <a href="https://twitter.com/home?status=#blog">
+                    <span class="twit">تویتر</span>
                 </a>
             </p>
         </div>

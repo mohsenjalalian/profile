@@ -5,7 +5,6 @@
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-
         <div class="container">
             @include('admin.layouts.errors')
             <form id="contact" action="{{route('blog.update',$blog->id)}}" method="post"
@@ -67,52 +66,63 @@
                         @endif
                     </div>
 
-<div class="row">
-                    <div class="col-md-2">
-                        <div class="ibox float-e-margins">
-                            <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
-                                @if(!empty($blog->album[0]->photo))
-                                    <input type="file" id="file1" name="photo" value="{{$blog->album[0]->photo}}" onchange="readURL1(this)" style="display:none" >
-                                    <img style="width: 50px;height: 50px" id="photo1" src="{{asset(\App\Http\Controllers\BlogController::ALBUM_PATH.'/'.$blog->album[0]->photo)}}" alt="{{$blog->album[0]->photo}}">
-                                @else
-                                    <input type="file" id="file1" name="photo" onchange="readURL1(this)" style="display:none" >
-                                    <img id="photo1" src="#" alt="عکس 1" />
-                                @endif
-                                <div class="fileinput fileinput-new" data-provides="fileinput">
-                                        <span class="btn btn-default btn-file"><span
-                                                    class="fileinput-new">عکس ۱</span> <span class="fileinput-exists"><span class="fileinput-exists"><span
-                                                            style="color: #2aca76;">بارگذاری شد</span></span> </span>
-                                            <input type="file" name="photo[{{$blog->album[0]->id}}]" value="{{$blog->album[0]->photo}}" onchange="readURL1(this)"></span>
-                                </div>
-                                @if($errors->has('photo'))
-                                    <span class="help-block">{{ $errors->first('photo')}}</span>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-
+                    <div class="row">
                         <div class="col-md-2">
                             <div class="ibox float-e-margins">
                                 <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
-                                    @if(!empty($blog->album[1]->photo))
-                                        <input type="file" id="file2" name="photo" value="{{$blog->album[1]->photo}}" onchange="readURL2(this)" style="display:none" >
-                                        <img style="width: 50px;height: 50px" id="photo2" src="{{asset(\App\Http\Controllers\BlogController::ALBUM_PATH.'/'.$blog->album[1]->photo)}}" alt="{{$blog->album[1]->photo}}">
+                                    @if(isset($blog->album[0]) and !empty($blog->album[0]->photo))
+                                        <input type="file" id="file1" name="photo" value="{{$blog->album[0]->photo}}"
+                                               onchange="readURL1(this)" style="display:none">
+                                        <img style="width: 50px;height: 50px" id="photo1"
+                                             src="{{asset(\App\Http\Controllers\BlogController::ALBUM_PATH.'/'.$blog->album[0]->photo)}}"
+                                             alt="{{$blog->album[0]->photo}}">
                                     @else
-                                        <input type="file" id="file2" name="photo" onchange="readURL1(this)" style="display:none" >
-                                        <img id="photo2" src="#" alt="عکس2" />
+                                        <input type="file" id="file1" name="photo" onchange="readURL1(this)"
+                                               style="display:none">
+                                        <img id="photo1" src="#" alt="عکس 1"/>
                                     @endif
                                     <div class="fileinput fileinput-new" data-provides="fileinput">
                                         <span class="btn btn-default btn-file"><span
-                                                    class="fileinput-new">عکس 2</span> <span class="fileinput-exists"><span class="fileinput-exists"><span
+                                                    class="fileinput-new">عکس ۱</span> <span
+                                                    class="fileinput-exists"><span class="fileinput-exists"><span
                                                             style="color: #2aca76;">بارگذاری شد</span></span> </span>
-                                            <input type="file" name="photo[{{$blog->album[1]->id}}]"
-                                                   value="{{$blog->album[1]->photo}}" onchange="readURL2(this)">
-                                        </span>
+                                            <input type="file" name="photo[]"
+                                                   value="" onchange="readURL1(this)"></span>
+                                    </div>
                                     @if($errors->has('photo'))
                                         <span class="help-block">{{ $errors->first('photo')}}</span>
                                     @endif
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="ibox float-e-margins">
+                                <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
+                                    @if(isset($blog->album[1]) and !empty($blog->album[1]->photo))
+                                        <input type="file" id="file2" name="photo" value="{{$blog->album[1]->photo}}"
+                                               onchange="readURL2(this)" style="display:none">
+                                        <img style="width: 50px;height: 50px" id="photo2"
+                                             src="{{asset(\App\Http\Controllers\BlogController::ALBUM_PATH.'/'.$blog->album[1]->photo)}}"
+                                             alt="{{$blog->album[1]->photo}}">
+                                    @else
+                                        <input type="file" id="file2" name="photo" onchange="readURL1(this)"
+                                               style="display:none">
+                                        <img id="photo2" src="#" alt="عکس2"/>
+                                    @endif
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <span class="btn btn-default btn-file"><span
+                                                    class="fileinput-new">عکس 2</span> <span
+                                                    class="fileinput-exists"><span class="fileinput-exists"><span
+                                                            style="color: #2aca76;">بارگذاری شد</span></span> </span>
+                                            <input type="file" name="photo[]"
+                                                   value="" onchange="readURL2(this)">
+                                        </span>
+                                        @if($errors->has('photo'))
+                                            <span class="help-block">{{ $errors->first('photo')}}</span>
+                                        @endif
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -120,7 +130,7 @@
                         <div class="col-md-2">
                             <div class="ibox float-e-margins">
                                 <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
-                                    @if(!empty($blog->album[2]->photo))
+                                    @if(isset($blog->album[2]) and !empty($blog->album[2]->photo))
                                         <input type="file" id="file3" name="photo" value="{{$blog->album[2]->photo}}"
                                                onchange="readURL3(this)" style="display:none">
                                         <img style="width: 50px;height: 50px" id="photo3"
@@ -133,25 +143,22 @@
                                     @endif
                                     <div class="fileinput fileinput-new" data-provides="fileinput">
                                         <span class="btn btn-default btn-file"><span
-                                                    class="fileinput-new">عکس 3</span> <span class="fileinput-exists"><span class="fileinput-exists"><span
+                                                    class="fileinput-new">عکس 3</span> <span
+                                                    class="fileinput-exists"><span class="fileinput-exists"><span
                                                             style="color: #2aca76;">بارگذاری شد</span></span> </span>
-                                            <input type="file" name="photo[{{$blog->album[2]->id}}]" value="{{$blog->album[2]->photo}}" onchange="readURL3(this)"></span>
-                </div>
-                @if($errors->has('photo'))
-                    <span class="help-block">{{ $errors->first('photo')}}</span>
-                @endif
-            </div>
-        </div>
-    </div>
-</div>
-                </fieldset>
-
-                <div style="margin-top: -20px;" class="modal-footer col-md-5">
-                    <button type="button" class="btn btn-white" data-dismiss="modal">بستن</button>
-                    <button name="submit" type="submit" id="contact-submit" data-submit="...Sending"
-                            class="btn btn-primary">اعمال تغیرات
-                    </button>
-                </div>
+                                            <input type="file" name="photo[]"
+                                                   value="" onchange="readURL3(this)"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: -20px;" class="modal-footer col-md-5">
+                        <button type="button" class="btn btn-white" data-dismiss="modal">بستن</button>
+                        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending"
+                                class="btn btn-primary">اعمال تغیرات
+                        </button>
+                    </div>
             </form>
 
         </div>

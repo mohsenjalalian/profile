@@ -10,7 +10,14 @@
 <script src="/js/plugins/sparkline/jquery.sparkline.min.js"></script>
 <script src="js/plugins/jasny/jasny-bootstrap.min.js"></script>
 <script src="js/plugins/codemirror/codemirror.js"></script>
+{{--<script src="js/plugins/footable/footable.all.min.js"></script>--}}
 <script src="js/plugins/footable/footable.all.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.footable').footable();
+        $('.footable2').footable();
+    });
+</script>
 <script src="js/classie.js"></script>
 
 <script>
@@ -26,12 +33,12 @@
         obj.setCustomValidity('');
     }
 </script>
-<script>
-    $(document).ready(function () {
-        $('.footable').footable();
-        $('.footable2').footable();
-    });
-</script>
+{{--<script>--}}
+    {{--$(document).ready(function () {--}}
+        {{--$('.footable').footable();--}}
+        {{--$('.footable2').footable();--}}
+    {{--});--}}
+{{--</script>--}}
 <script>
     $(document).ready(function () {
         $('form.frm').submit(function () {

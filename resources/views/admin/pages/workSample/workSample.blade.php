@@ -43,17 +43,17 @@
                                 </div>
                             </div>
                             @if(count($categories) > 0)
-                                <p style="position:relative; height: 22px; top: 20px; right: 15px;">دسته بندی</p>
+                                <p style="position:relative; height: 22px; bottom: 0px; right: 15px;">دسته بندی</p>
                                 <div style="margin-top: 70px;"
                                      class="form-group{{ $errors->has('category_id[]') ? ' has-error': ''}}">
-                                    <div style="margin-top: 0px; margin-right: 15px; width: 280px;"
+                                    <div style="margin-top: 10px; margin-right: 15px; width: 280px;"
                                          class="ibox float-e-margins">
                                         <div class="form-group">
                                             <label class="font-noraml text-center"></label>
                                             <div>
-                                                <select data-placeholder="انتخاب کنید" name="category_id[]"
+                                                <select data-placeholder="" name="category_id[]"
                                                         class="chosen-select" multiple
-                                                        style="width:350px;" tabindex="4">
+                                                        style="width:0px;" tabindex="4">
                                                     @foreach($categories as $category )
                                                         <option name="category_id[]"
                                                                 value="{{$category->id}}">{{$category->name}}</option>
@@ -76,13 +76,12 @@
                                 <div class="form-group{{ $errors->has('skill_id[]') ? ' has-error': ''}}">
                                     <div style="margin-top: -15px; margin-right: 15px; width: 280px; "
                                          class="ibox float-e-margins">
-
                                         <div class="form-group">
                                             <label class="font-noraml text-center"></label>
                                             <div>
-                                                <select data-placeholder="انتخاب کنید" name="skill_id[]"
+                                                <select data-placeholder=""  name="skill_id[]"
                                                         class="chosen-select" multiple
-                                                        style="width:350px;" tabindex="4">
+                                                        style="width:1px !important;" tabindex="4">
                                                     @foreach($skills as $skill )
                                                         <option name="skill_id[]"
                                                                 value="{{$skill->id}}">{{$skill->name}}</option>
@@ -229,7 +228,7 @@
                         داده میشود
                     </small>
                 </div>
-                <div style="background-color: #fff !important; height: 470px;" class="modal-body col-md-12">
+                <div style="background-color: #fff !important; height: auto;" class="modal-body col-md-12">
                     <div class="container">
 
                     </div>
@@ -248,42 +247,18 @@
 @section('script')
     <script src="js/plugins/chosen/chosen.jquery.js"></script>
     <script src="js/plugins/iCheck/icheck.min.js"></script>
+    <script src="js/plugins/footable/footable.all.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.footable').footable();
+            $('.footable2').footable();
+        });
+    </script>
     <script>
         $(document).ready(function () {
             $('.chosen-select').chosen({width: "100%"});
 
-            $("#ionrange_1").ionRangeSlider({
-                min: 0,
-                max: 5000,
-                type: 'double',
-                prefix: "$",
-                maxPostfix: "+",
-                prettify: false,
-                hasGrid: true
-            });
 
-            $("#ionrange_2").ionRangeSlider({
-                min: 0,
-                max: 10,
-                type: 'single',
-                step: 0.1,
-                postfix: " carats",
-                prettify: false,
-                hasGrid: true
-            });
-
-            $("#ionrange_3").ionRangeSlider({
-                min: -50,
-                max: 50,
-                from: 0,
-                postfix: "°",
-                prettify: false,
-                hasGrid: true
-            });
-
-            $(".dial").knob();
-
-            var basic_slider = document.getElementById('basic_slider');
 
         });
     </script>

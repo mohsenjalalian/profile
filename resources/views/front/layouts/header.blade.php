@@ -37,19 +37,50 @@
 
 <!--home-->
 @foreach($profiles as $profile)
-<img class="cover-img" src="{{$profile->cover}}" height="480px" width="100%" alt="cover">
+    @if ($profile->cover)
+        <img class="cover-img" src="{{$profile->cover}}"
+             alt="cover" height="480px" width="100%">
+    @else
+        <img class="cover-img" height="480px" width="100%"  src="/images/front/background.jpg"
+             alt="cover">
+    @endif
+    @if ($profile->photo)
+        <section class="pull-right col-sm-6 col-xs-12 col-md-5">
+            <img class="me img-responsive" width="370px;"  height="200px" src="{{$profile->photo}}" alt="me">
+        </section>
+    @else
+        <section class="pull-right col-sm-6 col-xs-12 col-md-5">
+            <img class="me img-responsive" width="370px;"  height="200px" src="/image/profile.png" alt="me">
+        </section>
+    @endif
+    {{--<div class="box-social1 pull-left"><a href="#"><i class="fa fa-language" aria-hidden="true"></i></a>--}}
+        {{--<div class="box-languge pull-left">--}}
+            {{--<p class="text-center">English</p>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+    <div class="row">
+    <section class="pull-left col-xs-12 col-md-6 texth1">
+    <h1>{{$profile->first_name}} {{$profile->last_name}} </h1>
+    <p class="textp">{{$profile->summary}} </p>
+    <p>شغل : <span class="p-text">{{$profile->job}} </span>
+    <button id="tagrobe" class="btn btn-head">
+    <p>بیشتر</p>
+    </button>
+    </p>
+    <p class="p-text2">تحصیلات : <span class="p-text3">{{$profile->last_degree}} </span>
+    <button id="tahsilat" class="btn btn-head">
+    <p>بیشتر</p>
+    </button>
+    </p>
+    </section>
+    </div>
 @endforeach
 <main id="home11" class="container-fluid background">
-    <div class="box-social1 pull-left"><a href="#"><i class="fa fa-language" aria-hidden="true"></i></a>
-        <div class="box-languge pull-left">
-            <p class="text-center">English</ >
-        </div>
-    </div>
-    @foreach($socialNetworks as $socialNetwork)
-        <a href="{{$socialNetwork->telegram}}"><div class="social1 pull-left hidden-xs"><i class="fa fa-paper-plane" aria-hidden="true"></i></div></a>
-        <a href="{{$socialNetwork->linkedin}}"><div class="social2 pull-left hidden-xs"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a>
-        <a href="{{$socialNetwork->instagram}}"><div class="social3 pull-left hidden-xs"><i class="fa fa-instagram" aria-hidden="true"></i></div></a>
-    @endforeach
+    {{--<div class="box-social1 pull-left"><a href="#"><i class="fa fa-language" aria-hidden="true"></i></a>--}}
+        {{--<div class="box-languge pull-left">--}}
+            {{--<p class="text-center">English</p>--}}
+        {{--</div>--}}
+    {{--</div>--}}
     <section class="pull-right hidden-xs col-md-1 nav-left">
         <div class="navbar-tunel">
             <section class="pull-right col-md-6">
@@ -114,23 +145,25 @@
 
 
 @foreach($profiles as $profile)
-    <section class="pull-right col-sm-6 col-xs-12 col-md-4"><img class="me img-responsive" width="370px" height="200px" src="{{$profile->photo}}" alt="me">
-    </section>
-    <section class="pull-right col-xs-12 col-md-4 texth1">
-        <h1>{{$profile->first_name}} {{$profile->last_name}} </h1>
-        <p class="textp">{{$profile->summary}} </p>
-        <p>شغل : <span class="p-text">{{$profile->job}} </span>
-            <button id="tagrobe" class="btn btn-head">
-        <p>بیشتر</p>
-        </button>
-        </p>
-        <p class="p-text2">تحصیلات : <span class="p-text3">{{$profile->last_degree}} </span>
-            <button id="tahsilat" class="btn btn-head">
-        <p>بیشتر</p>
-        </button>
-        </p>
-    </section>
-    <section class="hidden-xs hidden-sm col-md-3 "><img class="mouse" src="images/front/mouse.png" alt="mouse"></section>
+    {{--<div class="row">--}}
+    {{--<section class="pull-right col-sm-6 col-xs-12 col-md-6">--}}
+        {{--<img class="me img-responsive" height="200px" src="{{$profile->photo}}" alt="me">--}}
+    {{--</section>--}}
+    {{--<section class="pull-left col-xs-12 col-md-6 texth1">--}}
+        {{--<h1>{{$profile->first_name}} {{$profile->last_name}} </h1>--}}
+        {{--<p class="textp">{{$profile->summary}} </p>--}}
+        {{--<p>شغل : <span class="p-text">{{$profile->job}} </span>--}}
+            {{--<button id="tagrobe" class="btn btn-head">--}}
+        {{--<p>بیشتر</p>--}}
+        {{--</button>--}}
+        {{--</p>--}}
+        {{--<p class="p-text2">تحصیلات : <span class="p-text3">{{$profile->last_degree}} </span>--}}
+            {{--<button id="tahsilat" class="btn btn-head">--}}
+        {{--<p>بیشتر</p>--}}
+        {{--</button>--}}
+        {{--</p>--}}
+    {{--</section>--}}
+    {{--</div>--}}
 </main>
 
 <!--about-->
@@ -142,7 +175,7 @@
             </a> <a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i>
                 <p class="icon-animate">پیام فرستادن</p>
             </a> <a style="border-right:none;" href="{{$profile->pdf}}" download><i class="fa fa-diamond"
-                                                                                                aria-hidden="true"></i>
+                               aria-hidden="true"></i>
                 <p> دانلود رزومه</p>
             </a></aside>
     </section>

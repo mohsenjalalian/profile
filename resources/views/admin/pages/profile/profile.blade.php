@@ -421,9 +421,6 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="ibox float-e-margins">
-                                            @if(empty($profile->photo))
-                                                <h4>شما هیچ عکسی آپلود نکرده اید</h4>
-                                            @endif
                                             <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
                                                 <img style="width: 50px;height: 50px; position: relative; right: 25px;"
                                                      id="photo1"
@@ -443,12 +440,14 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="col-md-4">
                                         <div class="ibox float-e-margins">
                                             <div class="form-group{{ $errors->has('pdf') ? ' has-error': ''}}">
-                                                @if(($profile->pdf) != 0)
+                                                @if(($profile->pdf))
                                                     <i style="font-size: 52px; position: relative; right: 20px;"
+                                                       class="fa fa-book"></i>
+                                                @else
+                                                    <i style="font-size: 52px; position: relative; right: 20px; display: none;"
                                                        class="fa fa-book"></i>
                                                 @endif
                                                 <div class="fileinput fileinput-new" data-provides="fileinput">
@@ -484,7 +483,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button style="margin-top: 20px; font-family: webmdesign; position: relative; right: 5px; float: right !important;"
+                                    <button style="margin-top: 20px; font-family: webmdesign; margin-left: 330px; float: left !important;"
                                             class="btn btn-primary col-md-4" name="submit" type="submit"
                                             id="contact-submit"
                                             data-submit="...Sending">
@@ -496,7 +495,7 @@
                                     {{ csrf_field() }}
 
                                     <span class="text-center"><button
-                                                style="width: 30px; height: 33px; position: relative; top: 303px; right: -310px;"
+                                                style="width: 30px; float: left; height: 33px; margin-top: -34px; margin-left: 290px;"
                                                 class="btn btn-danger"><i style="margin-right: -5px" class="fa fa-trash"
                                                                           aria-hidden="true"></i></button></span>
 
@@ -515,19 +514,36 @@
                         <div class="col-md-12">
                             @foreach($profiles as $profile)
                                 <div style="height: 200px" class="col-md-12">
-                                    <img width="100%" height="100%" class="m-b-md" src="{{asset($profile->cover)}}"
-                                         alt="{{$profile->cover}}"></div>
+                                    @if ($profile->cover)
+                                        <img width="100%"
+                                             height="100%"
+                                             class="m-b-md"
+                                             src="{{asset($profile->cover)}}"
+                                             alt="{{$profile->cover}}">
+                                    @else
+                                        <img width="100%"
+                                             height="100%"
+                                             class="m-b-md"
+                                             src="/images/front/background.jpg"
+                                             alt="{{$profile->cover}}">
+                                    @endif
+                                </div>
                                 <div style="float: left !important; margin-top: -30px;"
                                      class="profile-image col-md-3 pull-left">
-                                    <img class="img-circle circle-border m-b-md" src="{{asset($profile->photo)}}"
-                                         alt="{{$profile->photo}}">
+                                    @if ($profile->photo)
+                                        <img class="img-circle circle-border m-b-md" src="{{asset($profile->photo)}}"
+                                             alt="{{$profile->photo}}">
+                                    @else
+                                        <img class="img-circle circle-border m-b-md" src="/image/profile.png"
+                                             alt="admin">
+                                    @endif
                                 </div>
                                 <div class="profile-info">
                                     <div>
                                         <div>
-                                            <h2 style="margin-right: 20px !important; class=" no-margins">
-                                            <span>{{$profile->first_name}}</span>
-                                            <span>{{$profile->last_name}}</span>
+                                            <h2 style="margin-right: 20px !important; class=">
+                                                <span>{{$profile->first_name}}</span>
+                                                <span>{{$profile->last_name}}</span>
                                             </h2>
                                             <p style="margin-right: 23px; margin-top: 5px;">{{$profile->job}}</p>
 
@@ -577,14 +593,19 @@
                         <div class="col-md-6">
 
                             <td class="pull-left">
-                                <a href="{{asset($profile->pdf)}}" download><i
-                                            style="color: #222; float: left; padding-left: 45px; margin-top: 30px; font-size: 20px;"
-                                            class="fa fa-book" aria-hidden="true">
+                                @if ($profile->pdf)
+                                    <a href="{{asset($profile->pdf)}}" download class="disabled"><i
+                                                style="color: #222; float: left; padding-left: 45px; margin-top: 30px; font-size: 20px;"
+                                                class="fa fa-book" aria-hidden="true">
 
-                                        <span style="font-family: webmdesign !important; font-size: 14px;">دانلود رزومه</span>
-                                    </i>
-
-                                </a></td>
+                                            <span style="font-family: webmdesign !important; font-size: 14px;">دانلود رزومه</span>
+                                        </i>
+                                    </a>
+                                @else
+                                    <a href="{{asset($profile->pdf)}}" download class="disabled">
+                                    </a>
+                                @endif
+                            </td>
 
                         </div>
 

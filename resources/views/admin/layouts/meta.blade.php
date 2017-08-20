@@ -32,6 +32,7 @@
         <link href="css/plugins/bootstrap-markdown/bootstrap-markdown.min.css" rel="stylesheet">
         <link href="css/detacheker.css" rel="stylesheet">
         <link href="css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+
         {{--<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />--}}
     {{--<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>--}}
     {{--<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>--}}

@@ -8,7 +8,7 @@
             <section class="content bgcolor-1">
                 <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
             <span class="input input--nao">
-      <input class="input__field input__field--nao" required name="name"
+      <input oninvalid="return chek(this)" oninput="return chek2(this)" class="input__field input__field--nao" required name="name"
              value="{{ Request::old('name') ?: ''}}" type="text" id="input-1"/>
       <label class="input__label input__label--nao" for="input-1">
           <span class="input__label-content input__label-content--nao">نام</span>
@@ -21,7 +21,7 @@
 
                 <div class="form-group{{ $errors->has('email') ? ' has-error': ''}}">
                 <span class="input input--nao">
-      <input class="input__field input__field--nao" required name="email"
+      <input oninvalid="return chek(this)" oninput="return chek2(this)" class="input__field input__field--nao" required name="email"
              value="{{ Request::old('email') ?: ''}}" type="text" id="input-2"/>
       <label class="input__label input__label--nao" for="input-2">
           <span class="input__label-content input__label-content--nao">ایمیل</span>
@@ -34,7 +34,7 @@
 
                 <div class="form-group{{ $errors->has('message') ? ' has-error': ''}}">
                     <span class="input input--nao">
-      <input class="input__field input__field--nao" required name="message"
+      <input oninvalid="return chek(this)" oninput="return chek2(this)" class="input__field input__field--nao" required name="message"
              value="{{ Request::old('message') ?: ''}}" type="text" id="input-3"/>
       <label class="input__label input__label--nao" for="input-3">
           <span class="input__label-content input__label-content--nao">پیام</span>
@@ -79,10 +79,18 @@
                                                               aria-hidden="true"></i></a>
                     <a href="{{$socialNetwork->skype}}"><i id="social-fo5" class="fa fa-skype"
                                                           aria-hidden="true"></i></a>
+                    <a href="{{$socialNetwork->telegram}}"><i id="social-fo6" class="fa fa-paper-plane"
+                                                           aria-hidden="true"></i></a>
+                    <a href="{{$socialNetwork->linkedin}}"><i id="social-fo7" class="fa fa-linkedin"
+                                                           aria-hidden="true"></i></a>
+                    <a href="{{$socialNetwork->instagram}}"><i id="social-fo8" class="fa fa-instagram"
+                                                           aria-hidden="true"></i></a>
                 @endforeach
             </div>
-            <div class="pull-left"><img class="img-qr hidden-xs" src="{{$contact->qr_code}}" alt="{{$contact->qr_code}}"
-                                        width="130px"></div>
+            <div class="pull-left">
+                <img style="background-color: rgba(255,217,62,0.6)" class="img-qr hidden-xs" src="{{$contact->qr_code}}" alt="{{$contact->qr_code}}"
+                                        width="130px">
+            </div>
             @endforeach
         </section>
 

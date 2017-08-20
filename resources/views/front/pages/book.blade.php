@@ -6,7 +6,15 @@
         <li style="border:1px solid #eee;">
             <figure class="book">
                 <ul class="hardcover_front">
-                    <li><img src="{{asset($doc->photo)}}" alt="{{$doc->photo}}" width="100%" height="100%"></li>
+                    <li>
+                        @if ($doc->photo)
+                            <img src="{{asset($doc->photo)}}" alt="{{$doc->photo}}" width="100%" height="100%">
+                        @else
+                            <img src="/image/profile.png" alt="salam" width="100%" height="100%">
+                        @endif
+                        {{--<img src="{{asset($doc->photo)}}" alt="{{$doc->photo}}" width="100%" height="100%">--}}
+
+                    </li>
                     <li></li>
                 </ul>
 
