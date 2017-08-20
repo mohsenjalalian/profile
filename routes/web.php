@@ -151,4 +151,11 @@ Route::group(['middleware' => 'auth'], function () {
             'index' => 'blog'
         ]
     ]);
+
+    Route::resource('types', 'TypeController', [
+        'names' => [
+            'index' => 'type'
+        ]
+    ]);
+
 });

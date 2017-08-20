@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SkillForm;
 use App\Model\Skills;
+use App\Model\SkillType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
@@ -22,7 +23,8 @@ class SkillsController extends Controller
     public function index()
     {
         $skills = Skills::all();
-        return view('admin.pages.skills.skills', compact('skills'));
+        $types = SkillType::all();
+        return view('admin.pages.skills.skills', compact('skills', 'types'));
     }
 
     /**
@@ -32,7 +34,7 @@ class SkillsController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.skills.createSkills');
+        //        return view('admin.pages.skills.createSkills');
     }
 
     /**
@@ -67,7 +69,8 @@ class SkillsController extends Controller
     public function edit($id)
     {
         $skills = Skills::find($id);
-        return view('admin.pages.skills.update', compact('skills'))->renderSections()['content'];
+        $types = SkillType::all();
+        return view('admin.pages.skills.update', compact('skills','types'))->renderSections()['content'];
     }
 
     /**
@@ -80,7 +83,6 @@ class SkillsController extends Controller
     public function update($id)
     {
         $rules = array(
-            'type' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
             'name' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
             'point' => 'required',
         );
@@ -93,8 +95,7 @@ class SkillsController extends Controller
         } else {
             // store
             $skills = Skills::find($id);
-
-            $skills->type = Input::get('type');
+            $skills->type_id = Input::get('type_id');
             $skills->name = Input::get('name');
             $skills->point = Input::get('point');
 

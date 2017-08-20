@@ -6,7 +6,7 @@
     <div class="content-wrapper clearfix">
         <div class="row wrapper border-bottom white-bg page-heading">
             <div class="col-lg-10">
-                <h2>مهارت ها</h2>
+                <h2> نوع مهارت ها</h2>
                 <ol class="breadcrumb">
                     <li>
                         <a href="{{route('profile')}}">خانه</a>
@@ -24,7 +24,7 @@
                         افزودن
                     </div>
                     <div class="panel-body">
-                        <form id="contact" action="{{route('skills.store')}}" method="post">
+                        <form id="contact" action="{{route('types.store')}}" method="post">
                             {{csrf_field()}}
                             <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
                                 <div class="col-sm-10 col-md-12">
@@ -40,54 +40,8 @@
                             </div>
 
                             <div class="row">
-                            @if(count($types) > 0)
-                                <p style="position:relative; height: 22px; bottom: 0px; right: 15px;">نوع مهارت</p>
-                                <div style="margin-top: 70px;"
-                                     class="form-group{{ $errors->has('type_id') ? ' has-error': ''}}">
-                                    <div style="margin-top: 10px; margin-right: 15px; width: 280px;"
-                                         class="ibox float-e-margins">
-                                        <div class="form-group">
-                                            <label class="font-noraml text-center"></label>
-                                                <select oninvalid="return chek(this)" oninput="return chek2(this)"
-                                                        style="width: 279px; margin-right: 15px;" name="type_id"
-                                                        class="select2_demo_1 form-control">
-                                                    <option value="{{ Request::old('type') ?: '0'}}">نوع را انتخاب کنید</option>
-                                                    @foreach($types as $type)
-                                                    <option value="{{$type->id}}">{{$type->name}}</option>
-                                                    @endforeach
-                                                </select>
-                                        </div>
-                                    </div>
-                                    @if($errors->has('type_id'))
-                                        <span class="help-block">{{ $errors->first('type_id')}}</span>
-                                    @endif
-                                </div>
-                            @else
-                                <p class="text-center">شما هیچ دسته بندی نساخته اید</p>
-                            @endif
-                        </div>
 
-
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group{{ $errors->has('point') ? ' has-error': ''}}">
-                                        <select oninvalid="return chek(this)" oninput="return chek2(this)" required
-                                                style="margin-right: 15px; width: 280px;" name="point"
-                                                class="select2_demo_1 form-control">
-                                            <option value="{{ Request::old('point') ?: ''}}">امتیاز</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
-                                        @if($errors->has('point'))
-                                            <span class="help-block">{{ $errors->first('point')}}</span>
-                                        @endif
-                                    </div>
-                                </div>
                             </div>
-
 
                             <fieldset>
                                 <button style="font-family: webmdesign;" class="btn btn-primary col-md-4" name="submit"
@@ -108,24 +62,21 @@
                         <table class="footable table table-stripped" data-page-size="3" data-filter=#filter>
                             <thead>
                             <tr>
-                                <th class="text-center">نوع</th>
                                 <th class="text-center">نام</th>
-                                <th class="text-center">امتیاز</th>
+
                                 <th style="width: 30px;" class="text-center"> تغییرات</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($skills as $skill)
+                            @foreach($types as $type)
 
                                 <tr>
-                                    <td style="padding-top: 22px;" class="text-center">{{$skill->type->name}}</td>
-                                    <td style="padding-top: 22px;" class="text-center">{{$skill->name}}</td>
-                                    <td style="padding-top: 22px;" class="text-center">{{$skill->point}}</td>
+                                    <td style="padding-top: 22px;" class="text-center">{{$type->name}}</td>
 
                                     <td style="display: flex;">
                                         <button style="margin-top: 12px; width:30px; height: 30px;" data-toggle="modal"
                                                 data-target="#myModal4"
-                                                data-href="{{route('skills.edit',$skill->id)}}"
+                                                data-href="{{route('types.edit',$type->id)}}"
                                                 class="btn btn-warning edit md-trigger">
                                             <i style="margin-right: -5px; position: relative; top: -2px;"
                                                class="fa fa-paint-brush" aria-hidden="true">
@@ -134,7 +85,7 @@
 
                     </div>
                 </div>
-                <form action="{{ route('skills.destroy', $skill->id) }}" method="POST" class="frm">
+                <form action="{{ route('types.destroy', $type->id) }}" method="POST" class="frm">
                     {{ method_field('DELETE') }}
                     {{ csrf_field() }}
                     <button style=" margin-top: 12px; margin-right: 10px; width: 30px; height: 30px"
@@ -184,21 +135,5 @@
 
 
 @section('script')
-    <script src="js/plugins/chosen/chosen.jquery.js"></script>
-    <script src="js/plugins/iCheck/icheck.min.js"></script>
-    <script src="js/plugins/footable/footable.all.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('.footable').footable();
-            $('.footable2').footable();
-        });
-    </script>
-    <script>
-        $(document).ready(function () {
-            $('.chosen-select').chosen({width: "100%"});
 
-
-
-        });
-    </script>
 @endsection
