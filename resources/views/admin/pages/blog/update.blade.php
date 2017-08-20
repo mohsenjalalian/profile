@@ -69,28 +69,31 @@
                     <div class="row">
                         <div class="col-md-2">
                             <div class="ibox float-e-margins">
+
                                 <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
-                                    @if(isset($blog->album[0]) and !empty($blog->album[0]->photo))
+                                    @if(!empty($blog->album[0]->photo))
+
                                         <input type="file" id="file1" name="photo" value="{{$blog->album[0]->photo}}"
                                                onchange="readURL1(this)" style="display:none">
                                         <img style="width: 50px;height: 50px" id="photo1"
                                              src="{{asset(\App\Http\Controllers\BlogController::ALBUM_PATH.'/'.$blog->album[0]->photo)}}"
                                              alt="{{$blog->album[0]->photo}}">
-                                    @else
-                                        <input type="file" id="file1" name="photo" onchange="readURL1(this)"
-                                               style="display:none">
-                                        <img id="photo1" src="#" alt="عکس 1"/>
                                     @endif
+
+                                        {{--<input type="file" name="photo[]" onchange="readURL1(this)">--}}
+
+
                                     <div class="fileinput fileinput-new" data-provides="fileinput">
                                         <span class="btn btn-default btn-file"><span
                                                     class="fileinput-new">عکس ۱</span> <span
                                                     class="fileinput-exists"><span class="fileinput-exists"><span
                                                             style="color: #2aca76;">بارگذاری شد</span></span> </span>
                                             <input type="file" name="photo[]"
-                                                   value="" onchange="readURL1(this)"></span>
+                                                   value="{{$blog->album[0]->photo}}" onchange="readURL1(this)">
+                                        </span>
                                     </div>
-                                    @if($errors->has('photo'))
-                                        <span class="help-block">{{ $errors->first('photo')}}</span>
+                                    @if($errors->has('photo[]'))
+                                        <span class="help-block">{{ $errors->first('photo[]')}}</span>
                                     @endif
                                 </div>
                             </div>
@@ -99,8 +102,9 @@
                         <div class="col-md-2">
                             <div class="ibox float-e-margins">
                                 <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
+
                                     @if(isset($blog->album[1]) and !empty($blog->album[1]->photo))
-                                        <input type="file" id="file2" name="photo" value="{{$blog->album[1]->photo}}"
+                                        <input type="file" id="file2" name="photo[]" value="{{$blog->album[1]->photo}}"
                                                onchange="readURL2(this)" style="display:none">
                                         <img style="width: 50px;height: 50px" id="photo2"
                                              src="{{asset(\App\Http\Controllers\BlogController::ALBUM_PATH.'/'.$blog->album[1]->photo)}}"
