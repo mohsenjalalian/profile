@@ -58,7 +58,7 @@
                             <div class="progress">
                                 <div class="progress-bar progress-bar-success progress-bar-striped active"
                                      role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="10"
-                                     style="width:30%"> {{$language->listening}}% گوش دادن
+                                     style="width:50%"> {{$language->listening}}% گوش دادن
                                 </div>
                             </div>
                         </div>

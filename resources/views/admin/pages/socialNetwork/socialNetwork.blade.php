@@ -323,7 +323,7 @@
 
                             </form>
                             <form action="{{ route('social-network.destroy', $social->id) }}"
-                                  method="POST">
+                                  method="POST" class="frm">
                                 {{ method_field('DELETE') }}
                                 {{ csrf_field() }}
                                 <div class="col-md-4">

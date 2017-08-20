@@ -41,7 +41,7 @@
             </div>
             @endforeach
             <ul class="page-nav">
-                <li><a href="#">1</a></li>
+                <li style="cursor: pointer;">1</li>
             </ul>
         </main>
     </section>

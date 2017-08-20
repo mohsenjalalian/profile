@@ -8,7 +8,7 @@
                 <p class="text-center text-yellow">{{$recommendation->name}}</p>
                 <p class="text-yellow2 mCustomScrollbar content-a4" data-mcs-theme="minimal-dark">{{$recommendation->info}}</p>
                 <br>
-                <p class="pull-right text-yellow3">{{$recommendation->position}}</p>
+                <p class="pull-right text-yellow3"><strong>{{$recommendation->position}}</strong></p>
                 <p class="pull-right text-yellow4">{{$recommendation->company}}</p>
             </section>
         </aside>
