@@ -24,7 +24,7 @@
                                         {{$skills->type->name}}
                                     </option>
                                 @foreach($types as $type)
-                                      @if($type->id !== $skills->type->id )
+                                      @if($type->id !== $skills->type->id)
                                         <option value="{{$type->id}}">{{$type->name}}</option>
                                         @endif
                                     @endforeach
