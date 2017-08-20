@@ -10,7 +10,7 @@
                         @if ($doc->photo)
                             <img src="{{asset($doc->photo)}}" alt="{{$doc->photo}}" width="100%" height="100%">
                         @else
-                            <img src="/image/profile.png" alt="salam" width="100%" height="100%">
+                            <img src="/image/licence.png" alt="salam" width="100%" height="100%">
                         @endif
                         {{--<img src="{{asset($doc->photo)}}" alt="{{$doc->photo}}" width="100%" height="100%">--}}
 

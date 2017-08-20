@@ -1,45 +1,99 @@
 
 <main id="about6" class="container">
     <h2 class="text-ex2">بلاگ من</h2>
-    @foreach($blogs as $blog)
-    <section class="pull-left col-xs-12 col-sm-12 col-md-6 blog">
-        <div class="box-small1">
-            <div id="owl5" class="owl-carousel" style="direction:ltr">
-                @foreach($blog->album as $value)
-                <div class="item">
-                    <div class="img-scale"><img class="img-responsive" src="{{$value->photo}}" width="540px"></div>
+    <div id="owl7" class="owl-carousel" style="direction:ltr">
+        @foreach($blogs as $blog)
+        <div class="item">
+            <section class="pull-right col-xs-12 col-sm-12 col-md-12 blog">
+                <div class="box-small2">
+                    <div id="owl6" class="owl-carousel" style="direction:ltr">
+                        @foreach($blog->album as $value)
+                                <div class="item">
+                                    @if(!empty($blog->album))
+                                        <div class="img-scale"><img class="img-responsive" src="{{$value->photo}}" width="540px"></div>
+                                    @else
+                                        <div class="img-scale"><img class="img-responsive" src="/image/profile.png" width="540px"></div>
+                                    @endif
+                                </div>
+                            @endforeach
+                    </div>
+                    <h2 class="text-bl">{{$blog->title}}</h2>
+                    <p class="text-bl2">{{$blog->description}}</p>
+                    <br>
+                    <br>
+                <hr style="border:1px solid #DFDFDF; width:100%;">
+                <p class="blog-mg">
+                    {{$blog->date}}
+                    <span class="blog-mg2">اشتراک:</span>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=#blog">
+                        <span class="face-bl">فیس بوک</span>
+                    </a>
+                    <a href="https://plus.google.com/share?url=#blog">
+                        <span class="google">گوگل بلاس</span>
+                    </a>
+                    <a href="https://twitter.com/home?status=#blog">
+                        <span class="twit">تویتر</span>
+                    </a>
+                </p>
                 </div>
-                @endforeach
+            </section>
+        </div>
+            @endforeach
+        </div>
+
+
+
+    {{--@foreach($blogs as $blog)--}}
+    {{--<section class="pull-left col-xs-12 col-sm-12 col-md-6 blog">--}}
+        {{--<div class="box-small1">--}}
+            {{--<div id="owl5" class="owl-carousel" style="direction:ltr">--}}
+                {{--@foreach($blog->album as $value)--}}
+                {{--<div class="item">--}}
+                    {{--@if(!empty($blog->album))--}}
+                    {{--<div class="img-scale"><img class="img-responsive" src="{{$value->photo}}" width="540px"></div>--}}
+                        {{--@else--}}
+                    {{--<div class="img-scale"><img class="img-responsive" src="/image/profile.png" width="540px"></div>--}}
+                        {{--@endif--}}
+                {{--</div>--}}
+                {{--@endforeach--}}
                 {{--<div class="item">--}}
                     {{--<div class="img-scale"><img class="img-responsive" src="images/front/blog-2.jpg" width="540"></div>--}}
                 {{--</div>--}}
                 {{--<div class="item">--}}
                     {{--<div class="img-scale"><img class="img-responsive" src="images/front/blog-1.jpg" width="540px"></div>--}}
                 {{--</div>--}}
-            </div>
-            <h2 class="text-bl">{{$blog->title}}</h2>
-            <p class="text-bl2">
-                {{$blog->description}}
-        </p>
-            <br>
-            <br>
-            <hr style="border:1px solid #DFDFDF; width:100%;">
-            <p class="blog-mg">
-                {{$blog->date}}
-                <span class="blog-mg2">اشتراک:</span>
-                <a href="https://www.facebook.com/sharer/sharer.php?u=#blog">
-                    <span class="face-bl">فیس بوک</span>
-                </a>
-                <a href="https://plus.google.com/share?url=#blog">
-                    <span class="google">گوگل بلاس</span>
-                </a>
-                <a href="https://twitter.com/home?status=#blog">
-                    <span class="twit">تویتر</span>
-                </a>
-            </p>
-        </div>
-    </section>
-    @endforeach
+            {{--</div>--}}
+            {{--<h2 class="text-bl">{{$blog->title}}</h2>--}}
+            {{--<p class="text-bl2">--}}
+                {{--{{$blog->description}}--}}
+        {{--</p>--}}
+            {{--<br>--}}
+            {{--<br>--}}
+            {{--<hr style="border:1px solid #DFDFDF; width:100%;">--}}
+            {{--<p class="blog-mg">--}}
+                {{--{{$blog->date}}--}}
+                {{--<span class="blog-mg2">اشتراک:</span>--}}
+                {{--<a href="https://www.facebook.com/sharer/sharer.php?u=#blog">--}}
+                    {{--<span class="face-bl">فیس بوک</span>--}}
+                {{--</a>--}}
+                {{--<a href="https://plus.google.com/share?url=#blog">--}}
+                    {{--<span class="google">گوگل بلاس</span>--}}
+                {{--</a>--}}
+                {{--<a href="https://twitter.com/home?status=#blog">--}}
+                    {{--<span class="twit">تویتر</span>--}}
+                {{--</a>--}}
+            {{--</p>--}}
+        {{--</div>--}}
+    {{--</section>--}}
+
+    {{--@endforeach--}}
+
+
+
+
+
+
+
 
     {{--<section class="pull-right col-xs-12 col-sm-12 col-md-6 blog">--}}
         {{--<div class="box-small2">--}}

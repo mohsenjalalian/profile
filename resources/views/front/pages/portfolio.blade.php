@@ -6,14 +6,15 @@
             <ul class="nav nav-pills">
                 @foreach($workSamples as $sample)
                     <ul id="filter-options">
-                        <li><input type="checkbox" value="filter_red" data-filter_id="red"> {{$sample->name}}</li>
+                        <li>
+                            <input type="checkbox" value="filter_red" data-filter_id="red"> {{$sample->name}}</li>
                     </ul>
                 {{--<li style="margin-top:20px;" class="active"><a class="fade1" data-toggle="tab" href="#menu1"> {{$sample->name}}</a>--}}
                 {{--</li>--}}
                  @endforeach
             </ul>
             @foreach($workSamples as $workSample)
-            <div class="tab-content" class="filter_red" id="product-list">
+            <div style="display: flex;" class="tab-content" class="filter_red" id="product-list">
                 <div id="menu1" class="tab-pane fade in active">
                     <ul class="grid cs-style-4">
                         <section class="col-md-4">
