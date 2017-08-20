@@ -52,7 +52,6 @@ class WorkSampleForm extends FormRequest
 
         $workSample = WorkSample::create($data);
 
-
         $workSample->category()->attach(request('category_id'));
         $workSample->skills()->attach(request('skill_id'));
     }

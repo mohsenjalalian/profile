@@ -25,7 +25,6 @@ class SkillForm extends FormRequest
     public function rules()
     {
         return [
-            'type' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
             'name' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
             'point' => 'required'
             ];
@@ -33,14 +32,17 @@ class SkillForm extends FormRequest
 
     public function process()
     {
+        $data = [
+                'name'   => request('name'),
+                'point'  => request('point'),
+                'type_id' => request('type_id'),
+            ];
 
-        $skills = Skills::create(
-            [
-                'type'      => request('type'),
-                'name'      => request('name'),
-                'point'      => request('point'),
-            ]);
+        if (!empty($data)) {
+            $skill = Skills::create($data);
+
+        } else {
+            return redirect()->back()->withErrors('متاسفانه ساخته نشد');
+        }
     }
-
-
 }
