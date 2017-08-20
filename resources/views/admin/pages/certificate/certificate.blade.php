@@ -65,7 +65,7 @@
                                     <div class="i-checks"><label> <input type="radio" name="type" value="جایزه"
                                                                          tabindex="2"> <i></i> جایزه </label></div>
                                     <div class="i-checks"><label> <input type="radio" name="type" value="گواهی"
-                                                                         tabindex="2"> <i></i> گواهی </label></div>
+                                                                         tabindex="2" > <i></i> گواهی </label></div>
                                 </div>
 
                                 <div class="row">

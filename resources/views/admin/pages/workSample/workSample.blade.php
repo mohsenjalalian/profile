@@ -71,6 +71,7 @@
                             @endif
 
 
+
                             @if(count($skills) > 0)
                                 <p style="position: relative; top: 2px; right: 15px;">مهارت ها</p>
                                 <div class="form-group{{ $errors->has('skill_id[]') ? ' has-error': ''}}">
@@ -152,6 +153,8 @@
                             </thead>
                             <tbody>
                             @foreach($workSamples as $workSample)
+
+
                                 <tr>
                                     <td style="vertical-align: middle;" class="text-center"><img width="50"
                                                                                                  height="50"
@@ -165,7 +168,6 @@
 
                                         @endforeach
                                     </td>
-
                                     <td style="vertical-align: middle;" class="text-center">
                                         @foreach($workSample->skills as $skill)
                                             {{$skill->name}}

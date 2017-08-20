@@ -5,7 +5,6 @@
 @section('content')
 
 
-    <textarea class="content" name="example"></textarea>
     <div class="content-wrapper clearfix">
         <div class="row wrapper border-bottom white-bg page-heading">
             <div class="col-lg-10">
@@ -25,7 +24,7 @@
         <div class="container">
             <form id="contact" action="{{route('message.store')}}" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
-                <div style="margin-top: 40px;" class="col-md-6">
+                <div style="margin-top: 40px;" class="col-md-3">
                 <div class="form-group{{ $errors->has('email') ? ' has-error': ''}}">
                     <label for="email">ایمیل</label>
                     <fieldset>
@@ -39,15 +38,11 @@
                 <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
                     <a class="btn btn-large" data-edit="bold"><i class="icon-bold"></i></a>
                 </div>
-                <a data-edit="fontName Arial">...</a>
-                <input type="text" data-edit="createLink">
-                <input type="file" data-edit="insertImage">
-
-                <textarea style="direction: rtl !important;" class="col-md-8"></textarea>
 
                 <div class="form-group{{ $errors->has('answer') ? ' has-error': ''}}">
                     <fieldset >
-                        <textarea name="answer"   tabindex="1" required></textarea>
+                        {{--<textarea name="answer"   tabindex="1" required></textarea>--}}
+                        <textarea name="answer"></textarea>
                     </fieldset>
                     @if($errors->has('answer'))
                         <span class="help-block">{{ $errors->first('answer')}}</span>
@@ -58,7 +53,7 @@
                 </fieldset>
 
             </form>
-
+        <span></span>
         </div>
     </div>
     </div>
@@ -66,14 +61,14 @@
 
 @section('script')
 
-    {{--CkEditor--}}
-    {{--<script>--}}
-        {{--CKEDITOR.replace( 'answer',{--}}
-            {{--uiColor: '#2F4050',--}}
-            {{--contentsLangDirection : 'rtl',--}}
-            {{--width:'95%',--}}
-        {{--} );--}}
-        {{--//        config.contentsLangDirection = 'rtl',--}}
 
-    {{--</script>--}}
+    {{--CkEditor--}}
+    <script>
+        CKEDITOR.replace( 'answer',{
+            contentsLangDirection : 'rtl',
+            width:'55%',
+//            max-width:'65%',
+        } );
+
+    </script>
  @endsection

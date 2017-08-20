@@ -361,16 +361,19 @@
                                         <div class="form-group{{ $errors->has('military') ? ' has-error': ''}}">
                                             <div class="i-checks"><label> <input type="radio" name="military"
                                                                                  value="تمام شده"
-                                                                                 tabindex="1" checked> <i></i>تمام شده
+                                                                                 tabindex="1"
+                                                                                 @if($profile->military == 'تمام شده') checked @endif> <i></i>تمام شده
                                                 </label>
                                             </div>
                                             <div class="i-checks"><label> <input type="radio" name="military"
                                                                                  value="معاف"
-                                                                                 tabindex="1"> <i></i> معاف </label>
+                                                                                 tabindex="1"
+                                                                                 @if($profile->military == 'معاف') checked @endif> <i></i> معاف </label>
                                             </div>
                                             <div class="i-checks"><label> <input type="radio" name="military"
                                                                                  value="معاف پزشکی"
-                                                                                 tabindex="1"> <i></i> معافیت پزشکی
+                                                                                 tabindex="1"
+                                                                                 @if($profile->military == 'معاف پزشکی') checked @endif> <i></i> معافیت پزشکی
                                                 </label>
                                             </div>
                                             @if($errors->has('military'))
@@ -383,12 +386,14 @@
                                         <div class="form-group{{ $errors->has('marriage') ? ' has-error': ''}}">
                                             <div class="i-checks"><label> <input type="radio" name="marriage"
                                                                                  value="مجرد"
-                                                                                 tabindex="2" checked> <i></i>مجرد
+                                                                                 tabindex="2"
+                                                                                 @if($profile->marriage == 'مجرد') checked @endif> <i></i>مجرد
                                                 </label>
                                             </div>
                                             <div class="i-checks"><label> <input type="radio" name="marriage"
                                                                                  value="متاهل"
-                                                                                 tabindex="2"> <i></i> متاهل </label>
+                                                                                 tabindex="2"
+                                                                                 @if($profile->marriage == 'متاهل') checked @endif> <i></i> متاهل </label>
                                             </div>
                                             @if($errors->has('marriage'))
                                                 <span class="help-block">{{ $errors->first('marriage')}}</span>
@@ -398,11 +403,15 @@
                                     <div style="margin-top: 10px;" class="col-sm-10 col-md-4">
                                         <div class="form-group{{ $errors->has('gender') ? ' has-error': ''}}">
                                             <p>جنسیت</p>
-                                            <div class="i-checks"><label> <input type="radio" name="gender" value="مرد"
-                                                                                 tabindex="2" checked> <i></i>مرد
-                                                </label></div>
+                                            <div class="i-checks">
+                                                <label>
+                                                    <input type="radio" name="gender" value="مرد" tabindex="2"
+                                                    @if($profile->gender == 'مرد') checked @endif > <i></i>مرد
+                                                </label>
+                                            </div>
                                             <div class="i-checks"><label> <input type="radio" name="gender" value="زن"
-                                                                                 tabindex="2"> <i></i> زن </label></div>
+                                                                                 tabindex="2"
+                                                                                 @if($profile->gender == 'زن') checked @endif > <i></i> زن </label></div>
                                             @if($errors->has('gender'))
                                                 <span class="help-block">{{ $errors->first('gender')}}</span>
                                             @endif

@@ -34,16 +34,19 @@
                     <div class="i-checks col-md-4"><label>
                             <input type="radio" name="type" value="دوره"
 
-                                                         tabindex="2" checked> <i></i>دوره </label>
+                                                         tabindex="2"
+                                   @if($certificate->type == 'دوره') checked @endif> <i></i>دوره </label>
                     </div>
 
                     <div class="i-checks col-md-4"><label>
                             <input type="radio" name="type" value="جایزه"
-                                                         tabindex="2"> <i></i> جایزه </label>
+                                                         tabindex="2"
+                                   @if($certificate->type == 'جایزه') checked @endif> <i></i> جایزه </label>
                     </div>
                     <div class="i-checks col-md-4"><label>
                             <input type="radio" name="type" value="گواهی"
-                                                         tabindex="2"> <i></i> گواهی </label>
+                                                         tabindex="2"
+                                   @if($certificate->type == 'گواهی') checked @endif> <i></i> گواهی </label>
                     </div>
                     @if($errors->has('type'))
                         <span class="help-block">{{ $errors->first('type')}}</span>
