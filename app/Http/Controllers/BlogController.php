@@ -77,7 +77,7 @@ class BlogController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update($id)
+    public function update(Request $request, $id)
     {
         $rules = array(
             'title' => 'required|min:3',

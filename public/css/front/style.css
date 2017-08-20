@@ -141,7 +141,6 @@ ul{
     padding: 3em 0;
     position: relative;
     top:-220px;
-    right: 1170px;
 }
 
 .timeline-list li:nth-child(1):before {
@@ -227,7 +226,7 @@ ul{
     direction: rtl !important;
 }
 .content-a5 {
-    height: 580px !important;
+    height: 1000px !important;
     direction: rtl !important;
 }
 
@@ -786,8 +785,8 @@ a:hover {
     margin-top: 105px;
     z-index: 1000;
     background-color: #fff;
-    position: relative;
-    left: -165px;
+    float: left !important;
+
 }
 
 .box-social1 i {
@@ -835,8 +834,9 @@ a:hover {
     background-color: #35ace0;
     margin-top: 150px;
     cursor: pointer;
-    position: relative;
-    left: -205px;
+    float: left !important;
+    margin-left: -600px;
+
 }
 
 .social1 i {
@@ -858,8 +858,8 @@ a:hover {
     background-color: #007bb6;
     margin-top: 189px;
     cursor: pointer;
-    position: relative;
-    left: -245px;
+    float: left !important;
+    margin-left: -600px;
 }
 
 .social2 i {
@@ -880,10 +880,9 @@ a:hover {
     height: 40px;
     background-color: #964b00;
     margin-top: 229px;
-    float: left;
     cursor: pointer;
-    position: relative;
-    left: -285px;
+    float: left !important;
+    margin-left: -600px;
 }
 
 .social3 i {
@@ -918,14 +917,17 @@ a:hover {
     box-shadow: 0px 12px 90px -10px rgba(139, 139, 139, 0.5) !important;
     z-index: 1;
     height: 470px;
-    position: relative;
-    top: 123px;
+    clear: both;
+    position: absolute;
+    top: -358px;
+    right: 140px;
 }
 
 .texth1 {
     color: #ffd93e;
-    margin-top: 170px;
-    margin-right: 0px;
+    position: absolute;
+    top:150px;
+    right: 520px;
 }
 
 .texth1 p {
@@ -1127,7 +1129,9 @@ a:hover {
     padding-right: 20px;
     padding-top: 20px;
     color: #000;
-    text-align: left;
+    width: 100%;
+    float: right;
+    text-align: right;
 }
 
 .text-lg2 {
@@ -1325,25 +1329,32 @@ progress::-moz-progress-bar {
     width: 100%;
     margin-top: 20px;
     float: right !important;
-    position: relative;
-    right: -1050px;
+    text-align: right;
 
 }
 
 .text-yellow4 {
     width: 100%;
     float: right !important;
-    position: relative;
-    right: -1050px;
+    text-align: right;
 
 }
 
 .text-book {
     font-size: 13px;
     float: right;
+width: 100%;
+    text-align: right;
     position: relative;
-    top: 120px;
-    left:70%;
+    top:80px;
+}
+
+.box-qr{
+    background-color: rgba(255,217,62,0.9);
+    width: 130px;
+    height: 130px;
+    z-index: 20000;
+    position: relative;
 }
 
 .text-book2 {
@@ -1705,7 +1716,18 @@ progress::-moz-progress-bar {
     color: blue;
     transition: all 1.2s;
 }
-
+#social-fo6:hover {
+    color: #0d8ddb;
+    transition: all 1.2s;
+}
+#social-fo7:hover {
+    color:#0a6aa1;
+    transition: all 1.2s;
+}
+#social-fo8:hover {
+    color: brown;
+    transition: all 1.2s;
+}
 .text-fo {
     color: #fff;
     margin-top: 13px;
@@ -1736,6 +1758,7 @@ progress::-moz-progress-bar {
 }
 
 .img-qr {
+    z-index: 1;
     position: relative;
     top: -100px;
     left: 50px;
@@ -2505,13 +2528,31 @@ figure.effect-ming:hover img {
         margin-top: 10px;
         margin-right: 10px;
     }
-
     .me {
-        width: 100%;
-        height: auto !important;
-        position: relative;
-        top: 5px;
+        width: 90%;
+        border: 10px solid #fff;
+        box-shadow: 0px 12px 90px -10px rgba(139, 139, 139, 0.5) !important;
+        z-index: 1;
+        height: 470px;
+        clear: both;
+        position: absolute;
+        top: -700px;
+        right: 20px;
+
     }
+    .texth1 {
+        color: #ffd93e;
+        position: absolute;
+        right: 0px;
+        top:550px;
+
+    }
+    /*.me {*/
+
+        /*height: auto !important;*/
+        /*position: relative;*/
+        /*top: 5px;*/
+    /*}*/
 
     .top-th {
         width: 100%;
@@ -2590,10 +2631,14 @@ figure.effect-ming:hover img {
         margin-left: 0px;
         margin-right: 0px;
     }
-
+.texti i{
+    position: relative;
+    top: 80px;
+}
     .input__label--nao {
         position: absolute;
         right: -250px;
+        text-align: right;
     }
 
     .contact1 h2 {
@@ -2681,9 +2726,12 @@ figure.effect-ming:hover img {
     top: -50px;
 }
     .text-book {
+        width: 100%;
+        text-align: left;
+        float: right;
         position: relative;
-        right: -200px;
-        top: 120px;
+        top:80px;
+        right: -260px;
     }
 
     .grid {
@@ -2762,14 +2810,14 @@ figure.effect-ming:hover img {
 
     .text-yellow3 {
         margin-top: 20px;
-        margin-right: 0px;
-        text-align: center;
+        text-align: right;
+        margin-right: 10px;
     }
 
     .text-yellow4 {
-        margin-top: 50px;
-        text-align: center !important;
-        margin-right: -58px;
+        margin-top: 0px;
+        text-align: right !important;
+        margin-right: 10px;
     }
 
     .page-nav {
@@ -2796,5 +2844,201 @@ figure.effect-ming:hover img {
     }
     .cover-img{
         height: 800px;
+    }
+
+    .block-content {
+        direction: rtl !important;
+        min-height:100vh;
+    }
+
+    .heading-group {
+
+    }
+
+
+    .timeline-list:before{
+        content: "";
+        border-left: 5px solid #222;
+        left: -0.25em;
+        top: 2em;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        transform-origin:0 0;
+        animation:scaleVertical 3s 1s ease both 1;
+
+    }
+    .timeline-list:after {
+        content: "";
+        clear:both;
+        position: absolute;
+        bottom: 0px;
+        left: -1em;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: none repeat scroll 0% 0% #DDD;
+        border: 5px solid #DDD;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+        animation:revealScaleUp 0.75s 2.82s ease both 1;
+    }
+
+    .timeline-list {
+        position: relative;
+
+    }
+
+
+    .l-block-spacing {
+
+
+        min-height:80vh;
+        padding:2em 0 4em 0;
+
+    }
+
+    /*.l-contained {*/
+
+    /*max-width: 1000px;*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+
+    /*padding-left: 1em;*/
+    /*padding-right: 1em;*/
+    /*}*/
+    ul{
+        list-style: none;
+        display: inline-block;
+    }
+
+    #filter-options li{
+        float: left;
+        margin-left: 20px;
+    }
+
+    #product-list{
+        display: block;
+    }
+    .hide-ppp{
+        color: #ecf1f7;
+    }
+    .timeline-list {
+        position: relative;
+        right: -1100px;
+    }
+
+    .t-block-teal {
+        background:#02aa9d;
+    }
+    .t-block-teal h2 {
+        color:#fff;
+    }
+    .t-block-teal h3 {
+        color:#034944;
+    }
+    .t-block-teal p {
+        color:#034944;
+    }
+    /*//list animation*/
+    /*//scale in the circle, follwoed by the list item*/
+    /*//the border must also animate in.*/
+    .timeline-list li {
+        position: relative;
+    }
+    .timeline-list li:before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: -1.45em;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: none repeat scroll 0% 0% #222222;
+        border: 5px solid #fff;
+        animation:revealScaleUp 0.75s 0s ease both 1;
+    }
+    .timeline-list {
+
+        animation:reveal 2s 0 ease both 1;
+    }
+    .timeline-list li .content {
+        animation:revealFromLeft 0.5s 0s ease both 1;
+    }
+
+
+    .contentss {
+        font-size: 150%;
+        padding: 3em 0;
+        position: relative;
+        top:-120px;
+        right: 1100px;
+    }
+
+    .timeline-list li:nth-child(1):before {
+        animation-delay:0.85s;
+    }
+    .timeline-list li:nth-child(1) .content {
+        animation-delay:1.05s;
+    }
+    .timeline-list li:nth-child(2):before {
+        animation-delay:1.2s;
+    }
+    .timeline-list li:nth-child(2) .content {
+        animation-delay:1.5s;
+    }
+    .timeline-list li:nth-child(3):before {
+        animation-delay:1.8s;
+    }
+    .timeline-list li:nth-child(3) .content {
+        animation-delay:2.1s;
+    }
+    .timeline-list li:nth-child(4):before {
+        animation-delay:2s;
+    }
+    .timeline-list li:nth-child(4) .content {
+        animation-delay:2.3s;
+    }
+    @keyframes revealFromLeft {
+        0% {
+            transform:translateX(-1em);
+            opacity:0;
+        }
+        100% {
+            opacity:1;
+            transform:translateX(0);
+        }
+    }
+    @keyframes reveal {
+        0% {
+            opacity:0;
+        }
+        100% {
+            opacity:1;
+        }
+    }
+    @keyframes scaleVertical {
+        0% {
+            transform:scaleY(0);
+
+        }
+        100% {
+            transform:scaleY(1);
+        }
+    }
+    @keyframes revealScaleUp {
+        0% {
+            opacity:0;
+            transform:scale(0.5);
+        }
+        50% {
+            opacity:1;
+            transform:scale(1.3);
+        }
+        100% {
+            opacity:1;
+            transform:scale(1);
+
+        }
     }
 }

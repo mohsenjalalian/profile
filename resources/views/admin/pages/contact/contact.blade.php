@@ -234,7 +234,7 @@
                         </button>
 
                     </form>
-                    <form action="{{ route('contact.destroy', $contact->id) }}" method="POST">
+                    <form action="{{ route('contact.destroy', $contact->id) }}" method="POST" class="frm">
                         {{ method_field('DELETE') }}
                         {{ csrf_field() }}
 

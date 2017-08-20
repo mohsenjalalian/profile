@@ -6,7 +6,6 @@
 -->
 <!DOCTYPE html>
 <html>
-
 @include('admin.layouts.meta')
 
 <body class="rtls">

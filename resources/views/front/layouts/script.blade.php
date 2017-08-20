@@ -109,6 +109,14 @@
     })();
 </script>
 <script>
+    function chek(obj) {
+        obj.setCustomValidity('لطفا این قسمت را پر کنید')
+    }
+    function chek2(obj) {
+        obj.setCustomValidity('');
+    }
+</script>
+<script>
     (function ($) {
         $(window).on("load", function () {
             $(".content-a").mCustomScrollbar({

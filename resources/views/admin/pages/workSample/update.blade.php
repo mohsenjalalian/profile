@@ -46,51 +46,108 @@
                     </div>
                 </div>
                 @if(count($categories) > 0)
-                    <fieldset>
-                        <h5>دسته بند ی</h5>
-                        @foreach($categories as $category )
-                            <div class="col-md-1">
-                            <div class="form-group{{ $errors->has('category_id[]') ? ' has-error': ''}}">
-                                        <input type="checkbox"
-                                               @if(in_array($category->id, array_keys($ws)))
-                                                       checked="checked"
-                                               @endif
-                                               name="category_id[]"
-                                               value="{{$category->id}}">{{$category->name}}<br>
-                                    @if($errors->has('category_id[]'))
-                                            <span class="help-block">{{ $errors->first('category_id[]')}}</span>
-                                        @endif
-                                    </div>
+                    <p style="position:relative; height: 22px; top: 0px; right: 15px;">دسته بندی</p>
+                    <div style="margin-top: 0px;"
+                         class="form-group{{ $errors->has('category_id[]') ? ' has-error': ''}}">
+                        <div style="margin-top: 0px; margin-right: 15px; width: 520px;"
+                             class="ibox float-e-margins">
+                            <div class="form-group">
+                                <label class="font-noraml text-center"></label>
+                                <div>
+                                    <select data-placeholder="" name="category_id[]"
+                                            class="chosen-select" multiple
+                                            style="width:350px;" tabindex="4">
+                                        @foreach($categories as $category )
+                                            <option name="category_id[]"
+                                                    value="{{$category->id}}">{{$category->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
-                        @endforeach
-
-                    </fieldset>
+                        </div>
+                        @if($errors->has('category_id[]'))
+                            <span class="help-block">{{ $errors->first('category_id[]')}}</span>
+                        @endif
+                    </div>
                 @else
-                    <p>شما هیچ دسته بندی نساخته اید</p>
+                    <p class="text-center">شما هیچ دسته بندی نساخته اید</p>
                 @endif
+
 
                 @if(count($skills) > 0)
-                    <fieldset>
-                        <h5>مهارت</h5>
-                        @foreach($skills as $skill )
-                            <div class="col-md-1">
-                        <div class="form-group{{ $errors->has('skill_id[]') ? ' has-error': ''}}">
-                            <input type="checkbox"
-                                   @if(in_array($skill->id, array_keys($sw)))
-                                   checked="checked"
-                                   @endif
-                                   name="skill_id[]"
-                                   value="{{$skill->id}}">{{$skill->name}}<br>
-                            @if($errors->has('skill_id[]'))
-                                <span class="help-block">{{ $errors->first('skill_id[]')}}</span>
-                            @endif
-                        </div>
+                    <p style="position: relative; top: 2px; right: 15px;">مهارت ها</p>
+                    <div class="form-group{{ $errors->has('skill_id[]') ? ' has-error': ''}}">
+                        <div style="margin-top: -15px; margin-right: 15px; width: 520px; "
+                             class="ibox float-e-margins">
+                            <div class="form-group">
+                                <label class="font-noraml text-center"></label>
+                                <div>
+                                    <select data-placeholder="" name="skill_id[]"
+                                            class="chosen-select" multiple
+                                            style="width:330px;" tabindex="4">
+                                        @foreach($skills as $skill )
+                                            <option name="skill_id[]"
+                                                    value="{{$skill->id}}">{{$skill->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
-                        @endforeach
+                        </div>
+                        @if($errors->has('skill_id[]'))
+                            <span class="help-block">{{ $errors->first('skill_id[]')}}</span>
+                        @endif
+                    </div>
                 @else
-                    <p>شما هیچ مهارتی نساخته اید</p>
+                    <p class="text-center">شما هیچ دسته بندی نساخته اید</p>
                 @endif
-                    </fieldset>
+
+
+                {{--@if(count($categories) > 0)--}}
+                    {{--<fieldset>--}}
+                        {{--<h5>دسته بند ی</h5>--}}
+                        {{--@foreach($categories as $category )--}}
+                            {{--<div class="col-md-1">--}}
+                            {{--<div class="form-group{{ $errors->has('category_id[]') ? ' has-error': ''}}">--}}
+                                        {{--<input type="checkbox"--}}
+                                               {{--@if(in_array($category->id, array_keys($ws)))--}}
+                                                       {{--checked="checked"--}}
+                                               {{--@endif--}}
+                                               {{--name="category_id[]"--}}
+                                               {{--value="{{$category->id}}">{{$category->name}}<br>--}}
+                                    {{--@if($errors->has('category_id[]'))--}}
+                                            {{--<span class="help-block">{{ $errors->first('category_id[]')}}</span>--}}
+                                        {{--@endif--}}
+                                    {{--</div>--}}
+                            {{--</div>--}}
+                        {{--@endforeach--}}
+
+                    {{--</fieldset>--}}
+                {{--@else--}}
+                    {{--<p>شما هیچ دسته بندی نساخته اید</p>--}}
+                {{--@endif--}}
+
+                {{--@if(count($skills) > 0)--}}
+                    {{--<fieldset>--}}
+                        {{--<h5>مهارت</h5>--}}
+                        {{--@foreach($skills as $skill )--}}
+                            {{--<div class="col-md-1">--}}
+                        {{--<div class="form-group{{ $errors->has('skill_id[]') ? ' has-error': ''}}">--}}
+                            {{--<input type="checkbox"--}}
+                                   {{--@if(in_array($skill->id, array_keys($sw)))--}}
+                                   {{--checked="checked"--}}
+                                   {{--@endif--}}
+                                   {{--name="skill_id[]"--}}
+                                   {{--value="{{$skill->id}}">{{$skill->name}}<br>--}}
+                            {{--@if($errors->has('skill_id[]'))--}}
+                                {{--<span class="help-block">{{ $errors->first('skill_id[]')}}</span>--}}
+                            {{--@endif--}}
+                        {{--</div>--}}
+                            {{--</div>--}}
+                        {{--@endforeach--}}
+                {{--@else--}}
+                    {{--<p>شما هیچ مهارتی نساخته اید</p>--}}
+                {{--@endif--}}
+
                     <div style="margin-top: 20px;" class="modal-footer col-md-5">
                         <button  style="font-family: webmdesign;" type="button" class="btn btn-white" data-dismiss="modal">بستن</button>
                         <button style="font-family: webmdesign;" name="submit" type="submit" id="contact-submit" data-submit="...Sending" class="btn btn-primary">اعمال تغییرات</button>
@@ -99,4 +156,20 @@
 
         </div>
     </div>
+
+    <script src="js/plugins/chosen/chosen.jquery.js"></script>
+    <script src="js/plugins/iCheck/icheck.min.js"></script>
+    <script src="js/plugins/footable/footable.all.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.footable').footable();
+            $('.footable2').footable();
+            $('.chosen-select').chosen({width: "100%"});
+        });
+    </script>
+
+@endsection
+
+@section('script')
+
 @endsection

@@ -612,7 +612,10 @@ figcaption h1 {
 	margin: 0;
 	float:right;
 	font-size:20px !important;
-	margin-top:40px;
+text-align: right;
+	width: 100%;
+	position: relative;
+	top:40px;
 }
 
 figcaption span {
@@ -621,9 +624,10 @@ figcaption span {
 	font-size:20px;
 	 display: block;
     float: right;
-    position: relative;
-    top: 80px !important;
-    right: -80px !important;
+text-align: right;
+	width: 100%;
+	position: relative;
+	top:60px;
 }
 
 

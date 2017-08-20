@@ -510,7 +510,7 @@
             return true;
         };
 
-        AbstractChosen.default_multiple_text = "Select Some Options";
+        AbstractChosen.default_multiple_text = "";
 
         AbstractChosen.default_single_text = "Select an Option";
 
@@ -1192,7 +1192,7 @@
                 });
                 div.text(this.search_field.val());
                 $('body').append(div);
-                w = div.width() + 25;
+                w = div.width() + 10;
                 div.remove();
                 f_width = this.container.outerWidth();
                 if (w > f_width - 10) {
