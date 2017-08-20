@@ -490,7 +490,7 @@
                                         اصلاح
                                     </button>
                                 </form>
-                                <form action="{{ route('profile.destroy', $profile->id) }}" method="POST">
+                                <form action="{{ route('profile.destroy', $profile->id) }}" method="POST" class="frm">
                                     {{ method_field('DELETE') }}
                                     {{ csrf_field() }}
 

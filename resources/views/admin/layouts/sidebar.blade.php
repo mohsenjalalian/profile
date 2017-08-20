@@ -11,7 +11,7 @@
                         @else
                             <p class="text-center"> <img alt="image/admin.png" style="width: 100px; height:100px"
                                                          class="img-circle"
-                                                         src="{{asset('/image/admin.png')}}"/>
+                                                         src="{{asset('/image/profile.png')}}"/>
                             </p>
                         @endif
                              </span>

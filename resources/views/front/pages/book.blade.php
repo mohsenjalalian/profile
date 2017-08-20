@@ -10,7 +10,7 @@
                         @if ($doc->photo)
                             <img src="{{asset($doc->photo)}}" alt="{{$doc->photo}}" width="100%" height="100%">
                         @else
-                            <img src="/image/licence.png" alt="salam" width="100%" height="100%">
+                            <img style="margin-top: 25px;" src="/image/licence.png" alt="salam" width="70%" height="60%">
                         @endif
                         {{--<img src="{{asset($doc->photo)}}" alt="{{$doc->photo}}" width="100%" height="100%">--}}
 
@@ -133,7 +133,8 @@
 
     </ul>
     <ul class="page-nav">
-        <li><a href="#">1</a></li>
+        <li>1</li>
 
     </ul>
+
 </main>
