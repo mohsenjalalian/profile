@@ -3,7 +3,7 @@
     <section class="container mCustomScrollbar content-a5" data-mcs-theme="minimal-dark">
         <h2 class="text-ex">تجربه ها</h2>
             <div style="direction: rtl !important;" class="l-contained">
-                <ul class="timeline-list">
+
                     @foreach($workExperiences as $experience )
                     <li>
                         <div class="contentss">
