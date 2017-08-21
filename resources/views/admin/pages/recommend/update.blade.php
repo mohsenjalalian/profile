@@ -83,27 +83,6 @@
                         </div>
                 </div>
 
-                {{--<div style="margin-top: 5px;" class="col-md-6">--}}
-                    {{--<div class="ibox float-e-margins">--}}
-                        {{--<div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">--}}
-                            {{--@if(isset($recommend->photo))--}}
-                                {{--<img style="position: relative;" width="50" height="50" src="{{asset($recommend->photo)}}">--}}
-                            {{--@else--}}
-                                {{--<h4>شما هیچ عکسی آپلود نکرده اید</h4>--}}
-                            {{--@endif--}}
-                            {{--<div class="fileinput fileinput-new" data-provides="fileinput">--}}
-                                        {{--<span class="btn btn-default btn-file"><span--}}
-                                                    {{--class="fileinput-new">بارگذاری عکس جدید</span><span class="fileinput-exists"><span--}}
-                                                        {{--style="color: #2aca76;">بارگذاری شد</span></span>--}}
-                                            {{--<input type="file" value="{{$recommend->photo}}" name="photo"></span>--}}
-                            {{--</div>--}}
-                            {{--@if($errors->has('photo'))--}}
-                                {{--<span class="help-block">{{ $errors->first('photo')}}</span>--}}
-                            {{--@endif--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--</div>--}}
                 <div class="row">
                     <div style="margin-top: -20px;" class="col-md-12">
                 <label>توضیحات</label>
@@ -118,12 +97,6 @@
                     </div>
                 </div>
 
-                            {{--<div class="modal-footer col-md-5">--}}
-                                {{--<button type="button" class=" md-close" data-dismiss="modal">بستن</button>--}}
-                                {{--<button name="submit" type="submit" id="contact-submit" data-submit="...Sending"--}}
-                                        {{--class="btn btn-primary">اعمال تغیرات--}}
-                                {{--</button>--}}
-                            {{--</div>--}}
 
                         <div style="margin-top: 10px;" class="modal-footer col-md-5">
                             <button  style="font-family: webmdesign;" type="button" class="btn btn-white" data-dismiss="modal">بستن</button>

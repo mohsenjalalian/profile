@@ -16,6 +16,20 @@
     $(document).ready(function () {
         $('.footable').footable();
         $('.footable2').footable();
+        $(document).on('change','input.upload-photo', function() {
+            alert(1);
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $(this)
+                        .attr('src', e.target.result)
+                        .width(50)
+                        .height(50);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        });
     });
 </script>
 <script src="js/classie.js"></script>
