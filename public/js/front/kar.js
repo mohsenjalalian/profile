@@ -306,23 +306,23 @@ $(document).scroll(function(e) {
 	}
 
 	
-		z = $(document).scrollTop();
-	// if(z>4500 & z<5050){
-    if(z > about555.position().top && z < about555.position().top + about555.height()){
-		$("#icon6").css("background-color","#fff");
-	}else{
-		$("#icon6").css("background-color","#ffd93e");
-	}
+	// 	z = $(document).scrollTop();
+	// // if(z>4500 & z<5050){
+    // if(z > about555.position().top && z < about555.position().top + about555.height()){
+	// 	$("#icon6").css("background-color","#fff");
+	// }else{
+	// 	$("#icon6").css("background-color","#ffd93e");
+	// }
 			w = $(document).scrollTop();
 	// if(w>5050 & w<5850){
-    if(m > about6.position().top && m < about6.position().top + about6.height()){
+    if(m > about56.position().top && m < about6.position().top + about56.height()){
 		$("#icon7").css("background-color","#fff");
 	}else{
 		$("#icon7").css("background-color","#ffd93e");
 	}
 	k = $(document).scrollTop();
 		// if(k>5850 & k<6690){
-    if(k > about7.position().top && k < about7.position().top + about7.height()){
+    if(k > about6.position().top && k < about7.position().top + about6.height()){
 		$("#icon8").css("background-color","#fff");
 	}else{
 		$("#icon8").css("background-color","#ffd93e");

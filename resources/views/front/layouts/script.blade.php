@@ -7,6 +7,12 @@
 <script src="/js/front/kar.js"></script>
 <script src="js/classie.js"></script>
 <!--jquery-->
+<script>
+    $(document).ready(function () {
+        $('.nav-pills li:first-child').addClass('active').show();
+        $('.tab-content .tab-pane:first').addClass('active').show()
+    });
+</script>
 
 <script>
     $(document).ready(function () {
@@ -57,6 +63,12 @@
         $("#owl8").owlCarousel({
             autoPlay: 5000, //Set AutoPlay to 3 seconds
             items: 2,
+            itemsDesktop: [1199, 3],
+            itemsDesktopSmall: [979, 3]
+        });
+        $("#owl9").owlCarousel({
+            autoPlay: 3000, //Set AutoPlay to 3 seconds
+            items: 3,
             itemsDesktop: [1199, 3],
             itemsDesktopSmall: [979, 3]
         });
