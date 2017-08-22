@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-
+@inject('photo',\App\Http\Controllers\BlogController)
 @section('content')
 
     <div class="content-wrapper clearfix">
@@ -174,24 +174,16 @@
                         </tr>
                         </thead>
                         <tbody>
+
                         @foreach($blogs as $blog)
                             <tr>
                                 <td class="text-center">
-
                                 @foreach($blog->album as $val)
-
-                                        @if(empty($blog->album))
+                                    @if($loop->first)
                                             <img width="50" height="50"
-                                                 src="/image/admin.png"
-                                                 alt="بلاگ">
-                                        @elseif($loop->first)
-                                            @inject('photo',\App\Http\Controllers\BlogController)
-                                                <img width="50" height="50"
-                                                     src="{{$photo::ALBUM_PATH.'/'. $val->photo}}"
-                                                     alt="">
+                                                 src="{{$photo::ALBUM_PATH.'/'. $val->photo}}" alt="{{$val->photo}}">
                                         @endif
-                                    @endforeach
-
+                                @endforeach
                                 </td>
 
                                 <td style=" vertical-align: middle;"
