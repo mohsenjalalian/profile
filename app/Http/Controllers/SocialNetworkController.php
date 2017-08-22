@@ -54,7 +54,7 @@ class SocialNetworkController extends Controller
      */
     public function show($id)
     {
-        //
+        SocialNetwork::findOrFail($id);
     }
 
     /**

@@ -178,12 +178,14 @@
                         @foreach($blogs as $blog)
                             <tr>
                                 <td class="text-center">
-                                @foreach($blog->album as $val)
-                                    @if($loop->first)
+                                     @if($blog->album->first())
                                             <img width="50" height="50"
-                                                 src="{{$photo::ALBUM_PATH.'/'. $val->photo}}" alt="{{$val->photo}}">
+                                                 src="{{$photo::ALBUM_PATH.'/'. $blog->album->first()->photo}}"
+                                                 alt="{{$blog->album->first()->photo}}">
+                                        @else
+                                            <img width="50" height="50"
+                                                 src="/image/admin.png" alt="">
                                         @endif
-                                @endforeach
                                 </td>
 
                                 <td style=" vertical-align: middle;"

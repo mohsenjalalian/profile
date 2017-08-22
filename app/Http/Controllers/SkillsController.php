@@ -57,7 +57,7 @@ class SkillsController extends Controller
      */
     public function show($id)
     {
-        //
+        Skills::findOrFail($id);
     }
 
     /**

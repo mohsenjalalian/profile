@@ -54,7 +54,7 @@ class LanguageController extends Controller
      */
     public function show($id)
     {
-        //
+        Language::findOrFail($id);
     }
 
     /**
