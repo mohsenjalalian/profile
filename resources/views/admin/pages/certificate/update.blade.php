@@ -60,7 +60,7 @@
                                 @if(isset($certificate->photo))
                                     <img style="position: relative; top: 40px; right: -50px;" width="50" height="50" src="{{asset($certificate->photo)}}">
                                 @else
-                                    <h4 style="width: 200px;">شما هیچ عکسی آپلود نکرده اید</h4>
+                                    <h4 style="width: 200px; margin-top: 50px;">شما هیچ عکسی آپلود نکرده اید</h4>
                                 @endif
                                 <div style="width: 280px; margin-right: 15px;" class="fileinput fileinput-new input-group" data-provides="fileinput">
                                     <div class="form-control" data-trigger="fileinput">

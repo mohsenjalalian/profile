@@ -38,6 +38,7 @@ ul {
 	position: relative;
 	width: 160px; 
 	height: 220px;
+	margin-left: 100px;
 	-webkit-perspective: 1000px;
 	-moz-perspective: 1000px;
 	perspective: 1000px;
@@ -612,7 +613,7 @@ figcaption h1 {
 	margin: 0;
 	float:right;
 	font-size:20px !important;
-text-align: right;
+    text-align: right;
 	width: 100%;
 	position: relative;
 	top:40px;

@@ -88,8 +88,15 @@
                 @endforeach
             </div>
             <div class="pull-left">
-                <img style="background-color: rgba(255,217,62,0.6)" class="img-qr hidden-xs" src="{{$contact->qr_code}}" alt="{{$contact->qr_code}}"
-                                        width="130px">
+                @if ($contact->qr_code)
+                    <img class="img-qr hidden-xs" src="{{$contact->qr_code}}" alt="{{$contact->qr_code}}"
+                         width="130px">
+                @else
+                    <img style="position: relative; top: -120px; right: -50px;" class="img-qr" height="150px" width="150px;"  src="images/front/Cotint.png"
+                         alt="cover">
+                @endif
+                {{--<img style="background-color: rgba(255,217,62,0.6)" class="img-qr hidden-xs" src="{{$contact->qr_code}}" alt="{{$contact->qr_code}}"--}}
+                                        {{--width="130px">--}}
             </div>
             @endforeach
         </section>

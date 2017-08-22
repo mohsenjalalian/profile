@@ -86,7 +86,7 @@
                                 @if(isset($education->logo))
                                     <img style="position: relative; top: 40px; right: -35px; " width="50" height="50" src="{{asset($education->logo)}}">
                                 @else
-                                    <h4>شما هیچ عکسی آپلود نکرده اید</h4>
+                                    <h4 style="margin-top: 60px;">شما هیچ عکسی آپلود نکرده اید</h4>
                                 @endif
                             <div style="width: 280px; margin-right: 15px;" class="fileinput fileinput-new input-group" data-provides="fileinput">
                                 <div class="form-control" data-trigger="fileinput">

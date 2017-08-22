@@ -67,7 +67,7 @@ class TypeController extends Controller
     public function edit($id)
     {
         $skills = SkillType::find($id);
-        return view('admin.pages.type.update', compact('skills'))->renderSections()['content'];
+        return view('admin.pages.types.update', compact('skills'))->renderSections()['content'];
     }
 
     /**

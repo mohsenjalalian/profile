@@ -550,11 +550,11 @@
                                 <div class="profile-info">
                                     <div>
                                         <div>
-                                            <h2 style="margin-right: 20px !important; class=">
+                                            <h2 style="margin-right: 20px !important; position: relative; top: 10px;">
                                                 <span>{{$profile->first_name}}</span>
                                                 <span>{{$profile->last_name}}</span>
                                             </h2>
-                                            <p style="margin-right: 23px; margin-top: 5px;">{{$profile->job}}</p>
+                                            <p style="margin-right: 23px; margin-top: 20px;">{{$profile->job}}</p>
 
                                             <p style="margin-right: 20px !important; margin-top: 10px !important;"
                                                class="no-margins">{{$profile->summary}}</p>

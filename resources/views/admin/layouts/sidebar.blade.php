@@ -89,7 +89,7 @@
             </li>
 
 
-            <li class="@if (\Request::route()->getName() == "language" or \Request::route()->getName() == "skills" or \Request::route()->getName() == "certification" or \Request::route()->getName() == "education") active @endif">
+            <li class="@if (\Request::route()->getName() == "language" or \Request::route()->getName() == "skills" or \Request::route()->getName() == "certification" or \Request::route()->getName() == "education" or \Request::route()->getName() == "type") active @endif">
                 <a class="menu" href="#">
                     <i class="fa fa-sitemap"></i> <span class="nav-label">توامندی ها </span><span
                             class="fa arrow"></span></a>
@@ -102,6 +102,11 @@
                     <li class="@if (\Request::route()->getName() == "skills") active @endif">
                         <a class="menu" href="{{route('skills')}}"><i class="fa fa-flask"></i> <span
                                     class="nav-label"></span>مهارت
+                            ها</a>
+                    </li>
+                    <li class="@if (\Request::route()->getName() == "type") active @endif">
+                        <a class="menu" href="{{route('type')}}"><i class="fa fa-check"></i> <span
+                                    class="nav-label"></span>نوع مهارت
                             ها</a>
                     </li>
                     <li class="@if (\Request::route()->getName() == "certification") active @endif">

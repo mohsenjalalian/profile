@@ -26,13 +26,14 @@
                     <div class="panel-body">
                         <form id="contact" action="{{route('skills.store')}}" method="post">
                             {{csrf_field()}}
+
+
                             <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
                                 <div class="col-sm-10 col-md-12">
                                     <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text"
                                            placeholder="نام "
                                            value="{{ Request::old('name') ?: ''}}" class="form-control m-b" name="name"
                                            tabindex="1" required autofocus>
-
                                     @if($errors->has('name'))
                                         <span class="help-block">{{ $errors->first('name')}}</span>
                                     @endif
@@ -41,8 +42,8 @@
 
                             <div class="row">
                             @if(count($types) > 0)
-                                <p style="position:relative; height: 22px; bottom: 0px; right: 15px;">نوع مهارت</p>
-                                <div style="margin-top: 70px;"
+                                <p style=" height: 22px; margin-right: 30px;">نوع مهارت</p>
+                                <div style="margin-top: 40px;"
                                      class="form-group{{ $errors->has('type_id') ? ' has-error': ''}}">
                                     <div style="margin-top: 10px; margin-right: 15px; width: 280px;"
                                          class="ibox float-e-margins">
@@ -115,8 +116,8 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($skills as $skill)
 
+                            @foreach($skills as $skill)
                                 <tr>
                                     <td style="padding-top: 22px;" class="text-center">{{$skill->type->name}}</td>
                                     <td style="padding-top: 22px;" class="text-center">{{$skill->name}}</td>
@@ -196,9 +197,6 @@
     <script>
         $(document).ready(function () {
             $('.chosen-select').chosen({width: "100%"});
-
-
-
         });
     </script>
 @endsection

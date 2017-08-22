@@ -5,18 +5,12 @@
 <script src="/js/front/scrollbar.min.js"></script>
 <script src="/js/front/snap.svg-min.js"></script>
 <script src="/js/front/kar.js"></script>
-<script src="js/plugins/footable/footable.all.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $('.footable').footable();
-        $('.footable2').footable();
-    });
-</script>
 <script src="js/classie.js"></script>
 <!--jquery-->
 
 <script>
     $(document).ready(function () {
+
         $("#owl").owlCarousel({
             autoPlay: 3000, //Set AutoPlay to 3 seconds
             items: 2,
@@ -55,6 +49,12 @@
             itemsDesktopSmall: [979, 3]
         });
         $("#owl7").owlCarousel({
+            autoPlay: 5000, //Set AutoPlay to 3 seconds
+            items: 2,
+            itemsDesktop: [1199, 3],
+            itemsDesktopSmall: [979, 3]
+        });
+        $("#owl8").owlCarousel({
             autoPlay: 5000, //Set AutoPlay to 3 seconds
             items: 2,
             itemsDesktop: [1199, 3],

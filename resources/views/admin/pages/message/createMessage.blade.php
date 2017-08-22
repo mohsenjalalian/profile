@@ -21,14 +21,20 @@
         </div>
 
         <div class="content-wrapper">
+            <div style="margin-top: 20px;" class="col-lg-8">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        افزودن
+                    </div>
+                    <div class="panel-body">
         <div class="container">
             <form id="contact" action="{{route('message.store')}}" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
-                <div style="margin-top: 40px;" class="col-md-3">
+                <div style="margin-top: 20px;" class="col-md-3">
                 <div class="form-group{{ $errors->has('email') ? ' has-error': ''}}">
-                    <label for="email">ایمیل</label>
                     <fieldset>
-                        <input class="form-control m-b"  type="text" name="email" tabindex="1" value="{{$message->email}}" autofocus>
+                        <label for="email">ایمیل</label>
+                        <input style="direction: ltr;" class="form-control m-b"  type="text" name="email" tabindex="1" value="{{$message->email}}" autofocus>
                     </fieldset>
                     @if($errors->has('email'))
                         <span class="help-block">{{ $errors->first('email')}}</span>
@@ -57,6 +63,7 @@
         </div>
     </div>
     </div>
+            </div>
 @endsection
 
 @section('script')
@@ -67,6 +74,7 @@
         CKEDITOR.replace( 'answer',{
             contentsLangDirection : 'rtl',
             width:'55%',
+            height:'100px',
 //            max-width:'65%',
         } );
 
