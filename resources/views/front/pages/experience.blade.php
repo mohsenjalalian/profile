@@ -2,18 +2,19 @@
 <main id="about2" class="container-fluid products">
     <section class="container">
         <h2 class="text-ex">تجربه ها</h2>
-
-
-            <div style="direction: rtl !important;" class="l-contained">
-                <ul class="timeline-list">
+        {{--<ul class="timeline">--}}
+            {{--<li>--}}
+                {{--<p class="timeline-date">Feb 2007</p>--}}
+                {{--<div class="timeline-content">--}}
+                    {{--<h3>Canada</h3>--}}
+                    {{--<p>I moved to Vancouver, Canada to broaden my horizons.</p>--}}
+                {{--</div>--}}
+            {{--</li>--}}
+        {{--</ul>--}}
                     @foreach($workExperiences as $experience )
-                    <li>
-                        <p class="hid-p">.</p>
-                        <p class="hid-p">.</p>
-                        <p class="hid-p">.</p>
-                        <p class="hid-p">.</p>
-
-                        <div class="contentss">
+            <ul class="timeline">
+                <li>
+                    <div class="timeline-content">
                             <section class="col-xs-12 col-md-3 yellow-sm">
                                 <p class="pull-right text-sm">از</p>
                                 <p class="pull-right text-sm">تا</p>
@@ -28,10 +29,9 @@
                                     {{$experience->about}}
                                 </p>
                             </section>
-                        </div>
-                    </li>
+                    </div>
+                </li>
+            </ul>
                     @endforeach
-                </ul>
-            </div>
     </section>
 </main>

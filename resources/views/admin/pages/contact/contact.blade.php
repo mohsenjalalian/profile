@@ -275,7 +275,7 @@
                 <div class="col-md-3">
                     @if(empty($contact->qr_code))
                         <img  alt="image" width="100px;" height="100px;" class="m-t-xs"
-                              src="/image/admin.png">
+                              src="/images/front/Cotint.png">
                         @else
                         <img  alt="تصویر تماس" width="100px;" height="100px;" class="m-t-xs"
                               src="{{asset($contact->qr_code)}}">
