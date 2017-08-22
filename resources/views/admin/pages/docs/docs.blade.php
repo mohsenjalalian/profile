@@ -89,7 +89,7 @@
                                     <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text"
                                            placeholder="لینک به مقاله"
                                            value="{{ Request::old('link') ?: ''}}" class="form-control m-b" name="link"
-                                           tabindex="1" required autofocus>
+                                           tabindex="1"  autofocus>
                                     @if($errors->has('link'))
                                         <span class="help-block">{{ $errors->first('link')}}</span>
                                     @endif
@@ -150,8 +150,13 @@
                             @foreach($docs as $doc)
 
                                 <tr>
-                                    <td class="text-center"><img width="50" height="50" src="{{asset($doc->photo)}}"
-                                                                 alt=""></td>
+                                    <td class="text-center">
+                                        @if(empty($doc->photo))
+                                            <img width="50" height="50" src="/image/admin.png" alt="مقالات و کتب">
+                                         @else
+                                            <img width="50" height="50" src="{{asset($doc->photo)}}" alt="">
+                                        @endif
+                                    </td>
                                     <td style="padding-top: 22px;" class="text-center">{{$doc->name}}</td>
                                     <td style="padding-top: 22px;" class="text-center">{{$doc->published_place}}</td>
                                     <td style="padding-top: 20px;" class="text-center">{{$doc->published_year}}</td>

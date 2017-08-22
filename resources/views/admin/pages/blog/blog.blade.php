@@ -166,7 +166,7 @@
                     <table class="footable table table-stripped" data-page-size="3" data-filter=#filter>
                         <thead>
                         <tr>
-                            <th class="text-center">عکس 1</th>
+                            <th class="text-center">عکس </th>
                             <th class="text-center">تیتر</th>
                             <th class="text-center">تاریخ</th>
                             <th class="text-center">توضیحات</th>
@@ -175,16 +175,23 @@
                         </thead>
                         <tbody>
                         @foreach($blogs as $blog)
-
                             <tr>
                                 <td class="text-center">
+
                                 @foreach($blog->album as $val)
-                                    @if($loop->first)
-                    <img width="50" height="50"
-                         src="{{\App\Http\Controllers\BlogController::ALBUM_PATH.'/'. $val->photo}}"
-                         alt="">
+
+                                        @if(empty($blog->album))
+                                            <img width="50" height="50"
+                                                 src="/image/admin.png"
+                                                 alt="بلاگ">
+                                        @elseif($loop->first)
+                                            @inject('photo',\App\Http\Controllers\BlogController)
+                                                <img width="50" height="50"
+                                                     src="{{$photo::ALBUM_PATH.'/'. $val->photo}}"
+                                                     alt="">
                                         @endif
                                     @endforeach
+
                                 </td>
 
                                 <td style=" vertical-align: middle;"

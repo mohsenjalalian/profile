@@ -147,9 +147,17 @@
 
                                 <tr>
                                     <td style="vertical-align: middle; width: 30px;" class="text-center">
+                                    @if(empty($certificate->photo))
+                                            <img style="height: 50px;"
+                                                 src="/image/admin.png"
+                                                 alt="گواهی">
+                                        @else
                                         <img style="height: 50px;"
                                              src="{{$certificate->photo}}"
-                                             alt="{{$certificate->photo}}"></td>
+                                             alt="{{$certificate->photo}}">
+                                        @endif
+                                    </td>
+
                                     <td style="vertical-align: middle;"
                                         class="text-center">{{$certificate->name}}</td>
                                     <td style="vertical-align: middle;"

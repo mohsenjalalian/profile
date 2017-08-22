@@ -142,8 +142,14 @@
                         @foreach($educations as $education)
                             <tr>
                                 <td style="vertical-align: middle;" class="text-center">
+                                    @if(empty($education->logo))
+                                        <img style="width: 50px;height: 50px;" src="/image/admin.png"
+                                             alt="تحصیلات">
+                                    @else
                                     <img style="width: 50px;height: 50px;" src="{{asset($education->logo)}}"
-                                         alt="{{$education->logo}}"></td>
+                                         alt="{{$education->logo}}">
+                                    @endif
+                                </td>
                                 <td style="vertical-align: middle;" class="text-center">{{$education->university_name}}</td>
                                 <td style="vertical-align: middle" class="text-center">{{$education->field}}</td>
                                 <td style="vertical-align: middle" class="text-center">{{$education->tendency}}</td>
