@@ -11,73 +11,49 @@
                 @endforeach
             </ul>
 
+
+
             <div class="tab-content">
-                @foreach($workSamples as $workSample)
-                @foreach($categories as $cat)
-                    <div id="{{$cat->id}}" class="tab-pane fade in">
+                @foreach($categories as $category)
+                 @foreach($skills as $skill)
+
+                    <div id="{{$category->id}}" class="tab-pane fade in">
                             <ul class="grid cs-style-4">
                                 <section class="col-md-4">
+                                   @foreach($category->workSample as $work)
+
+
                                     <li>
                                         <figure>
-                                            {{--photo--}}
                                             <div>
-                                                <img style="display: flex" src="{{$workSample->photo}}" alt="img05">
+                                                <img style="display: flex" src="{{$work->photo}}" alt="img05">
                                             </div>
-                                            {{--photo--}}
 
-                                            {{--pro--}}
                                             <figcaption>
-                                                <h3 class="pull-right">{{$workSample->name}}</h3>
-                                                @foreach($workSample->category as $cat)
-                                                    <p style="margin-top:30px;" class="port-n">{{$cat->name}}</p>
-                                                @endforeach
-                                                @foreach($workSample->skills as $skill)
+                                                <h3 class="pull-right">{{$work->name}}</h3>
+
+                                                    <p style="margin-top:30px;" class="port-n">{{$category->name}}</p>
+
+                                                @foreach($work->skills as $skill)
                                                     <p class="port-n">{{$skill->name}}</p>
                                                 @endforeach
+
+
                                                 <a href="http://dribbble.com/shots/1118904-Game-Center">دانلود
                                                     رزومه</a>
                                             </figcaption>
-                                            {{--pro--}}
 
                                         </figure>
                                     </li>
+                                       @endforeach
                                 </section>
                             </ul>
                         </div>
-                    @endforeach
+                  @endforeach
                 @endforeach
+
             </div>
 
-            {{--@foreach($workSamples as $workSample)--}}
-            {{--<div style="display: flex;" class="tab-content" class="filter_red" id="product-list">--}}
-            {{--<div id="menu1" class="tab-pane fade in active">--}}
-            {{--<ul class="grid cs-style-4">--}}
-            {{--<section class="col-md-4">--}}
-            {{--<li>--}}
-            {{--<figure>--}}
-            {{--<div>--}}
-            {{--<img style="display: flex" src="{{$workSample->photo}}" alt="img05">--}}
-            {{--</div>--}}
-            {{--<figcaption>--}}
-            {{--<h3 class="pull-right">{{$workSample->name}}</h3>--}}
-            {{--@foreach($workSample->category as $cat)--}}
-            {{--<p style="margin-top:30px;" class="port-n">{{$cat->name}}</p>--}}
-            {{--@endforeach--}}
-            {{--@foreach($workSample->skills as $skill)--}}
-            {{--<p class="port-n">{{$skill->name}}</p>--}}
-            {{--@endforeach--}}
-            {{--<a href="http://dribbble.com/shots/1118904-Game-Center">دانلود رزومه</a>--}}
-            {{--</figcaption>--}}
-            {{--</figure>--}}
-            {{--</li>--}}
-            {{--</section>--}}
-            {{--</ul>--}}
-            {{--</div>--}}
-            {{--</div>--}}
-            {{--@endforeach--}}
-            {{--<ul class="page-nav">--}}
-                {{--<li style="cursor: pointer;">1</li>--}}
-            {{--</ul>--}}
         </main>
     </section>
 </main>

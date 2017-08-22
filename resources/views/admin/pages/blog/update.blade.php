@@ -70,9 +70,7 @@
                             <div class="col-md-2">
                                 <div class="ibox float-e-margins">
                                     <div class="form-group{{ $errors->has('photo') ? 'has-error': ''}}">
-                                        {{--@if(!empty($blog->album[$i]->photo))--}}
-                                        {{--<input type="file" id="file1" name="" value="{{$blog->album[$i]->photo}}"--}}
-                                        {{--onchange="readURL1(this)" style="display:none">--}}
+
                                         <img style="width: 50px;height: 50px" id="photo1"
                                              @if (isset($blog->album[$i]))
                                              src="{{asset(\App\Http\Controllers\BlogController::ALBUM_PATH.'/'.$blog->album[$i]->photo)}}"
@@ -82,7 +80,7 @@
 
                                         <div class="fileinput fileinput-new" data-provides="fileinput">
                                           <span class="btn btn-default btn-file"><span
-                                                      class="fileinput-new">عکس 1</span> <span
+                                                      class="fileinput-new">عکس </span> <span
                                                       class="fileinput-exists"><span class="fileinput-exists"><span
                                                               style="color: #2aca76;">بارگذاری شد</span></span> </span>
                                             <input type="file" class="upload-photo"
