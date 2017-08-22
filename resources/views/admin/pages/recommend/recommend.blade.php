@@ -132,8 +132,15 @@
                         @foreach($recommends as $recommend)
                             <tr>
                                 <td style="vertical-align: middle; width: 50px;" class="text-center">
-                                    <img style="width: 50px;height: 50px" src="{{$recommend->photo}}"
-                                         alt="{{$recommend->photo}}"></td>
+                                    @if(empty($recommend->photo))
+                                        <img style="width: 50px;height: 50px" src="/image/admin.png"
+                                             alt="">
+                                     @else
+                                        <img style="width: 50px;height: 50px" src="{{$recommend->photo}}"
+                                             alt="{{$recommend->photo}}">
+                                        @endif
+
+                                </td>
                                 <td style=" vertical-align: middle; width: 100px;"
                                     class="text-center">{{$recommend->name}}</td>
                                 <td style="vertical-align: middle; width: 100px;" class="text-center">

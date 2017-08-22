@@ -12,11 +12,13 @@
                     <div id="{{$skill->type_id}}" class="tab-pane fade in">
                         <div class="mCustomScrollbar content-a3" data-mcs-theme="minimal-dark">
                             @foreach($type->skill as $skill)
+                                @if(!empty($skill))
                                 <p style="font-size: 16px; padding-top: 10px;" class="col-md-6">{{$skill->name}}
                                     <span>
                                         <progress value="{{$skill->point}}" max="10"></progress>
                                     </span>
                                 </p>
+                               @endif
                             @endforeach
                         </div>
                     </div>
