@@ -1,5 +1,3 @@
-<!--skills-->
-
 <main id="about57" class="container skill">
     <h2 class="text-sk3">مهارت ها و زبان</h2>
     <main class="container tabs-tunel col-md-8">
@@ -37,10 +35,11 @@
                 <div id="owl3" class="owl-carousel" style="direction:ltr">
                     @foreach($languages as $language)
                         <div class="item test5">
+
                             <h2>{{$language->name}}</h2>
                             <div class="progress">
                                 <div class="progress-bar progress-bar-success progress-bar-striped active"
-                                     role="progressbar" aria-valuenow="3" aria-valuemin="3" aria-valuemax="10"
+                                     role="progressbar" value="" aria-valuemin="3" aria-valuemax="10"
                                      style="width: 60%"> {{$language->reading}}% خواندن
                                 </div>
                             </div>
@@ -59,7 +58,7 @@
                             <div class="progress">
                                 <div class="progress-bar progress-bar-success progress-bar-striped active"
                                      role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="10"
-                                     style="width:30%"> {{$language->listening}}% گوش دادن
+                                     style="width:50%"> {{$language->listening}}% گوش دادن
                                 </div>
                             </div>
                         </div>

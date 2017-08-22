@@ -110,7 +110,7 @@
                                                 </span>
                                                 <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">پاک کردن</a>
                                             </div>
-                                            <p style="font-size: 12px; margin-left: 15px;" class="pull-right colorpicker">۱۰۰ * ۱۰۰</p>
+                                            <p style="font-size: 12px; margin-left: 15px;" class="pull-right colorpicker">۱۶۰ * ۱۰۰</p>
                                             @if($errors->has('photo'))
                                                 <span class="help-block">{{ $errors->first('photo')}}</span>
                                             @endif

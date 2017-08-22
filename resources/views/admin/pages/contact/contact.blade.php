@@ -92,6 +92,9 @@
                                                 <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">پاک کردن</a>
                                             </div>
                                             <p style="font-size: 12px; margin-left: 15px;" class="pull-right colorpicker">۱۰۰ * ۱۰۰</p>
+                                            <a style="color: #000;" href="https://app.qr-code-generator.com/" target="_blank">
+                                                <i style="font-size: 25px; color: #ffd93e; margin-right: 15px;" class="fa fa-qrcode">
+                                                </i> <p style="position: relative; top: -26px; right: 50px;">qr code خود را انتخاب کنید</p></a>
                                             @if($errors->has('qr_code'))
                                                 <span class="help-block">{{ $errors->first('qr_code')}}</span>
                                             @endif
@@ -198,6 +201,7 @@
                                         @if($errors->has('qr_code'))
                                             <span class="help-block">{{ $errors->first('qr_code')}}</span>
                                         @endif
+
                                     </div>
                                 </div>
                             </div>

@@ -43,7 +43,7 @@
                                 @endif
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary block full-width m-b">ورود</button>
+                        <button style="font-family: webmdesign;" type="submit" class="btn btn-primary block full-width m-b">ورود</button>
 
                         <a href="{{route('showLinkRequestForm')}}">
                             <small>رمز عبور خود را فراموش کرده اید؟</small>
