@@ -40,6 +40,7 @@ class SkillForm extends FormRequest
 
         if (!empty($data)) {
             $skill = Skills::create($data);
+
         } else {
             return redirect()->back()->withErrors('متاسفانه ساخته نشد');
         }

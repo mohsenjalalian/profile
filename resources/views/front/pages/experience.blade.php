@@ -2,14 +2,16 @@
 <main id="about2" class="container-fluid products">
     <section class="container">
         <h2 class="text-ex">تجربه ها</h2>
+
+
             <div style="direction: rtl !important;" class="l-contained">
                 <ul class="timeline-list">
                     @foreach($workExperiences as $experience )
                     <li>
-                        <p>.</p>
-                        <p>.</p>
-                        <p>.</p>
-                        <p>.</p>
+                        <p class="hid-p">.</p>
+                        <p class="hid-p">.</p>
+                        <p class="hid-p">.</p>
+                        <p class="hid-p">.</p>
 
                         <div class="contentss">
                             <section class="col-xs-12 col-md-3 yellow-sm">

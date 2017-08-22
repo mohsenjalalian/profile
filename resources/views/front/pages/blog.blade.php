@@ -1,89 +1,98 @@
-
 <main id="about6" class="container">
-    <h2 class="text-ex2">بلاگ من</h2>
+    <h2 style="margin-top: 50px;" class="text-ex2">بلاگ من</h2>
     <div id="owl7" class="owl-carousel" style="direction:ltr">
         @foreach($blogs as $blog)
-        <div class="item">
-            <section class="pull-right col-xs-12 col-sm-12 col-md-12 blog">
-                <div class="box-small2">
-                    <div id="owl6" class="owl-carousel" style="direction:ltr">
-                        @foreach($blog->album as $value)
+            <div class="item">
+                <section class="pull-right col-xs-12 col-sm-12 col-md-12 blog">
+                    <div class="box-small2">
+
+
+                        <div id="owl6" class="owl-carousel" style="direction:ltr">
+                            @foreach($blog->album as $value)
                                 <div class="item">
-                                    @if(!empty($blog->album))
-                                        <div class="img-scale"><img class="img-responsive" src="{{$value->photo}}" width="540px"></div>
+                                    @if(!empty($value->photo))
+                                        <div class="img-scale"><img class="img-responsive"
+                                                                    src="{{asset($value->photo)}}"
+                                                                    width="540px"></div>
                                     @else
-                                        <div class="img-scale"><img class="img-responsive" src="/image/profile.png" width="540px"></div>
+                                        <div class="img-scale">
+                                            <img class="img-responsive" src="{{asset('/image/profile.png')}}"
+                                                 width="540px">
+                                        </div>
                                     @endif
                                 </div>
-                            @endforeach
-                    </div>
-                    <h2 class="text-bl">{{$blog->title}}</h2>
-                    <p class="text-bl2">{{$blog->description}}</p>
-                    <br>
-                    <br>
-                <hr style="border:1px solid #DFDFDF; width:100%;">
-                <p class="blog-mg">
-                    {{$blog->date}}
-                    <span class="blog-mg2">اشتراک:</span>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=#blog">
-                        <span class="face-bl">فیس بوک</span>
-                    </a>
-                    <a href="https://plus.google.com/share?url=#blog">
-                        <span class="google">گوگل بلاس</span>
-                    </a>
-                    <a href="https://twitter.com/home?status=#blog">
-                        <span class="twit">تویتر</span>
-                    </a>
-                </p>
-                </div>
-            </section>
-        </div>
-            @endforeach
-        </div>
 
+                            @endforeach
+                        </div>
+
+                        <h2 class="text-bl">{{$blog->title}}</h2>
+                        <p class="text-bl2">{{$blog->description}}</p>
+                        <br>
+                        <br>
+                        <hr style="border:1px solid #DFDFDF; width:100%;">
+                        <span class="blog-mg2">{{$blog->date}}:اشتراک</span>
+                        {{--<p class="blog-mg">--}}
+                            {{--{{$blog->date}}--}}
+                        {{--</p>--}}
+
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=#blog">
+                                <span class="face-bl"><i style="font-size: 22px;" class="fa fa-facebook"></i></span>
+                            </a>
+                            <a href="https://plus.google.com/share?url=#blog">
+                                <span class="google"><i style="font-size: 22px;" class="fa fa-google-plus"></i> </span>
+                            </a>
+                            <a href="https://twitter.com/home?status=#blog">
+                                <span class="twit"><i style="font-size: 22px;" class="fa fa-twitter"></i> </span>
+                            </a>
+
+                    </div>
+                </section>
+            </div>
+        @endforeach
+    </div>
 
 
     {{--@foreach($blogs as $blog)--}}
     {{--<section class="pull-left col-xs-12 col-sm-12 col-md-6 blog">--}}
-        {{--<div class="box-small1">--}}
-            {{--<div id="owl5" class="owl-carousel" style="direction:ltr">--}}
-                {{--@foreach($blog->album as $value)--}}
-                {{--<div class="item">--}}
-                    {{--@if(!empty($blog->album))--}}
-                    {{--<div class="img-scale"><img class="img-responsive" src="{{$value->photo}}" width="540px"></div>--}}
-                        {{--@else--}}
-                    {{--<div class="img-scale"><img class="img-responsive" src="/image/profile.png" width="540px"></div>--}}
-                        {{--@endif--}}
-                {{--</div>--}}
-                {{--@endforeach--}}
-                {{--<div class="item">--}}
-                    {{--<div class="img-scale"><img class="img-responsive" src="images/front/blog-2.jpg" width="540"></div>--}}
-                {{--</div>--}}
-                {{--<div class="item">--}}
-                    {{--<div class="img-scale"><img class="img-responsive" src="images/front/blog-1.jpg" width="540px"></div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            {{--<h2 class="text-bl">{{$blog->title}}</h2>--}}
-            {{--<p class="text-bl2">--}}
-                {{--{{$blog->description}}--}}
-        {{--</p>--}}
-            {{--<br>--}}
-            {{--<br>--}}
-            {{--<hr style="border:1px solid #DFDFDF; width:100%;">--}}
-            {{--<p class="blog-mg">--}}
-                {{--{{$blog->date}}--}}
-                {{--<span class="blog-mg2">اشتراک:</span>--}}
-                {{--<a href="https://www.facebook.com/sharer/sharer.php?u=#blog">--}}
-                    {{--<span class="face-bl">فیس بوک</span>--}}
-                {{--</a>--}}
-                {{--<a href="https://plus.google.com/share?url=#blog">--}}
-                    {{--<span class="google">گوگل بلاس</span>--}}
-                {{--</a>--}}
-                {{--<a href="https://twitter.com/home?status=#blog">--}}
-                    {{--<span class="twit">تویتر</span>--}}
-                {{--</a>--}}
-            {{--</p>--}}
-        {{--</div>--}}
+    {{--<div class="box-small1">--}}
+    {{--<div id="owl5" class="owl-carousel" style="direction:ltr">--}}
+    {{--@foreach($blog->album as $value)--}}
+    {{--<div class="item">--}}
+    {{--@if(!empty($blog->album))--}}
+    {{--<div class="img-scale"><img class="img-responsive" src="{{$value->photo}}" width="540px"></div>--}}
+    {{--@else--}}
+    {{--<div class="img-scale"><img class="img-responsive" src="/image/profile.png" width="540px"></div>--}}
+    {{--@endif--}}
+    {{--</div>--}}
+    {{--@endforeach--}}
+    {{--<div class="item">--}}
+    {{--<div class="img-scale"><img class="img-responsive" src="images/front/blog-2.jpg" width="540"></div>--}}
+    {{--</div>--}}
+    {{--<div class="item">--}}
+    {{--<div class="img-scale"><img class="img-responsive" src="images/front/blog-1.jpg" width="540px"></div>--}}
+    {{--</div>--}}
+    {{--</div>--}}
+    {{--<h2 class="text-bl">{{$blog->title}}</h2>--}}
+    {{--<p class="text-bl2">--}}
+    {{--{{$blog->description}}--}}
+    {{--</p>--}}
+    {{--<br>--}}
+    {{--<br>--}}
+    {{--<hr style="border:1px solid #DFDFDF; width:100%;">--}}
+    {{--<p class="blog-mg">--}}
+    {{--{{$blog->date}}--}}
+    {{--<span class="blog-mg2">اشتراک:</span>--}}
+    {{--<a href="https://www.facebook.com/sharer/sharer.php?u=#blog">--}}
+    {{--<span class="face-bl">فیس بوک</span>--}}
+    {{--</a>--}}
+    {{--<a href="https://plus.google.com/share?url=#blog">--}}
+    {{--<span class="google">گوگل بلاس</span>--}}
+    {{--</a>--}}
+    {{--<a href="https://twitter.com/home?status=#blog">--}}
+    {{--<span class="twit">تویتر</span>--}}
+    {{--</a>--}}
+    {{--</p>--}}
+    {{--</div>--}}
     {{--</section>--}}
 
     {{--@endforeach--}}
@@ -96,23 +105,23 @@
 
 
     {{--<section class="pull-right col-xs-12 col-sm-12 col-md-6 blog">--}}
-        {{--<div class="box-small2">--}}
-            {{--<div id="owl6" class="owl-carousel" style="direction:ltr">--}}
-                {{--<div class="item">--}}
-                    {{--<div class="img-scale"><img class="img-responsive" src="images/front/blog-2.jpg" width="540"></div>--}}
-                {{--</div>--}}
-                {{--<div class="item">--}}
-                    {{--<div class="img-scale"><img class="img-responsive" src="images/front/blog-2.jpg" width="540"></div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            {{--<h2 class="text-bl">مفاهیم</h2>--}}
-            {{--<p class="text-bl2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک--}}
-                {{--است. چاپگرها و متون بلکه روزنامه و مجله </p>--}}
-            {{--<br>--}}
-            {{--<br>--}}
-            {{--<hr style="border:1px solid #DFDFDF; width:100%;">--}}
-            {{--<p class="blog-mg">اسفند ۱۰, ۱۳۹۶ <span class="blog-mg2">اشتراک:</span> <span class="face-bl">فیس بوک</span>--}}
-                {{--<span class="google">گوگل بلاس</span> <span class="twit">تویتر</span></p>--}}
-        {{--</div>--}}
+    {{--<div class="box-small2">--}}
+    {{--<div id="owl6" class="owl-carousel" style="direction:ltr">--}}
+    {{--<div class="item">--}}
+    {{--<div class="img-scale"><img class="img-responsive" src="images/front/blog-2.jpg" width="540"></div>--}}
+    {{--</div>--}}
+    {{--<div class="item">--}}
+    {{--<div class="img-scale"><img class="img-responsive" src="images/front/blog-2.jpg" width="540"></div>--}}
+    {{--</div>--}}
+    {{--</div>--}}
+    {{--<h2 class="text-bl">مفاهیم</h2>--}}
+    {{--<p class="text-bl2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک--}}
+    {{--است. چاپگرها و متون بلکه روزنامه و مجله </p>--}}
+    {{--<br>--}}
+    {{--<br>--}}
+    {{--<hr style="border:1px solid #DFDFDF; width:100%;">--}}
+    {{--<p class="blog-mg">اسفند ۱۰, ۱۳۹۶ <span class="blog-mg2">اشتراک:</span> <span class="face-bl">فیس بوک</span>--}}
+    {{--<span class="google">گوگل بلاس</span> <span class="twit">تویتر</span></p>--}}
+    {{--</div>--}}
     {{--</section>--}}
 </main>
