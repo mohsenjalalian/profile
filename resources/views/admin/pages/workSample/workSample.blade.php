@@ -112,7 +112,7 @@
                                                       class="input-group-addon btn btn-default btn-file">
                                                     <span class="fileinput-new">بارگذاری</span>
                                                     <span class="fileinput-exists">عوض کردن</span>
-                                                    <input type="file" value="{{ Request::old('photo') ?: ''}}" required
+                                                    <input type="file" value="{{ Request::old('photo') ?: ''}}"
                                                            name="photo">
                                                 </span>
                                                 <a href="#" class="input-group-addon btn btn-default fileinput-exists"
@@ -156,11 +156,17 @@
 
 
                                 <tr>
-                                    <td style="vertical-align: middle;" class="text-center"><img width="50"
-                                                                                                 height="50"
-                                                                                                 src="{{asset($workSample->photo)}}"
-                                                                                                 alt="">
+
+                                    <td style="vertical-align: middle;" class="text-center">
+                                        @if(empty($workSample->photo))
+                                            <img width="50" height="50" src="/image/admin.png"
+                                                 alt="نمونه کار">
+                                        @else
+                                        <img width="50" height="50" src="{{asset($workSample->photo)}}"
+                                             alt="{{$workSample->photo}}">
+                                        @endif
                                     </td>
+
                                     <td style="vertical-align: middle;" class="text-center">
                                         @foreach($workSample->category as $cat)
 

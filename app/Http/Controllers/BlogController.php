@@ -30,7 +30,8 @@ class BlogController extends Controller
     public function index()
     {
         $blogs = Blog::all();
-        return view('admin.pages.blog.blog', compact('blogs'));
+        $albums = Album::all();
+        return view('admin.pages.blog.blog', compact('blogs','albums'));
     }
 
     /**
