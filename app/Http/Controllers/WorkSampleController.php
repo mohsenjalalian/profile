@@ -61,7 +61,7 @@ class WorkSampleController extends Controller
      */
     public function show($id)
     {
-        //
+        WorkSample::findOrFail($id);
     }
 
     /**

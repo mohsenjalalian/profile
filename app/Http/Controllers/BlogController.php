@@ -63,7 +63,7 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        //
+        Blog::findOrFail($id);
     }
 
     /**

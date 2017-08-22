@@ -56,7 +56,8 @@ class CertificationController extends Controller
      */
     public function show($id)
     {
-        //
+        Certification::findOrfail($id);
+
     }
 
     /**

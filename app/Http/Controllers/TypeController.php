@@ -55,7 +55,7 @@ class TypeController extends Controller
      */
     public function show($id)
     {
-        //
+        SkillType::findOrFail($id);
     }
 
     /**
