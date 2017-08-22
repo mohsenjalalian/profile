@@ -264,5 +264,9 @@
 @section('script')
     <script src="js/cheouts.js"></script>
     <script src="js/time.js"></script>
+    <script>
+
+    </script>
+
 @endsection
 

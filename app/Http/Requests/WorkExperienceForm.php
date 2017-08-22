@@ -37,7 +37,6 @@ class WorkExperienceForm extends FormRequest
 
     public function process()
     {
-
         $education = WorkExperince::create([
             'title' => request('title'),
             'company' => request('company'),
@@ -48,5 +47,4 @@ class WorkExperienceForm extends FormRequest
 
         ]);
     }
-
 }

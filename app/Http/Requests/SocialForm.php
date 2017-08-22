@@ -39,29 +39,26 @@ class SocialForm extends FormRequest
 
     public function process()
     {
-
         $socials = request(['twitter', 'facebook', 'telegram', 'instagram',
             'google_plus', 'linkedin', 'skype', 'site']);
 
 
-//        $data = [
-//            'twitter' => request('twitter'),
-//            'facebook' => request('facebook'),
-//            'instagram' => request('instagram'),
-//            'telegram' => request('telegram'),
-//            'google_plus' => request('google_plus'),
-//            'linkedin' => request('linkedin'),
-//            'skype' => request('skype'),
-//            'site' => request('site'),
-//        ];
+        //        $data = [
+        //            'twitter' => request('twitter'),
+        //            'facebook' => request('facebook'),
+        //            'instagram' => request('instagram'),
+        //            'telegram' => request('telegram'),
+        //            'google_plus' => request('google_plus'),
+        //            'linkedin' => request('linkedin'),
+        //            'skype' => request('skype'),
+        //            'site' => request('site'),
+        //        ];
         foreach ($socials as $social) {
             if (empty($social)) {
-              return redirect()->back();
+                return redirect()->back();
             } else {
                 SocialNetwork::updateOrCreate($socials);
             }
         }
     }
-
-
 }

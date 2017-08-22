@@ -35,6 +35,4 @@ class CategoryForm extends FormRequest
             'name' => request('name')
         ]);
     }
-
-
 }
