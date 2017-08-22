@@ -262,14 +262,20 @@
                 <div class="contact-box">
                         <div class="col-md-9">
                             <h3><strong>{{$contact->email}}</strong></h3>
-                            <p>{{\App\Http\Controllers\ContactController::englishToPersian($contact->phone_number)}}</p>
-                            <p>{{\App\Http\Controllers\ContactController::englishToPersian($contact->mobile)}}</p>
-                            <p>{{\App\Http\Controllers\ContactController::englishToPersian($contact->office_number)}}</p>
+
+                            <p>{{\App\Http\Controllers\ContactController::toPersianNum($contact->phone_number)}}</p>
+                            <p>{{\App\Http\Controllers\ContactController::toPersianNum($contact->mobile)}}</p>
+                            <p>{{\App\Http\Controllers\ContactController::toPersianNum($contact->office_number)}}</p>
                         </div>
 
                 <div class="col-md-3">
+                    @if(empty($contact->qr_code))
                         <img  alt="image" width="100px;" height="100px;" class="m-t-xs"
+                              src="/image/admin.png">
+                        @else
+                        <img  alt="تصویر تماس" width="100px;" height="100px;" class="m-t-xs"
                               src="{{asset($contact->qr_code)}}">
+                        @endif
                 </div>
                     <div class="clearfix"></div>
             </div>
