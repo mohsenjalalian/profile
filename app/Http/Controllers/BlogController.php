@@ -31,7 +31,7 @@ class BlogController extends Controller
     {
         $blogs = Blog::all();
         $albums = Album::all();
-        return view('admin.pages.blog.blog', compact('blogs','albums'));
+        return view('admin.pages.blog.blog', compact('blogs', 'albums'));
     }
 
     /**

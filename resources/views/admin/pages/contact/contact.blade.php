@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-
+@inject('translate',\App\Http\Controllers\ContactController)
 
 @section('content')
 
@@ -177,34 +177,7 @@
                                 @endif
                             </div>
                         </div>
-                        {{--<div class="row">--}}
-                        {{--<div style=" margin-right: 0px; margin-top: -30px;" class="col-md-4">--}}
-                            {{--<div class="ibox float-e-margins">--}}
-                                {{--<div class="form-group{{ $errors->has('qr_code') ? ' has-error': ''}}">--}}
-                                    {{--@if(isset($contact->qr_code))--}}
-                                        {{--<img style="position: relative; top: 40px;" width="50" height="50" src="{{asset($contact->qr_code)}}">--}}
-                                    {{--@else--}}
-                                        {{--<h4 style="width: 200px;">شما عکسی بارگذاری نکرده اید</h4>--}}
-                                    {{--@endif--}}
-                                    {{--<div style="width: 280px; margin-right: 15px;" class="fileinput fileinput-new input-group" data-provides="fileinput">--}}
-                                        {{--<div class="form-control" data-trigger="fileinput">--}}
-                                            {{--<p class="fileinput-exists" style="color: #2aca76;">بارگذاری شد</p>--}}
-                                        {{--</div>--}}
-                                        {{--<span style="border: 1px solid #e5e6e7;" class="input-group-addon btn btn-default btn-file">--}}
-                                                    {{--<span class="fileinput-new">بارگذاری</span>--}}
-                                                    {{--<span class="fileinput-exists">عوض کردن</span>--}}
-                                                    {{--<input type="file"--}}
-                                                           {{--value="{{$contact->qr_code}}" name="qr_code">--}}
-                                                {{--</span>--}}
-                                        {{--<a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">پاک کردن</a>--}}
-                                    {{--</div>--}}
-                                        {{--@if($errors->has('qr_code'))--}}
-                                            {{--<span class="help-block">{{ $errors->first('qr_code')}}</span>--}}
-                                        {{--@endif--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--</div>--}}
+
                         <div class="row">
                             <div class="col-md-6">
                                 <div style="margin-right: 15px;" class="ibox float-e-margins">
@@ -262,10 +235,9 @@
                 <div class="contact-box">
                         <div class="col-md-9">
                             <h3><strong>{{$contact->email}}</strong></h3>
-
-                            <p>{{\App\Http\Controllers\ContactController::toPersianNum($contact->phone_number)}}</p>
-                            <p>{{\App\Http\Controllers\ContactController::toPersianNum($contact->mobile)}}</p>
-                            <p>{{\App\Http\Controllers\ContactController::toPersianNum($contact->office_number)}}</p>
+                            <p>{{$translate::toPersianNum($contact->phone_number)}}</p>
+                            <p>{{$translate::toPersianNum($contact->mobile)}}</p>
+                            <p>{{$translate::toPersianNum($contact->office_number)}}</p>
                         </div>
 
                 <div class="col-md-3">
