@@ -1,4 +1,4 @@
-<!--EXPERIENCE-->
+@if(!$workExperiences->isEmpty())
 <main id="about2" class="container-fluid products">
     <section class="container">
         <h2 class="text-ex">تجربه ها</h2>
@@ -35,3 +35,4 @@
             </div>
     </section>
 </main>
+@endif

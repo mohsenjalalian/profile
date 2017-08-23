@@ -1,6 +1,5 @@
-<!--EDUCATION-->
-
-<main id="about3"  class="container-fluid background-three">
+@if(!$educations->isEmpty())
+    <main id="about3"  class="container-fluid background-three">
     <section class="container">
         <h2 class="text-ex">تحصیلات</h2>
         <aside class="col-xs-12 col-md-12">
@@ -14,9 +13,8 @@
                     <p class="text-ed3">{{$education->start_date}} - {{$education->finish_date}}</p>
                 </div>
                 @endforeach
-
-
             </div>
         </aside>
     </section>
 </main>
+@endif

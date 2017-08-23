@@ -1,6 +1,5 @@
-<!--Certification-->
+@if(!$recommendations->isEmpty())
 <main id="about55" class="container-fluid background-six">
-
     <section class="container">
         <h2 class="text-ex">گواهی</h2>
         <div id="owl4" class="owl-carousel" style="direction:ltr">
@@ -23,3 +22,4 @@
         </div>
     </section>
 </main>
+@endif
