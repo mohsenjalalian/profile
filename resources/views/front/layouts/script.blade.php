@@ -6,8 +6,15 @@
 <script src="/js/front/snap.svg-min.js"></script>
 <script src="/js/front/kar.js"></script>
 <script src="js/classie.js"></script>
+<script src="js/front/timelineweb.js"></script>
 <!--jquery-->
-
+<script>
+    $(function(){
+        $().timelinr({
+            arrowKeys: 'true'
+        })
+    });
+</script>
 <script>
     $(document).ready(function () {
         $('.nav-pills li:first-child').addClass('active').show();
