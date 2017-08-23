@@ -5,7 +5,21 @@
         <div style="direction: ltr !important;" id="timeline">
             <ul id="dates">
                 @foreach($workExperiences as $experience )
-                <li><a href="#{{$experience->id}}">{{$experience->start_date}}</a></li>
+                @php
+                    $stDate = $experience->start_date;
+                    $enDate = $experience->finish_date;
+                    list($stYear,$stMonth,$day) = explode("/",$stDate);
+                    list($enYear,$enMonth,$day) = explode("/",$enDate);
+
+                     $stYear = substr($stYear,4);
+                     $enYear = substr($enYear,4);
+
+                @endphp
+
+                   سال شروع <li><a href="#{{$experience->id}}">{{$stYear .'/'. $stMonth}}</a></li>
+                    {{--<br>--}}
+                 سال پایان   <li><a href="#{{$experience->id}}">{{$enYear .'/'. $enMonth}}</a></li>
+
                 @endforeach
             </ul>
             <ul id="issues">
