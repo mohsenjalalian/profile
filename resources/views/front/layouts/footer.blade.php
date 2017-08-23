@@ -125,3 +125,7 @@
 <div class="btn-top"><i style="color:#FFFFFF; font-size:22px; padding-top:12px; padding-right:14px;"
                         class="fa fa-chevron-up" aria-hidden="true"></i></div>
 
+
+@include('front.layouts.success')
+@include('admin.layouts.errors')
+
