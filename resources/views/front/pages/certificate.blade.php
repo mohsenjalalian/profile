@@ -6,8 +6,16 @@
            @foreach($certifications as $certification)
             <div class="item">
                 <div class="grid-go">
-                    <figure class="effect-ming"><img width="100%" height="100%"
-                                src="{{$certification->photo}}">
+                    <figure class="effect-ming">
+                        @if ($certification->photo)
+                            <img width="100%" height="100%"
+                                 src="{{$certification->photo}}">
+                        @else
+                            <img width="100%" height="100%"
+                                 src="images/front/certificate2.png">
+                        @endif
+
+
                         <figcaption>
                             <p class="text-center">{{$certification->name}}</p>
                             <p class="text-center">{{$certification->type}}</p>

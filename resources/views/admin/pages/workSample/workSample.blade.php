@@ -159,7 +159,7 @@
 
                                     <td style="vertical-align: middle;" class="text-center">
                                         @if(empty($workSample->photo))
-                                            <img width="50" height="50" src="/image/admin.png"
+                                            <img width="50" height="50" src="/images/front/site.png"
                                                  alt="نمونه کار">
                                         @else
                                         <img width="50" height="50" src="{{asset($workSample->photo)}}"

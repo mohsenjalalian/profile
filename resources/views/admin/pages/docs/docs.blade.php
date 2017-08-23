@@ -152,7 +152,7 @@
                                 <tr>
                                     <td class="text-center">
                                         @if(empty($doc->photo))
-                                            <img width="50" height="50" src="/image/admin.png" alt="مقالات و کتب">
+                                            <img width="50" height="50" src="/images/front/books.png" alt="مقالات و کتب">
                                          @else
                                             <img width="50" height="50" src="{{asset($doc->photo)}}" alt="">
                                         @endif

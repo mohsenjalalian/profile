@@ -411,23 +411,15 @@ $(document).ready(function(e) {
 	},function(){
 		$(".box-languge").css("transform","perspective(1000px) rotatey(-90deg)");
 	});
-	});		
-			
-		
+	});
 
 	$(document).ready(function(e) {
 	$(".icon-animate").click(function(e) {
 		x = $("#about7").offset();
         $("body,html").animate({scrollTop:x.top},1500);
     }); 
-	
-}); 	
-	
-	
-	
-	
-			
-			
+	});
+
 $(document).ready(function(e) {
    	$("#icon11").click(function(e) {
         $("body,html").animate({scrollTop:0},1500);

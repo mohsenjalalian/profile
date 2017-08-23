@@ -7,13 +7,13 @@
 <script src="/js/front/kar.js"></script>
 <script src="js/classie.js"></script>
 <!--jquery-->
+
 <script>
     $(document).ready(function () {
         $('.nav-pills li:first-child').addClass('active').show();
         $('.tab-content .tab-pane:first').addClass('active').show()
     });
 </script>
-
 <script>
     $(document).ready(function () {
 

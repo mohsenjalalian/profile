@@ -42,26 +42,26 @@
                             <div class="progress">
                                 <div class="progress-bar progress-bar-success progress-bar-striped active"
                                      role="progressbar" value="" aria-valuemin="3" aria-valuemax="10"
-                                     style="width: 60%"> {{$language->reading}}% خواندن
+                                     style="width: {{$language->reading * 20}}%"> {{$language->reading *20}}% خواندن
                                 </div>
                             </div>
                             <div class="progress">
                                 <div class="progress-bar progress-bar-success progress-bar-striped active"
                                      role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="10"
-                                     style="width:40%"> {{$language->writing}}% نوشتن
+                                     style="width:{{$language->writing * 20}}%"> {{$language->writing *20}}% نوشتن
                                 </div>
                             </div>
                             {{--<progress class="progress3" value="{{$language->writing}}" max="10">dfsfdsf</progress>--}}
                             <div class="progress">
                                 <div class="progress-bar progress-bar-success progress-bar-striped active"
                                      role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="10"
-                                     style="width:80%"> {{$language->speaking}}% صحبت کردن
+                                     style="width:{{$language->speaking *20}}%"> {{$language->speaking *20}}% صحبت کردن
                                 </div>
                             </div>
                             <div class="progress">
                                 <div class="progress-bar progress-bar-success progress-bar-striped active"
                                      role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="10"
-                                     style="width:50%"> {{$language->listening}}% گوش دادن
+                                     style="width:{{$language->listening *20}}%"> {{$language->listening *20}}% گوش دادن
                                 </div>
                             </div>
                         </div>

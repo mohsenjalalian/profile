@@ -133,7 +133,7 @@
                             <tr>
                                 <td style="vertical-align: middle; width: 50px;" class="text-center">
                                     @if(empty($recommend->photo))
-                                        <img style="width: 50px;height: 50px" src="/image/admin.png"
+                                        <img style="width: 50px;height: 50px" src="/images/front/manager.png"
                                              alt="">
                                      @else
                                         <img style="width: 50px;height: 50px" src="{{$recommend->photo}}"
