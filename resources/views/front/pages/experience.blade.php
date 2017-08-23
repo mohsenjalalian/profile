@@ -31,15 +31,15 @@
             <ul id="issues">
                 @foreach($workExperiences as $experience )
                 <li id="{{$experience->id}}">
-
-                    <h4 style="float: right;  text-align: right; width: 100%">{{$experience->title}}</h4>
-                    <p style="text-align: right; float: right; ">{{$experience->about}}</p>
+                    <h4 style="float: right; color: #ffd93e;  text-align: right; width: 100%"><strong>{{$experience->title}}</strong></h4>
+                    <p style="font-size: 11px;"><strong>{{$experience->company}}</strong></p>
+                    <p style="text-align: right; float: right; width: 100%;">{{$experience->about}}</p>
                     <p>{{$experience->city}}</p>
                     @endforeach
             </ul>
             <div id="grad_left"></div>
             <div id="grad_right"></div>
-            <a href="#" id="next">+<i style="font-size: 30px;" class="fa fa-plus"></i></a>
+            <a href="#" id="next">+<i id="next grad-left" style="font-size: 30px; color: #0000cc;" class="fa fa-plus"></i></a>
             <a href="#" id="prev">-</a>
         </div>
 
