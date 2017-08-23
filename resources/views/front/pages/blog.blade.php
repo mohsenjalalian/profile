@@ -29,11 +29,10 @@
                             </div>
 
                         <h2 class="text-bl">{{$blog->title}}</h2>
-                        <p class="text-bl2">{{$blog->description}}</p>
-                        <br>
-                        <br>
+                        <p class="text-bl2 mCustomScrollbar content-a44" data-mcs-theme="minimal-dark">{{$blog->description}}</p>
                         <hr style="border:1px solid #DFDFDF; width:100%;">
-                        <span class="blog-mg2">{{$blog->date}}:اشتراک</span>
+                        <span class="blog-mg2">{{$blog->date}}</span>
+                        <p><span style="text-align: right; float: right; font-size: 20px; padding-left: 20px;">: اشتراک</span>
                             <a href="https://www.facebook.com/sharer/sharer.php?u={{route('home')}}#blog">
                                 <span class="face-bl"><i style="font-size: 22px;" class="fa fa-facebook"></i></span>
                             </a>
@@ -43,7 +42,10 @@
                             <a href="https://twitter.com/home?status={{route('home')}}#blog">
                                 <span class="twit"><i style="font-size: 22px;" class="fa fa-twitter"></i> </span>
                             </a>
-
+                            <a href="https://twitter.com/home?status={{route('home')}}#blog">
+                                <span class="telegram"><i style="font-size: 22px;" class="fa fa-paper-plane"></i> </span>
+                            </a>
+                        </p>
                     </div>
                 </section>
             </div>

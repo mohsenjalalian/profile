@@ -149,7 +149,7 @@
                                     <td style="vertical-align: middle; width: 30px;" class="text-center">
                                     @if(empty($certificate->photo))
                                             <img style="height: 50px;"
-                                                 src="/image/admin.png"
+                                                 src="/images/front/certificate2.png"
                                                  alt="گواهی">
                                         @else
                                         <img style="height: 50px;"

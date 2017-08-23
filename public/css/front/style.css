@@ -15,7 +15,7 @@ body {
 }
 
 a {
-    color: #ffffcc;
+    color: #888;
     text-decoration: none;
     -webkit-transition: 0.5s;
     -moz-transition: 0.5s;
@@ -34,12 +34,12 @@ a.selected {
 }
 
 #timeline {
-    width: 800px;
-    height: 350px;
+    width: 75%;
+    min-height: 100px;
+    height:auto;
     overflow: hidden;
     margin: 100px auto;
     position: relative;
-    background: url('../images/dot.gif') left 45px repeat-x;
 }
 
 #dates {
@@ -51,9 +51,9 @@ a.selected {
 #dates li {
     list-style: none;
     float: left;
-    width: 100px;
+    width: 150px;
     height: 50px;
-    font-size: 24px;
+    font-size: 22px;
     text-align: center;
     background: url('../images/biggerdot.png') center bottom no-repeat;
 }
@@ -64,12 +64,13 @@ a.selected {
 }
 
 #dates .selected {
-    font-size: 38px;
+    font-size: 30px;
 }
 
 #issues {
-    width: 800px;
-    height: 350px;
+    min-height: 200px;
+    height: auto;
+    text-align: right;
     overflow: hidden;
 }
 
@@ -122,11 +123,9 @@ a.selected {
 
 #issues li p {
     font-size: 14px;
-    margin-right: 70px;
     margin-left: 70px;
     font-weight: normal;
     line-height: 22px;
-    text-shadow: #000 1px 1px 2px;
 }
 
 #grad_left,
@@ -225,6 +224,10 @@ a.selected {
 .content-a5 {
     height: 1000px !important;
     direction: rtl !important;
+}
+.content-a44{
+    height: 140px;
+    direction: rtl;
 }
 
 .test5 {
@@ -1066,6 +1069,7 @@ a:hover {
 
 .products {
     background-color: #ecf1f7;
+    min-height: 100px;
     height: auto;
     margin-top: 100px;
 }
@@ -1301,7 +1305,6 @@ progress::-moz-progress-bar {
     padding-right: 6px;
     font-size: 12px !important;
     color: #FFFFFF;
-    cursor: pointer;
 }
 
 .port-n:hover {
@@ -1457,8 +1460,15 @@ width: 100%;
     margin-right: 10px;
     font-size: 16px;
     float: right !important;
+    padding-left: 10px;
+    border-left: 1px solid #bababa;
 }
-
+.telegram {
+    color: #0d8ddb;
+    margin-right: 10px;
+    font-size: 16px;
+    float: right !important;
+}
 .btn-blog:hover {
     background-color: #ffd93e;
     border: 1px solid #ffd93e;
@@ -1473,7 +1483,7 @@ width: 100%;
 }
 
 .box-small2 {
-    min-height: 525px;
+    min-height:520px;
     height: auto;
     box-shadow: 0px 30px 120px 0px #dde5ee;
     margin-top: 40px;

@@ -25,8 +25,9 @@
                                 @endif
                             </div>
                         </div>
-                        <div style="margin-top: 27px;" class="col-md-3">
+                        <div style="margin-top: 0px;" class="col-md-3">
                             <div class="form-group">
+                                <label>تاریخ</label>
                                 <div class="form-group{{ $errors->has('date') ? ' has-error': ''}}">
                                     <div class="input-group">
                                         <div data-mdpersiandatetimepickershowing="false" title="" data-original-title=""
@@ -45,7 +46,7 @@
                                                placeholder="از تاریخ" data-mddatetimepicker="true" data-trigger="click"
                                                data-targetselector="#fromDate2" data-groupid="group1"
                                                data-fromdate="true" data-enabletimepicker="false" data-placement="right"
-                                               name="date" type="date">
+                                               name="date" type="text">
 
 
                                         @if($errors->has('date'))
@@ -59,8 +60,9 @@
 
 
                     <div class="form-group{{ $errors->has('description') ? ' has-error': ''}}">
+                        <label>توضیحات</label>
                         <fieldset>
-                            <textarea style="height: 80px !important; max-height: 80px; width: 555px; max-width: 555px;"
+                            <textarea style="height: 160px !important; max-height: 160px; width: 555px; max-width: 555px;"
                                       class="form-control m-b col-md-4" name="description" rows="8" cols="80"
                                       placeholder="توضیحات" tabindex="1" required>{{$blog->description}}</textarea>
                         </fieldset>
@@ -103,8 +105,8 @@
 
                     </div>
                     <div style="margin-top: -20px;" class="modal-footer col-md-5">
-                        <button type="button" class="btn btn-white" data-dismiss="modal">بستن</button>
-                        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending"
+                        <button style="font-family: webmdesign;" type="button" class="btn btn-white" data-dismiss="modal">بستن</button>
+                        <button style="font-family: webmdesign;" name="submit" type="submit" id="contact-submit" data-submit="...Sending"
                                 class="btn btn-primary">اعمال تغیرات
                         </button>
                     </div>
