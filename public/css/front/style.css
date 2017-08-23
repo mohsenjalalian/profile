@@ -27,6 +27,8 @@ a {
 a:hover,
 a.selected {
     color: #ffcc00;
+    text-decoration: none;
+    list-style: none;
 }
 .sociales {
     text-align: center;
@@ -69,14 +71,14 @@ a.selected {
 
 #issues {
     min-height: 200px;
-    height: auto;
+
     text-align: right;
     overflow: hidden;
 }
 
 #issues li {
     width: 800px;
-    height: 350px;
+    height: 200px;
     list-style: none;
     float: left;
 }
@@ -111,16 +113,6 @@ a.selected {
     -ms-transform: scale(0.7, 0.7);
     transform: scale(0.7, 0.7);
 }
-
-#issues li h1 {
-    color: #ffcc00;
-    font-size: 48px;
-    margin: 20px 0;
-    text-shadow: #000 1px 1px 2px;
-    text-align: left;
-    padding-left: 70px;
-}
-
 #issues li p {
     font-size: 14px;
     margin-left: 70px;
@@ -131,7 +123,7 @@ a.selected {
 #grad_left,
 #grad_right {
     width: 100px;
-    height: 350px;
+    height: 200px;
     position: absolute;
     top: 0;
 }
