@@ -1,4 +1,4 @@
-<!--book-->
+@if(!$docs->isEmpty())
 <main id="about56" class="container">
     <h2 class="text-book2">مقالات و کتاب</h2>
     <ul style="direction:ltr !important;" class="align">
@@ -13,8 +13,6 @@
                         @else
                             <img style="margin-top: 25px;" src="/image/licence.png" alt="salam" width="70%" height="60%">
                         @endif
-                        {{--<img src="{{asset($doc->photo)}}" alt="{{$doc->photo}}" width="100%" height="100%">--}}
-
                     </li>
                     <li></li>
                 </ul>
@@ -45,3 +43,4 @@
         </div>
     </ul>
 </main>
+@endif

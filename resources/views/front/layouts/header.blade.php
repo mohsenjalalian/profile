@@ -53,11 +53,6 @@
             <img class="me img-responsive" width="370px;"  height="200px" src="/image/profile.png" alt="me">
         </section>
     @endif
-    {{--<div class="box-social1 pull-left"><a href="#"><i class="fa fa-language" aria-hidden="true"></i></a>--}}
-        {{--<div class="box-languge pull-left">--}}
-            {{--<p class="text-center">English</p>--}}
-        {{--</div>--}}
-    {{--</div>--}}
     <div class="row">
     <section class="pull-left col-xs-12 col-md-6 texth1">
     <h1>{{$profile->first_name}} {{$profile->last_name}} </h1>
@@ -76,94 +71,96 @@
     </div>
 @endforeach
 <main id="home11" class="container-fluid background">
-    {{--<div class="box-social1 pull-left"><a href="#"><i class="fa fa-language" aria-hidden="true"></i></a>--}}
-        {{--<div class="box-languge pull-left">--}}
-            {{--<p class="text-center">English</p>--}}
-        {{--</div>--}}
-    {{--</div>--}}
+
     <section class="pull-right hidden-xs col-md-1 nav-left">
         <div class="navbar-tunel">
             <section class="pull-right col-md-6">
+
                 <div id="icon1" class="web-icon">
                     <li><img src="images/front/homepage (3).png" alt="home" width="23px"> <span class="tooltip1">
             <p class="text-center">خانه</p>
             <i class="fa fa-caret-right" aria-hidden="true"></i> </span></li>
                 </div>
+
                 <div id="icon2" class="web-icon">
                     <li><img src="images/front/view (1).png" alt="about" width="23px"> <span class="tooltip2">
             <p class="text-center">درباره</p>
             <i class="fa fa-caret-right" aria-hidden="true"></i> </span></li>
                 </div>
+
+                @if(!$workExperiences->isEmpty())
                 <div id="icon3" class="web-icon">
                     <li><img src="images/front/briefcase (1).png" alt="taj" width="23px"> <span class="tooltip3">
             <p class="text-center">تجربه</p>
             <i class="fa fa-caret-right" aria-hidden="true"></i> </span></li>
                 </div>
+                @endif
+
+                @if(!$educations->isEmpty())
                 <div id="icon4" class="web-icon">
                     <li><img src="images/front/mortarboard (1).png" alt="ede" width="23px"> <span class="tooltip4">
             <p class="text-center">تحصیلات</p>
             <i class="fa fa-caret-right" aria-hidden="true"></i> </span></li>
                 </div>
+                    @endif
+
                 <div id="icon57" class="web-icon">
                     <li><img src="images/front/skills.png" alt="portfolio" width="23px"> <span class="tooltip57">
             <p class="text-center">مهارت ها</p>
             <i class="fa fa-caret-right" aria-hidden="true"></i> </span></li>
                 </div>
+
+                @if(!$workSamples->isEmpty())
                 <div id="icon5" class="web-icon">
                     <li><img src="images/front/diamond (1).png" alt="portfolio" width="23px"> <span class="tooltip5">
             <p class="text-center">نمونه کار</p>
             <i class="fa fa-caret-right" aria-hidden="true"></i> </span></li>
                 </div>
+                @endif
+
+                @if(!$recommendations->isEmpty())
                 <div id="icon55" class="web-icon">
                     <li><img src="images/front/quality (1).png" alt="portfolio" width="23px"> <span class="tooltip55">
             <p class="text-center">گواهی</p>
             <i class="fa fa-caret-right" aria-hidden="true"></i> </span></li>
                 </div>
+                @endif
+
+                @if(!$docs->isEmpty())
                 <div id="icon56" class="web-icon">
                     <li><img src="images/front/notebook.png" alt="portfolio" width="23px"> <span class="tooltip56">
             <p class="text-center">کتاب</p>
             <i class="fa fa-caret-right" aria-hidden="true"></i> </span></li>
                 </div>
+                @endif
+
+                @if(!$recommendations->isEmpty())
                 <div id="icon6" class="web-icon">
                     <li><img src="images/front/edit (1).png" alt="tosih" width="23px"> <span class="tooltip6">
             <p class="text-center">توصیه ها</p>
             <i class="fa fa-caret-right" aria-hidden="true"></i> </span></li>
                 </div>
+                @endif
+
+                @if(!$blogs->isEmpty())
                 <div id="icon7" class="web-icon">
                     <li><img src="images/front/speech-bubble (2).png" alt="blog" width="23px"> <span class="tooltip7">
             <p class="text-center">بلاگ</p>
             <i class="fa fa-caret-right" aria-hidden="true"></i> </span></li>
                 </div>
+                @endif
+
+
                 <div id="icon8" class="web-icon">
                     <li><img src="images/front/envelope (1).png" alt="phone" width="23px"> <span class="tooltip8">
             <p class="text-center">تماس</p>
             <i class="fa fa-caret-right" aria-hidden="true"></i> </span></li>
                 </div>
+
+
             </section>
         </div>
     </section>
-
-
-@foreach($profiles as $profile)
-    {{--<div class="row">--}}
-    {{--<section class="pull-right col-sm-6 col-xs-12 col-md-6">--}}
-        {{--<img class="me img-responsive" height="200px" src="{{$profile->photo}}" alt="me">--}}
-    {{--</section>--}}
-    {{--<section class="pull-left col-xs-12 col-md-6 texth1">--}}
-        {{--<h1>{{$profile->first_name}} {{$profile->last_name}} </h1>--}}
-        {{--<p class="textp">{{$profile->summary}} </p>--}}
-        {{--<p>شغل : <span class="p-text">{{$profile->job}} </span>--}}
-            {{--<button id="tagrobe" class="btn btn-head">--}}
-        {{--<p>بیشتر</p>--}}
-        {{--</button>--}}
-        {{--</p>--}}
-        {{--<p class="p-text2">تحصیلات : <span class="p-text3">{{$profile->last_degree}} </span>--}}
-            {{--<button id="tahsilat" class="btn btn-head">--}}
-        {{--<p>بیشتر</p>--}}
-        {{--</button>--}}
-        {{--</p>--}}
-    {{--</section>--}}
-    {{--</div>--}}
 </main>
 
 <!--about-->
@@ -180,5 +177,3 @@
             </a></aside>
     </section>
 </main>
-
-@endforeach
