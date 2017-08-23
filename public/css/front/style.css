@@ -737,7 +737,7 @@ a:hover {
 
 .navbar-tunel {
     width: 60px;
-    min-height: 470px;
+    min-height: 100px;
     height: auto;
     background-color: #ffd93e;
     position: fixed;

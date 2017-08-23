@@ -22,7 +22,7 @@
                                 @else
                                 <div class="item">
                                     <div class="img-scale">
-                                        <img class="img-responsive" src="/image/admin.png" width="540px">
+                                        <img class="img-responsive" src="/images/front/blog.png" width="540px">
                                     </div>
                                 </div>
                                 @endif
