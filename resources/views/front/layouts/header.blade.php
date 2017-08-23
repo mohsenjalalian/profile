@@ -12,23 +12,23 @@
             <button class="menu__label3"><i class="fa fa-fw fa-bars"></i></button>
             <ul class="menu__inner3">
                 <br>
-                <li id="icon11"><img style="margin-right:1px; margin-top:10px;" src="/images/front/homepage (3).png">
+                <li id="icon11"><img style="margin-right:-2px; margin-top:10px;" src="/images/front/homepage (3).png">
                 </li>
-                <li id="icon12"><img style="margin-top:20px; margin-right:1px;" src="/images/front/view (1).png"></li>
-                <li id="icon13"><img style="margin-top:20px; margin-right:1px;" src="/images/front/briefcase (1).png">
+                <li id="icon12"><img style="margin-top:20px; margin-right:-2px;" src="/images/front/view (1).png"></li>
+                <li id="icon13"><img style="margin-top:20px; margin-right:-2px;" src="/images/front/briefcase (1).png">
                 </li>
-                <li id="icon14"><img style="margin-top:20px; margin-right:1px;" src="/images/front/mortarboard (1).png">
+                <li id="icon14"><img style="margin-top:20px; margin-right:-2px;" src="/images/front/mortarboard (1).png">
                 </li>
-                <li id="icon157"><img style="margin-top:20px; margin-right:1px;" src="/images/front/skills.png"></li>
-                <li id="icon15"><img style="margin-top:20px; margin-right:1px;" src="/images/front/diamond (1).png">
+                <li id="icon157"><img style="margin-top:20px; margin-right:-2px;" src="/images/front/skills.png"></li>
+                <li id="icon15"><img style="margin-top:20px; margin-right:-2px;" src="/images/front/diamond (1).png">
                 </li>
-                <li id="icon155"><img style="margin-top:20px; margin-right:1px;" src="/images/front/quality (1).png">
+                <li id="icon155"><img style="margin-top:20px; margin-right:-2px;" src="/images/front/quality (1).png">
                 </li>
-                <li id="icon156"><img style="margin-top:20px; margin-right:1px;" src="/images/front/notebook.png"></li>
-                <li id="icon16"><img style="margin-top:20px; margin-right:1px;" src="/images/front/edit (1).png"></li>
-                <li id="icon17"><img style="margin-top:20px; margin-right:1px;"
+                <li id="icon156"><img style="margin-top:20px; margin-right:-2px;" src="/images/front/notebook.png"></li>
+                <li id="icon16"><img style="margin-top:20px; margin-right:-2px;" src="/images/front/edit (1).png"></li>
+                <li id="icon17"><img style="margin-top:20px; margin-right:-2px;"
                                      src="/images/front/speech-bubble (2).png"></li>
-                <li id="icon18"><img style="margin-top:20px; margin-right:1px;" src="/images/front/envelope (1).png">
+                <li id="icon18"><img style="margin-top:20px; margin-right:-2px;" src="/images/front/envelope (1).png">
                 </li>
             </ul>
         </nav>

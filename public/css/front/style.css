@@ -14,6 +14,7 @@ body {
     overflow-x: hidden;
 }
 
+
 .timeline > li {
     overflow: hidden;
     margin: 0;
@@ -93,7 +94,7 @@ a:hover {
     display: block;
     background: none;
     border: none;
-    width: 154%;
+    width: 157%;
     height: 0px;
     padding-left: 19px;
     padding-top: 0px;
@@ -123,7 +124,7 @@ a:hover {
 .menu3 .fa {
     vertical-align: top;
     line-height: 1.25;
-    font-size: 24px;
+    font-size: 20px;
     position: relative;
     right: -8px;
 }
@@ -202,7 +203,7 @@ a:hover {
 }
 
 .morph-shape {
-    height: 70px;
+    height: 50px;
     -webkit-transition: height 0.5s cubic-bezier(0.7, 0, 0.3, 1);
     transition: height 0.5s cubic-bezier(0.7, 0, 0.3, 1);
 }
@@ -1167,7 +1168,7 @@ progress::-moz-progress-bar {
 
 .text-yellow3 {
     width: 100%;
-    margin-top: 20px;
+    margin-top: -10px;
     float: right !important;
     margin-right: 60px;
     text-align: right;
@@ -1179,7 +1180,7 @@ progress::-moz-progress-bar {
     float: right !important;
     text-align: right;
     margin-right: 60px;
-
+    margin-top: -5px;
 }
 
 .text-book {

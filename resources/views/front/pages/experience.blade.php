@@ -2,16 +2,7 @@
 <main id="about2" class="container-fluid products">
     <section class="container">
         <h2 class="text-ex">تجربه ها</h2>
-        {{--<ul class="timeline">--}}
-            {{--<li>--}}
-                {{--<p class="timeline-date">Feb 2007</p>--}}
-                {{--<div class="timeline-content">--}}
-                    {{--<h3>Canada</h3>--}}
-                    {{--<p>I moved to Vancouver, Canada to broaden my horizons.</p>--}}
-                {{--</div>--}}
-            {{--</li>--}}
-        {{--</ul>--}}
-                    @foreach($workExperiences as $experience )
+    @foreach($workExperiences as $experience )
             <ul class="timeline">
                 <li>
                     <div class="timeline-content">

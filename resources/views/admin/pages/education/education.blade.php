@@ -143,7 +143,7 @@
                             <tr>
                                 <td style="vertical-align: middle;" class="text-center">
                                     @if(empty($education->logo))
-                                        <img style="width: 50px;height: 50px;" src="/image/admin.png"
+                                        <img style="width: 50px;height: 50px;" src="/images/front/uni.png"
                                              alt="تحصیلات">
                                     @else
                                     <img style="width: 50px;height: 50px;" src="{{asset($education->logo)}}"
