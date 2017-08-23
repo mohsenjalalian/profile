@@ -15,29 +15,29 @@ body {
 }
 
 
-.timeline > li {
-    overflow: hidden;
-    margin: 0;
-    position: relative;
-    margin-top: -20px;
-}
-.timeline-content {
-    width: 100%;
-    float: right;
-    margin-right: 20px;
-    border-right: 5px #222 solid;
-    margin-top: 25px;
-}
-.timeline-content:before {
-    content: '';
-    width: 25px;
-    height: 25px;
-    background: #222;
-    position: absolute;
-    right: 11px;
-    top: 10px;
-    border-radius: 100%;
-}
+/*.timeline > li {*/
+    /*overflow: hidden;*/
+    /*margin: 0;*/
+    /*position: relative;*/
+    /*margin-top: -20px;*/
+/*}*/
+/*.timeline-content {*/
+    /*width: 100%;*/
+    /*float: right;*/
+    /*margin-right: 20px;*/
+    /*border-right: 5px #222 solid;*/
+    /*margin-top: 25px;*/
+/*}*/
+/*.timeline-content:before {*/
+    /*content: '';*/
+    /*width: 25px;*/
+    /*height: 25px;*/
+    /*background: #222;*/
+    /*position: absolute;*/
+    /*right: 11px;*/
+    /*top: 10px;*/
+    /*border-radius: 100%;*/
+/*}*/
 
 .content-a {
     height: 120px !important;
