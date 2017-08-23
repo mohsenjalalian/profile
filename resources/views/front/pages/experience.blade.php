@@ -1,7 +1,7 @@
 @if(!$workExperiences->isEmpty())
 <main id="about2" class="container-fluid products">
     <section class="container">
-        <h2 class="text-ex">تجربه ها</h2>
+        <h2 style="color: #fff;" class="">تجربه ها</h2>
         <div style="direction: ltr !important;" id="timeline">
             <ul id="dates">
                 @foreach($workExperiences as $experience )
@@ -26,9 +26,9 @@
                 @foreach($workExperiences as $experience )
                 <li id="{{$experience->id}}">
                     <h4 style="float: right; color: #ffd93e;  text-align: right; width: 100%"><strong>{{$experience->title}}</strong></h4>
-                    <p style="font-size: 11px;"><strong>{{$experience->company}}</strong></p>
-                    <p style="text-align: right; float: right; width: 100%;">{{$experience->about}}</p>
-                    <p>{{$experience->city}}</p>
+                    <p style="font-size: 11px; color: #eee;"><strong>{{$experience->company}}</strong></p>
+                    <p style="text-align: right; color: #eee; padding-left: 45px; float: right; width: 100%;">{{$experience->about}}</p>
+                    <p style="color: #eee;">{{$experience->city}}</p>
                     @endforeach
             </ul>
             <div id="grad_left"></div>

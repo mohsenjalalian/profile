@@ -75,8 +75,9 @@
                                                              aria-hidden="true"></i></a>
                     <a href="{{$socialNetwork->facebook}}"><i id="social-fo3" class="fa fa-facebook"
                                                               aria-hidden="true"></i></a>
-                    <a href="{{$socialNetwork->site}}"><i id="social-fo4" class="fa fa-book"
-                                                              aria-hidden="true"></i></a>
+
+                    <a href="{{$socialNetwork->site}}"><i id="social-fo4" class="fa fa-globe" aria-hidden="true"></i></a>
+
                     <a href="{{$socialNetwork->skype}}"><i id="social-fo5" class="fa fa-skype"
                                                           aria-hidden="true"></i></a>
                     <a href="{{$socialNetwork->telegram}}"><i id="social-fo6" class="fa fa-paper-plane"
