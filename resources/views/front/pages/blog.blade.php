@@ -1,30 +1,34 @@
 @if(!$blogs->isEmpty())
-<main id="about6" class="container">
-    <h2 style="margin-top: 50px;" class="text-ex2">بلاگ من</h2>
-    <div id="owl7" class="owl-carousel" style="direction:ltr">
-        @foreach($blogs as $blog)
+@inject('photo',\App\Http\Controllers\BlogController)
+
+    <main id="about6" class="container">
+        <h2 style="margin-top: 50px;" class="text-ex2">بلاگ من</h2>
+        <div id="owl7" class="owl-carousel" style="direction:ltr">
+            @foreach($blogs as $blog)
             <div class="item">
                 <section class="pull-right col-xs-12 col-sm-12 col-md-12 blog">
                     <div class="box-small2">
 
-
-                        <div id="owl6" class="owl-carousel" style="direction:ltr">
-                            @foreach($blog->album as $value)
-                                <div class="item">
-                                    @if(!empty($value->photo))
-                                        <div class="img-scale"><img class="img-responsive"
-                                                                    src="{{asset($value->photo)}}"
-                                                                    width="540px"></div>
-                                    @else
-                                        <div class="img-scale">
-                                            <img class="img-responsive" src="{{asset('/image/profile.png')}}"
-                                                 width="540px">
-                                        </div>
-                                    @endif
+                            <div id="owl6" class="owl-carousel">
+                                @if(!$blog->album->isEmpty())
+                                    @foreach($blog->album as $value)
+                                    <div class="item">
+                                    <div class="img-scale">
+                                <img class="img-responsive"
+                                  src="{{$photo::ALBUM_PATH.'/'. $value->photo}}">
+                                    </div>
                                 </div>
+                                    @endforeach
 
-                            @endforeach
-                        </div>
+
+                                {{--@else--}}
+                                {{--<div class="item">--}}
+                                    {{--<div class="img-scale">--}}
+                                        {{--<img class="img-responsive" src="/image/admin.png" width="540px">--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                @endif
+                            </div>
 
                         <h2 class="text-bl">{{$blog->title}}</h2>
                         <p class="text-bl2">{{$blog->description}}</p>
@@ -45,7 +49,7 @@
                     </div>
                 </section>
             </div>
-        @endforeach
-    </div>
+            @endforeach
+        </div>
 </main>
 @endif

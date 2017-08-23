@@ -101,6 +101,7 @@ class BlogController extends Controller
             $blog->title = Input::get('title');
             $blog->description = Input::get('description');
             $blog->date = Input::get('date');
+
             $blog->save();
 
             $rules = array(
@@ -113,11 +114,12 @@ class BlogController extends Controller
             } else {
                 $photos = request()->file('photo');
 
-                foreach ($photos as  $photo_id => $photo) {
-                    $image_name = time()."_".$photo->getClientOriginalName();
-                    $photo->move(BlogController::ALBUM_PATH, $image_name);
+                if (!empty($photos)) {
+                    foreach ($photos as  $photo_id => $photo) {
+                        $image_name = time()."_".$photo->getClientOriginalName();
+                        $photo->move(BlogController::ALBUM_PATH, $image_name);
 
-                    Album::updateOrCreate(
+                        Album::updateOrCreate(
                             [
                                 'id' => $photo_id
                             ],
@@ -126,6 +128,7 @@ class BlogController extends Controller
                                     'blog_id'=> $id
                                 ]
                             );
+                    }
                 }
             }
         }
