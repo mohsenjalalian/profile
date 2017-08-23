@@ -44,13 +44,14 @@
 <div class="row">
                     <div class="form-group">
                         <div class="col-md-3">
+                            <label>از تاریخ</label>
                         <div class="form-group{{ $errors->has('start_date') ? ' has-error': ''}}">
                             <div class="input-group">
-                                <div data-mdpersiandatetimepickershowing="false" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:10,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" style="cursor: pointer;" class="input-group-addon" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#fromDate1" data-groupid="group1" data-fromdate="true" data-enabletimepicker="false" data-placement="left">
+                                <div data-mdpersiandatetimepickershowing="false" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:10,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" style="cursor: pointer;" class="input-group-addon" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#fromDate3" data-groupid="group1" data-fromdate="true" data-enabletimepicker="false" data-placement="left">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </div>
                                 <input data-mdpersiandatetimepickershowing="false"
-                                       value="{{$work->start_date}}" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:9,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" class="form-control" id="fromDate1" placeholder="از تاریخ" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#fromDate1" data-groupid="group1" data-fromdate="true" data-enabletimepicker="false" data-placement="right" name="start_date" type="text">
+                                       value="{{$work->start_date}}" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:9,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" class="form-control" id="fromDate3" placeholder="از تاریخ" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#fromDate1" data-groupid="group1" data-fromdate="true" data-enabletimepicker="false" data-placement="right" name="start_date" type="text">
                                 @if($errors->has('start_date'))
                                     <span class="help-block">{{ $errors->first('start_date')}}</span>
                                 @endif
@@ -58,23 +59,37 @@
                         </div>
                         </div>
                         <div class="col-md-3">
-                        <div class="form-group{{ $errors->has('finish_date') ? ' has-error': ''}}">
-                            <div class="input-group">
-                                <div data-mdpersiandatetimepickershowing="false" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:10,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" style="cursor: pointer;" class="input-group-addon" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#toDate1" data-groupid="group1" data-todate="true"  data-placement="left">
-                                    <span class="glyphicon glyphicon-calendar"></span>
+                            <label>تا تاریخ</label>
+                            <div class="form-group{{ $errors->has('finish_date') ? ' has-error': ''}}">
+                                <div class="input-group">
+                                    <div data-mdpersiandatetimepickershowing="false" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:10,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" style="cursor: pointer;" class="input-group-addon" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#toDate3" data-groupid="group1" data-todate="true" data-placement="left">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </div>
+                                    <input data-mdpersiandatetimepickershowing="false" name="finish_date"
+                                           value="{{$work->finish_date}}" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:23,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" class="form-control" id="toDate3" placeholder="تا تاریخ" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#toDate3" data-groupid="group1" data-todate="true" data-enabletimepicker="false" data-placement="right" type="text">
                                 </div>
-                                <input data-mdpersiandatetimepickershowing="false" name="finish_date"
-                                       value="{{$work->finish_date}}" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:23,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" class="form-control" id="toDate1" placeholder="تا تاریخ" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#toDate1" data-groupid="group1" data-todate="true" data-enabletimepicker="true" data-placement="right" type="text">
                                 @if($errors->has('finish_date'))
                                     <span class="help-block">{{ $errors->first('finish_date')}}</span>
                                 @endif
                             </div>
-                        </div>
+                        {{--<div class="form-group{{ $errors->has('finish_date') ? ' has-error': ''}}">--}}
+                            {{--<div class="input-group">--}}
+                                {{--<div data-mdpersiandatetimepickershowing="false" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:10,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" style="cursor: pointer;" class="input-group-addon" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#toDate3" data-groupid="group1" data-todate="true"  data-placement="left">--}}
+                                    {{--<span class="glyphicon glyphicon-calendar"></span>--}}
+                                {{--</div>--}}
+                                {{--<input data-mdpersiandatetimepickershowing="false" name="finish_date"--}}
+                                       {{--value="{{$work->finish_date}}" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:23,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" class="form-control" id="toDate3" placeholder="تا تاریخ" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#toDate3" data-groupid="group1" data-todate="true" data-enabletimepicker="true" data-placement="right" type="text">--}}
+                                {{--@if($errors->has('finish_date'))--}}
+                                    {{--<span class="help-block">{{ $errors->first('finish_date')}}</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                     </div>
                     </div>
 </div>
                     <div class="row">
                         <div style="margin-right: 100px;" class="col-md-4">
+                            <label>شهر</label>
                             <div class="form-group{{ $errors->has('city') ? ' has-error': ''}}">
                                 <select name="city" class="select2_demo_1 form-control">
                                     <option value="{{$work->city}}">{{$work->city}}</option>
@@ -119,7 +134,7 @@
                 <div class="form-group{{ $errors->has('about') ? ' has-error': ''}}">
                     <label>توضیحات</label>
                     <fieldset>
-                        <textarea style="width: 555px; height: 160px; max-height: 160px; max-width: 555px;" placeholder="توضیحات" type="text" name="about" tabindex="1"
+                        <textarea style="width: 555px; height: 130px; max-height: 130px; max-width: 555px;" placeholder="توضیحات" type="text" name="about" tabindex="1"
                                   required autofocus>{{$work->about}}</textarea>
                     </fieldset>
                     @if($errors->has('about'))

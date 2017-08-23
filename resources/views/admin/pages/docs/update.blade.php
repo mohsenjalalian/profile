@@ -51,14 +51,15 @@
                     @endif
                 </div>
 </div>
-    <div style="margin-top: 27px;" class="col-md-3">
+    <div style="margin-top: px;" class="col-md-3">
                     <div class="form-group">
+                        <label>تاریخ انتشار</label>
                         <div class="form-group{{ $errors->has('published_year') ? ' has-error': ''}}">
                             <div class="input-group">
-                                <div data-mdpersiandatetimepickershowing="false" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:10,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" style="cursor: pointer;" class="input-group-addon" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#fromDate1" data-groupid="group1" data-fromdate="true" data-enabletimepicker="false" data-placement="left">
+                                <div data-mdpersiandatetimepickershowing="false" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:10,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" style="cursor: pointer;" class="input-group-addon" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#fromDate5" data-groupid="group1" data-fromdate="true" data-enabletimepicker="false" data-placement="left">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </div>
-                                <input data-mdpersiandatetimepickershowing="false" value="{{$docs->published_year}}" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:9,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" class="form-control" id="fromDate1" placeholder="تاریخ انتشار" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#fromDate1" data-groupid="group1" data-fromdate="true" data-enabletimepicker="false" data-placement="right" name="published_year" type="text">
+                                <input data-mdpersiandatetimepickershowing="false" value="{{$docs->published_year}}" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:9,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" class="form-control" id="fromDate5" placeholder="تاریخ انتشار" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#fromDate5" data-groupid="group1" data-fromdate="true" data-enabletimepicker="false" data-placement="right" name="published_year" type="text">
                                 @if($errors->has('published_year'))
                                     <span class="help-block">{{ $errors->first('published_year')}}</span>
                                 @endif

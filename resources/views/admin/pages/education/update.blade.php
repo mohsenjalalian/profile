@@ -51,12 +51,13 @@
                 <div class="row">
                <div class="col-md-3">
                     <div class="form-group">
+                        <label>از تاریخ</label>
                         <div class="form-group{{ $errors->has('start_date') ? ' has-error': ''}}">
                             <div class="input-group">
-                                <div data-mdpersiandatetimepickershowing="false" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:10,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" style="cursor: pointer;" class="input-group-addon" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#fromDate1" data-groupid="group1" data-fromdate="true" data-enabletimepicker="false" data-placement="left">
+                                <div data-mdpersiandatetimepickershowing="false" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:10,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" style="cursor: pointer;" class="input-group-addon" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#fromDate4" data-groupid="group1" data-fromdate="true" data-enabletimepicker="false" data-placement="left">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </div>
-                                <input data-mdpersiandatetimepickershowing="false" value="{{$education->start_date}}"  title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:9,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" class="form-control" id="fromDate1" placeholder="از تاریخ" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#fromDate1" data-groupid="group1" data-fromdate="true" data-enabletimepicker="false" data-placement="right" name="start_date" type="text">
+                                <input data-mdpersiandatetimepickershowing="false" value="{{$education->start_date}}"  title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:9,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" class="form-control" id="fromDate4" placeholder="از تاریخ" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#fromDate4" data-groupid="group1" data-fromdate="true" data-enabletimepicker="false" data-placement="right" name="start_date" type="text">
                                 @if($errors->has('start_date'))
                                     <span class="help-block">{{ $errors->first('start_date')}}</span>
                                 @endif
@@ -65,22 +66,23 @@
                     </div>
                </div>
                     <div class="col-md-3">
+                        <label>تا تاریخ</label>
                         <div class="form-group{{ $errors->has('finish_date') ? ' has-error': ''}}">
                             <div class="input-group">
-                                <div data-mdpersiandatetimepickershowing="false" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:10,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" style="cursor: pointer;" class="input-group-addon" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#toDate1" data-groupid="group1" data-todate="true" data-placement="left">
+                                <div data-mdpersiandatetimepickershowing="false" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:10,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" style="cursor: pointer;" class="input-group-addon" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#toDate4" data-groupid="group1" data-todate="true" data-placement="left">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </div>
                                 <input data-mdpersiandatetimepickershowing="false" name="finish_date"
-                                       value="{{$education->finish_date}}" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:23,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" class="form-control" id="toDate1" placeholder="تا تاریخ" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#toDate1" data-groupid="group1" data-todate="true" data-enabletimepicker="true" data-placement="right" type="text">
-                                @if($errors->has('finish_date'))
-                                    <span class="help-block">{{ $errors->first('finish_date')}}</span>
-                                @endif
+                                       value="{{$education->finish_date}}" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:23,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" class="form-control" id="toDate4" placeholder="تا تاریخ" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#toDate4" data-groupid="group1" data-todate="true" data-enabletimepicker="false" data-placement="right" type="text">
                             </div>
+                            @if($errors->has('finish_date'))
+                                <span class="help-block">{{ $errors->first('finish_date')}}</span>
+                            @endif
                         </div>
                     </div>
                 </div>
 
-                <div style="position: absolute; top: 233px; right: 155px;" class="col-md-5">
+                <div style="position: absolute; top: 263px; right: 155px;" class="col-md-5">
                     <div class="ibox float-e-margins">
                             <div class="form-group{{ $errors->has('logo') ? ' has-error': ''}}">
                                 @if(isset($education->logo))

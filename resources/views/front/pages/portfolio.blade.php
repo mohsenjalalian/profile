@@ -11,11 +11,10 @@
 
             <div class="tab-content">
                 @foreach($categories as $category)
-                    @foreach($skills as $skill)
-                        <div  id="{{$category->id}}" class="tab-pane fade in">
+                        <div  id="{{$category->id}}" class="tab-pane fade in firest">
                             <ul class="grid cs-style-4">
+                                @foreach($category->workSample as $work)
                                 <section class="col-md-4">
-                                    @foreach($category->workSample as $work)
                                         <li>
                                             <figure>
                                                 <div>
@@ -36,12 +35,11 @@
                                                 </figcaption>
                                             </figure>
                                         </li>
-                                    @endforeach
                                 </section>
+                                @endforeach
                             </ul>
                         </div>
                     @endforeach
-                @endforeach
             </div>
         </main>
     </section>

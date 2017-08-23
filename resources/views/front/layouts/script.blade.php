@@ -6,12 +6,24 @@
 <script src="/js/front/snap.svg-min.js"></script>
 <script src="/js/front/kar.js"></script>
 <script src="js/classie.js"></script>
+<script src="js/front/timelineweb.js"></script>
 <!--jquery-->
-
+<script>
+    $(function(){
+        $().timelinr({
+            arrowKeys: 'true'
+        })
+    });
+</script>
 <script>
     $(document).ready(function () {
         $('.nav-pills li:first-child').addClass('active').show();
         $('.tab-content .tab-pane:first').addClass('active').show()
+    });
+
+    $(document).ready(function () {
+        $('.nav-pills li:first-child').addClass('active').show();
+        $('.tab-content .firest:first').addClass('active').show()
     });
 </script>
 <script>
@@ -49,7 +61,7 @@
             itemsDesktopSmall: [979, 3]
         });
         $(".owl6").owlCarousel({
-            autoPlay: 5000, //Set AutoPlay to 3 seconds
+            autoPlay: 6000, //Set AutoPlay to 3 seconds
             items: 1,
             itemsDesktop: [1199, 3],
             itemsDesktopSmall: [979, 3]
