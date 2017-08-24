@@ -60,6 +60,7 @@
                                                     @endforeach
                                                 </select>
                                             </div>
+                                            <p style="padding-top:20px;">بیش از ۳ کاراکتر وارد نشود</p>
                                         </div>
                                     </div>
                                     @if($errors->has('category_id[]'))
@@ -89,6 +90,7 @@
                                                     @endforeach
                                                 </select>
                                             </div>
+                                         <p style="padding-top:20px;">بیش از ۵ کاراکتر وارد نشود</p>
                                         </div>
                                     </div>
                                     @if($errors->has('skill_id[]'))
@@ -118,6 +120,7 @@
                                                 <a href="#" class="input-group-addon btn btn-default fileinput-exists"
                                                    data-dismiss="fileinput">پاک کردن</a>
                                             </div>
+                                            <p style="font-size: 12px; margin-left: 20px;" class="pull-right colorpicker">۳۰۰ * ۳۰۰</p>
                                             @if($errors->has('photo'))
                                                 <span class="help-block">{{ $errors->first('photo')}}</span>
                                             @endif

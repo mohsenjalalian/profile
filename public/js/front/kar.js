@@ -206,7 +206,7 @@ $(document).scroll(function(e) {
     }
 		w = $(document).scrollTop();
     if(about3 != undefined) {
-        if (w > about3.position().top && w < about3.position().top + about3.height()) {
+        if (w > about3.position().top && j < about3.position().top + about3.height()) {
             $("#icon4").css("background-color", "#fff");
         } else {
             $("#icon4").css("background-color", "#ffd93e");
@@ -256,7 +256,7 @@ $(document).scroll(function(e) {
 
 	w = $(document).scrollTop();
     if(about6 != undefined) {
-        if (m > about6.position().top && m < about6.position().top + about6.height()) {
+        if (m > about6.position().top && m < about6.position().top + about56.height()) {
             $("#icon7").css("background-color", "#fff");
         } else {
             $("#icon7").css("background-color", "#ffd93e");

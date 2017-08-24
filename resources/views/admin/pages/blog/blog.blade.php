@@ -184,7 +184,7 @@
                                                  alt="{{$blog->album->first()->photo}}">
                                         @else
                                             <img width="50" height="50"
-                                                 src="/image/admin.png" alt="">
+                                                 src="/images/front/bloge.png" alt="">
                                         @endif
                                 </td>
 

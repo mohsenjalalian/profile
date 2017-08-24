@@ -12,6 +12,16 @@
 <script src="js/plugins/codemirror/codemirror.js"></script>
 {{--<script src="js/plugins/footable/footable.all.min.js"></script>--}}
 <script src="js/plugins/footable/footable.all.min.js"></script>
+<script src="js/jquery-max-indicator.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.demo').maxIndicator();
+        $('.demo').maxIndicator({
+            color:'red'
+    });
+    });
+</script>
 <script>
     $(document).ready(function () {
         $('.footable').footable();

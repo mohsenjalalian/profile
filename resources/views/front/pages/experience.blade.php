@@ -21,9 +21,9 @@
                 @foreach($workExperiences as $experience )
                 <li id="{{$experience->id}}">
                     <h4 style="float: right; color: #ffd93e;  text-align: right; width: 100%"><strong>{{$experience->title}}</strong></h4>
-                    <p style="font-size: 11px; color: #eee;"><strong>{{$experience->company}}</strong></p>
+                    <p style="font-size: 15px; color: #eee;"><strong>{{$experience->company}}</strong></p>
                     <p style="text-align: justify; color: #eee; padding-left: 55px; float: right; width: 100%;" class="mCustomScrollbar content-a2" data-mcs-theme="minimal-dark">{{$experience->about}}</p>
-                    <p style="color: #eee;">{{$experience->city}}</p>
+                    <p style="color: #eee; position: relative; top: -10px;">{{$experience->city}}</p>
                     @endforeach
             </ul>
             <div id="grad_left"></div>
