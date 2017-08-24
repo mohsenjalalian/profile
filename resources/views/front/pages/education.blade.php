@@ -3,7 +3,7 @@
     <section class="container">
         <h2 class="text-ex">تحصیلات</h2>
         <aside class="col-xs-12 col-md-12">
-            <div id="owl" class="owl-carousel" style="direction:ltr">
+            <div id="owl" class="owl-carousel" style="direction: ltr;">
                 @foreach($educations as $education)
                 <div class="item">
                     @if ($education->logo)

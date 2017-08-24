@@ -82,17 +82,6 @@ if ( typeof define === 'function' && define.amd ) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 $(document).scroll(function(e) {
     h = $(document).scrollTop();
 	if(h>250){
@@ -101,9 +90,6 @@ $(document).scroll(function(e) {
 		$(".btn-top").fadeOut();
 	}
 });
-
-
-
 $(document).ready(function(e) {
     $("#filter-options :checkbox").click(function()
     {
@@ -118,63 +104,50 @@ $(document).ready(function(e) {
             $("#product-list li").fadeIn();
 
         }
-
     });
-
 });
-
 $(document).ready(function(e) {
 	$(".btn-top").click(function(e) {
         /*$(document).scrollTop(0);*/
 		$("body,html").animate({scrollTop:200},3000);
     });
 });
-
-
 $(document).ready(function(e) {
 	$("#icon1").hover(function(){
 		$(".tooltip1").css("transform","perspective(1000px) rotatey(0deg)");
 	},function(){
 		$(".tooltip1").css("transform","perspective(1000px) rotatey(-90deg)");
 	});
-	
-		$("#icon2").hover(function(){
+	$("#icon2").hover(function(){
 		$(".tooltip2").css("transform","perspective(1000px) rotatey(0deg)");
 	},function(){
 		$(".tooltip2").css("transform","perspective(1000px) rotatey(-90deg)");
 	});
-	
 			$("#icon3").hover(function(){
 		$(".tooltip3").css("transform","perspective(1000px) rotatey(0deg)");
 	},function(){
 		$(".tooltip3").css("transform","perspective(1000px) rotatey(-90deg)");
 	});
-	
 			$("#icon4").hover(function(){
 		$(".tooltip4").css("transform","perspective(1000px) rotatey(0deg)");
 	},function(){
 		$(".tooltip4").css("transform","perspective(1000px) rotatey(-90deg)");
 	});
-	
 			$("#icon5").hover(function(){
 		$(".tooltip5").css("transform","perspective(1000px) rotatey(0deg)");
 	},function(){
 		$(".tooltip5").css("transform","perspective(1000px) rotatey(-90deg)");
 	});
-	
 			$("#icon6").hover(function(){
 		$(".tooltip6").css("transform","perspective(1000px) rotatey(0deg)");
 	},function(){
 		$(".tooltip6").css("transform","perspective(1000px) rotatey(-90deg)");
 	});
-	
 			$("#icon7").hover(function(){
 		$(".tooltip7").css("transform","perspective(1000px) rotatey(0deg)");
 	},function(){
 		$(".tooltip7").css("transform","perspective(1000px) rotatey(-90deg)");
 	});
-	
-		
 			$("#icon8").hover(function(){
 		$(".tooltip8").css("transform","perspective(1000px) rotatey(0deg)");
 	},function(){
@@ -190,143 +163,114 @@ $(document).ready(function(e) {
 	},function(){
 		$(".tooltip56").css("transform","perspective(1000px) rotatey(-90deg)");
 	});
-	
 					$("#icon57").hover(function(){
 		$(".tooltip57").css("transform","perspective(1000px) rotatey(0deg)");
 	},function(){
 		$(".tooltip57").css("transform","perspective(1000px) rotatey(-90deg)");
 	});
-	
 	});
 
 var home11 = $('#home11');
-console.log( home11.position().top);
-console.log( home11.height());
-
 var about1 = $('#about1');
-console.log( about1.position().top);
-console.log( about1.height());
-
 var about2 = $('#about2');
-console.log( about2.position().top);
-console.log( about2.height());
-
 var about3 = $('#about3');
-console.log( about3.position().top);
-console.log( about3.height());
-
 var about57 = $('#about57');
-console.log( about57.position().top);
-console.log( about57.height());
-
 var about4 = $('#about4');
-console.log( about4.position().top);
-console.log( about4.height());
-
 var about55 = $('#about55');
-console.log( about55.position().top);
-console.log( about55.height());
-
 var about56 = $('#about56');
-console.log( about56.position().top);
-console.log( about56.height());
-
-var about555 = $('#about555');
-console.log( about555.position().top);
-console.log( about555.height());
-
+var box1 = $('#box1');
 var about6 = $('#about6');
-console.log( about6.position().top);
-console.log( about6.height());
-
 var about7 = $('#about7');
-console.log( about7.position().top);
-console.log( about7.height());
-
 $(document).scroll(function(e) {
     p = $(document).scrollTop();
-	// if(p<350){
 	if(p<350){
-     //    if(p > home11.position().top && p < home11.position().top + home11.height()){
 		$("#icon1").css("background-color","#fff");
 	}else{
 		$("#icon1").css("background-color","#ffd93e");
 	}
 	    o = $(document).scrollTop();
-	// if(o>350 & o<750){
-    if(o > about1.position().top && o < about1.position().top + about1.height()){
-		$("#icon2").css("background-color","#fff");
-	}else{
-		$("#icon2").css("background-color","#ffd93e");
-	}
-	
+	if(about1 != undefined) {
+        if (o > about1.position().top && o < about1.position().top + about1.height()) {
+            $("#icon2").css("background-color", "#fff");
+        } else {
+            $("#icon2").css("background-color", "#ffd93e");
+        }
+    }
 	j = $(document).scrollTop();
-	// if(j>750 & j<1650){
-
-    if(j > about2.position().top && j < about2.position().top + about2.height()){
-		$("#icon3").css("background-color","#fff");
-	}else{
-		$("#icon3").css("background-color","#ffd93e");
-	}
-		q = $(document).scrollTop();
-	// if(q>1650 & q<2150){
-    if(q > about3.position().top && q < about3.position().top + about3.height()){
-		$("#icon4").css("background-color","#fff");
-	}else{
-		$("#icon4").css("background-color","#ffd93e");
-	}
+    if(about2 != undefined) {
+        if (j > about2.position().top && j < about2.position().top + about2.height()) {
+            $("#icon3").css("background-color", "#fff");
+        } else {
+            $("#icon3").css("background-color", "#ffd93e");
+        }
+    }
+		w = $(document).scrollTop();
+    if(about3 != undefined) {
+        if (w > about3.position().top && w < about3.position().top + about3.height()) {
+            $("#icon4").css("background-color", "#fff");
+        } else {
+            $("#icon4").css("background-color", "#ffd93e");
+        }
+    }
 			q = $(document).scrollTop();
-	// if(q>2150 & q<2450){
-        if(q > about57.position().top && q < about57.position().top + about57.height()){
-		$("#icon57").css("background-color","#fff");
-	}else{
-		$("#icon57").css("background-color","#ffd93e");
-	}
-	
+    if(about57 != undefined) {
+        if (q > about57.position().top && q < about57.position().top + about57.height()) {
+            $("#icon57").css("background-color", "#fff");
+        } else {
+            $("#icon57").css("background-color", "#ffd93e");
+        }
+    }
 	o = $(document).scrollTop();
-	// if(m>2450 & m<3300){
-    if(o > about4.position().top && o < about4.position().top + about4.height()){
-		$("#icon5").css("background-color","#fff");
-	}else{
-		$("#icon5").css("background-color","#ffd93e");
-	}
+    if(about4 != undefined) {
+        if (o > about4.position().top && o < about4.position().top + about4.height()) {
+            $("#icon5").css("background-color", "#fff");
+        } else {
+            $("#icon5").css("background-color", "#ffd93e");
+        }
+    }
 	m = $(document).scrollTop();
-	// if(m>3300 & m<4000){
-        if(m > about55.position().top && m < about55.position().top + about55.height()){
-		$("#icon55").css("background-color","#fff");
-	}else{
-		$("#icon55").css("background-color","#ffd93e");
-	}
+    if(about55 != undefined) {
+        if (m > about55.position().top && m < about55.position().top + about55.height()) {
+            $("#icon55").css("background-color", "#fff");
+        } else {
+            $("#icon55").css("background-color", "#ffd93e");
+        }
+    }
 		m = $(document).scrollTop();
-	// if(m>4000 & m<4500){
-    if(m > about56.position().top && m < about56.position().top + about56.height()){
-		$("#icon56").css("background-color","#fff");
-	}else{
-		$("#icon56").css("background-color","#ffd93e");
-	}
+    if(about56 != undefined) {
+        if (m > about55.position().top && m < about56.position().top + about55.height()) {
+            $("#icon56").css("background-color", "#fff");
+        } else {
+            $("#icon56").css("background-color", "#ffd93e");
+        }
+    }
+    w = $(document).scrollTop();
+    if(box1 != undefined) {
+        if (m > box1.position().top && m < about6.position().top + box1.height()) {
+            $("#icon6").css("background-color", "#fff");
+        } else {
+            $("#icon6").css("background-color", "#ffd93e");
+        }
+    }
 
-	
-	// 	z = $(document).scrollTop();
-	// // if(z>4500 & z<5050){
-    // if(z > about555.position().top && z < about555.position().top + about555.height()){
-	// 	$("#icon6").css("background-color","#fff");
-	// }else{
-	// 	$("#icon6").css("background-color","#ffd93e");
-	// }
-			w = $(document).scrollTop();
-	// if(w>5050 & w<5850){
-    if(m > about56.position().top && m < about6.position().top + about56.height()){
-		$("#icon7").css("background-color","#fff");
-	}else{
-		$("#icon7").css("background-color","#ffd93e");
-	}
+
+	w = $(document).scrollTop();
+    if(about6 != undefined) {
+        if (m > about6.position().top && m < about6.position().top + about6.height()) {
+            $("#icon7").css("background-color", "#fff");
+        } else {
+            $("#icon7").css("background-color", "#ffd93e");
+        }
+    }
+
 	k = $(document).scrollTop();
-		// if(k>5850 & k<6690){
-    if(k > about6.position().top && k < about7.position().top + about6.height()){
-		$("#icon8").css("background-color","#fff");
-	}else{
-		$("#icon8").css("background-color","#ffd93e");
-	}
+    if(about6 != undefined) {
+        if (k > about6.position().top && k < about7.position().top + about6.height()) {
+            $("#icon8").css("background-color", "#fff");
+        } else {
+            $("#icon8").css("background-color", "#ffd93e");
+        }
+    }
 	
 });
 
@@ -341,7 +285,7 @@ $(document).ready(function(e) {
 	$("#icon2").click(function(e) {
 		x = $("#about1").offset();
         $("body,html").animate({scrollTop:x.top},1500);
-    }); 
+    });
 	$("#icon3").click(function(e) {
         y = $("#about2").offset();
         $("body,html").animate({scrollTop:y.top},1500);
@@ -357,7 +301,7 @@ $(document).ready(function(e) {
     });
 
 	$("#icon6").click(function(e) {
-        y = $("#about555").offset();
+        y = $("#box1").offset();
         $("body,html").animate({scrollTop:y.top},1500);
     });
 
@@ -580,8 +524,8 @@ if ( typeof define === 'function' && define.amd ) {
 					}
 				}
 			})();
-			
-			
-					
-			
-			
+
+
+
+
+

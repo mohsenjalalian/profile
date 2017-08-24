@@ -59,7 +59,7 @@
                 <p class="text-for"> تلفن</p>
                 <p class="text-for2">{{$contact->phone_number}}</p>
             </div>
-            <div class="web"><i class="fa fa-phone" aria-hidden="true"></i>
+            <div class="web"><i style="font-size:28px; padding-right: 3px; margin-top: 5px;" class="fa fa-mobile" aria-hidden="true"></i>
                 <p class="text-for"> تلفن همراه</p>
                 <p class="text-for2">{{$contact->mobile}}</p>
             </div>
@@ -75,8 +75,9 @@
                                                              aria-hidden="true"></i></a>
                     <a href="{{$socialNetwork->facebook}}"><i id="social-fo3" class="fa fa-facebook"
                                                               aria-hidden="true"></i></a>
-                    <a href="{{$socialNetwork->site}}"><i id="social-fo4" class="fa fa-book"
-                                                              aria-hidden="true"></i></a>
+
+                    <a href="{{$socialNetwork->site}}"><i id="social-fo4" class="fa fa-globe" aria-hidden="true"></i></a>
+
                     <a href="{{$socialNetwork->skype}}"><i id="social-fo5" class="fa fa-skype"
                                                           aria-hidden="true"></i></a>
                     <a href="{{$socialNetwork->telegram}}"><i id="social-fo6" class="fa fa-paper-plane"
