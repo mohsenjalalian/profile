@@ -89,9 +89,9 @@ class ProfileController extends Controller
             'birth_place' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
             'gender' => 'required',
             'job' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
-            'photo' => 'file|mimes:jpeg,bmp,png|max:5000',
-            'cover' => 'file|mimes:jpeg,bmp,png|max:5000',
-            'pdf' => 'file|mimes:pdf|max:10000',
+            'photo' => 'file|mimes:jpeg,bmp,png|max:5000|nullable',
+            'cover' => 'file|mimes:jpeg,bmp,png|max:5000|nullable',
+            'pdf' => 'file|mimes:pdf|max:10000|nullable',
 
         );
 

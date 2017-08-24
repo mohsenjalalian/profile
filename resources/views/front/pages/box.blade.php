@@ -14,7 +14,13 @@
 
                 </p>
                 <p class="text-center text-yellow">{{$recommendation->name}}</p>
-                <p class="text-yellow2 mCustomScrollbar content-a4" data-mcs-theme="minimal-dark">{{$recommendation->info}}</p>
+                <p class="text-yellow2 mCustomScrollbar content-a4" data-mcs-theme="minimal-dark">
+                    @php
+                        $des =  nl2br(e($recommendation->info));
+                    echo $des;
+                    @endphp
+
+                </p>
                 <br>
                 <hr style="width: 85px; border:1px solid #555; margin-right: 55px; float: right;">
                 <p class="pull-right text-yellow3"><strong>{{$recommendation->position}}</strong></p>

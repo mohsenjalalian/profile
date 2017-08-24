@@ -96,7 +96,7 @@ class WorkSampleController extends Controller
     {
         $rules = array(
             'name' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
-            'photo' => 'file|mimes:jpeg,bmp,png|max:5000',
+            'photo' => 'file|mimes:jpeg,bmp,png|max:5000|nullable',
         );
 
         $validator = Validator::make(Input::all(), $rules);
@@ -106,17 +106,21 @@ class WorkSampleController extends Controller
             return redirect()->back()->withErrors('اطلاعات وارد شده اشتباه است');
         } else {
             $file = request()->file('photo');
-            if ($file) {
+            if (!empty($file)) {
                 $old_photo = \request('old_pic');
                 //Move Upload File
                 $photo = $file->move('images/workSample', $old_photo);
+            }else{
+                dump('delete');
+                $this->deletePhoto($file);
             }
 
             // store
             $workSample = WorkSample::find($id);
 
-
             $workSample->name = Input::get('name');
+            $workSample->link = Input::get('link');
+
             if ($file) {
                 $workSample->photo = $photo;
             }
@@ -140,7 +144,7 @@ class WorkSampleController extends Controller
     {
         $workSample = WorkSample::find($id);
         if ($workSample->photo) {
-            unlink(public_path($workSample->photo));
+            $this->deletePhoto($workSample->photo);
         }
         if ($workSample->delete()) {
             $workSample->category()->detach(request('category_id'));
@@ -149,5 +153,12 @@ class WorkSampleController extends Controller
         }
 
         return redirect()->back()->withErrors('متاسفانه نمونه کار حذف نشد');
+    }
+
+    public function deletePhoto($photo)
+    {
+        if(file_exists(public_path($photo))){
+            @unlink(public_path($photo));
+        }
     }
 }

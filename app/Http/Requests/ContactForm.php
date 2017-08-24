@@ -30,7 +30,7 @@ class ContactForm extends FormRequest
             'phone_number' => 'required|min:5',
             'mobile' => 'required|min:5',
             'office_number' => 'required|min:5',
-            'qr_code' => 'file|mimes:jpeg,bmp,png|max:5000',
+            'qr_code' => 'file|mimes:jpeg,bmp,png|max:5000|nullable',
         ];
     }
 

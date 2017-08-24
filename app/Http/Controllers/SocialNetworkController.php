@@ -78,25 +78,8 @@ class SocialNetworkController extends Controller
      */
     public function update($id)
     {
-        $rules = array(
-//            'twitter' => 'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/',
-//            'facebook' => 'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/',
-//            'instagram' => 'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/',
-//            'telegram' => 'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/',
-//            'google_plus' => 'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/',
-//            'linkedin' => 'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/',
-//            'skype' => 'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/',
-//            'site' => 'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/',
-        );
-
-        $validator = Validator::make(Input::all(), $rules);
-        // process the login
-        if (!$validator) {
-            return redirect()->back()->withErrors('اطلاعات وارد شده اشتباه است');
-        } else {
             // store
             $profile = SocialNetwork::find($id);
-
             $profile->twitter = Input::get('twitter');
             $profile->facebook = Input::get('facebook');
             $profile->instagram = Input::get('instagram');
@@ -111,7 +94,7 @@ class SocialNetworkController extends Controller
             // redirect
             return redirect()->route('social-network')->with('success', 'شبکه های اجتماعی شما با موفقیت اصلاح شد');
         }
-    }
+
 
     /**
      * Remove the specified resource from storage.

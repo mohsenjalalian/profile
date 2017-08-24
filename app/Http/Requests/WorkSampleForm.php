@@ -29,7 +29,7 @@ class WorkSampleForm extends FormRequest
     {
         return [
             'name' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
-            'photo' => 'file|mimes:jpeg,bmp,png|max:5000',
+            'photo' => 'file|mimes:jpeg,bmp,png|max:5000|nullable',
         ];
     }
     public function process()
@@ -45,7 +45,8 @@ class WorkSampleForm extends FormRequest
         }
 
         $data =[
-            'name' => request('name')
+            'name' => request('name'),
+            'link' => request('link')
         ];
 
         $data['photo'] = $photo;

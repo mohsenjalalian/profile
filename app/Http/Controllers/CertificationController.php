@@ -84,7 +84,7 @@ class CertificationController extends Controller
         $rules = array(
             'name' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
             'info' => 'required|min:3',
-            'photo' => 'file|mimes:jpeg,bmp,png|max:5000',
+            'photo' => 'file|mimes:jpeg,bmp,png|max:5000|nullable',
             'type' => 'required|min:3',
         );
 

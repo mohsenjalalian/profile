@@ -12,22 +12,39 @@
             <button class="menu__label3"><i class="fa fa-fw fa-bars"></i></button>
             <ul class="menu__inner3">
                 <br>
+
                 <li id="icon11"><img style="margin-right:-2px; margin-top:10px;" src="/images/front/homepage (3).png">
                 </li>
                 <li id="icon12"><img style="margin-top:20px; margin-right:-2px;" src="/images/front/view (1).png"></li>
-                <li id="icon13"><img style="margin-top:20px; margin-right:-2px;" src="/images/front/briefcase (1).png">
+                @if(!$workExperiences->isEmpty())
+               <li id="icon13"><img style="margin-top:20px; margin-right:-2px;" src="/images/front/briefcase (1).png">
                 </li>
+                @endif
+                @if(!$educations->isEmpty())
                 <li id="icon14"><img style="margin-top:20px; margin-right:-2px;" src="/images/front/mortarboard (1).png">
                 </li>
+                @endif
+                @if(!$skills->isEmpty())
                 <li id="icon157"><img style="margin-top:20px; margin-right:-2px;" src="/images/front/skills.png"></li>
+                @endif
+                @if(!$workSamples->isEmpty())
                 <li id="icon15"><img style="margin-top:20px; margin-right:-2px;" src="/images/front/diamond (1).png">
                 </li>
+                @endif
+              @if(!$certifications->isEmpty())
                 <li id="icon155"><img style="margin-top:20px; margin-right:-2px;" src="/images/front/quality (1).png">
                 </li>
+                @endif
+                @if(!$docs->isEmpty())
                 <li id="icon156"><img style="margin-top:20px; margin-right:-2px;" src="/images/front/notebook.png"></li>
+                @endif
+                @if(!$recommendations->isEmpty())
                 <li id="icon16"><img style="margin-top:20px; margin-right:-2px;" src="/images/front/edit (1).png"></li>
+                @endif
+                @if(!$blogs->isEmpty())
                 <li id="icon17"><img style="margin-top:20px; margin-right:-2px;"
                                      src="/images/front/speech-bubble (2).png"></li>
+                @endif
                 <li id="icon18"><img style="margin-top:20px; margin-right:-2px;" src="/images/front/envelope (1).png">
                 </li>
             </ul>
@@ -36,33 +53,67 @@
 </div>
 
 <!--home-->
+@if(!$profiles->isEmpty())
 @foreach($profiles as $profile)
-    @if ($profile->cover)
+
+    @if(!empty($profile->cover))
         <img class="cover-img" src="{{$profile->cover}}"
              alt="cover" height="480px" width="100%">
     @else
-        <img class="cover-img" height="480px" width="100%"  src="/images/front/background.jpg"
+        <img class="cover-img" height="480px" width="100%"  src="/image/a4.jpg"
              alt="cover">
     @endif
-    @if ($profile->photo)
+
+      @if(!empty($profile->photo))
         <section class="pull-right col-sm-6 col-xs-12 col-md-5">
             <img class="me img-responsive" width="370px;"  height="200px" src="{{$profile->photo}}" alt="me">
         </section>
-    @else
+        @else
         <section class="pull-right col-sm-6 col-xs-12 col-md-5">
             <img class="me img-responsive" width="370px;"  height="200px" src="/images/front/Avatar2.png" alt="me">
         </section>
-    @endif
+        @endif
+
     <div class="row">
     <section class="pull-left col-xs-12 col-md-6 texth1">
-    <h1>{{$profile->first_name}} {{$profile->last_name}} </h1>
-    <p class="textp">{{$profile->summary}} </p>
-    <p>شغل : <span class="p-text">{{$profile->job}} </span>
+    <h1>
+        @if(!empty($profile->first_name))
+            {{$profile->first_name}}
+        @else
+سعید
+        @endif
+        @if(!empty($profile->last_name))
+        {{$profile->last_name}}
+        @else
+محمدی
+            @endif
+    </h1>
+
+    <p class="textp">
+        @if(!empty($profile->summary))
+        {{$profile->summary}}
+         @else
+            فردایی وجود ندارد
+        @endif
+    </p>
+    <p>شغل : <span class="p-text">
+            @if(!empty($profile->job))
+            {{$profile->job}}
+            @else
+مدیر پروژه
+            @endif
+        </span>
     <button id="tagrobe" class="btn btn-head">
     <p>بیشتر</p>
     </button>
     </p>
-    <p class="p-text2">تحصیلات : <span class="p-text3">{{$profile->last_degree}} </span>
+    <p class="p-text2">تحصیلات : <span class="p-text3">
+        @if(!empty($profile->last_degree))
+            {{$profile->last_degree}}
+         @else
+دکترای مدیریت سیستم ها
+            @endif
+        </span>
     <button id="tahsilat" class="btn btn-head">
     <p>بیشتر</p>
     </button>
@@ -70,6 +121,32 @@
     </section>
     </div>
 @endforeach
+    @else
+    <img class="cover-img" height="480px" width="100%"  src="/image/a4.jpg"
+         alt="cover">
+    <section class="pull-right col-sm-6 col-xs-12 col-md-5">
+        <img class="me img-responsive" width="370px;"  height="200px" src="/image/profile.png" alt="me">
+    </section>
+
+    <div class="row">
+        <section class="pull-left col-xs-12 col-md-6 texth1">
+            <h1>سعید محمدی  </h1>
+            <p class="textp">            فردایی وجود ندارد
+            </p>
+            <p>شغل : <span class="p-text">مدیر پروژه
+</span>
+                <button id="tagrobe" class="btn btn-head">
+            <p>بیشتر</p>
+            </button>
+            </p>
+            <p class="p-text2">تحصیلات : <span class="p-text3">دکترای مدیریت سیستم ها</span>
+                <button id="tahsilat" class="btn btn-head">
+            <p>بیشتر</p>
+            </button>
+            </p>
+        </section>
+    </div>
+@endif
 <main id="home11" class="container-fluid background">
 
     <section class="pull-right hidden-xs col-md-1 nav-left">
@@ -110,7 +187,7 @@
             <i class="fa fa-caret-right" aria-hidden="true"></i> </span></li>
                 </div>
 
-                @if(!$workSamples->isEmpty())
+            @if(!$workSamples->isEmpty())
                 <div id="icon5" class="web-icon">
                     <li><img src="images/front/diamond (1).png" alt="portfolio" width="23px"> <span class="tooltip5">
             <p class="text-center">نمونه کار</p>
@@ -126,7 +203,8 @@
                 </div>
                 @endif
 
-                @if(!$docs->isEmpty())
+
+            @if(!$docs->isEmpty())
                 <div id="icon56" class="web-icon">
                     <li><img src="images/front/notebook.png" alt="portfolio" width="23px"> <span class="tooltip56">
             <p class="text-center">کتاب</p>
@@ -142,7 +220,7 @@
                 </div>
                 @endif
 
-                @if(!$blogs->isEmpty())
+            @if(!$blogs->isEmpty())
                 <div id="icon7" class="web-icon">
                     <li><img src="images/front/speech-bubble (2).png" alt="blog" width="23px"> <span class="tooltip7">
             <p class="text-center">بلاگ</p>
@@ -164,16 +242,41 @@
 </main>
 
 <!--about-->
-
+@if(!$profiles->isEmpty())
+@foreach($profiles as $profile)
 <main class="container-fluid">
     <section class="pull-left col-xs-12 col-md-8 nav-bottom">
         <aside class="pull-left top-th"><a href="#"> <i class="fa fa-eye" aria-hidden="true"></i>
                 <p class="icon-animate">اطلاعات تماس</p>
             </a> <a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i>
                 <p class="icon-animate">پیام فرستادن</p>
-            </a> <a style="border-right:none;" href="{{$profile->pdf}}" download><i class="fa fa-diamond"
+            </a>
+            @if(!empty($profile->pdf))
+            <a style="border-right:none;" href="{{$profile->pdf}}" download><i class="fa fa-diamond"
                                aria-hidden="true"></i>
                 <p> دانلود رزومه</p>
-            </a></aside>
+            </a>
+                @else
+                <a style="border-right:none;" href="#" download><i class="fa fa-diamond"
+                                                                                   aria-hidden="true"></i>
+                    <p> دانلود رزومه</p>
+                </a>
+            @endif
+        </aside>
     </section>
 </main>
+@endforeach
+    @else
+    <main class="container-fluid">
+        <section class="pull-left col-xs-12 col-md-8 nav-bottom">
+            <aside class="pull-left top-th"><a href="#"> <i class="fa fa-eye" aria-hidden="true"></i>
+                    <p class="icon-animate">اطلاعات تماس</p>
+                </a> <a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    <p class="icon-animate">پیام فرستادن</p>
+                </a> <a style="border-right:none;" href="#" download><i class="fa fa-diamond"
+                                                                                        aria-hidden="true"></i>
+                    <p> دانلود رزومه</p>
+                </a></aside>
+        </section>
+    </main>
+@endif

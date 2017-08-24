@@ -15,13 +15,9 @@ class CreateWorkSamplesTable extends Migration
     {
         Schema::create('work_samples', function (Blueprint $table) {
             $table->increments('id');
-//            $table->integer('category_id')->unsigned()->nullable();
-//            $table->integer('skill_id')->unsigned()->nullable();
             $table->string('name');
+            $table->string('link')->nullable();
             $table->string('photo')->nullable();
-
-//            $table->foreign('category_id')->references('id')->on('categories');
-//            $table->foreign('skill_id')->references('id')->on('skills');
 
             $table->timestamps();
         });

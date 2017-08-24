@@ -105,7 +105,7 @@ class BlogController extends Controller
             $blog->save();
 
             $rules = array(
-                'photo[]' => 'file|mimes:jpeg,bmp,png|max:5000',
+                'photo[]' => 'file|mimes:jpeg,bmp,png|max:5000|nullable',
             );
             $validator = Validator::make(Input::all(), $rules);
 
