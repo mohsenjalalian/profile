@@ -64,7 +64,8 @@
                                     @else
                                         <h4 style="margin-top: 30px;">شما هیچ عکسی آپلود نکرده اید</h4>
                                     @endif
-                                    <div style="width: 280px; margin-right: 15px;" class="fileinput fileinput-new input-group" data-provides="fileinput">
+                                        <button type="button" id="btnremove" class="btn btn-danger">پاک کردن</button>
+                                        <div style="width: 280px; margin-right: 15px;" class="fileinput fileinput-new input-group" data-provides="fileinput">
                                         <div class="form-control" data-trigger="fileinput">
                                             <p class="fileinput-exists" style="color: #2aca76;">بارگذاری شد</p>
                                         </div>
@@ -106,6 +107,15 @@
         </div>
     </div>
 
+
+
+    <script>
+        $(document).ready(function(){
+            $('#btnremove').click(function(){
+                $('#rmPhoto').attr("value", "");
+            });
+        });
+    </script>
 @endsection
 
 @section('script')
