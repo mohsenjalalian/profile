@@ -103,26 +103,6 @@
                                 </div>
                             </div>
 
-                            {{--<div class="row">--}}
-                                {{--<div class="col-md-6">--}}
-                                    {{--<div class="ibox float-e-margins">--}}
-                                        {{--<div class="form-group{{ $errors->has('qr_code') ? ' has-error': ''}}">--}}
-                                            {{--<div class="fileinput fileinput-new" data-provides="fileinput">--}}
-                                        {{--<span class="btn btn-default btn-file"><span--}}
-                                                    {{--class="fileinput-new">بارگذاری</span><span class="fileinput-exists"><span--}}
-                                                        {{--style="color: #2aca76;">بارگذاری شد</span></span>--}}
-                                            {{--<input type="file"--}}
-                                                   {{--value="{{ Request::old('qr_code') ?: ''}}" name="qr_code"></span>--}}
-                                            {{--</div>--}}
-                                            {{--@if($errors->has('qr_code'))--}}
-                                                {{--<span class="help-block">{{ $errors->first('qr_code')}}</span>--}}
-                                            {{--@endif--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-
-
                             <button style="font-family: webmdesign;" class="btn btn-primary col-md-4" name="submit" type="submit" id="contact-submit"
                                     data-submit="...Sending">ارسال
                             </button>

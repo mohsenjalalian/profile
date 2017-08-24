@@ -29,7 +29,12 @@
                             </div>
 
                         <h2 class="text-bl">{{$blog->title}}</h2>
-                        <p class="text-bl2 mCustomScrollbar content-a44" data-mcs-theme="minimal-dark">{{$blog->description}}</p>
+                        <p class="text-bl2 mCustomScrollbar content-a44" data-mcs-theme="minimal-dark">
+                         @php
+                         $des =  nl2br(e($blog->description));
+                            echo $des;
+                         @endphp
+                        </p>
                         <hr style="border:1px solid #DFDFDF; width:100%;">
                         <span class="blog-mg2">{{$blog->date}}</span>
                         <p><span style="text-align: right; float: right; font-size: 20px; padding-left: 20px;">: اشتراک</span>

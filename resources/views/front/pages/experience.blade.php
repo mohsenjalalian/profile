@@ -21,9 +21,14 @@
                 @foreach($workExperiences as $experience )
                 <li id="{{$experience->id}}">
                     <h4 style="float: right; color: #ffd93e;  text-align: right; width: 100%"><strong>{{$experience->title}}</strong></h4>
-                    <p style="font-size: 11px; color: #eee;"><strong>{{$experience->company}}</strong></p>
-                    <p style="text-align: justify; color: #eee; padding-left: 55px; float: right; width: 100%;" class="mCustomScrollbar content-a2" data-mcs-theme="minimal-dark">{{$experience->about}}</p>
-                    <p style="color: #eee;">{{$experience->city}}</p>
+                    <p style="font-size: 11px;"><strong>{{$experience->company}}</strong></p>
+                    <p style="text-align: right; float: right; width: 100%;">
+                        @php
+                            $des =  nl2br(e($experience->about));
+                         echo $des;
+                        @endphp
+                    </p>
+                    <p>{{$experience->city}}</p>
                     @endforeach
             </ul>
             <div id="grad_left"></div>
@@ -34,23 +39,3 @@
     </section>
 </main>
 @endif
-{{--<ul class="timeline">--}}
-{{--<li>--}}
-{{--<div class="timeline-content">--}}
-{{--<section class="col-xs-12 col-md-3 yellow-sm">--}}
-{{--<p class="pull-right text-sm">از</p>--}}
-{{--<p class="pull-right text-sm">تا</p>--}}
-{{--<p class="pull-right text-sm2">{{$experience->start_date}}</p>--}}
-{{--<p class="pull-right text-sm2">{{$experience->finish_date}}</p>--}}
-{{--<p class="pull-right text-sm2">{{$experience->company}}</p>--}}
-{{--<p class="pull-right text-sm3">{{$experience->city}}</p>--}}
-{{--</section>--}}
-{{--<section class="col-xs-12 col-md-8 yellow-lg">--}}
-{{--<h2 class="pull-right text-lg1">{{$experience->title}}</h2>--}}
-{{--<p class="pull-right text-justify text-lg2 mCustomScrollbar content-a2" data-mcs-theme="minimal-dark">--}}
-{{--{{$experience->about}}--}}
-{{--</p>--}}
-{{--</section>--}}
-{{--</div>--}}
-{{--</li>--}}
-{{--</ul>--}}

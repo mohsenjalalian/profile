@@ -16,7 +16,7 @@ class CreateWorkSamplesTable extends Migration
         Schema::create('work_samples', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('link');
+            $table->string('link')->nullable();
             $table->string('photo')->nullable();
 
             $table->timestamps();

@@ -20,7 +20,11 @@
                             <p class="text-center">{{$certification->name}}</p>
                             <p class="text-center">{{$certification->type}}</p>
                             <p style="padding-left:20px; padding-right:20px;" class="text-center hid-p">
-                                {{$certification->info}}
+                                @php
+                                    $des =  nl2br(e($certification->info));
+                                echo $des;
+                                @endphp
+
                             </p>
                         </figcaption>
                     </figure>

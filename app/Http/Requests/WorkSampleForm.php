@@ -29,7 +29,7 @@ class WorkSampleForm extends FormRequest
     {
         return [
             'name' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
-            'photo' => 'file|mimes:jpeg,bmp,png|max:5000',
+            'photo' => 'file|mimes:jpeg,bmp,png|max:5000|nullable',
         ];
     }
     public function process()

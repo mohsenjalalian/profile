@@ -50,14 +50,14 @@
                     <div style="margin-right: 100px;" class="col-md-4">
                 <div class="form-group{{ $errors->has('point') ? ' has-error': ''}}">
                         <lable style="margin-right: 7px; margin-bottom: 10px;">امتیاز</lable>
-                        <select name="point" class="select2_demo_1 form-control">
-                            {{--$type->id !== $skills->type->id--}}
-                            <option value="{{$skills->point}}">{{$skills->point}}</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
+
+                        <select name="point" class="select2_demo_1 form-control" >
+
+                            <option value="1" @if($skills->point == 1) selected @endif>1</option>
+                            <option value="2" @if($skills->point == 2) selected @endif>2</option>
+                            <option value="3" @if($skills->point == 3) selected @endif>3</option>
+                            <option value="4" @if($skills->point == 4) selected @endif>4</option>
+                            <option value="5" @if($skills->point == 5) selected @endif>5</option>
                         </select>
                     @if($errors->has('point'))
                         <span class="help-block">{{ $errors->first('point')}}</span>

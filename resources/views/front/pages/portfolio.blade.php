@@ -30,8 +30,10 @@
                                                     @foreach($work->skills as $skill)
                                                         <p class="port-n">{{$skill->name}}</p>
                                                     @endforeach
-                                                    <a href="http://dribbble.com/shots/1118904-Game-Center">دانلود
+                                                    @if(!empty($work->link))
+                                                    <a href="{{$work->link}}">دانلود
                                                         رزومه</a>
+                                                    @endif
                                                 </figcaption>
                                             </figure>
                                         </li>

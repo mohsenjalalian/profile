@@ -1,5 +1,5 @@
 <!-- form-->
-
+@inject('translate',\App\Http\Controllers\ContactController)
 <main id="about7">
     <section id="scrollcontact" class="pull-left col-xs-12 col-sm-6 col-md-6 contact1">
         <h2>پیام برسان</h2>
@@ -65,7 +65,7 @@
                 <p class="text-for"> تلفن</p>
                 <p class="text-for2">
                 @if(!empty($contact->phone_number))
-                    {{$contact->phone_number}}
+                    {{$translate::toPersianNum($contact->phone_number)}}
                 @else
                     ۰۲۱-۲۲۰۳۵۹۷۶
                  @endif
@@ -75,7 +75,7 @@
                 <p class="text-for"> تلفن همراه</p>
                 <p class="text-for2">
                 @if(!empty($contact->mobile))
-                    {{$contact->mobile}}
+                        {{$translate::toPersianNum($contact->mobile)}}
                 @else
                    ۰۹۱۲۲۱۰۵۲۷۱
                 @endif
@@ -85,7 +85,7 @@
                 <p class="text-for">تلفن دفتر</p>
                 <p class="text-for2">
                   @if(!empty($contact->office_number))
-                    {{$contact->office_number}}
+                        {{$translate::toPersianNum($contact->office_number)}}
                   @else
                      ۰۲۱-۶۶۵۶۴۶۱۲
                   @endif
