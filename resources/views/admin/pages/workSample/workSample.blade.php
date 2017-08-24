@@ -42,6 +42,23 @@
                                     @endif
                                 </div>
                             </div>
+
+                            <div style="margin-top: -20px;"
+                                 class="form-group{{ $errors->has('link') ? ' has-error': ''}}">
+                                <div class="col-sm-10 col-md-12">
+                                    <label>لینک</label>
+                                    <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text"
+                                           placeholder="لینک"
+                                           value="{{ Request::old('link') ?  : ''}}" class="form-control m-b"
+                                           name="link"
+                                           tabindex="1"  autofocus>
+                                    @if($errors->has('link'))
+                                        <span class="help-block">{{ $errors->first('link')}}</span>
+                                    @endif
+                                </div>
+                            </div>
+
+
                             @if(count($categories) > 0)
                                 <p style="position:relative; height: 22px; bottom: 0px; right: 15px;">دسته بندی</p>
                                 <div style="margin-top: 70px;"
@@ -145,9 +162,10 @@
                             <thead>
                             <tr>
                                 <td style="width: 30px;" class="text-center">عکس</td>
+                                <td class="text-center">نام</td>
+                                <td class="text-center">لینک</td>
                                 <td class="text-center">دسته بندی</td>
                                 <td class="text-center">مهارت</td>
-                                <td class="text-center">نام</td>
                                 <th style="width: 30px;" class="text-center">تغییرات</th>
                             </tr>
                             </thead>
@@ -159,13 +177,23 @@
 
                                     <td style="vertical-align: middle;" class="text-center">
                                         @if(empty($workSample->photo))
-                                            <img width="50" height="50" src="/images/front/site.png"
+                                            <img width="50" height="50" src="/image/admin.png"
                                                  alt="نمونه کار">
                                         @else
                                         <img width="50" height="50" src="{{asset($workSample->photo)}}"
                                              alt="{{$workSample->photo}}">
                                         @endif
                                     </td>
+
+                                    <td style="vertical-align: middle;"
+                                        class="text-center">{{$workSample->name}}
+                                    </td>
+
+                                    <td style="vertical-align: middle;"
+                                        class="text-center">{{$workSample->link}}
+                                    </td>
+
+
 
                                     <td style="vertical-align: middle;" class="text-center">
                                         @foreach($workSample->category as $cat)
@@ -179,8 +207,6 @@
                                             {{$skill->name}}
                                         @endforeach
                                     </td>
-                                    <td style="vertical-align: middle;"
-                                        class="text-center">{{$workSample->name}}</td>
 
 
                                     <td style="border: none;">

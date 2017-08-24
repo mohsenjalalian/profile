@@ -19,6 +19,18 @@
                         <span class="help-block">{{ $errors->first('name')}}</span>
                     @endif
                 </div>
+
+                    <div class="form-group{{ $errors->has('link') ? ' has-error': ''}}">
+                        <label>لینک</label>
+                        <fieldset>
+                            <input class="form-control m-b col-md-2" placeholder="نام" value="{{$workSample->link}}" type="text" name="link" tabindex="1"
+                                    autofocus>
+                        </fieldset>
+                        @if($errors->has('link'))
+                            <span class="help-block">{{ $errors->first('link')}}</span>
+                        @endif
+                    </div>
+
                     <div style="position: absolute; top: -2px; right: 255px;" class="col-md-5">
                         <div class="ibox float-e-margins">
                             <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">

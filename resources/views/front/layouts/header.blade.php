@@ -36,33 +36,67 @@
 </div>
 
 <!--home-->
+@if(!$profiles->isEmpty())
 @foreach($profiles as $profile)
-    @if ($profile->cover)
+
+    @if(!empty($profile->cover))
         <img class="cover-img" src="{{$profile->cover}}"
              alt="cover" height="480px" width="100%">
     @else
-        <img class="cover-img" height="480px" width="100%"  src="/images/front/background.jpg"
+        <img class="cover-img" height="480px" width="100%"  src="/image/a4.jpg"
              alt="cover">
     @endif
-    @if ($profile->photo)
+
+      @if(!empty($profile->photo))
         <section class="pull-right col-sm-6 col-xs-12 col-md-5">
             <img class="me img-responsive" width="370px;"  height="200px" src="{{$profile->photo}}" alt="me">
         </section>
-    @else
+        @else
         <section class="pull-right col-sm-6 col-xs-12 col-md-5">
             <img class="me img-responsive" width="370px;"  height="200px" src="/images/front/Avatar2.png" alt="me">
         </section>
-    @endif
+        @endif
+
     <div class="row">
     <section class="pull-left col-xs-12 col-md-6 texth1">
-    <h1>{{$profile->first_name}} {{$profile->last_name}} </h1>
-    <p class="textp">{{$profile->summary}} </p>
-    <p>شغل : <span class="p-text">{{$profile->job}} </span>
+    <h1>
+        @if(!empty($profile->first_name))
+            {{$profile->first_name}}
+        @else
+سعید
+        @endif
+        @if(!empty($profile->last_name))
+        {{$profile->last_name}}
+        @else
+محمدی
+            @endif
+    </h1>
+
+    <p class="textp">
+        @if(!empty($profile->summary))
+        {{$profile->summary}}
+         @else
+            فردایی وجود ندارد
+        @endif
+    </p>
+    <p>شغل : <span class="p-text">
+            @if(!empty($profile->job))
+            {{$profile->job}}
+            @else
+مدیر پروژه
+            @endif
+        </span>
     <button id="tagrobe" class="btn btn-head">
     <p>بیشتر</p>
     </button>
     </p>
-    <p class="p-text2">تحصیلات : <span class="p-text3">{{$profile->last_degree}} </span>
+    <p class="p-text2">تحصیلات : <span class="p-text3">
+        @if(!empty($profile->last_degree))
+            {{$profile->last_degree}}
+         @else
+دکترای مدیریت سیستم ها
+            @endif
+        </span>
     <button id="tahsilat" class="btn btn-head">
     <p>بیشتر</p>
     </button>
@@ -70,6 +104,32 @@
     </section>
     </div>
 @endforeach
+    @else
+    <img class="cover-img" height="480px" width="100%"  src="/image/a4.jpg"
+         alt="cover">
+    <section class="pull-right col-sm-6 col-xs-12 col-md-5">
+        <img class="me img-responsive" width="370px;"  height="200px" src="/image/profile.png" alt="me">
+    </section>
+
+    <div class="row">
+        <section class="pull-left col-xs-12 col-md-6 texth1">
+            <h1>سعید محمدی  </h1>
+            <p class="textp">            فردایی وجود ندارد
+            </p>
+            <p>شغل : <span class="p-text">مدیر پروژه
+</span>
+                <button id="tagrobe" class="btn btn-head">
+            <p>بیشتر</p>
+            </button>
+            </p>
+            <p class="p-text2">تحصیلات : <span class="p-text3">دکترای مدیریت سیستم ها</span>
+                <button id="tahsilat" class="btn btn-head">
+            <p>بیشتر</p>
+            </button>
+            </p>
+        </section>
+    </div>
+@endif
 <main id="home11" class="container-fluid background">
 
     <section class="pull-right hidden-xs col-md-1 nav-left">
@@ -164,16 +224,41 @@
 </main>
 
 <!--about-->
-
+@if(!$profiles->isEmpty())
+@foreach($profiles as $profile)
 <main class="container-fluid">
     <section class="pull-left col-xs-12 col-md-8 nav-bottom">
         <aside class="pull-left top-th"><a href="#"> <i class="fa fa-eye" aria-hidden="true"></i>
                 <p class="icon-animate">اطلاعات تماس</p>
             </a> <a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i>
                 <p class="icon-animate">پیام فرستادن</p>
-            </a> <a style="border-right:none;" href="{{$profile->pdf}}" download><i class="fa fa-diamond"
+            </a>
+            @if(!empty($profile->pdf))
+            <a style="border-right:none;" href="{{$profile->pdf}}" download><i class="fa fa-diamond"
                                aria-hidden="true"></i>
                 <p> دانلود رزومه</p>
-            </a></aside>
+            </a>
+                @else
+                <a style="border-right:none;" href="#" download><i class="fa fa-diamond"
+                                                                                   aria-hidden="true"></i>
+                    <p> دانلود رزومه</p>
+                </a>
+            @endif
+        </aside>
     </section>
 </main>
+@endforeach
+    @else
+    <main class="container-fluid">
+        <section class="pull-left col-xs-12 col-md-8 nav-bottom">
+            <aside class="pull-left top-th"><a href="#"> <i class="fa fa-eye" aria-hidden="true"></i>
+                    <p class="icon-animate">اطلاعات تماس</p>
+                </a> <a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    <p class="icon-animate">پیام فرستادن</p>
+                </a> <a style="border-right:none;" href="#" download><i class="fa fa-diamond"
+                                                                                        aria-hidden="true"></i>
+                    <p> دانلود رزومه</p>
+                </a></aside>
+        </section>
+    </main>
+@endif

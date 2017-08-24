@@ -46,7 +46,9 @@ class SkillsController extends Controller
     public function store(SkillForm $form)
     {
         $form->process();
-        return redirect()->route('skills')->with('success', 'مهارت شما با موفقیت ساخته شد');
+        if ($form){
+            return redirect()->route('skills')->with('success', 'مهارت شما با موفقیت ساخته شد');
+        }
     }
 
     /**

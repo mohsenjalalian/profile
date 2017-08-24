@@ -117,6 +117,7 @@ class WorkSampleController extends Controller
 
 
             $workSample->name = Input::get('name');
+            $workSample->link = Input::get('link');
             if ($file) {
                 $workSample->photo = $photo;
             }

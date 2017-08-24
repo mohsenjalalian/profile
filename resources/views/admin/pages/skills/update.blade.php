@@ -51,6 +51,7 @@
                 <div class="form-group{{ $errors->has('point') ? ' has-error': ''}}">
                         <lable style="margin-right: 7px; margin-bottom: 10px;">امتیاز</lable>
                         <select name="point" class="select2_demo_1 form-control">
+                            {{--$type->id !== $skills->type->id--}}
                             <option value="{{$skills->point}}">{{$skills->point}}</option>
                             <option value="1">1</option>
                             <option value="2">2</option>

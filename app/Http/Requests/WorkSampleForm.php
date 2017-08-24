@@ -45,7 +45,8 @@ class WorkSampleForm extends FormRequest
         }
 
         $data =[
-            'name' => request('name')
+            'name' => request('name'),
+            'link' => request('link')
         ];
 
         $data['photo'] = $photo;
