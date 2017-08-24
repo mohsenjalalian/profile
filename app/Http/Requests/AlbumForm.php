@@ -26,7 +26,7 @@ class AlbumForm extends FormRequest
     public function rules()
     {
         return [
-            'photo' => 'required|file|mimes:jpeg,bmp,png|max:5000',
+            'photo' => 'required|file|mimes:jpeg,bmp,png|max:5000|nullable',
         ];
     }
 

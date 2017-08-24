@@ -9,21 +9,39 @@
                 {{ method_field('PUT') }}
                 <input type="hidden" name="old_pic" value="{{ $workSample->photo }}">
                 <div class="row">
+
                 <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
                     <label>نام</label>
                     <fieldset>
-                        <input class="form-control m-b col-md-2" placeholder="نام" value="{{$workSample->name}}" type="text" name="name" tabindex="1"
-                               required autofocus>
+                        <input class="form-control m-b col-md-2"
+                               placeholder="نام"
+                               value="{{$workSample->name}}" type="text" name="name" tabindex="1"
+                                autofocus>
                     </fieldset>
                     @if($errors->has('name'))
                         <span class="help-block">{{ $errors->first('name')}}</span>
                     @endif
                 </div>
+
+                    <div class="form-group{{ $errors->has('link') ? ' has-error': ''}}">
+                        <label>لینک</label>
+                        <fieldset>
+                            <input class="form-control m-b col-md-2" placeholder="نام"
+                                   value="{{$workSample->link}}" type="text" name="link" tabindex="1"
+                                    autofocus>
+                        </fieldset>
+                        @if($errors->has('link'))
+                            <span class="help-block">{{ $errors->first('link')}}</span>
+                        @endif
+                    </div>
+
                     <div style="position: absolute; top: -2px; right: 255px;" class="col-md-5">
                         <div class="ibox float-e-margins">
                             <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
                                 @if(isset($workSample->photo))
                                     <img style="position: relative; top: 40px; right: -50px;" width="50" height="50" src="{{asset($workSample->photo)}}">
+
+                                    <button type="button" id="btnremove" class="btn btn-danger">پاک کردن</button>
                                 @else
                                     <h4 style="margin-top: 22px;">شما هیچ عکسی آپلود نکرده اید</h4>
                                 @endif
@@ -36,6 +54,7 @@
                                                     <span class="fileinput-exists">عوض کردن</span>
                                                     <input type="file" value="{{$workSample->photo}}" name="photo">
                                                 </span>
+
                                     <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">پاک کردن</a>
                                 </div>
                                 @if($errors->has('photo'))
@@ -45,6 +64,7 @@
                         </div>
                     </div>
                 </div>
+
 
                 @if(count($categories) > 0)
                     <p style="position:relative; height: 22px; top: 0px; right: 15px;">دسته بندی</p>
@@ -58,16 +78,24 @@
                                     <select data-placeholder="" name="category_id[]"
                                             class="chosen-select" multiple
                                             style="width:350px;" tabindex="4">
+                                        @if(!$workSample->category->isEmpty())
                                         @foreach($workSample->category as $cat)
-                                            <option name="skill_id[]"
+                                            {{--{{dump($workSample->category)}}--}}
+                                            <option name="category_id[]"
                                                     value="{{$cat->id}}" selected>{{$cat->name}}</option>
-                                        @foreach($categories as $category )
+                                            @foreach($categories as $category )
                                                 @if($category->id != $cat->id)
-                                                <option name="category_id[]"
-                                                    value="{{$category->id}}">{{$category->name}}</option>
+                                                    <option name="category_id[]"
+                                                            value="{{$category->id}}">{{$category->name}}</option>
                                                 @endif
+                                            @endforeach
                                         @endforeach
-                                        @endforeach
+                                        @else
+                                            @foreach($categories as $category)
+                                                <option name="category_id[]"
+                                                        value="{{$category->id}}">{{$category->name}}</option>
+                                             @endforeach
+                                        @endif
                                     </select>
                                 </div>
                             </div>
@@ -80,7 +108,6 @@
                     <p class="text-center">شما هیچ دسته بندی نساخته اید</p>
                 @endif
 
-
                 @if(count($skills) > 0)
                     <p style="position: relative; top: 2px; right: 15px;">مهارت ها</p>
                     <div class="form-group{{ $errors->has('skill_id[]') ? ' has-error': ''}}">
@@ -92,6 +119,7 @@
                                     <select data-placeholder="" name="skill_id[]"
                                             class="chosen-select" multiple
                                             style="width:330px;" tabindex="4">
+                                        @if(!$workSample->skills->isEmpty())
                                         @foreach($workSample->skills as $val)
                                             <option name="skill_id[]"
                                                     value="{{$val->id}}" selected>{{$val->name}}</option>
@@ -102,6 +130,13 @@
                                         @endif
                                         @endforeach
                                         @endforeach
+                                         @else
+                                            @foreach($skills as $skill)
+                                                    <option name="skill_id[]"
+                                                            value="{{$skill->id}}">{{$skill->name}}</option>
+
+                                            @endforeach
+                                        @endif
                                     </select>
                                 </div>
                             </div>
@@ -137,5 +172,12 @@
 @endsection
 
 @section('script')
-
+    <script>
+    $(document).ready(function(){
+    $('#btnremove').click(function(){
+      //do sth
+        $('#').attr("");
+    });
+    });
+    </script>
 @endsection

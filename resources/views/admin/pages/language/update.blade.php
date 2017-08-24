@@ -25,12 +25,11 @@
                 <div class="col-md-1">
                     <div class="form-group{{ $errors->has('reading') ? ' has-error': ''}}">
                         <select name="reading" class="select2_demo_1 form-control">
-                            <option value="{{$language->reading}}">{{$language->reading}}</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
+                            <option value="1" @if($language->reading == 1) selected @endif>1</option>
+                            <option value="2" @if($language->reading == 2) selected @endif>2</option>
+                            <option value="3" @if($language->reading == 3) selected @endif>3</option>
+                            <option value="4" @if($language->reading == 4) selected @endif>4</option>
+                            <option value="5" @if($language->reading == 5) selected @endif>5</option>
                         </select>
                         @if($errors->has('reading'))
                             <span class="help-block">{{ $errors->first('reading')}}</span>
@@ -41,12 +40,11 @@
                     <div class="col-md-1">
                         <div class="form-group{{ $errors->has('writing') ? ' has-error': ''}}">
                             <select name="writing" class="select2_demo_1 form-control">
-                            <option value="{{$language->writing}}">{{$language->writing}}</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
+                            <option value="1" @if($language->writing == 1) selected @endif>1</option>
+                            <option value="2" @if($language->writing == 2) selected @endif>2</option>
+                            <option value="3" @if($language->writing == 3) selected @endif>3</option>
+                            <option value="4" @if($language->writing == 4) selected @endif>4</option>
+                            <option value="5" @if($language->writing == 5) selected @endif>5</option>
                         </select>
                     @if($errors->has('writing'))
                         <span class="help-block">{{ $errors->first('writing')}}</span>
@@ -56,12 +54,11 @@
                  <div class="col-md-1">
                 <div class="form-group{{ $errors->has('speaking') ? ' has-error': ''}}">
                         <select name="speaking" class="select2_demo_1 form-control">
-                            <option value="{{$language->speaking}}">{{$language->speaking}}</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
+                            <option value="1" @if($language->speaking == 1) selected @endif>1</option>
+                            <option value="2" @if($language->speaking == 2) selected @endif>2</option>
+                            <option value="3" @if($language->speaking == 3) selected @endif>3</option>
+                            <option value="4" @if($language->speaking == 4) selected @endif>4</option>
+                            <option value="5" @if($language->speaking == 5) selected @endif>5</option>
                         </select>
                     @if($errors->has('speaking'))
                         <span class="help-block">{{ $errors->first('speaking')}}</span>
@@ -71,12 +68,11 @@
                 <div class="col-md-1">
                 <div class="form-group{{ $errors->has('listening') ? ' has-error': ''}}">
                             <select name="listening" class="select2_demo_1 form-control">
-                            <option value="{{$language->listening}}">{{$language->listening}}</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
+                            <option value="1" @if($language->listening == 1) selected @endif>1</option>
+                            <option value="2" @if($language->listening == 2) selected @endif>2</option>
+                            <option value="3" @if($language->listening == 3) selected @endif>3</option>
+                            <option value="4" @if($language->listening == 4) selected @endif>4</option>
+                            <option value="5" @if($language->listening == 5) selected @endif>5</option>
                         </select>
                     @if($errors->has('listening'))
                         <span class="help-block">{{ $errors->first('listening')}}</span>

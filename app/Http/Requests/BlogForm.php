@@ -30,7 +30,7 @@ class BlogForm extends FormRequest
             'title' => 'required',
             'description' => 'required',
             'date' => 'required',
-            'photo[]' => 'file|mimes:jpeg,bmp,png|max:5000',
+            'photo[]' => 'file|mimes:jpeg,bmp,png|max:5000|nullable',
         ];
     }
 

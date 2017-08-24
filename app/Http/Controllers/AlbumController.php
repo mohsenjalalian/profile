@@ -75,7 +75,7 @@ class AlbumController extends Controller
     public function update($id)
     {
         $rules = array(
-            'photo' => 'required|file|mimes:jpeg,bmp,png|max:5000',
+            'photo' => 'required|file|mimes:jpeg,bmp,png|max:5000|nullable',
         );
 
         $validator = Validator::make(Input::all(), $rules);

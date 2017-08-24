@@ -83,7 +83,7 @@ class DocsController extends Controller
             'name' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
             'published_place' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
             'published_year' => 'required',
-            'photo' => 'file|mimes:jpeg,bmp,png|max:5000',
+            'photo' => 'file|mimes:jpeg,bmp,png|max:5000|nullable',
         );
 
         $validator = Validator::make(Input::all(), $rules);

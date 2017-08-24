@@ -32,15 +32,16 @@ class SkillForm extends FormRequest
 
     public function process()
     {
+
         $data = [
                 'name'   => request('name'),
                 'point'  => request('point'),
                 'type_id' => request('type_id'),
             ];
 
-        if (!empty($data)) {
-            $skill = Skills::create($data);
 
+        if (!empty($data['type_id'])) {
+            $skill = Skills::create($data);
         } else {
             return redirect()->back()->withErrors('متاسفانه ساخته نشد');
         }

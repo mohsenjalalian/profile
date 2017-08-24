@@ -98,7 +98,7 @@ class ContactController extends Controller
             'phone_number' => 'required|min:5|integer',
             'mobile' => 'required|min:5|integer',
             'office_number' => 'required|min:5|integer',
-            'qr_code' => 'file|mimes:jpeg,bmp,png|max:5000',
+            'qr_code' => 'file|mimes:jpeg,bmp,png|max:5000|nullable',
         );
 
         $validator = Validator::make(Input::all(), $rules);

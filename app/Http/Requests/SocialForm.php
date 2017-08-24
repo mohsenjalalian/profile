@@ -26,14 +26,6 @@ class SocialForm extends FormRequest
     public function rules()
     {
         return [
-//            'twitter' => 'url',
-//            'facebook' => 'url',
-//            'instagram' => 'url',
-//            'telegram' => 'url',
-//            'google_plus' => 'url',
-//            'linkedin' => 'url',
-//            'skype' => 'url',
-//            'site' => 'url',
         ];
     }
 
@@ -42,17 +34,6 @@ class SocialForm extends FormRequest
         $socials = request(['twitter', 'facebook', 'telegram', 'instagram',
             'google_plus', 'linkedin', 'skype', 'site']);
 
-
-        //        $data = [
-        //            'twitter' => request('twitter'),
-        //            'facebook' => request('facebook'),
-        //            'instagram' => request('instagram'),
-        //            'telegram' => request('telegram'),
-        //            'google_plus' => request('google_plus'),
-        //            'linkedin' => request('linkedin'),
-        //            'skype' => request('skype'),
-        //            'site' => request('site'),
-        //        ];
         foreach ($socials as $social) {
             if (empty($social)) {
                 return redirect()->back();
