@@ -55,7 +55,7 @@ class RecommendationController extends Controller
      */
     public function show($id)
     {
-        //
+        Recommendation::findOrFail($id);
     }
 
     /**

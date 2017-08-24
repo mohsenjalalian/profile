@@ -47,6 +47,12 @@ class AlbumController extends Controller
     }
 
 
+    public function show($id)
+        {
+            Album::findOrFail($id);
+        }
+
+
     /**
      * Show the form for editing the specified resource.
      *

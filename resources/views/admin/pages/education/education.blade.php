@@ -18,7 +18,6 @@
             </div>
         </div>
 
-        <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
 
             <div style="margin-top: 20px;" class="col-lg-4">
@@ -40,30 +39,6 @@
                                     @endif
                                 </div>
                             </div>
-
-
-                            <div class="form-group{{ $errors->has('field') ? ' has-error': ''}}">
-                                <div class="col-sm-10 col-md-12">
-                                    <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="رشته"
-                                           value="{{ Request::old('field') ?: ''}}" class="form-control m-b" name="field" tabindex="1"
-                                           required autofocus>
-                                    @if($errors->has('field'))
-                                        <span class="help-block">{{ $errors->first('field')}}</span>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="form-group{{ $errors->has('tendency') ? ' has-error': ''}}">
-                                <div class="col-sm-10 col-md-12">
-                                    <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="گرایش"
-                                           value="{{ Request::old('tendency') ?: ''}}" class="form-control m-b" name="tendency"
-                                           tabindex="1" required autofocus>
-                                    @if($errors->has('tendency'))
-                                        <span class="help-block">{{ $errors->first('tendency')}}</span>
-                                    @endif
-                                </div>
-                            </div>
-
 
                             <div class="container col-md-12">
                                 <div class="form-group">
@@ -92,24 +67,51 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                            <div style="margin-right: 15px;" class="col-md-6">
-                                <div class="ibox float-e-margins">
-                                    <div class="form-group{{ $errors->has('logo') ? ' has-error': ''}}">
-                                        <div class="fileinput fileinput-new" data-provides="fileinput">
-                                        <span class="btn btn-default btn-file"><span class="fileinput-new">بارگذاری</span><span class="fileinput-exists"><span
-                                                        style="color: #2aca76;">بارگذاری شد</span></span>
-                                            <input type="file" value="{{ Request::old('logo') ?: ''}}" name="logo"></span>
-
-                                        </div>
-                                        @if($errors->has('logo'))
-                                            <span class="help-block">{{ $errors->first('logo')}}</span>
-                                        @endif
-                                    </div>
+                            <div class="form-group{{ $errors->has('field') ? ' has-error': ''}}">
+                                <div class="col-sm-10 col-md-12">
+                                    <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="رشته"
+                                           value="{{ Request::old('field') ?: ''}}" class="form-control m-b" name="field" tabindex="1"
+                                           required autofocus>
+                                    @if($errors->has('field'))
+                                        <span class="help-block">{{ $errors->first('field')}}</span>
+                                    @endif
                                 </div>
                             </div>
+
+                            <div class="form-group{{ $errors->has('tendency') ? ' has-error': ''}}">
+                                <div class="col-sm-10 col-md-12">
+                                    <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="گرایش"
+                                           value="{{ Request::old('tendency') ?: ''}}" class="form-control m-b" name="tendency"
+                                           tabindex="1" required autofocus>
+                                    @if($errors->has('tendency'))
+                                        <span class="help-block">{{ $errors->first('tendency')}}</span>
+                                    @endif
+                                </div>
                             </div>
-                            <button style="font-family: webmdesign;" class="btn btn-primary col-md-4" name="submit" type="submit" id="contact-submit"
+                            <div class="row">
+                                <div  class="col-md-5">
+                                    <div class="ibox float-e-margins">
+                                        <div class="form-group{{ $errors->has('logo') ? ' has-error': ''}}">
+                                            <div style="width: 280px; margin-right: 15px;" class="fileinput fileinput-new input-group" data-provides="fileinput">
+                                                <div class="form-control" data-trigger="fileinput">
+                                                    <p class="fileinput-exists" style="color: #2aca76;">بارگذاری شد</p>
+                                                </div>
+                                                <span style="border: 1px solid #e5e6e7;" class="input-group-addon btn btn-default btn-file">
+                                                    <span class="fileinput-new">بارگذاری</span>
+                                                    <span class="fileinput-exists">عوض کردن</span>
+                                                    <input type="file" value="{{ Request::old('logo') ?: ''}}" name="logo">
+                                                </span>
+                                                <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">پاک کردن</a>
+                                            </div>
+                                            <p style="font-size: 12px; margin-left: -170px;" class="pull-right colorpicker">۱۰۰ * ۱۰۰</p>
+                                            @if($errors->has('logo'))
+                                                <span class="help-block">{{ $errors->first('logo')}}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+
+                            <button style="font-family: webmdesign; margin-top: 10px; margin-left: 90px;" class="btn btn-primary col-md-4" name="submit" type="submit" id="contact-submit"
                                     data-submit="...Sending">ارسال
                             </button>
 
@@ -140,8 +142,14 @@
                         @foreach($educations as $education)
                             <tr>
                                 <td style="vertical-align: middle;" class="text-center">
+                                    @if(empty($education->logo))
+                                        <img style="width: 50px;height: 50px;" src="/images/front/uni.png"
+                                             alt="تحصیلات">
+                                    @else
                                     <img style="width: 50px;height: 50px;" src="{{asset($education->logo)}}"
-                                         alt="{{$education->logo}}"></td>
+                                         alt="{{$education->logo}}">
+                                    @endif
+                                </td>
                                 <td style="vertical-align: middle;" class="text-center">{{$education->university_name}}</td>
                                 <td style="vertical-align: middle" class="text-center">{{$education->field}}</td>
                                 <td style="vertical-align: middle" class="text-center">{{$education->tendency}}</td>
@@ -156,7 +164,7 @@
                                         </button>
 
                                     <form action="{{ route('education.destroy', $education->id) }}"
-                                          method="POST">
+                                          method="POST" class="frm">
                                         {{ method_field('DELETE') }}
                                         {{ csrf_field() }}
 
@@ -181,73 +189,6 @@
     </div>
     </div>
     </div>
-        {{--<div class="wrapper wrapper-content animated fadeInRight col-md-8">--}}
-            {{--<div class="row">--}}
-                {{--<div style="margin-top: 10px;">--}}
-                    {{--<div class="ibox float-e-margins">--}}
-
-                        {{--<div class="ibox-content">--}}
-
-                            {{--<div class="table-responsive">--}}
-                                {{--<table class="table table-striped table-bordered table-hover dataTables-example">--}}
-                                    {{--<thead>--}}
-                                    {{--@include('admin.layouts.success')--}}
-                                    {{--@include('admin.layouts.errors')--}}
-                                    {{--<tr>--}}
-                                        {{--<th class="text-center">لوگو</th>--}}
-                                        {{--<th class="text-center">دانشگاه</th>--}}
-                                        {{--<th class="text-center">رشته</th>--}}
-                                        {{--<th class="text-center">گرایش</th>--}}
-                                        {{--<th class="text-center">سال و ماه شروع</th>--}}
-                                        {{--<th class="text-center">سال و ماه پایان</th>--}}
-                                        {{--<th class="text-center">تغییرات</th>--}}
-                                    {{--</tr>--}}
-                                    {{--</thead>--}}
-                                    {{--<tbody>--}}
-                                    {{--@foreach($educations as $education)--}}
-                                        {{--<tr>--}}
-                                            {{--<td style="vertical-align: middle;" class="text-center">--}}
-                                                {{--<img style="width: 50px;height: 50px;" src="{{asset($education->logo)}}"--}}
-                                                     {{--alt="{{$education->logo}}"></td>--}}
-                                            {{--<td style="vertical-align: middle;" class="text-center">{{$education->university_name}}</td>--}}
-                                            {{--<td style="vertical-align: middle" class="text-center">{{$education->field}}</td>--}}
-                                            {{--<td style="vertical-align: middle" class="text-center">{{$education->tendency}}</td>--}}
-                                            {{--<td style="vertical-align: middle" class="text-center">{{$education->start_date}}</td>--}}
-                                            {{--<td style="vertical-align: middle" class="text-center">{{$education->finish_date}}</td>--}}
-                                            {{--<td style="display: flex;">--}}
-                                                {{--<div style="margin-top: -20px;" class="modal-footer col-md-6">--}}
-                                                    {{--<button style="margin-top: 16px; width:30px; height: 30px;" data-toggle="modal"--}}
-                                                            {{--data-href="{{ route('education.edit', $education->id) }}"--}}
-                                                            {{--data-target="#myModal2" class="btn btn-warning edit">--}}
-                                                        {{--<i style="margin-right: -3px;" class="fa fa-paint-brush" aria-hidden="true">--}}
-                                                        {{--</i>--}}
-                                                {{--</div>--}}
-
-                                                {{--<form action="{{ route('education.destroy', $education->id) }}"--}}
-                                                      {{--method="POST">--}}
-                                                    {{--{{ method_field('DELETE') }}--}}
-                                                    {{--{{ csrf_field() }}--}}
-
-                                                        {{--<button style="margin-right: 10px; margin-top: 12px; width: 30px; height: 30px"--}}
-                                                                {{--class="btn btn-danger"><i style="margin-right: -3px"--}}
-                                                                                          {{--class="fa fa-trash"--}}
-                                                                                          {{--aria-hidden="true"></i>--}}
-                                                        {{--</button>--}}
-
-                                                {{--</form>--}}
-                                            {{--</td>--}}
-                                        {{--</tr>--}}
-                                    {{--@endforeach--}}
-                                    {{--</tbody>--}}
-                                {{--</table>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-
     <div class="modal inmodal" id="myModal4" tabindex="-1" role="dialog"
          aria-hidden="true">
         <div class="modal-dialog">
@@ -276,11 +217,7 @@
 @endsection
 
 
-@section('scripts')
-    $('button.edit').click(function(e){
-    e.preventDefault();
-    $.get($(this).attr('data-href'),function(data){
-    $('#myModal2').find('.modal-body').html(data);
-    })
-    });
+@section('script')
+    <script src="js/cheouts.js"></script>
+    <script src="js/time.js"></script>
 @endsection

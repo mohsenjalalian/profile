@@ -5,17 +5,34 @@
 <script src="/js/front/scrollbar.min.js"></script>
 <script src="/js/front/snap.svg-min.js"></script>
 <script src="/js/front/kar.js"></script>
-
+<script src="js/front/timelineweb.js"></script>
 <!--jquery-->
-
+<script>
+    $(function(){
+        $().timelinr({
+            arrowKeys: 'true'
+        })
+    });
+</script>
 <script>
     $(document).ready(function () {
+        $('.nav-pills li:first-child').addClass('active').show();
+        $('.tab-content .tab-pane:first').addClass('active').show()
+    });
 
+    $(document).ready(function () {
+        $('.nav-pills li:first-child').addClass('active').show();
+        $('.tab-content .firest:first').addClass('active').show()
+    });
+</script>
+<script>
+    $(document).ready(function () {
         $("#owl").owlCarousel({
             autoPlay: 3000, //Set AutoPlay to 3 seconds
             items: 2,
             itemsDesktop: [1199, 3],
             itemsDesktopSmall: [979, 3]
+
         });
 
         $("#owl2").owlCarousel({
@@ -42,14 +59,33 @@
             itemsDesktop: [1199, 3],
             itemsDesktopSmall: [979, 3]
         });
-        $("#owl6").owlCarousel({
-            autoPlay: 5000, //Set AutoPlay to 3 seconds
+        $(".owl6").owlCarousel({
+            autoPlay: 6000, //Set AutoPlay to 3 seconds
             items: 1,
+            itemsDesktop: [1199, 3],
+            itemsDesktopSmall: [979, 3]
+        });
+        $("#owl7").owlCarousel({
+            autoPlay: 5000, //Set AutoPlay to 3 seconds
+            items: 2,
+            itemsDesktop: [1199, 3],
+            itemsDesktopSmall: [979, 3]
+        });
+        $("#owl8").owlCarousel({
+            autoPlay: 5000, //Set AutoPlay to 3 seconds
+            items: 2,
+            itemsDesktop: [1199, 3],
+            itemsDesktopSmall: [979, 3]
+        });
+        $("#owl9").owlCarousel({
+            autoPlay: 3000, //Set AutoPlay to 3 seconds
+            items: 3,
             itemsDesktop: [1199, 3],
             itemsDesktopSmall: [979, 3]
         });
     });
 </script>
+
 <script>
     new WOW().init();
 </script>
@@ -109,6 +145,14 @@
     })();
 </script>
 <script>
+    function chek(obj) {
+        obj.setCustomValidity('لطفا این قسمت را پر کنید')
+    }
+    function chek2(obj) {
+        obj.setCustomValidity('');
+    }
+</script>
+<script>
     (function ($) {
         $(window).on("load", function () {
             $(".content-a").mCustomScrollbar({
@@ -133,6 +177,13 @@
     (function ($) {
         $(window).on("load", function () {
             $(".content-a4").mCustomScrollbar({
+                axis: "yx"
+            });
+        });
+    })(jQuery);
+    (function ($) {
+        $(window).on("load", function () {
+            $(".content-a5").mCustomScrollbar({
                 axis: "yx"
             });
         });

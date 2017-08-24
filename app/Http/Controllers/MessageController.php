@@ -42,9 +42,9 @@ class MessageController extends Controller
         ]);
 
         if ($data) {
-            return redirect()->back()->with('info', 'با سپاس ارسال شد');
+            return redirect()->back()->with('success', 'با سپاس پیغام ارسال شد');
         }
-        return redirect()->back()->with('error', 'ارسال نشد');
+        return redirect()->back()->withErrors( 'متاسفانه پیغام شما ارسال نشد');
     }
 
     /**

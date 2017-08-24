@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-
+@inject('photo',\App\Http\Controllers\BlogController)
 @section('content')
 
     <div class="content-wrapper clearfix">
@@ -20,7 +20,7 @@
         <div style="margin-top: 20px;" class="col-lg-4">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    افزودن نظر
+                    افزودن
                 </div>
                 <div class="panel-body">
                     <form id="contact" action="{{route('blog.store')}}" method="post" enctype="multipart/form-data">
@@ -76,68 +76,79 @@
                                 @endif
                             </div>
                         </div>
-
-
-                        <div class="col-md-4">
+<div class="row">
+                        <div  class="col-md-5">
                             <div class="ibox float-e-margins">
                                 <div class="form-group{{ $errors->has('photo1') ? ' has-error': ''}}">
-                                    <div class="fileinput fileinput-new" data-provides="fileinput">
-                                        <span class="btn btn-default btn-file"><span
-                                                    class="fileinput-new">عکس ۱</span> <span
-                                                    class="fileinput-exists"><span class="fileinput-exists"><span
-                                                            style="color: #2aca76;">بارگذاری شد</span></span> </span>
-                                            <input type="file" name="photo[]"
-                                                   value="{{ Request::old('photo1') ?: ''}}" onchange="readURL1(this)"></span>
-                                        <p style="font-size: 10px;" class="text-center colorpicker">۲۰۰ * ۳۷۰</p>
+                                    <div style="width: 280px; margin-right: 15px;" class="fileinput fileinput-new input-group" data-provides="fileinput">
+                                        <div class="form-control" data-trigger="fileinput">
+                                            <p class="fileinput-exists" style="color: #2aca76;">بارگذاری شد</p>
+                                        </div>
+                                        <span style="border: 1px solid #e5e6e7;" class="input-group-addon btn btn-default btn-file">
+                                                    <span class="fileinput-new">بارگذاری</span>
+                                                    <span class="fileinput-exists">عوض کردن</span>
+                                                    <input type="file" name="photo[]"
+                                                           value="{{ Request::old('photo1') ?: ''}}" onchange="readURL1(this)">
+                                                </span>
+                                        <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">پاک کردن</a>
                                     </div>
+                                    <p style="font-size: 12px; margin-left: -170px;" class="pull-right colorpicker">۲۰۰ * ۳۷۰</p>
                                     @if($errors->has('photo1'))
                                         <span class="help-block">{{ $errors->first('photo1')}}</span>
                                     @endif
                                 </div>
                             </div>
                         </div>
-
-
-                        <div class="col-md-4">
+</div>
+                        <div class="row">
+                        <div  class="col-md-5">
                             <div class="ibox float-e-margins">
                                 <div class="form-group{{ $errors->has('photo2') ? ' has-error': ''}}">
-                                    <div class="fileinput fileinput-new" data-provides="fileinput">
-                                        <span class="btn btn-default btn-file"><span
-                                                    class="fileinput-new">عکس ۲</span><span
-                                                    class="fileinput-exists"><span class="fileinput-exists"><span
-                                                            style="color: #2aca76;">بارگذاری شد</span></span> </span>
-                                            <input type="file" name="photo[]"
-                                                   value="{{ Request::old('photo2') ?: ''}}" onchange="readURL2(this)"></span>
-                                        <p style="font-size: 10px;" class="text-center colorpicker">۲۰۰ * ۳۷۰</p>
+                                    <div style="width: 280px; margin-right:15px;" class="fileinput fileinput-new input-group" data-provides="fileinput">
+                                        <div class="form-control" data-trigger="fileinput">
+                                            <p class="fileinput-exists" style="color: #2aca76;">بارگذاری شد</p>
+                                        </div>
+                                        <span style="border: 1px solid #e5e6e7;" class="input-group-addon btn btn-default btn-file">
+                                                    <span class="fileinput-new">بارگذاری</span>
+                                                    <span class="fileinput-exists">عوض کردن</span>
+                                                    <input type="file" name="photo[]"
+                                                           value="{{ Request::old('photo2') ?: ''}}" onchange="readURL2(this)">
+                                                </span>
+                                        <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">پاک کردن</a>
                                     </div>
+                                    <p style="font-size: 12px; margin-left: -170px;" class="pull-right colorpicker">۲۰۰ * ۳۷۰</p>
                                     @if($errors->has('photo2'))
                                         <span class="help-block">{{ $errors->first('photo2')}}</span>
                                     @endif
                                 </div>
                             </div>
                         </div>
+                        </div>
 
-                        <div class="col-md-4">
-                            <div class="ibox float-e-margins">
-                                <div class="form-group{{ $errors->has('photo3') ? ' has-error': ''}}">
-                                    <div class="fileinput fileinput-new" data-provides="fileinput">
-                                        <span class="btn btn-default btn-file"><span
-                                                    class="fileinput-new">عکس ۳</span><span
-                                                    class="fileinput-exists"><span class="fileinput-exists"><span
-                                                            style="color: #2aca76;">بارگذاری شد</span></span> </span>
-                                            <input type="file" name="photo[]"
-                                                   value="{{ Request::old('photo3') ?: ''}}" onchange="readURL3(this)">
-                                        </span>
-                                        <p style="font-size: 10px;" class="text-center colorpicker">۲۰۰ * ۳۷۰</p>
+                        <div class="row">
+                            <div  class="col-md-5">
+                                <div class="ibox float-e-margins">
+                                    <div class="form-group{{ $errors->has('photo3') ? ' has-error': ''}}">
+                                        <div style="width: 280px; margin-right: 15px;" class="fileinput fileinput-new input-group" data-provides="fileinput">
+                                            <div class="form-control" data-trigger="fileinput">
+                                                <p class="fileinput-exists" style="color: #2aca76;">بارگذاری شد</p>
+                                            </div>
+                                            <span style="border: 1px solid #e5e6e7;" class="input-group-addon btn btn-default btn-file">
+                                                    <span class="fileinput-new">بارگذاری</span>
+                                                    <span class="fileinput-exists">عوض کردن</span>
+                                                    <input type="file" name="photo[]"
+                                                           value="{{ Request::old('photo3') ?: ''}}" onchange="readURL3(this)">
+                                                </span>
+                                            <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">پاک کردن</a>
+                                        </div>
+                                        <p style="font-size: 12px; margin-left: -170px;" class="pull-right colorpicker">۲۰۰ * ۳۷۰</p>
+                                        @if($errors->has('photo3'))
+                                            <span class="help-block">{{ $errors->first('photo3')}}</span>
+                                        @endif
                                     </div>
-                                    @if($errors->has('photo3'))
-                                        <span class="help-block">{{ $errors->first('photo3')}}</span>
-                                    @endif
                                 </div>
                             </div>
                         </div>
-
-
                         <button style="font-family: webmdesign;" class="btn btn-primary col-md-3" name="submit" type="submit" id="contact-submit"
                                 data-submit="...Sending">ارسال
                         </button>
@@ -155,7 +166,7 @@
                     <table class="footable table table-stripped" data-page-size="3" data-filter=#filter>
                         <thead>
                         <tr>
-                            <th class="text-center">عکس 1</th>
+                            <th class="text-center">عکس </th>
                             <th class="text-center">تیتر</th>
                             <th class="text-center">تاریخ</th>
                             <th class="text-center">توضیحات</th>
@@ -163,30 +174,30 @@
                         </tr>
                         </thead>
                         <tbody>
+
                         @foreach($blogs as $blog)
-
                             <tr>
-
                                 <td class="text-center">
-
-                                    @if(!empty($blogs[0]->album[0]->photo))
-                                        <img width="50" height="50"
-                                             src="{{\App\Http\Controllers\BlogController::ALBUM_PATH.'/'.$blogs[0]->album[0]->photo}}"
-                                             alt=""></td>
-                                   @endif
+                                     @if($blog->album->first())
+                                            <img width="50" height="50"
+                                                 src="{{$photo::ALBUM_PATH.'/'. $blog->album->first()->photo}}"
+                                                 alt="{{$blog->album->first()->photo}}">
+                                        @else
+                                            <img width="50" height="50"
+                                                 src="/image/admin.png" alt="">
+                                        @endif
+                                </td>
 
                                 <td style=" vertical-align: middle;"
                                     class="text-center">{{$blog->title}}</td>
                                 <td style="vertical-align: middle;" class="text-center">{{$blog->date}}</td>
                                 <td style="vertical-align: middle;"
                                     class="text-center">
-                                    {{--<a href="#" title="{{$blog->description}}">--}}
                                         <i style="color: #239963; font-size: 22px;" class="fa fa-check"></i>
-                                    {{--</a>--}}
+
                                 </td>
 
                                 <td style="display: flex; border: none;">
-                                    {{--<a href="{{route('recommend.edit',$recommend->id)}}" class="edit">--}}
 
                                     <button style="margin-top: 12px; width:30px; height: 30px;" data-toggle="modal" data-target="#myModal4"
                                             data-href="{{route('blog.edit',$blog->id)}}"
@@ -194,9 +205,8 @@
                                         <i style="margin-right: -5px; position: relative; top: -2px;" class="fa fa-paint-brush" aria-hidden="true">
                                         </i>
                                     </button>
-                                    {{--</a>--}}
                                     <form action="{{ route('blog.destroy', $blog->id) }}"
-                                          method="POST">
+                                          method="POST" class="frm">
                                         {{ method_field('DELETE') }}
                                         {{ csrf_field() }}
 
@@ -235,7 +245,7 @@
                         داده میشود
                     </small>
                 </div>
-                <div style="background-color: #fff !important; height: 470px;" class="modal-body col-md-12">
+                <div style="background-color: #fff !important; height:auto;" class="modal-body col-md-12">
                     <div class="container">
 
                     </div>
@@ -249,6 +259,15 @@
 
     @include('admin.layouts.success')
     @include('admin.layouts.errors')
+
+@endsection
+
+@section('script')
+    <script src="js/cheouts.js"></script>
+    <script src="js/time.js"></script>
+    <script>
+
+    </script>
 
 @endsection
 

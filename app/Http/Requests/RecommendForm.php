@@ -56,6 +56,5 @@ class RecommendForm extends FormRequest
         }
 
         $recommend = Recommendation::create($data);
-
     }
 }

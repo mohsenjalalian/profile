@@ -9,7 +9,7 @@
             <ul class="nav navbar-top-links navbar-right">
                 <li>
                     <a href="{{route('home')}}" target="_blank">
-                        <i class="fa fa-home" title="خانه"></i><span class="m-r-sm text-muted welcome-message">خانه</span>
+                        <i class="fa fa-home" title="سایت"></i><span class="m-r-sm text-muted welcome-message">سایت</span>
                     </a>
                 </li>
                 <li>
@@ -23,8 +23,6 @@
                     </a>
                 </li>
             </ul>
-
-        </nav>
 
     </div>
 

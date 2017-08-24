@@ -3,8 +3,6 @@
 
 
 @section('content')
-
-
         <div class="wrapper wrapper-content">
             <div class="row">
                 <div class="col-lg-12 animated fadeInRight">
@@ -22,7 +20,7 @@
                                 <td class="mail-subject">{{$message->subject}}</td>
                                 <td class="text-right mail-date">{{$message->email}}</td>
                                 <td class="text-right mail-date" style="direction: ltr">{{$message->created_at->diffForHumans()}}</td>
-                                <td><a href="{{route('message.show',$message->id)}}"><button class="btn btn-primary">مشاهده </button></a></td>
+                                <td><a href="{{route('message.show',$message->id)}}"><button style="font-family: webmdesign;" class="btn btn-primary">مشاهده </button></a></td>
                             </tr>
                                 @endforeach
                             </tbody>

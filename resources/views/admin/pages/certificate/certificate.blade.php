@@ -33,7 +33,6 @@
                                   enctype="multipart/form-data">
                                 {{csrf_field()}}
 
-
                                 <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
                                     <div class="col-sm-10 col-md-12">
                                         <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="نام "
@@ -44,6 +43,8 @@
                                         @endif
                                     </div>
                                 </div>
+
+
                                 <div class="form-group{{ $errors->has('info') ? ' has-error': ''}}">
                                     <div class="col-sm-10 col-md-12">
                                         <textarea oninvalid="return chek(this)" oninput="return chek2(this)" style="max-width: 280px; max-height: 70px;" type="text" placeholder="توضیحات" class="form-control m-b" name="info"
@@ -53,6 +54,8 @@
                                         @endif
                                     </div>
                                 </div>
+
+
                                 <p style="margin-right: 15px;">نوع</p>
                                 <div style="margin-right: 15px;" class="form-group{{ $errors->has('type') ? ' has-error': ''}}">
                                     <div class="i-checks"><label> <input type="radio" name="type" value="دوره"
@@ -62,36 +65,61 @@
                                     <div class="i-checks"><label> <input type="radio" name="type" value="جایزه"
                                                                          tabindex="2"> <i></i> جایزه </label></div>
                                     <div class="i-checks"><label> <input type="radio" name="type" value="گواهی"
-                                                                         tabindex="2"> <i></i> گواهی </label></div>
+                                                                         tabindex="2" > <i></i> گواهی </label></div>
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="ibox float-e-margins">
-                                            <div class="col-md-12">
-                                                <div class="ibox float-e-margins">
-                                                    <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
-                                                        <div class="fileinput fileinput-new" data-provides="fileinput">
-                                        <span class="btn btn-default btn-file"><span
-                                                    class="fileinput-new">بارگذاری</span>
-                                            <span class="fileinput-exists"><span
-                                                        style="color: #2aca76;">بارگذاری شد</span>
-                                            </span>
-                                            <input type="file"
-                                                   value="{{ Request::old('photo') ?: ''}}" name="photo"></span>
-
-                                                        </div>
-                                                        @if($errors->has('photo'))
-                                                            <span class="help-block">{{ $errors->first('photo')}}</span>
-                                                        @endif
-                                                    </div>
+                                <div  class="col-md-5">
+                                    <div class="ibox float-e-margins">
+                                        <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
+                                            <div style="width: 280px; margin-right: 15px;" class="fileinput fileinput-new input-group" data-provides="fileinput">
+                                                <div class="form-control" data-trigger="fileinput">
+                                                    <p class="fileinput-exists" style="color: #2aca76;">بارگذاری شد</p>
                                                 </div>
+                                                <span style="border: 1px solid #e5e6e7;" class="input-group-addon btn btn-default btn-file">
+                                                    <span class="fileinput-new">بارگذاری</span>
+                                                    <span class="fileinput-exists">عوض کردن</span>
+                                                    <input type="file" value="{{ Request::old('photo') ?: ''}}" name="photo">
+                                                </span>
+                                                <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">پاک کردن</a>
                                             </div>
+                                            <p style="font-size: 12px; margin-left: -170px;" class="pull-right colorpicker">۵۷۰ * ۵۷۰</p>
+                                            @if($errors->has('photo'))
+                                                <span class="help-block">{{ $errors->first('photo')}}</span>
+                                            @endif
                                         </div>
-                                        <button style="font-family: webmdesign;" class="btn btn-primary col-md-6" name="submit" type="submit"
+                                    </div>
+                                </div>
+
+
+
+                                {{--<div class="row">--}}
+                                    {{--<div class="col-md-12">--}}
+                                        {{--<div class="ibox float-e-margins">--}}
+                                            {{--<div class="col-md-12">--}}
+                                                {{--<div class="ibox float-e-margins">--}}
+                                                    {{--<div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">--}}
+                                                        {{--<div class="fileinput fileinput-new" data-provides="fileinput">--}}
+                                        {{--<span class="btn btn-default btn-file"><span--}}
+                                                    {{--class="fileinput-new">بارگذاری</span>--}}
+                                            {{--<span class="fileinput-exists"><span--}}
+                                                        {{--style="color: #2aca76;">بارگذاری شد</span>--}}
+                                            {{--</span>--}}
+                                            {{--<input type="file"--}}
+                                                   {{--value="{{ Request::old('photo') ?: ''}}" name="photo"></span>--}}
+
+                                                        {{--</div>--}}
+                                                        {{--@if($errors->has('photo'))--}}
+                                                            {{--<span class="help-block">{{ $errors->first('photo')}}</span>--}}
+                                                        {{--@endif--}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+
+                                        <button style="font-family: webmdesign; margin-top: 70px;" class="btn btn-primary col-md-6" name="submit" type="submit"
                                                 id="contact-submit" data-submit="...Sending">ارسال
                                         </button>
-                                    </div>
                                 </div>
                             </form>
                         </div>
@@ -104,7 +132,6 @@
                     <div class="ibox-content">
                         <input type="text" class="form-control input-sm m-b-xs" id="filter"
                                placeholder="سرچ کردن">
-
                         <table class="footable table table-stripped" data-page-size="3" data-filter=#filter>
                             <thead>
                             <tr>
@@ -120,19 +147,24 @@
 
                                 <tr>
                                     <td style="vertical-align: middle; width: 30px;" class="text-center">
+                                    @if(empty($certificate->photo))
+                                            <img style="height: 50px;"
+                                                 src="/images/front/certificate2.png"
+                                                 alt="گواهی">
+                                        @else
                                         <img style="height: 50px;"
                                              src="{{$certificate->photo}}"
-                                             alt="{{$certificate->photo}}"></td>
+                                             alt="{{$certificate->photo}}">
+                                        @endif
+                                    </td>
+
                                     <td style="vertical-align: middle;"
                                         class="text-center">{{$certificate->name}}</td>
                                     <td style="vertical-align: middle;"
                                         class="text-center">{{$certificate->type}}</td>
                                     <td style="vertical-align: middle;" class="text-center">
-                                        {{--<a href="#" title=" {{$certificate->info}}">--}}
                                             <i style="color: #239963; font-size: 22px;" class="fa fa-check"></i>
-                                        {{--</a>--}}
                                     </td>
-
                                     <td style="display: flex; border: none;">
                                         <button style="margin-top: 12px; width:30px; height: 30px;" data-toggle="modal" data-target="#myModal4"
                                                 data-href="{{route('certification.edit', $certificate->id)}}"
@@ -146,14 +178,16 @@
             </div>
 
             <form action="{{ route('certification.destroy', $certificate->id) }}"
-                  method="POST">
+                  method="POST" class="frm" >
+
+
                 {{ method_field('DELETE') }}
                 {{ csrf_field() }}
 
                 <button style=" margin-top: 12px; margin-right: 10px; width: 30px; height: 30px"
-                        class="btn btn-danger"><i style="margin-right: -4px; position: relative; top: -2px;" class="fa fa-trash"
+                        class="btn btn-danger delete">
+                    <i style="margin-right: -4px; position: relative; top: -2px;" class="fa fa-trash"
                                                   aria-hidden="true"></i></button>
-
             </form>
 
             @endforeach
@@ -197,11 +231,12 @@
 @endsection
 
 
-@section('scripts')
-    $('button.edit').click(function(e){
-    e.preventDefault();
-    $.get($(this).attr('data-href'),function(data){
-    $('#myModal2').find('.modal-body').html(data);
-    })
+@section('script')
+    <script src="js/plugins/iCheck/icheck.min.js"></script>
+    <script>
+    $('.i-checks').iCheck({
+    checkboxClass: 'icheckbox_square-green',
+    radioClass: 'iradio_square-green',
     });
+    </script>
 @endsection

@@ -11,8 +11,15 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 
+/**
+ * Class BlogController
+ * @package App\Http\Controllers
+ */
 class BlogController extends Controller
 {
+    /**
+     *
+     */
     const ALBUM_PATH = 'images/album';
 
     /**
@@ -23,7 +30,8 @@ class BlogController extends Controller
     public function index()
     {
         $blogs = Blog::all();
-        return view('admin.pages.blog.blog', compact('blogs'));
+        $albums = Album::all();
+        return view('admin.pages.blog.blog', compact('blogs', 'albums'));
     }
 
     /**
@@ -43,7 +51,6 @@ class BlogController extends Controller
      */
     public function store(BlogForm $form)
     {
-
         $form->process();
         return redirect()->route('blog')->with('success', 'بلاگ شما با موفقیت ساخته شد');
     }
@@ -56,7 +63,7 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        //
+        Blog::findOrFail($id);
     }
 
     /**
@@ -94,40 +101,43 @@ class BlogController extends Controller
             $blog->title = Input::get('title');
             $blog->description = Input::get('description');
             $blog->date = Input::get('date');
+
             $blog->save();
 
             $rules = array(
                 'photo[]' => 'file|mimes:jpeg,bmp,png|max:5000',
             );
             $validator = Validator::make(Input::all(), $rules);
+
             if (!$validator) {
                 return redirect()->back()->withErrors('اطلاعات وارد شده اشتباه است');
             } else {
                 $photos = request()->file('photo');
-                if ($photos) {
-                    /**
-                     * @var $photo UploadedFile
-                     */
-                    foreach ($photos as $photo_id => $photo) {
+
+                if (!empty($photos)) {
+                    foreach ($photos as  $photo_id => $photo) {
                         $image_name = time()."_".$photo->getClientOriginalName();
                         $photo->move(BlogController::ALBUM_PATH, $image_name);
+
                         Album::updateOrCreate(
                             [
                                 'id' => $photo_id
                             ],
                                 [
                                     'photo' => $image_name,
-                                    'blog_id'=>$id
+                                    'blog_id'=> $id
                                 ]
                             );
                     }
                 }
             }
-
-            // redirect
-            return redirect()->route('blog')->with('success', 'بلاگ شما با موفقیت اصلاح شد');
         }
+        
+        // redirect
+        return redirect()->route('blog')->with('success', 'بلاگ شما با موفقیت اصلاح شد');
     }
+
+
 
 
     /**

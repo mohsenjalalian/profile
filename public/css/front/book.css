@@ -38,6 +38,7 @@ ul {
 	position: relative;
 	width: 160px; 
 	height: 220px;
+	margin-left: 100px;
 	-webkit-perspective: 1000px;
 	-moz-perspective: 1000px;
 	perspective: 1000px;
@@ -611,8 +612,12 @@ figcaption {
 figcaption h1 {
 	margin: 0;
 	float:right;
-	font-size:20px !important;
-	margin-top:40px;
+	font-size:16px !important;
+    text-align: right;
+	line-height: 22px;
+	width: 100%;
+	position: relative;
+	top:40px;
 }
 
 figcaption span {
@@ -621,9 +626,10 @@ figcaption span {
 	font-size:20px;
 	 display: block;
     float: right;
-    position: relative;
-    top: 80px !important;
-    right: -80px !important;
+text-align: right;
+	width: 100%;
+	position: relative;
+	top:60px;
 }
 
 

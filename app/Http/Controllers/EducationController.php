@@ -55,7 +55,7 @@ class EducationController extends Controller
      */
     public function show($id)
     {
-        //
+        Education::findOrFail($id);
     }
 
     /**

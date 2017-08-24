@@ -56,7 +56,8 @@ class CertificationController extends Controller
      */
     public function show($id)
     {
-        //
+        Certification::findOrfail($id);
+
     }
 
     /**
@@ -68,7 +69,8 @@ class CertificationController extends Controller
     public function edit($id)
     {
         $certificate = Certification::find($id);
-        return view('admin.pages.certificate.update', compact('certificate'))->renderSections()['content'];
+        return view('admin.pages.certificate.update', compact('certificate'))
+            ->renderSections()['content'];
     }
 
     /**

@@ -56,7 +56,7 @@ class DocsController extends Controller
      */
     public function show($id)
     {
-        //
+        Docs::findOrFail($id);
     }
 
     /**

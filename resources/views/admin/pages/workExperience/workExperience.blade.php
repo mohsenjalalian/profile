@@ -30,19 +30,73 @@
 
                         <div class="form-group{{ $errors->has('title') ? ' has-error': ''}}">
                             <div class="col-sm-10 col-md-12">
-                                <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="نام شغل"
-                                       value="{{ Request::old('title') ?: ''}}" class="form-control m-b" name="title" tabindex="1" required autofocus>
+                                <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text"
+                                       placeholder="نام شغل"
+                                       value="{{ Request::old('title') ?: ''}}" class="form-control m-b" name="title"
+                                       tabindex="1" required autofocus>
                                 @if($errors->has('name'))
                                     <span class="help-block">{{ $errors->first('name')}}</span>
                                 @endif
                             </div>
                         </div>
 
-
+                        <div class="container col-md-12">
+                            <div class="form-group">
+                                <div class="form-group{{ $errors->has('start_date') ? ' has-error': ''}}">
+                                    <div class="input-group">
+                                        <div data-mdpersiandatetimepickershowing="false" title="" data-original-title=""
+                                             data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:10,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}"
+                                             data-mdpersiandatetimepicker="" style="cursor: pointer;"
+                                             class="input-group-addon" data-mddatetimepicker="true" data-trigger="click"
+                                             data-targetselector="#fromDate1" data-groupid="group1" data-fromdate="true"
+                                             data-enabletimepicker="false" data-placement="left">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </div>
+                                        <input data-mdpersiandatetimepickershowing="false"
+                                               value="{{ Request::old('start_date') ?: ''}}" title=""
+                                               data-original-title=""
+                                               data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:9,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}"
+                                               data-mdpersiandatetimepicker="" class="form-control" id="fromDate1"
+                                               placeholder="از تاریخ" data-mddatetimepicker="true" data-trigger="click"
+                                               data-targetselector="#fromDate1" data-groupid="group1"
+                                               data-fromdate="true" data-enabletimepicker="false" data-placement="right"
+                                               name="start_date" type="text">
+                                    </div>
+                                    @if($errors->has('start_date'))
+                                        <span class="help-block">{{ $errors->first('start_date')}}</span>
+                                    @endif
+                                </div>
+                                <div class="form-group{{ $errors->has('finish_date') ? ' has-error': ''}}">
+                                    <div class="input-group">
+                                        <div data-mdpersiandatetimepickershowing="false" title="" data-original-title=""
+                                             data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:10,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}"
+                                             data-mdpersiandatetimepicker="" style="cursor: pointer;"
+                                             class="input-group-addon" data-mddatetimepicker="true" data-trigger="click"
+                                             data-targetselector="#toDate1" data-groupid="group1" data-todate="true"
+                                             data-placement="left">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </div>
+                                        <input data-mdpersiandatetimepickershowing="false" name="finish_date"
+                                               value="{{ Request::old('finish_date') ?: ''}}" title=""
+                                               data-original-title=""
+                                               data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:23,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}"
+                                               data-mdpersiandatetimepicker="" class="form-control" id="toDate1"
+                                               placeholder="تا تاریخ" data-mddatetimepicker="true" data-trigger="click"
+                                               data-targetselector="#toDate1" data-groupid="group1" data-todate="true"
+                                               data-enabletimepicker="false" data-placement="right" type="text">
+                                    </div>
+                                    @if($errors->has('finish_date'))
+                                        <span class="help-block">{{ $errors->first('finish_date')}}</span>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
                         <div class="form-group{{ $errors->has('company') ? ' has-error': ''}}">
                             <div class="col-sm-10 col-md-12">
-                                <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="شرکت"
-                                       value="{{ Request::old('company') ?: ''}}" class="form-control m-b" name="company" tabindex="1" required autofocus>
+                                <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text"
+                                       placeholder="شرکت"
+                                       value="{{ Request::old('company') ?: ''}}" class="form-control m-b"
+                                       name="company" tabindex="1" required autofocus>
                                 @if($errors->has('company'))
                                     <span class="help-block">{{ $errors->first('company')}}</span>
                                 @endif
@@ -51,7 +105,9 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group{{ $errors->has('city') ? ' has-error': ''}}">
-                                    <select oninvalid="return chek(this)" oninput="return chek2(this)" style="width: 279px; margin-right: 15px;" name="city" class="select2_demo_1 form-control">
+                                    <select oninvalid="return chek(this)" oninput="return chek2(this)"
+                                            style="width: 279px; margin-right: 15px;" name="city"
+                                            class="select2_demo_1 form-control">
                                         <option value="{{ Request::old('city') ?: '0'}}">استان را انتخاب کنید</option>
                                         <option value="آذربایجان شرقی">آذربایجان شرقی</option>
                                         <option value="آذربایجان غربی">آذربایجان غربی</option>
@@ -91,62 +147,26 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="container col-md-12">
-                            <div class="form-group">
-                                <div class="form-group{{ $errors->has('start_date') ? ' has-error': ''}}">
-                                    <div class="input-group">
-                                        <div data-mdpersiandatetimepickershowing="false" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:10,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" style="cursor: pointer;" class="input-group-addon" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#fromDate1" data-groupid="group1" data-fromdate="true" data-enabletimepicker="false" data-placement="left">
-                                            <span class="glyphicon glyphicon-calendar"></span>
-                                        </div>
-                                        <input data-mdpersiandatetimepickershowing="false" value="{{ Request::old('start_date') ?: ''}}"  title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:9,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" class="form-control" id="fromDate1" placeholder="از تاریخ" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#fromDate1" data-groupid="group1" data-fromdate="true" data-enabletimepicker="false" data-placement="right" name="start_date" type="text">
-                                    </div>
-                                    @if($errors->has('start_date'))
-                                        <span class="help-block">{{ $errors->first('start_date')}}</span>
-                                    @endif
-                                </div>
-                                {{--<div class="form-group{{ $errors->has('finish_date') ? ' has-error': ''}}">--}}
-                                    {{--<div class="input-group">--}}
-                                        {{--<div data-mdpersiandatetimepickershowing="false" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:10,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" style="cursor: pointer;" class="input-group-addon" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#fromDate1" data-groupid="group1" data-fromdate="true" data-enabletimepicker="false" data-placement="left">--}}
-                                            {{--<span class="glyphicon glyphicon-calendar"></span>--}}
-                                        {{--</div>--}}
-                                        {{--<input data-mdpersiandatetimepickershowing="false" name="finish_date"--}}
-                                               {{--value="{{ Request::old('finish_date') ?: ''}}" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:9,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" class="form-control" id="toDate1" placeholder="تا تاریخ" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#fromDate1" data-groupid="group1" data-fromdate="true" data-enabletimepicker="false" data-placement="right" type="text">--}}
-                                    {{--</div>--}}
-                                    {{--@if($errors->has('finish_date'))--}}
-                                        {{--<span class="help-block">{{ $errors->first('finish_date')}}</span>--}}
-                                    {{--@endif--}}
-                                {{--</div>--}}
-                                <div class="form-group{{ $errors->has('finish_date') ? ' has-error': ''}}">
-                                    <div class="input-group">
-                                        <div data-mdpersiandatetimepickershowing="false" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:10,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" style="cursor: pointer;" class="input-group-addon" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#toDate1" data-groupid="group1" data-todate="true" data-placement="left">
-                                            <span class="glyphicon glyphicon-calendar"></span>
-                                        </div>
-                                        <input data-mdpersiandatetimepickershowing="false" name="finish_date"
-                                               value="{{ Request::old('finish_date') ?: ''}}" title="" data-original-title="" data-mdpersiandatetimepickerselecteddatetime="{&quot;Year&quot;:1393,&quot;Month&quot;:10,&quot;Day&quot;:23,&quot;Hour&quot;:0,&quot;Minute&quot;:0,&quot;Second&quot;:0}" data-mdpersiandatetimepicker="" class="form-control" id="toDate1" placeholder="تا تاریخ" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#toDate1" data-groupid="group1" data-todate="true" data-enabletimepicker="false" data-placement="right" type="text">
-                                    </div>
-                                    @if($errors->has('finish_date'))
-                                        <span class="help-block">{{ $errors->first('finish_date')}}</span>
-                                    @endif
-                                </div>
-                            </div>
-                            <div class="row">
+                        <div class="row">
                             <div class="form-group{{ $errors->has('about') ? ' has-error': ''}}">
                                 <div class="col-sm-10 col-md-12">
-                                <textarea oninvalid="return chek(this)" oninput="return chek2(this)" style="height: 70px; max-height: 80px; max-width: 280px;" type="text"
-                                          value="{{ Request::old('about') ?: ''}}" name="about" placeholder="توضیحات" tabindex="1" required autofocus
+                                <textarea oninvalid="return chek(this)" oninput="return chek2(this)"
+                                          style="height: 70px; margin-right: 15px; max-height: 70px; max-width: 280px;"
+                                          type="text"
+                                          value="{{ Request::old('about') ?: ''}}" name="about" placeholder="توضیحات"
+                                          tabindex="1" required autofocus
                                           class="form-control m-b"></textarea>
                                     @if($errors->has('about'))
                                         <span class="help-block">{{ $errors->first('about')}}</span>
                                     @endif
                                 </div>
                             </div>
-                            </div>
-                            <fieldset>
-                                <button style="font-family: webmdesign;" class="btn btn-primary col-md-4" name="submit" type="submit" id="contact-submit" data-submit="...Sending">ارسال</button>
-                            </fieldset>
                         </div>
-
+                        <fieldset>
+                            <button style="font-family: webmdesign;" class="btn btn-primary col-md-4" name="submit"
+                                    type="submit" id="contact-submit" data-submit="...Sending">ارسال
+                            </button>
+                        </fieldset>
                     </form>
                 </div>
             </div>
@@ -175,31 +195,35 @@
 
                             <tr>
                                 <td style="vertical-align: middle;" class="text-center">{{$workExperience->title}}</td>
-                                <td style="vertical-align: middle;" class="text-center">{{$workExperience->company}}</td>
+                                <td style="vertical-align: middle;"
+                                    class="text-center">{{$workExperience->company}}</td>
                                 <td style="vertical-align: middle;" class="text-center">{{$workExperience->city}}</td>
-                                <td style="vertical-align: middle;" class="text-center">{{$workExperience->start_date}}</td>
-                                <td style="vertical-align: middle;" class="text-center">{{$workExperience->finish_date}}</td>
+                                <td style="vertical-align: middle;"
+                                    class="text-center">{{$workExperience->start_date}}</td>
+                                <td style="vertical-align: middle;"
+                                    class="text-center">{{$workExperience->finish_date}}</td>
                                 <td style="vertical-align: middle;" class="text-center">
-                                    {{--<a href="#" title="{{$workExperience->about}}">--}}
-                                        <i style="color: #239963; font-size: 22px;" class="fa fa-check"></i>
-                                    {{--</a>--}}
+                                    <i style="color: #239963; font-size: 22px;" class="fa fa-check"></i>
                                 </td>
 
                                 <td style="border: none; text-align: center; width: 10px;">
-                                    {{--<a href="{{route('work-experience.edit',$workExperience->id)}}">--}}
-                                    <button style="margin-top: 12px; width:30px; height: 30px;" data-toggle="modal" data-target="#myModal4"
+                                    <button style="margin-top: 12px; width:30px; height: 30px;" data-toggle="modal"
+                                            data-target="#myModal4"
                                             data-href="{{route('work-experience.edit',$workExperience->id)}}"
-                                             class="btn btn-warning edit md-trigger">
-                                        <i style="margin-right: -5px; position: relative; top: -2px;" class="fa fa-paint-brush" aria-hidden="true">
+                                            class="btn btn-warning edit md-trigger">
+                                        <i style="margin-right: -5px; position: relative; top: -2px;"
+                                           class="fa fa-paint-brush" aria-hidden="true">
                                         </i>
                                     </button>
-                                    {{--</a>--}}
-                                    <form action="{{ route('work-experience.destroy',$workExperience->id) }}" method="POST">
+                                    <form action="{{ route('work-experience.destroy',$workExperience->id) }}"
+                                          method="POST" class="frm">
                                         {{ method_field('DELETE') }}
                                         {{ csrf_field() }}
                                         <button style="margin-top: 0px;  width: 30px; height: 30px;"
-                                                class="btn btn-danger"><i style="margin-right: -4px; position: relative; top: -2px;" class="fa fa-trash"
-                                                                          aria-hidden="true"></i></button>
+                                                class="btn btn-danger"><i
+                                                    style="margin-right: -4px; position: relative; top: -2px;"
+                                                    class="fa fa-trash"
+                                                    aria-hidden="true"></i></button>
                                     </form>
                                 </td>
                             </tr>
@@ -217,75 +241,6 @@
             </div>
         </div>
     </div>
-
-    {{--<div class="wrapper wrapper-content animated fadeInRight col-md-8">--}}
-            {{--<div class="row">--}}
-                {{--<div style="margin-top: 10px;">--}}
-                    {{--<div class="ibox float-e-margins">--}}
-
-                        {{--<div class="ibox-content">--}}
-                            {{--<div class="table-responsive">--}}
-                                {{--<table class="table table-striped table-bordered table-hover dataTables-example" >--}}
-                                    {{--<thead>--}}
-
-                                    {{--<tr>--}}
-                                        {{--<th class="text-center">موقعیت</th>--}}
-                                        {{--<th class="text-center">شرکت</th>--}}
-                                        {{--<th class="text-center">شهر</th>--}}
-                                        {{--<th class="text-center">سال شروع</th>--}}
-                                        {{--<th class="text-center">سال پایان</th>--}}
-                                        {{--<th class="text-center">توضیحات</th>--}}
-                                        {{--<th class="text-center">تغییرات</th>--}}
-                                    {{--</tr>--}}
-                                    {{--</thead>--}}
-                                    {{--<tbody>--}}
-                                    {{--@foreach($workExperiences as $workExperience)--}}
-
-                                        {{--<tr>--}}
-                                            {{--<td style="vertical-align: middle;" class="text-center">{{$workExperience->title}}</td>--}}
-                                            {{--<td style="vertical-align: middle;" class="text-center">{{$workExperience->company}}</td>--}}
-                                            {{--<td style="vertical-align: middle;" class="text-center">{{$workExperience->city}}</td>--}}
-                                            {{--<td style="vertical-align: middle;" class="text-center">{{$workExperience->start_date}}</td>--}}
-                                            {{--<td style="vertical-align: middle;" class="text-center">{{$workExperience->finish_date}}</td>--}}
-                                            {{--<td class="text-justify">{{$workExperience->about}}</td>--}}
-                                            {{--<td style="display: flex; border: none">--}}
-                                                {{--<a href="{{route('work-experience.edit',$workExperience->id)}}">--}}
-                                                {{--<button style="margin-top: 10px; width: 30px; height: 30px;" data-toggle="modal"--}}
-                                                        {{--data-href="{{route('work-experience.edit',$workExperience->id)}}"--}}
-                                                        {{--data-target="#myModal2" class="btn btn-warning edit"><i style="margin-right: -4px;"--}}
-                                                        {{--class="fa fa-paint-brush" aria-hidden="true"></i></button>--}}
-                                                {{--</a>--}}
-                                                {{--<form action="{{ route('work-experience.destroy',$workExperience->id) }}" method="POST">--}}
-                                                    {{--{{ method_field('DELETE') }}--}}
-                                                    {{--{{ csrf_field() }}--}}
-                                                    {{--<button style="margin-right: 10px; margin-top: 10px; width: 30px; height: 30px;"--}}
-                                                            {{--class="btn btn-danger"><i style="margin-right: -3px;" class="fa fa-trash"--}}
-                                                                                      {{--aria-hidden="true"></i></button>--}}
-                                                {{--</form>--}}
-                                            {{--</td>--}}
-                                        {{--</tr>--}}
-                                    {{--@endforeach--}}
-                                    {{--</tbody>--}}
-                                {{--</table>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-
-
-    {{--<div class="md-modal md-effect-13" id="modal-13">--}}
-        {{--<div class="md-content">--}}
-            {{--<h3>Modal Dialog</h3>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-
-    {{--<div class="container">--}}
-
-    {{--</div>--}}
-    {{--<div class="md-overlay"></div>--}}
     <div class="modal inmodal" id="myModal4" tabindex="-1" role="dialog"
          aria-hidden="true">
         <div class="modal-dialog">
@@ -299,7 +254,7 @@
                         داده میشود
                     </small>
                 </div>
-                <div style="background-color: #fff !important; height: 470px;" class="modal-body col-md-12">
+                <div style="background-color: #fff !important; height: 490px;" class="modal-body col-md-12">
                     <div class="container">
 
                     </div>
@@ -314,11 +269,7 @@
 @endsection
 
 
-@section('scripts')
-    $('button.edit').click(function(e){
-    e.preventDefault();
-    $.get($(this).attr('data-href'),function(data){
-    $('#myModal2').find('.modal-body').html(data);
-    })
-    });
+@section('script')
+    <script src="js/cheouts.js"></script>
+    <script src="js/time.js"></script>
 @endsection

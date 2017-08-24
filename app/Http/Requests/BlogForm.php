@@ -32,7 +32,6 @@ class BlogForm extends FormRequest
             'date' => 'required',
             'photo[]' => 'file|mimes:jpeg,bmp,png|max:5000',
         ];
-
     }
 
     /**
@@ -49,7 +48,7 @@ class BlogForm extends FormRequest
 
         $photos = $this->uploadPhoto($blog->id);
 
-        if (!empty($photos)){
+        if (!empty($photos)) {
             DB::table('albums')->insert($photos);
         }
     }

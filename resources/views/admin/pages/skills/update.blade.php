@@ -13,18 +13,27 @@
                 {{ method_field('PUT') }}
                 <div class="row">
                     <div style="margin-top: 20px;" class="col-md-3">
-                <div class="form-group{{ $errors->has('type') ? ' has-error': ''}}">
-                    <label>نوع</label>
-                    <fieldset>
-                        <input class="form-control m-b" placeholder="نوع" type="text" value="{{$skills->type}}" name="type" tabindex="1" required
-                               autofocus>
-                    </fieldset>
-                    @if($errors->has('type'))
-                        <span class="help-block">{{ $errors->first('type')}}</span>
-                    @endif
-                </div>
+                        <div style="margin-top: 10px; margin-right: 15px; width: 280px;"
+                             class="ibox float-e-margins">
+                            <div class="form-group">
+                                <label class="font-noraml text-center"></label>
+                                <lable style="margin-right: 13px; margin-bottom: 10px;">نوع مهارت</lable>
+                                <select oninvalid="return chek(this)" oninput="return chek2(this)"
+                                        style="width: 230px; margin-right: 15px;" name="type_id"
+                                        class="select2_demo_1 form-control">
+                                    <option  value="{{$skills->type->id}}">
+                                        {{$skills->type->name}}
+                                    </option>
+                                @foreach($types as $type)
+                                      @if($type->id !== $skills->type->id)
+                                        <option value="{{$type->id}}">{{$type->name}}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
                     </div>
-<div style="margin-top: 20px;" class="col-md-3">
+<div style="margin-top: 25px;" class="col-md-3">
                 <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
                     <label>نام</label>
                     <fieldset>
@@ -40,7 +49,7 @@
                 <div class="row">
                     <div style="margin-right: 100px;" class="col-md-4">
                 <div class="form-group{{ $errors->has('point') ? ' has-error': ''}}">
-                    <div class="form-group{{ $errors->has('point') ? ' has-error': ''}}">
+                        <lable style="margin-right: 7px; margin-bottom: 10px;">امتیاز</lable>
                         <select name="point" class="select2_demo_1 form-control">
                             <option value="{{$skills->point}}">{{$skills->point}}</option>
                             <option value="1">1</option>
@@ -56,7 +65,7 @@
 
                 </div>
                     </div>
-                </div>
+
                 <div style="margin-top: 20px;" class="modal-footer col-md-5">
                     <button  style="font-family: webmdesign;" type="button" class="btn btn-white" data-dismiss="modal">بستن</button>
                     <button style="font-family: webmdesign;" name="submit" type="submit" id="contact-submit" data-submit="...Sending" class="btn btn-primary">اعمال تغییرات</button>

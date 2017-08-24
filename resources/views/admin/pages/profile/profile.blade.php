@@ -32,7 +32,7 @@
                                 {{csrf_field()}}
                                 <div class="form-group{{ $errors->has('first_name') ? ' has-error': ''}}">
                                     <div class="col-sm-10 col-md-6">
-                                        <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="نام"
+                                        <input type="text" placeholder="نام"
                                                value="{{ Request::old('first_name') ?  : ''}}"
                                                class="form-control m-b" name="first_name"
                                                tabindex="1" required autofocus>
@@ -43,7 +43,7 @@
                                 </div>
                                 <div class="form-group{{ $errors->has('last_name') ? ' has-error': ''}}">
                                     <div class="col-sm-10 col-md-6">
-                                        <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="نام خانوادگی"
+                                        <input type="text" placeholder="نام خانوادگی"
                                                value="{{ Request::old('last_name') ?: ''}}" class="form-control m-b"
                                                name="last_name" tabindex="1" required autofocus>
                                         @if($errors->has('last_name'))
@@ -63,7 +63,7 @@
                                 </div>
                                 <div class="form-group{{ $errors->has('last_degree') ? ' has-error': ''}}">
                                     <div class="col-sm-10 col-md-6">
-                                        <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" value="{{ Request::old('last_degree') ?: ''}}"
+                                        <input type="text" value="{{ Request::old('last_degree') ?: ''}}"
                                                placeholder="اخرین مدرک تحصیلی" class="form-control m-b"
                                                name="last_degree"
                                                tabindex="1" required autofocus>
@@ -74,13 +74,13 @@
                                 </div>
                                 <div class="form-group{{ $errors->has('birth_place') ? ' has-error': ''}}">
                                     <div class="col-sm-10 col-md-6">
-                                        <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" value="{{ Request::old('birth_place') ?: ''}}"
+                                        <input type="text" value="{{ Request::old('birth_place') ?: ''}}"
                                                placeholder="محل تولد" class="form-control m-b" name="birth_place"
                                                tabindex="1" required autofocus>
+                                        @if($errors->has('birth_place'))
+                                            <span class="help-block">{{ $errors->first('birth_place')}}</span>
+                                        @endif
                                     </div>
-                                    @if($errors->has('birth_place'))
-                                        <span class="help-block">{{ $errors->first('birth_place')}}</span>
-                                    @endif
                                 </div>
                                 <div class="container col-md-6">
                                     <div class="form-group">
@@ -119,7 +119,7 @@
 
                                 <div class="form-group{{ $errors->has('job') ? ' has-error': ''}}">
                                     <div class="col-sm-10 col-md-12">
-                                        <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="شغل" value="{{ Request::old('job') ?: ''}}"
+                                        <input type="text" placeholder="شغل" value="{{ Request::old('job') ?: ''}}"
                                                class="form-control m-b" name="job" tabindex="1" required autofocus>
                                         @if($errors->has('job'))
                                             <span class="help-block">{{ $errors->first('job')}}</span>
@@ -174,7 +174,8 @@
                                 </div>
                                 <div class="form-group{{ $errors->has('about_me') ? ' has-error': ''}}">
                                     <div class="col-sm-10 col-md-12">
-                                <textarea style="height: 130px; max-height: 200px; max-width: 470px;" name="about_me" rows="8" cols="80"
+                                <textarea style="height: 130px; max-height: 200px; max-width: 470px;" name="about_me"
+                                          rows="8" cols="80"
                                           placeholder="درباره من" tabindex="1"
                                           class="form-control m-b">{{ Request::old('about_me') ?: ''}}</textarea>
                                         @if($errors->has('about_me'))
@@ -195,7 +196,8 @@
 
                                             <input type="file" name="photo" value="{{Request::file('photo')  ?: ''}}"
                                                    onchange="readURL1(this)"></span>
-                                                <p style="font-size: 10px;" class="text-center colorpicker">۲۰۰ * ۳۷۰</p>
+                                                <p style="font-size: 10px;" class="text-center colorpicker">۲۰۰ *
+                                                    ۳۷۰</p>
                                             </div>
                                             @if($errors->has('photo'))
                                                 <span class="help-block">{{ $errors->first('photo')}}</span>
@@ -232,8 +234,6 @@
                                             <input value="{{ Request::old('cover') ?: ''}}" type="file" name="cover"
                                                    onchange="readURL2(this)"></span>
                                                 <p style="font-size: 10px;" class="-warning text-center">۴۸۰ * ۱۰۰٪</p>
-                                                {{--<span class="fileinput-filename"></span>--}}
-                                                {{--<a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>--}}
                                             </div>
                                             @if($errors->has('cover'))
                                                 <span class="help-block">{{ $errors->first('cover')}}</span>
@@ -242,7 +242,8 @@
                                     </div>
                                 </div>
 
-                                <button class="btn btn-primary col-md-4" name="submit" type="submit" id="contact-submit"
+                                <button style="font-family: webmdesign;" class="btn btn-primary col-md-4" name="submit"
+                                        type="submit" id="contact-submit"
                                         data-submit="...Sending">
                                     ارسال
                                 </button>
@@ -360,16 +361,19 @@
                                         <div class="form-group{{ $errors->has('military') ? ' has-error': ''}}">
                                             <div class="i-checks"><label> <input type="radio" name="military"
                                                                                  value="تمام شده"
-                                                                                 tabindex="1" checked> <i></i>تمام شده
+                                                                                 tabindex="1"
+                                                                                 @if($profile->military == 'تمام شده') checked @endif> <i></i>تمام شده
                                                 </label>
                                             </div>
                                             <div class="i-checks"><label> <input type="radio" name="military"
                                                                                  value="معاف"
-                                                                                 tabindex="1"> <i></i> معاف </label>
+                                                                                 tabindex="1"
+                                                                                 @if($profile->military == 'معاف') checked @endif> <i></i> معاف </label>
                                             </div>
                                             <div class="i-checks"><label> <input type="radio" name="military"
                                                                                  value="معاف پزشکی"
-                                                                                 tabindex="1"> <i></i> معافیت پزشکی
+                                                                                 tabindex="1"
+                                                                                 @if($profile->military == 'معاف پزشکی') checked @endif> <i></i> معافیت پزشکی
                                                 </label>
                                             </div>
                                             @if($errors->has('military'))
@@ -382,12 +386,14 @@
                                         <div class="form-group{{ $errors->has('marriage') ? ' has-error': ''}}">
                                             <div class="i-checks"><label> <input type="radio" name="marriage"
                                                                                  value="مجرد"
-                                                                                 tabindex="2" checked> <i></i>مجرد
+                                                                                 tabindex="2"
+                                                                                 @if($profile->marriage == 'مجرد') checked @endif> <i></i>مجرد
                                                 </label>
                                             </div>
                                             <div class="i-checks"><label> <input type="radio" name="marriage"
                                                                                  value="متاهل"
-                                                                                 tabindex="2"> <i></i> متاهل </label>
+                                                                                 tabindex="2"
+                                                                                 @if($profile->marriage == 'متاهل') checked @endif> <i></i> متاهل </label>
                                             </div>
                                             @if($errors->has('marriage'))
                                                 <span class="help-block">{{ $errors->first('marriage')}}</span>
@@ -397,11 +403,15 @@
                                     <div style="margin-top: 10px;" class="col-sm-10 col-md-4">
                                         <div class="form-group{{ $errors->has('gender') ? ' has-error': ''}}">
                                             <p>جنسیت</p>
-                                            <div class="i-checks"><label> <input type="radio" name="gender" value="مرد"
-                                                                                 tabindex="2" checked> <i></i>مرد
-                                                </label></div>
+                                            <div class="i-checks">
+                                                <label>
+                                                    <input type="radio" name="gender" value="مرد" tabindex="2"
+                                                    @if($profile->gender == 'مرد') checked @endif > <i></i>مرد
+                                                </label>
+                                            </div>
                                             <div class="i-checks"><label> <input type="radio" name="gender" value="زن"
-                                                                                 tabindex="2"> <i></i> زن </label></div>
+                                                                                 tabindex="2"
+                                                                                 @if($profile->gender == 'زن') checked @endif > <i></i> زن </label></div>
                                             @if($errors->has('gender'))
                                                 <span class="help-block">{{ $errors->first('gender')}}</span>
                                             @endif
@@ -409,7 +419,8 @@
                                     </div>
                                     <div class="form-group{{ $errors->has('about_me') ? ' has-error': ''}}">
                                         <div class="col-sm-10 col-md-12">
-                                <textarea style="height: 130px; max-width: 470px; max-height: 200px;" name="about_me" rows="8" cols="80"
+                                <textarea style="height: 130px; max-width: 470px; max-height: 200px;" name="about_me"
+                                          rows="8" cols="80"
                                           placeholder="درباره من" tabindex="1"
                                           class="form-control m-b">{{$profile->about_me}}</textarea>
                                             @if($errors->has('about_me'))
@@ -420,7 +431,8 @@
                                     <div class="col-md-4">
                                         <div class="ibox float-e-margins">
                                             <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
-                                                <img style="width: 50px;height: 50px; position: relative; right: 25px;" id="photo1"
+                                                <img style="width: 50px;height: 50px; position: relative; right: 25px;"
+                                                     id="photo1"
                                                      src="{{asset($profile->photo)}}" alt="{{$profile->photo}}">
                                                 <div class="fileinput fileinput-new" data-provides="fileinput">
                                         <span class="btn btn-default btn-file"><span
@@ -437,12 +449,16 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="col-md-4">
                                         <div class="ibox float-e-margins">
                                             <div class="form-group{{ $errors->has('pdf') ? ' has-error': ''}}">
-
-                                                <i style="font-size: 52px; position: relative; right: 20px;" class="fa fa-book"></i>
+                                                @if(($profile->pdf))
+                                                    <i style="font-size: 52px; position: relative; right: 20px;"
+                                                       class="fa fa-book"></i>
+                                                @else
+                                                    <i style="font-size: 52px; position: relative; right: 20px; display: none;"
+                                                       class="fa fa-book"></i>
+                                                @endif
                                                 <div class="fileinput fileinput-new" data-provides="fileinput">
                                         <span class="btn btn-default btn-file"><span
                                                     class="fileinput-new"> بارگذاری pdf</span><span
@@ -460,16 +476,15 @@
                                     <div class="col-md-4">
                                         <div class="ibox float-e-margins">
                                             <div class="form-group{{ $errors->has('cover') ? ' has-error': ''}}">
-                                               <img style="width: 50px;height: 50px; position: relative; right: 20px;" id="photo2"
-                                                                             src="{{asset($profile->cover)}}" alt="{{$profile->cover}}">
+                                                <img style="width: 50px;height: 50px; position: relative; right: 20px;"
+                                                     id="photo2"
+                                                     src="{{asset($profile->cover)}}" alt="{{$profile->cover}}">
                                                 <div class="fileinput fileinput-new" data-provides="fileinput">
                                         <span class="btn btn-default btn-file"><span class="fileinput-new"> بارگذاری کاور</span><span
                                                     class="fileinput-exists"><span
                                                         style="color: #2aca76;">بارگذاری شد</span></span>
                                             <input value="{{$profile->cover}}" type="file" name="cover"
                                                    onchange="readURL2(this)"></span>
-                                                    {{--<span class="fileinput-filename"></span>--}}
-                                                    {{--<a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>--}}
                                                 </div>
                                                 @if($errors->has('cover'))
                                                     <span class="help-block">{{ $errors->first('cover')}}</span>
@@ -477,19 +492,20 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button style="margin-top: 20px; position: relative; right: -315px; float: right !important;" class="btn btn-primary col-md-4" name="submit" type="submit"
+                                    <button style="margin-top: 20px; font-family: webmdesign; margin-left: 330px; float: left !important;"
+                                            class="btn btn-primary col-md-4" name="submit" type="submit"
                                             id="contact-submit"
                                             data-submit="...Sending">
                                         اصلاح
                                     </button>
                                 </form>
-                                <form action="{{ route('profile.destroy', $profile->id) }}" method="POST">
+                                <form action="{{ route('profile.destroy', $profile->id) }}" method="POST" class="frm">
                                     {{ method_field('DELETE') }}
                                     {{ csrf_field() }}
 
                                     <span class="text-center"><button
-                                                style="width: 30px; height: 32.555px; position: relative; top: 306px; right: -310px;"
-                                                class="btn btn-danger"><i style="margin-right: -3px" class="fa fa-trash"
+                                                style="width: 30px; float: left; height: 33px; margin-top: -34px; margin-left: 290px;"
+                                                class="btn btn-danger"><i style="margin-right: -5px" class="fa fa-trash"
                                                                           aria-hidden="true"></i></button></span>
 
                                 </form>
@@ -507,21 +523,38 @@
                         <div class="col-md-12">
                             @foreach($profiles as $profile)
                                 <div style="height: 200px" class="col-md-12">
-                                    <img width="100%" height="100%" class="m-b-md" src="{{asset($profile->cover)}}"
-                                         alt="{{$profile->cover}}"></div>
+                                    @if ($profile->cover)
+                                        <img width="100%"
+                                             height="100%"
+                                             class="m-b-md"
+                                             src="{{asset($profile->cover)}}"
+                                             alt="{{$profile->cover}}">
+                                    @else
+                                        <img width="100%"
+                                             height="100%"
+                                             class="m-b-md"
+                                             src="/images/front/background.jpg"
+                                             alt="{{$profile->cover}}">
+                                    @endif
+                                </div>
                                 <div style="float: left !important; margin-top: -30px;"
                                      class="profile-image col-md-3 pull-left">
-                                    <img class="img-circle circle-border m-b-md" src="{{asset($profile->photo)}}"
-                                         alt="{{$profile->photo}}">
+                                    @if ($profile->photo)
+                                        <img class="img-circle circle-border m-b-md" src="{{asset($profile->photo)}}"
+                                             alt="{{$profile->photo}}">
+                                    @else
+                                        <img class="img-circle circle-border m-b-md" src="/image/profile.png"
+                                             alt="admin">
+                                    @endif
                                 </div>
                                 <div class="profile-info">
                                     <div>
                                         <div>
-                                            <h2 style="margin-right: 20px !important; class=" no-margins">
-                                            <span>{{$profile->first_name}}</span>
-                                            <span>{{$profile->last_name}}</span>
+                                            <h2 style="margin-right: 20px !important; position: relative; top: 10px;">
+                                                <span>{{$profile->first_name}}</span>
+                                                <span>{{$profile->last_name}}</span>
                                             </h2>
-                                            <p style="margin-right: 23px; margin-top: 5px;">{{$profile->job}}</p>
+                                            <p style="margin-right: 23px; margin-top: 20px;">{{$profile->job}}</p>
 
                                             <p style="margin-right: 20px !important; margin-top: 10px !important;"
                                                class="no-margins">{{$profile->summary}}</p>
@@ -569,14 +602,19 @@
                         <div class="col-md-6">
 
                             <td class="pull-left">
-                                <a href="{{asset($profile->pdf)}}" download><i
-                                            style="color: #222; float: left; padding-left: 45px; margin-top: 30px; font-size: 20px;"
-                                            class="fa fa-book" aria-hidden="true">
+                                @if ($profile->pdf)
+                                    <a href="{{asset($profile->pdf)}}" download class="disabled"><i
+                                                style="color: #222; float: left; padding-left: 45px; margin-top: 30px; font-size: 20px;"
+                                                class="fa fa-book" aria-hidden="true">
 
-                                        <span style="font-family: webmdesign !important; font-size: 14px;">دانلود رزومه</span>
-                                    </i>
-
-                                </a></td>
+                                            <span style="font-family: webmdesign !important; font-size: 14px;">دانلود رزومه</span>
+                                        </i>
+                                    </a>
+                                @else
+                                    <a href="{{asset($profile->pdf)}}" download class="disabled">
+                                    </a>
+                                @endif
+                            </td>
 
                         </div>
 
@@ -592,6 +630,15 @@
     @include('admin.layouts.success')
     @include('admin.layouts.errors')
 @endsection
-
-
+@section('script')
+    <script src="js/cheouts.js"></script>
+    <script src="js/time.js"></script>
+    <script src="js/plugins/iCheck/icheck.min.js"></script>
+    <script>
+        $('.i-checks').iCheck({
+            checkboxClass: 'icheckbox_square-green',
+            radioClass: 'iradio_square-green',
+        });
+    </script>
+@endsection
 

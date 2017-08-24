@@ -24,7 +24,6 @@ class LanguageForm extends FormRequest
      */
     public function rules()
     {
-
         return [
             'name' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
             'reading' => 'required',
@@ -43,8 +42,5 @@ class LanguageForm extends FormRequest
             'speaking' => request('speaking'),
             'listening' => request('listening'),
         ]);
-
-
     }
-
 }

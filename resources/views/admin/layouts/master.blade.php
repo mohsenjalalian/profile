@@ -6,7 +6,6 @@
 -->
 <!DOCTYPE html>
 <html>
-
 @include('admin.layouts.meta')
 
 <body class="rtls">
@@ -18,7 +17,6 @@
 
     @yield('content')
 
-    @yield('script')
 
     @include('admin.layouts.chat')
 
@@ -27,5 +25,7 @@
 </div>
 
 @include('admin.layouts.script')
+@yield('script')
+
 </body>
 </html>

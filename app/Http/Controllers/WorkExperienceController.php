@@ -57,7 +57,7 @@ class WorkExperienceController extends Controller
      */
     public function show($id)
     {
-        //
+        WorkExperince::findOrFail($id);
     }
 
     /**

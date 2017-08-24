@@ -14,6 +14,7 @@ use App\Model\Language;
 use App\Model\Profile;
 use App\Model\Recommendation;
 use App\Model\Skills;
+use App\Model\SkillType;
 use App\Model\SocialNetwork;
 use App\Model\WorkExperince;
 use App\Model\WorkSample;
@@ -44,6 +45,7 @@ class HomeController extends Controller
         $socialNetworks = SocialNetwork::all();
         $workExperiences = WorkExperince::all();
         $workSamples = WorkSample::all();
+        $types = SkillType::all();
 
         return view('front.index', compact([
             'albums',
@@ -59,7 +61,8 @@ class HomeController extends Controller
             'skills',
             'socialNetworks',
             'workExperiences',
-            'workSamples'
+            'workSamples',
+            'types'
         ]));
     }
 }
