@@ -86,7 +86,7 @@
                         <div class="form-group{{ $errors->has('info') ? ' has-error': ''}}">
                             <fieldset>
                                 <label>توضیحات</label>
-                        <textarea style="width: 555px; height: 170px; max-width: 555px; max-height: 170px;" class="form-control m-b" placeholder="توضیحات" type="text" name="info" tabindex="1"
+                        <textarea maxlength="360" class="demo" style="width: 555px; height: 170px; max-width: 555px; max-height: 170px;" class="form-control m-b" placeholder="توضیحات" type="text" name="info" tabindex="1"
                                   required autofocus>{{$certificate->info}}</textarea>
                             </fieldset>
                             @if($errors->has('info'))

@@ -1161,6 +1161,8 @@ a:hover {
     margin-bottom: 24px;
 }
 
+
+
 #owl .item i {
     color: #ffd93e;
     font-size: 20px;
@@ -2034,7 +2036,7 @@ figure.effect-ming:hover img {
 
 .cs-style-4 figcaption {
     height: 100%;
-    width: 50%;
+    width: 60%;
     opacity: 0;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;

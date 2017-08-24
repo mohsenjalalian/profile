@@ -33,9 +33,9 @@
     <section class="col-xs-12 col-md-4 pull-left">
         <div class="box2">
             <section class="col-md-12 text-skill">
-                <div id="owl3" class="owl-carousel" style="direction:ltr">
+                <div id="owl3" class="owl-carousel" style="direction: ltr;">
                     @foreach($languages as $language)
-                        <div class="item test5">
+                        <div  style="float: left !important;" class="item test5">
 
                             <h2>{{$language->name}}</h2>
                             {{--<progress class="progress3" value="{{$language->reading}}" max="10"</progress>--}}
