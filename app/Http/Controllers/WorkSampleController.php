@@ -111,8 +111,14 @@ class WorkSampleController extends Controller
                 //Move Upload File
                 $photo = $file->move('images/workSample', $old_photo);
             }else{
-                dump('delete');
-                $this->deletePhoto($file);
+
+                $old_photo = \request('old_pic');
+                $this->deletePhoto($old_photo);
+
+                $workSample = WorkSample::find($id);
+                $workSample->photo = null;
+                $workSample->save();
+
             }
 
             // store

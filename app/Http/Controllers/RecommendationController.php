@@ -95,12 +95,19 @@ class RecommendationController extends Controller
             return redirect()->back()->withErrors('اطلاعات وارد شده اشتباه است');
         } else {
             $file = request()->file('photo');
-            if ($file) {
+            if (!empty($file)) {
                 //Change File name
                 $old_photo = \request('old_pic');
                 //Move Upload File
                 $photo = $file->move('images/recommend', $old_photo);
                 ///
+            } else {
+                $old_photo = \request('old_pic');
+                $this->deletePhoto($old_photo);
+
+                $workSample = Recommendation::find($id);
+                $workSample->photo = null;
+                $workSample->save();
             }
             $certificate = Recommendation::find($id);
 
@@ -130,12 +137,20 @@ class RecommendationController extends Controller
         $recommend = Recommendation::find($id);
 
         if ($recommend->photo) {
-            unlink(public_path($recommend->photo));
+            $this->deletePhoto($recommend->photo);
         }
         if ($recommend->delete()) {
             return redirect()->back()->with('success', 'نظرات با موفقیت حذف شد');
         }
 
         return redirect()->back()->withErrors('متاسفانه نظرات حذف نشد');
+    }
+
+
+    public function deletePhoto($photo)
+    {
+        if (file_exists(public_path($photo))) {
+            @unlink(public_path($photo));
+        }
     }
 }
