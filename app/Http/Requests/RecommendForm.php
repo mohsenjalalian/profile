@@ -30,7 +30,7 @@ class RecommendForm extends FormRequest
             'position' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
             'company' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
             'info' => 'required|min:3',
-            'photo' => 'file|mimes:jpeg,bmp,png|max:5000',
+            'photo' => 'file|mimes:jpeg,bmp,png|max:5000|nullable',
         ];
     }
 

@@ -29,7 +29,7 @@ class EducationForm extends FormRequest
             'university_name' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
             'field' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
             'tendency' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
-            'logo' => 'file|mimes:jpeg,bmp,png|max:5000',
+            'logo' => 'file|mimes:jpeg,bmp,png|max:5000|nullable',
             'start_date' => 'required',
             'finish_date' => 'required',
             ];

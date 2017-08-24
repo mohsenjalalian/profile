@@ -40,6 +40,8 @@
                             <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
                                 @if(isset($workSample->photo))
                                     <img style="position: relative; top: 40px; right: -50px;" width="50" height="50" src="{{asset($workSample->photo)}}">
+
+                                    <button type="button" id="btnremove" class="btn btn-danger">پاک کردن</button>
                                 @else
                                     <h4 style="margin-top: 22px;">شما هیچ عکسی آپلود نکرده اید</h4>
                                 @endif
@@ -52,6 +54,7 @@
                                                     <span class="fileinput-exists">عوض کردن</span>
                                                     <input type="file" value="{{$workSample->photo}}" name="photo">
                                                 </span>
+
                                     <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">پاک کردن</a>
                                 </div>
                                 @if($errors->has('photo'))
@@ -169,5 +172,12 @@
 @endsection
 
 @section('script')
-
+    <script>
+    $(document).ready(function(){
+    $('#btnremove').click(function(){
+      //do sth
+        $('#').attr("");
+    });
+    });
+    </script>
 @endsection
