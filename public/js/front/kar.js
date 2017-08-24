@@ -221,7 +221,7 @@ $(document).scroll(function(e) {
         }
     }
 	o = $(document).scrollTop();
-    if(abou4 != undefined) {
+    if(about4 != undefined) {
         if (o > about4.position().top && o < about4.position().top + about4.height()) {
             $("#icon5").css("background-color", "#fff");
         } else {
@@ -229,7 +229,7 @@ $(document).scroll(function(e) {
         }
     }
 	m = $(document).scrollTop();
-    if(abou55 != undefined) {
+    if(about55 != undefined) {
         if (m > about55.position().top && m < about55.position().top + about55.height()) {
             $("#icon55").css("background-color", "#fff");
         } else {
@@ -237,7 +237,7 @@ $(document).scroll(function(e) {
         }
     }
 		m = $(document).scrollTop();
-    if(abou55 != undefined) {
+    if(about56 != undefined) {
         if (m > about56.position().top && m < about56.position().top + about56.height()) {
             $("#icon56").css("background-color", "#fff");
         } else {
@@ -245,7 +245,7 @@ $(document).scroll(function(e) {
         }
     }
 	w = $(document).scrollTop();
-    if(abou56 != undefined) {
+    if(about56 != undefined) {
         if (m > about56.position().top && m < about6.position().top + about56.height()) {
             $("#icon7").css("background-color", "#fff");
         } else {

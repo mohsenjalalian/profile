@@ -2,7 +2,7 @@
 @inject('photo',\App\Http\Controllers\BlogController)
 
     <main id="about6" class="container">
-        <h2 style="margin-top: 50px;" class="text-ex2">بلاگ من</h2>
+        <h2 style="margin-top: 20px;" class="text-ex2">بلاگ من</h2>
         <div id="owl7" class="owl-carousel" style="direction:ltr">
             @foreach($blogs as $blog)
             <div class="item">

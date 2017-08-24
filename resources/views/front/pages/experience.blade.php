@@ -1,7 +1,7 @@
 @if(!$workExperiences->isEmpty())
 <main id="about2" class="container-fluid products">
     <section class="container">
-        <h2 style="color: #fff;" class="">تجربه ها</h2>
+        <h2 style="color: #fff;">تجربه ها</h2>
         <div style="direction: ltr !important;" id="timeline">
             <ul id="dates">
                 @foreach($workExperiences as $experience )
@@ -10,16 +10,11 @@
                     $enDate = $experience->finish_date;
                     list($stYear,$stMonth,$day) = explode("/",$stDate);
                     list($enYear,$enMonth,$day) = explode("/",$enDate);
-
                      $stYear = substr($stYear,4);
                      $enYear = substr($enYear,4);
-
                 @endphp
-
-                   سال شروع <li><a href="#{{$experience->id}}">{{$stYear .'/'. $stMonth}}</a></li>
-                    {{--<br>--}}
-                 سال پایان   <li><a href="#{{$experience->id}}">{{$enYear .'/'. $enMonth}}</a></li>
-
+                    <li><a href="#{{$experience->id}}">{{$stYear .'/'. $stMonth}}-{{$enYear .'/'. $enMonth}}</a></li>
+                    {{--<li><a href="#{{$experience->id}}">{{$enYear .'/'. $enMonth}}</a></li>--}}
                 @endforeach
             </ul>
             <ul id="issues">
@@ -27,7 +22,7 @@
                 <li id="{{$experience->id}}">
                     <h4 style="float: right; color: #ffd93e;  text-align: right; width: 100%"><strong>{{$experience->title}}</strong></h4>
                     <p style="font-size: 11px; color: #eee;"><strong>{{$experience->company}}</strong></p>
-                    <p style="text-align: right; color: #eee; padding-left: 45px; float: right; width: 100%;">{{$experience->about}}</p>
+                    <p style="text-align: justify; color: #eee; padding-left: 55px; float: right; width: 100%;" class="mCustomScrollbar content-a2" data-mcs-theme="minimal-dark">{{$experience->about}}</p>
                     <p style="color: #eee;">{{$experience->city}}</p>
                     @endforeach
             </ul>

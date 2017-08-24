@@ -612,8 +612,9 @@ figcaption {
 figcaption h1 {
 	margin: 0;
 	float:right;
-	font-size:20px !important;
+	font-size:16px !important;
     text-align: right;
+	line-height: 22px;
 	width: 100%;
 	position: relative;
 	top:40px;

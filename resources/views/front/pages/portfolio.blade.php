@@ -1,7 +1,7 @@
 <!--portfolio-->
 <main id="about4" class="container-fluid background-four">
     <section class="container">
-        <h2 style="font-size:25px;margin-top:50px;"><strong>نمونه کار</strong></h2>
+        <h2 style="font-size:25px; margin-top: 30px;"><strong>نمونه کار</strong></h2>
         <main class="container tabs-tunel">
             <ul class="nav nav-pills">
                 @foreach($categories as $cat)
