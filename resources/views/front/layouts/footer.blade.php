@@ -59,7 +59,7 @@
                 <p class="text-for"> تلفن</p>
                 <p class="text-for2">{{$contact->phone_number}}</p>
             </div>
-            <div class="web"><i class="fa fa-phone" aria-hidden="true"></i>
+            <div class="web"><i style="font-size:28px; padding-right: 3px; margin-top: 5px;" class="fa fa-mobile" aria-hidden="true"></i>
                 <p class="text-for"> تلفن همراه</p>
                 <p class="text-for2">{{$contact->mobile}}</p>
             </div>

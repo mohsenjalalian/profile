@@ -70,7 +70,6 @@ a.selected {
 
 #issues {
     min-height: 200px;
-
     text-align: right;
     overflow: hidden;
 }
@@ -1063,6 +1062,7 @@ a:hover {
 .products {
     background-color: #222;
     min-height: 100px;
+    max-height: 380px;
     height: auto;
     margin-top: 50px;
 }

@@ -5,7 +5,6 @@
 <script src="/js/front/scrollbar.min.js"></script>
 <script src="/js/front/snap.svg-min.js"></script>
 <script src="/js/front/kar.js"></script>
-<script src="js/classie.js"></script>
 <script src="js/front/timelineweb.js"></script>
 <!--jquery-->
 <script>
@@ -28,12 +27,12 @@
 </script>
 <script>
     $(document).ready(function () {
-
         $("#owl").owlCarousel({
             autoPlay: 3000, //Set AutoPlay to 3 seconds
             items: 2,
             itemsDesktop: [1199, 3],
-            itemsDesktopSmall: [979, 3],
+            itemsDesktopSmall: [979, 3]
+
         });
 
         $("#owl2").owlCarousel({
@@ -70,18 +69,7 @@
             autoPlay: 5000, //Set AutoPlay to 3 seconds
             items: 2,
             itemsDesktop: [1199, 3],
-            itemsDesktopSmall: [979, 3],
-            responsive:{
-                0:{
-                    items:2
-                },
-                600:{
-                    items:2
-                },
-                1000:{
-                    items:2
-                }
-            }
+            itemsDesktopSmall: [979, 3]
         });
         $("#owl8").owlCarousel({
             autoPlay: 5000, //Set AutoPlay to 3 seconds
