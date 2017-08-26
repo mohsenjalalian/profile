@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\EducationForm;
 use App\Model\Education;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 
@@ -146,7 +145,7 @@ class EducationController extends Controller
         return redirect()->back()->withErrors('متاسفانه تحصیلات حذف نشد');
     }
 
-    public function deletePhoto($photo)
+    private function deletePhoto($photo)
     {
         if(file_exists(public_path($photo))){
             @unlink(public_path($photo));

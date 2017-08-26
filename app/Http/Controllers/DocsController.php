@@ -4,11 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\DocsForm;
 use App\Model\Docs;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
-use PhpParser\Comment\Doc;
 
 /**
  * Class DocsController
