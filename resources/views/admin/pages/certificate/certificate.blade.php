@@ -47,7 +47,7 @@
 
                                 <div class="form-group{{ $errors->has('info') ? ' has-error': ''}}">
                                     <div class="col-sm-10 col-md-12">
-                                        <textarea oninvalid="return chek(this)" oninput="return chek2(this)" style="max-width: 280px; max-height: 70px;" type="text" placeholder="توضیحات" class="form-control m-b" name="info"
+                                        <textarea maxlength="330" class="demo" oninvalid="return chek(this)" oninput="return chek2(this)" style="max-width: 280px; width: 275px; height: 70px; max-height: 70px;" type="text" placeholder="توضیحات" class="form-control m-b" name="info"
                                                   tabindex="1" required autofocus>{{ Request::old('info') ?: ''}}</textarea>
                                         @if($errors->has('info'))
                                             <span class="help-block">{{ $errors->first('info')}}</span>

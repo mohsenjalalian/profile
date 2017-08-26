@@ -183,61 +183,61 @@ var about6 = $('#about6');
 var about7 = $('#about7');
 $(document).scroll(function(e) {
     p = $(document).scrollTop();
-	if(p<350){
-		$("#icon1").css("background-color","#fff");
-	}else{
-		$("#icon1").css("background-color","#ffd93e");
-	}
-	    o = $(document).scrollTop();
-	if(about1 != undefined) {
+    if (p < 350) {
+        $("#icon1").css("background-color", "#fff");
+    } else {
+        $("#icon1").css("background-color", "#ffd93e");
+    }
+    o = $(document).scrollTop();
+    if (about1 != undefined && about1.position() !=undefined) {
         if (o > about1.position().top && o < about1.position().top + about1.height()) {
             $("#icon2").css("background-color", "#fff");
         } else {
             $("#icon2").css("background-color", "#ffd93e");
         }
     }
-	j = $(document).scrollTop();
-    if(about2 != undefined) {
+    j = $(document).scrollTop();
+    if (about2 != undefined && about2.position() !=undefined) {
         if (j > about2.position().top && j < about2.position().top + about2.height()) {
             $("#icon3").css("background-color", "#fff");
         } else {
             $("#icon3").css("background-color", "#ffd93e");
         }
     }
-		w = $(document).scrollTop();
-    if(about3 != undefined) {
+    w = $(document).scrollTop();
+    if (about3 != undefined && about3.position() !=undefined) {
         if (w > about3.position().top && w < about3.position().top + about3.height()) {
             $("#icon4").css("background-color", "#fff");
         } else {
             $("#icon4").css("background-color", "#ffd93e");
         }
     }
-			q = $(document).scrollTop();
-    if(about57 != undefined) {
+    q = $(document).scrollTop();
+    if (about57 != undefined && about57.position() !=undefined) {
         if (q > about57.position().top && q < about57.position().top + about57.height()) {
             $("#icon57").css("background-color", "#fff");
         } else {
             $("#icon57").css("background-color", "#ffd93e");
         }
     }
-	o = $(document).scrollTop();
-    if(about4 != undefined) {
+    o = $(document).scrollTop();
+    if (about4 != undefined && about4.position() !=undefined) {
         if (o > about4.position().top && o < about4.position().top + about4.height()) {
             $("#icon5").css("background-color", "#fff");
         } else {
             $("#icon5").css("background-color", "#ffd93e");
         }
     }
-	m = $(document).scrollTop();
-    if(about55 != undefined) {
+    m = $(document).scrollTop();
+    if (about55 != undefined && about55.position() !=undefined) {
         if (m > about55.position().top && m < about55.position().top + about55.height()) {
             $("#icon55").css("background-color", "#fff");
         } else {
             $("#icon55").css("background-color", "#ffd93e");
         }
     }
-		m = $(document).scrollTop();
-    if(about56 != undefined) {
+    m = $(document).scrollTop();
+    if (about56 != undefined && about56.position() !=undefined) {
         if (m > about55.position().top && m < about56.position().top + about55.height()) {
             $("#icon56").css("background-color", "#fff");
         } else {
@@ -245,26 +245,23 @@ $(document).scroll(function(e) {
         }
     }
     w = $(document).scrollTop();
-    if(box1 != undefined) {
+    if (box1 != undefined && about6.position() !=undefined) {
         if (m > box1.position().top && m < about6.position().top + box1.height()) {
             $("#icon6").css("background-color", "#fff");
         } else {
             $("#icon6").css("background-color", "#ffd93e");
         }
     }
-
-
-	w = $(document).scrollTop();
-    if(about6 != undefined) {
-        if (m > about6.position().top && m < about6.position().top + about6.height()) {
-            $("#icon7").css("background-color", "#fff");
-        } else {
-            $("#icon7").css("background-color", "#ffd93e");
+    w = $(document).scrollTop();
+        if (about6 != undefined && about6.position() !=undefined) {
+            if (m > about6.position().top && m < about6.position().top + about56.height()) {
+                $("#icon7").css("background-color", "#fff");
+            } else {
+                $("#icon7").css("background-color", "#ffd93e");
+            }
         }
-    }
-
 	k = $(document).scrollTop();
-    if(about6 != undefined) {
+    if(about7 != undefined && about6.position() !=undefined) {
         if (k > about6.position().top && k < about7.position().top + about6.height()) {
             $("#icon8").css("background-color", "#fff");
         } else {
@@ -273,10 +270,6 @@ $(document).scroll(function(e) {
     }
 	
 });
-
-
-
-
 
 $(document).ready(function(e) {
    	$("#icon1").click(function(e) {

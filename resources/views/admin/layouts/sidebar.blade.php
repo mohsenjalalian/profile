@@ -89,7 +89,7 @@
             </li>
 
 
-            <li class="@if (\Request::route()->getName() == "language" or \Request::route()->getName() == "skills" or \Request::route()->getName() == "certification" or \Request::route()->getName() == "education" or \Request::route()->getName() == "type") active @endif">
+            <li class="@if (\Request::route()->getName() == "language" or \Request::route()->getName() == "skills"  or \Request::route()->getName() == "education" or \Request::route()->getName() == "type") active @endif">
                 <a class="menu" href="#">
                     <i class="fa fa-sitemap"></i> <span class="nav-label">توامندی ها </span><span
                             class="fa arrow"></span></a>
@@ -109,10 +109,6 @@
                                     class="nav-label"></span>نوع مهارت
                             ها</a>
                     </li>
-                    <li class="@if (\Request::route()->getName() == "certification") active @endif">
-                        <a class="menu" href="{{route('certification')}}"><i class="fa fa-diamond"></i> <span
-                                    class="nav-label"></span>گواهی</a>
-                    </li>
                     <li class="@if (\Request::route()->getName() == "education") active @endif">
                         <a class="menu" href="{{route('education')}}"><i class="fa fa-envelope"></i> <span
                                     class="nav-label"></span>تحصیلات
@@ -122,7 +118,7 @@
             </li>
 
 
-            <li  class="@if (\Request::route()->getName() == "work-sample" or \Request::route()->getName() == "docs" or \Request::route()->getName() == "category") active @endif">
+            <li  class="@if (\Request::route()->getName() == "work-sample" or \Request::route()->getName() == "docs" or \Request::route()->getName() == "category" or \Request::route()->getName() == "certification") active @endif">
                 <a><i class="fa fa-book"></i> <span class="nav-label">نمونه کار</span><span
                             class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
@@ -131,15 +127,19 @@
                                     class="nav-label"></span>نمونه کار</a>
 
                     </li>
+                    <li class="@if (\Request::route()->getName() == "category") active @endif">
+                        <a href="{{route('category')}}"><i class="fa fa-files-o"></i> <span
+                                    class="nav-label"></span>دسته بندی
+                        </a>
+                    </li>
                     <li class="@if (\Request::route()->getName() == "docs") active @endif">
                         <a href="{{route('docs')}}"><i class="fa fa-edit"></i> <span
                                     class="nav-label"></span>مقالات کتاب</a>
 
                     </li>
-                    <li class="@if (\Request::route()->getName() == "category") active @endif">
-                        <a href="{{route('category')}}"><i class="fa fa-files-o"></i> <span
-                                    class="nav-label"></span>دسته بندی
-                        </a>
+                    <li class="@if (\Request::route()->getName() == "certification") active @endif">
+                        <a class="menu" href="{{route('certification')}}"><i class="fa fa-diamond"></i> <span
+                                    class="nav-label"></span>گواهی و مدارک</a>
                     </li>
 
                 </ul>

@@ -77,6 +77,7 @@
                                                     @endforeach
                                                 </select>
                                             </div>
+                                            <p style="padding-top:8px;">بیش از ۳ کاراکتر وارد نشود</p>
                                         </div>
                                     </div>
                                     @if($errors->has('category_id[]'))
@@ -106,6 +107,7 @@
                                                     @endforeach
                                                 </select>
                                             </div>
+                                         <p style="padding-top:8px;">بیش از ۵ کاراکتر وارد نشود</p>
                                         </div>
                                     </div>
                                     @if($errors->has('skill_id[]'))
@@ -135,6 +137,7 @@
                                                 <a href="#" class="input-group-addon btn btn-default fileinput-exists"
                                                    data-dismiss="fileinput">پاک کردن</a>
                                             </div>
+                                            <p style="font-size: 12px; margin-left: 20px;" class="pull-right colorpicker">۳۰۰ * ۳۰۰</p>
                                             @if($errors->has('photo'))
                                                 <span class="help-block">{{ $errors->first('photo')}}</span>
                                             @endif
@@ -177,7 +180,7 @@
 
                                     <td style="vertical-align: middle;" class="text-center">
                                         @if(empty($workSample->photo))
-                                            <img width="50" height="50" src="/image/admin.png"
+                                            <img width="50" height="50" src="/images/front/site.png"
                                                  alt="نمونه کار">
                                         @else
                                         <img width="50" height="50" src="{{asset($workSample->photo)}}"

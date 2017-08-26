@@ -55,18 +55,22 @@
                     @endif
                 </div>
                 </div>
-                    <div style="position: absolute; top: 73px; right: 255px;" class="col-md-5">
+                    <div style="position: absolute; top: 110px; right: 255px;" class="col-md-5">
                             <div class="ibox float-e-margins">
                                 <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
+                                    <div class="col-md-1">
                                     @if(isset($recommend->photo))
-                                        <img style="position: relative; top: 40px; right: -48px;" width="50" height="50"  src="{{asset($recommend->photo)}}">
-                                    @else
-                                        <h4 style="margin-top: 30px;">شما هیچ عکسی آپلود نکرده اید</h4>
+                                        <img id="btnrm" style="position: relative; top: 0px; right: -80px;" width="50" height="50" src="{{asset($recommend->photo)}}">
+
                                     @endif
-                                        <button type="button" id="btnremove" class="btn btn-danger">پاک کردن</button>
-                                        <div style="width: 280px; margin-right: 15px;" class="fileinput fileinput-new input-group" data-provides="fileinput">
+                                    </div>
+                                    <div class="col-md-1">
+                                        <button style="font-family: webmdesign; margin-right: -60px; margin-top: 0px; background-color: #fff; border: 1px solid #e5e6e7; color: #333;" type="button" id="btnremove" class="btn">پاک کردن</button>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div style="width: 250px; margin-right: -0px;" class="fileinput fileinput-new input-group" data-provides="fileinput">
                                         <div class="form-control" data-trigger="fileinput">
-                                            <p class="fileinput-exists" style="color: #2aca76;">بارگذاری شد</p>
+                                            <p class="fileinput-exists" style="color: #2aca76;">بارگذاری </p>
                                         </div>
                                             <input type="hidden" id="rmPhoto" name="old_pic" value="{{ $recommend->photo }}">
                                             <span style="border: 1px solid #e5e6e7;" class="input-group-addon btn btn-default btn-file">
@@ -75,6 +79,7 @@
                                                     <input type="file" name="photo" value="{{$recommend->photo}}" >
                                                 </span>
                                         <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">پاک کردن</a>
+                                    </div>
                                     </div>
                                         @if($errors->has('photo'))
                                             <span class="help-block">{{ $errors->first('photo')}}</span>
@@ -113,6 +118,13 @@
         $(document).ready(function(){
             $('#btnremove').click(function(){
                 $('#rmPhoto').attr("value", "");
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#btnremove").click(function () {
+                $("#btnrm").fadeOut(2000)
             });
         });
     </script>

@@ -21,14 +21,14 @@
                 @foreach($workExperiences as $experience )
                 <li id="{{$experience->id}}">
                     <h4 style="float: right; color: #ffd93e;  text-align: right; width: 100%"><strong>{{$experience->title}}</strong></h4>
-                    <p style="font-size: 11px;"><strong>{{$experience->company}}</strong></p>
-                    <p style="text-align: right; float: right; width: 100%;">
+                    <p style="font-size: 11px; color: #fff;"><strong>{{$experience->company}}</strong></p>
+                    <p style="text-align: right; float: right; width: 100%; color: #fff;" class="mCustomScrollbar content-a2" data-mcs-theme="minimal-dark">
                         @php
                             $des =  nl2br(e($experience->about));
                          echo $des;
                         @endphp
                     </p>
-                    <p>{{$experience->city}}</p>
+                    <p style="color: #fff;">{{$experience->city}}</p>
                     @endforeach
             </ul>
             <div id="grad_left"></div>

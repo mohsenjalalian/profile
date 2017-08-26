@@ -184,14 +184,14 @@
                                                  alt="{{$blog->album->first()->photo}}">
                                         @else
                                             <img width="50" height="50"
-                                                 src="/image/admin.png" alt="">
+                                                 src="/images/front/bloge.png" alt="">
                                         @endif
                                 </td>
 
-                                <td style=" vertical-align: middle;"
+                                <td style="padding-top: 25px;"
                                     class="text-center">{{$blog->title}}</td>
-                                <td style="vertical-align: middle;" class="text-center">{{$blog->date}}</td>
-                                <td style="vertical-align: middle;"
+                                <td style="padding-top: 25px;" class="text-center">{{$blog->date}}</td>
+                                <td style="padding-top: 25px;"
                                     class="text-center">
                                         <i style="color: #239963; font-size: 22px;" class="fa fa-check"></i>
 

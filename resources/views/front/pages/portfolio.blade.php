@@ -32,8 +32,7 @@
                                                         <p class="port-n">{{$skill->name}}</p>
                                                     @endforeach
                                                     @if(!empty($work->link))
-                                                    <a href="{{$work->link}}">دانلود
-                                                        رزومه</a>
+                                                    <a style="width: 70px;" href="{{$work->link}}">لینک</a>
                                                     @endif
                                                 </figcaption>
                                             </figure>

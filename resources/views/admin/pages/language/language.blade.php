@@ -133,7 +133,6 @@
                             </thead>
                             <tbody>
                             @foreach($languages as $language)
-
                                 <tr>
                                     <td style="padding-top: 22px;" class="text-center">{{$language->name}}</td>
                                     <td style="padding-top: 22px;" class="text-center">{{$language->reading}}</td>
@@ -203,7 +202,4 @@
     </div>
     @include('admin.layouts.success')
     @include('admin.layouts.errors')
-@endsection
-@section('script')
-
 @endsection

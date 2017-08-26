@@ -166,7 +166,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <button style="min-width: 200px" name="submit" type="submit" id="contact-submit"
+                                <button style="min-width: 200px; font-family: webmdesign;" name="submit" type="submit" id="contact-submit"
                                         data-submit="...Sending" class="btn btn-primary">ارسال
                                 </button>
                             </div>

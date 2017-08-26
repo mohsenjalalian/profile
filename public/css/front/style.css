@@ -328,7 +328,8 @@ a:hover {
 }
 
 .menu3.menu--open .menu__inner3 {
-    height: 600px;
+    min-height: 60px;
+    height: auto;
 }
 
 .menu--open .menu__inner3 li:nth-child(2) a {
@@ -374,7 +375,8 @@ a:hover {
 }
 
 .menu3.menu--open .morph-shape {
-    height: 1000px;
+    min-height: 1000px;
+    height: auto;
 }
 
 .morph-shape svg path {
@@ -781,7 +783,10 @@ a:hover {
     float: left !important;
 
 }
-
+.crusel11{
+   direction:ltr !important;
+    width: 50%;
+}
 .box-social1 i {
     font-size: 20px;
     color: #000;
@@ -815,7 +820,12 @@ a:hover {
     -ms-transform: perspective(1000px) rotatey(-90deg);
     transform: perspective(1000px) rotatey(-90deg);
 }
-
+.text-fe{
+   text-align: right !important;
+    float: right !important;
+    font-size: 20px !important;
+    padding-left: 20px !important;
+}
 .box-languge p {
     margin-top: 8px;
     font-size: 16px;
@@ -977,7 +987,12 @@ a:hover {
     height: 90px;
     border-bottom: 1px solid #e2e2e2;
 }
-
+.crusel2{
+    width: 550px;
+    height: 250px;
+    margin-bottom: 30px;
+    background-color: #fff;
+}
 .top-th {
     direction: rtl;
     padding: 7px 0px;
@@ -1160,6 +1175,8 @@ a:hover {
     overflow: hidden;
     margin-bottom: 24px;
 }
+
+
 
 #owl .item i {
     color: #ffd93e;
@@ -2034,7 +2051,7 @@ figure.effect-ming:hover img {
 
 .cs-style-4 figcaption {
     height: 100%;
-    width: 50%;
+    width: 60%;
     opacity: 0;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
@@ -2939,6 +2956,7 @@ figure.effect-ming:hover img {
         font-size: 16px;
         float: right !important;
         margin-top: 30px;
+        border: none;
     }
 
     .google {
@@ -2946,14 +2964,14 @@ figure.effect-ming:hover img {
         /*margin-right: 10px;*/
         padding-left: 15px;
         font-size: 16px;
-        border-right: 1px solid #bababa;
         padding-right: 15px;
-        border-left: 1px solid #bababa;
         float: right !important;
         margin-top: 30px;
+        border: none;
     }
 
     .twit {
+        border: none;
         color: #1ED1B8;
         margin-right: 10px;
         font-size: 16px;
@@ -2962,7 +2980,8 @@ figure.effect-ming:hover img {
     }
 
     .background-five {
-        margin-top: 1050px !important;
+
+        margin-top: 1000px !important;
         min-height: 140px !important;
         height: auto;
     }
@@ -3015,26 +3034,34 @@ figure.effect-ming:hover img {
         transform-style: preserve-3d;
     }
 
-    figcaption h1 {
+    figcaption span {
         margin: 0;
         float:right;
         font-size:20px !important;
         text-align: right;
         width: 100%;
         position: relative;
-        top:40px;
+        top:-190px;
+        right: -80px;
     }
 
-    figcaption span {
+    figcaption h1{
         color: #ffd93e;
         display: block;
         font-size:20px;
         display: block;
         float: right;
         text-align: right;
-        width: 10%;
+        width: 100%;
         position: relative;
-        top:60px;
+        top:-200px;
+        right: -80px;
+    }
+    .text-book{
+        position: relative;
+        top:-160px;
+        width: 100%;
+        right: -80px;
     }
     .grid {
         max-width: 100%;
@@ -3111,15 +3138,15 @@ figure.effect-ming:hover img {
     }
 
     .text-yellow3 {
-        margin-top: 20px;
+        margin-top:-10px;
         text-align: right;
-        margin-right: 10px;
+        margin-right: 55px;
     }
 
     .text-yellow4 {
-        margin-top: 0px;
+        margin-top: -10px;
         text-align: right !important;
-        margin-right: 10px;
+        margin-right: 55px;
     }
 
     .page-nav {
@@ -3148,199 +3175,173 @@ figure.effect-ming:hover img {
         height: 800px;
     }
 
-    .block-content {
-        direction: rtl !important;
-        min-height:100vh;
+    .sociales {
+        text-align: center;
+        margin-bottom: 0px;
     }
 
-    .heading-group {
-
-    }
-
-
-    .timeline-list:before{
-        content: "";
-        border-left: 5px solid #222;
-        left: -0.25em;
-        top: 2em;
-        height: 100%;
-        position: absolute;
-        bottom: 0;
-        top: 0;
-        transform-origin:0 0;
-        animation:scaleVertical 3s 1s ease both 1;
-
-    }
-    .timeline-list:after {
-        content: "";
-        clear:both;
-        position: absolute;
-        bottom: 0px;
-        left: -1em;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background: none repeat scroll 0% 0% #DDD;
-        border: 5px solid #DDD;
-        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-        animation:revealScaleUp 0.75s 2.82s ease both 1;
-    }
-
-    .timeline-list {
+    #timeline {
+        width: 100%;
+        min-height: 100px;
+        height:auto;
+        overflow: hidden;
+        margin: 0px auto;
         position: relative;
-
     }
 
-
-    .l-block-spacing {
-
-
-        min-height:80vh;
-        padding:2em 0 4em 0;
-
+    #dates {
+        width: 500px;
+        height: 60px;
+        overflow: hidden;
     }
 
-    /*.l-contained {*/
-
-    /*max-width: 1000px;*/
-    /*margin-left: auto;*/
-    /*margin-right: auto;*/
-
-    /*padding-left: 1em;*/
-    /*padding-right: 1em;*/
-    /*}*/
-    ul{
+    #dates li {
         list-style: none;
-        display: inline-block;
-    }
-
-    #filter-options li{
         float: left;
-        margin-left: 20px;
+        width: 150px;
+        height: 50px;
+        font-size: 15px;
+        text-align: center;
     }
 
-    #product-list{
-        display: block;
-    }
-    .hide-ppp{
-        color: #ecf1f7;
-    }
-    .timeline-list {
-        position: relative;
-        right: -1100px;
+    #dates a {
+        line-height: 38px;
+        padding-bottom: 10px;
     }
 
-    .t-block-teal {
-        background:#02aa9d;
+    #dates .selected {
+        font-size: 23px;
     }
-    .t-block-teal h2 {
-        color:#fff;
+
+    #issues {
+        min-height: 200px;
+        text-align: right;
+        overflow: hidden;
     }
-    .t-block-teal h3 {
-        color:#034944;
+
+    #issues li {
+        width: 270px;
+        min-height: 200px;
+        height:auto;
+        list-style: none;
+        float: left;
     }
-    .t-block-teal p {
-        color:#034944;
+
+    #issues li.selected img {
+        -webkit-transform: scale(1.1, 1.1);
+        -moz-transform: scale(1.1, 1.1);
+        -o-transform: scale(1.1, 1.1);
+        -ms-transform: scale(1.1, 1.1);
+        transform: scale(1.1, 1.1);
     }
-    /*//list animation*/
-    /*//scale in the circle, follwoed by the list item*/
-    /*//the border must also animate in.*/
-    .timeline-list li {
-        position: relative;
+
+    #issues li img {
+        float: left;
+        margin: 10px 30px 10px 50px;
+        background: transparent;
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)";
+        /* IE 8 */
+
+        filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF, endColorstr=#00FFFFFF);
+        /* IE 6 & 7 */
+
+        zoom: 1;
+        -webkit-transition: all 2s ease-in-out;
+        -moz-transition: all 2s ease-in-out;
+        -o-transition: all 2s ease-in-out;
+        -ms-transition: all 2s ease-in-out;
+        transition: all 2s ease-in-out;
+        -webkit-transform: scale(0.7, 0.7);
+        -moz-transform: scale(0.7, 0.7);
+        -o-transform: scale(0.7, 0.7);
+        -ms-transform: scale(0.7, 0.7);
+        transform: scale(0.7, 0.7);
     }
-    .timeline-list li:before {
-        content: "";
+    #issues li p {
+        font-size: 14px;
+        margin-left: 70px;
+        font-weight: normal;
+        line-height: 22px;
+    }
+
+    #grad_left,
+    #grad_right {
+        width: 100px;
+        height: 200px;
         position: absolute;
-        top: 0px;
-        left: -1.45em;
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        background: none repeat scroll 0% 0% #222222;
-        border: 5px solid #fff;
-        animation:revealScaleUp 0.75s 0s ease both 1;
-    }
-    .timeline-list {
-
-        animation:reveal 2s 0 ease both 1;
-    }
-    .timeline-list li .content {
-        animation:revealFromLeft 0.5s 0s ease both 1;
+        top: 0;
     }
 
+    #grad_left {
+        left: 0;
+    }
 
-    .contentss {
-        font-size: 150%;
-        padding: 3em 0;
+    #grad_right {
+        right: 0;
+    }
+
+    #next,
+    #prev {
+        position: absolute;
+        top: 0;
+        font-size: 70px;
+        top: 170px;
+        width: 25px;
+        height: 25px;
+        border-radius: 50px;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        text-indent: -9999px;
+        overflow: hidden;
+    }
+
+    #next:hover,
+    #prev:hover {
+        background-position: 0 -76px;
+    }
+
+    #next {
+        right: 0;
+        background-color: rgba(0,0,0,0.4);
+
+    }
+
+    #prev {
+        left: 0;
+        background-color: rgba(0,0,0,0.4);
+
+    }
+
+    #next.disabled,
+    #prev.disabled {
+        opacity: 0.2;
+    }
+    .text-fe {
+        width: 100%;
+        font-size: 16px !important;
+        text-align: right;
         position: relative;
-        top:-120px;
-        right: 1100px;
+        right: -180px;
+        border: none;
+    }
+    .text-fe i{
+        width: 100%;
+        font-size: 16px !important;
+        text-align: right;
+        position: relative;
+        right: 200px;
+        border: none;
+    }
+    .crusel2{
+        width: 300px;
+        height: 250px;
+        margin-bottom: 30px;
+        background-color: #fff;
+    }
+    .crusel11{
+        direction:ltr !important;
+        width: 100%;
+        height: 200px;
     }
 
-    .timeline-list li:nth-child(1):before {
-        animation-delay:0.85s;
-    }
-    .timeline-list li:nth-child(1) .content {
-        animation-delay:1.05s;
-    }
-    .timeline-list li:nth-child(2):before {
-        animation-delay:1.2s;
-    }
-    .timeline-list li:nth-child(2) .content {
-        animation-delay:1.5s;
-    }
-    .timeline-list li:nth-child(3):before {
-        animation-delay:1.8s;
-    }
-    .timeline-list li:nth-child(3) .content {
-        animation-delay:2.1s;
-    }
-    .timeline-list li:nth-child(4):before {
-        animation-delay:2s;
-    }
-    .timeline-list li:nth-child(4) .content {
-        animation-delay:2.3s;
-    }
-    @keyframes revealFromLeft {
-        0% {
-            transform:translateX(-1em);
-            opacity:0;
-        }
-        100% {
-            opacity:1;
-            transform:translateX(0);
-        }
-    }
-    @keyframes reveal {
-        0% {
-            opacity:0;
-        }
-        100% {
-            opacity:1;
-        }
-    }
-    @keyframes scaleVertical {
-        0% {
-            transform:scaleY(0);
-
-        }
-        100% {
-            transform:scaleY(1);
-        }
-    }
-    @keyframes revealScaleUp {
-        0% {
-            opacity:0;
-            transform:scale(0.5);
-        }
-        50% {
-            opacity:1;
-            transform:scale(1.3);
-        }
-        100% {
-            opacity:1;
-            transform:scale(1);
-
-        }
-    }
 }
