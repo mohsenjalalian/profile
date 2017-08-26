@@ -33,6 +33,7 @@
         <link href="css/detacheker.css" rel="stylesheet">
         <link href="css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
         <link href="css/timelineweb.css">
+        <link href="favicons.ico" rel="icon">
         <script src="https://cdn.ckeditor.com/4.7.2/standard/ckeditor.js"></script>
 
         {{--<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />--}}
