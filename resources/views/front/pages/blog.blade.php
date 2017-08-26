@@ -9,7 +9,6 @@
                     <div class="item">
                         <section class="pull-right col-xs-12 col-sm-12 col-md-12 blog">
                             <div class="box-small2">
-
                                 <div id="owl{{$blog->id}}" class="owl-carousel owl6" style="direction: ltr;">
                                     @if(!$blog->album->isEmpty())
                                         @foreach($blog->album as $value)
@@ -28,12 +27,11 @@
                                         </div>
                                     @endif
                                 </div>
-
                                 <h2 class="text-bl">{{$blog->title}}</h2>
                                 <p class="text-bl2 mCustomScrollbar content-a44" data-mcs-theme="minimal-dark">{{$blog->description}}</p>
                                 <hr style="border:1px solid #DFDFDF; width:100%;">
                                 <span class="blog-mg2">{{$blog->date}}</span>
-                                <p><span style="text-align: right; float: right; font-size: 20px; padding-left: 20px;">: اشتراک</span>
+                                <p class="text-fe"><span style="text-align: right; float: right; font-size: 20px; padding-left: 20px;">اشتراک :</span>
                                     <a href="https://www.facebook.com/sharer/sharer.php?u={{route('home')}}#blog">
                                         <span class="face-bl"><i style="font-size: 22px;" class="fa fa-facebook"></i></span>
                                     </a>
@@ -59,7 +57,6 @@
                     <div class="item">
                         <section class="pull-right col-xs-12 col-sm-12 col-md-12 blog">
                             <div class="box-small2">
-
                                 <div id="owl{{$blog->id}}" class="owl-carousel owl6">
                                     @if(!$blog->album->isEmpty())
                                         @foreach($blog->album as $value)
@@ -83,7 +80,7 @@
                                 <p class="text-bl2 mCustomScrollbar content-a44" data-mcs-theme="minimal-dark">{{$blog->description}}</p>
                                 <hr style="border:1px solid #DFDFDF; width:100%;">
                                 <span class="blog-mg2">{{$blog->date}}</span>
-                                <p><span style="text-align: right; float: right; font-size: 20px; padding-left: 20px;">: اشتراک</span>
+                                <p class="text-fe"><span style="text-align: right; float: right; font-size: 20px; padding-left: 20px;">: اشتراک</span>
                                     <a href="https://www.facebook.com/sharer/sharer.php?u={{route('home')}}#blog">
                                         <span class="face-bl"><i style="font-size: 22px;" class="fa fa-facebook"></i></span>
                                     </a>

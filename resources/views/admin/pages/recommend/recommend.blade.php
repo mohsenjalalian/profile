@@ -116,8 +116,7 @@
                 <div class="ibox-content">
                     <input type="text" class="form-control input-sm m-b-xs" id="filter"
                            placeholder="سرچ کردن">
-
-                    <table class="footable table table-stripped" data-page-size="3" data-filter=#filter>
+                    <table class="footable table table-stripped" data-page-size="4" data-filter=#filter>
                         <thead>
                         <tr>
                             <th class="text-center">عکس</th>
@@ -212,4 +211,7 @@
     </div>
     @include('admin.layouts.success')
     @include('admin.layouts.errors')
+
 @endsection
+@section('script')
+@stop

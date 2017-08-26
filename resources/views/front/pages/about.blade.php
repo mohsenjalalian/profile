@@ -14,7 +14,7 @@
             @endif
         </p>
     </section>
-    <section class="col-xs-12 col-md-6 pull-left">
+    <section style="margin-bottom: 30px;" class="col-xs-12 col-md-6 pull-left">
         <div class="box">
             <p>اطلاعات شخصی</p>
             <section class="col-xs-6 col-md-6">

@@ -6,6 +6,28 @@
 <script src="/js/front/snap.svg-min.js"></script>
 <script src="/js/front/kar.js"></script>
 <script src="js/front/timelineweb.js"></script>
+{{--<script src="js/front/modernizr.custom.js"></script>--}}
+{{--<script src="js/front/classie.js"></script>--}}
+{{--<script src="js/front/uiProgressButton.js"></script>--}}
+{{--<script>--}}
+    {{--[].slice.call( document.querySelectorAll( '.progress-button' ) ).forEach( function( bttn, pos ) {--}}
+        {{--new UIProgressButton( bttn, {--}}
+            {{--callback : function( instance ) {--}}
+                {{--var progress = 0,--}}
+                    {{--interval = setInterval( function() {--}}
+                        {{--progress = Math.min( progress + Math.random() * 0.1, 1 );--}}
+                        {{--instance.setProgress( progress );--}}
+
+                        {{--if( progress === 1 ) {--}}
+                            {{--instance.stop( pos === 1 || pos === 3 ? -1 : 1 );--}}
+                            {{--clearInterval( interval );--}}
+                        {{--}--}}
+                    {{--}, 50 );--}}
+            {{--}--}}
+        {{--} );--}}
+    {{--} );--}}
+{{--</script>--}}
+
 <!--jquery-->
 <script>
     $(function(){

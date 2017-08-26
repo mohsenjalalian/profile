@@ -2,7 +2,7 @@
 <main id="about56" class="container">
     <h2 class="text-book2">مقالات و کتاب</h2>
     @if($docs->count() == 1)
-        <ul style="direction:ltr !important; width: 50%;" class="align col-md-6">
+        <ul class="align col-md-6 crusel11">
                 @foreach($docs as $doc)
                     <li style="border:1px solid #eee; margin-right: 150px;">
                         <figure style="margin-left: 10px;" class="book">

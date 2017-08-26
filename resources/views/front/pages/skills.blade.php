@@ -30,7 +30,7 @@
 
 
    @if(!$languages->isEmpty())
-    <section class="col-xs-12 col-md-4 pull-left">
+    <section style="margin-bottom: 10px;" class="col-xs-12 col-md-4 pull-left">
         <div class="box2">
             <section class="col-md-12 text-skill">
                 <div id="owl3" class="owl-carousel" style="direction: ltr;">

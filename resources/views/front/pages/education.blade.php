@@ -5,7 +5,7 @@
         <aside class="col-xs-12 col-md-12">
             @if($educations->count() == 1)
                     @foreach($educations as $education)
-                        <div style="width: 550px; height: 250px; margin-bottom: 30px; background-color: #fff;">
+                        <div class="crusel2">
                             @if ($education->logo)
                                 <img width="100px" class="pull-left hidden-xs hidden-sm img-ed" src="{{asset($education->logo)}}" alt="un"
                                      height="100px">
