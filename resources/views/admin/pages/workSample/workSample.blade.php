@@ -84,7 +84,7 @@
                                     @endif
                                 </div>
                             @else
-                                <p class="text-center">شما هیچ دسته بندی نساخته اید</p>
+                                <p class="text-center">شما هیچ دسته بندی نساخته اید(ضروری)</p>
                             @endif
 
 
@@ -113,7 +113,7 @@
                                     @endif
                                 </div>
                             @else
-                                <p class="text-center">شما هیچ دسته بندی نساخته اید</p>
+                                <p class="text-center">شما هیچ مهارتی نساخته اید</p>
                             @endif
 
                             <div class="row">

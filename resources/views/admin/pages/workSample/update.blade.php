@@ -7,7 +7,7 @@
                   method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
                 {{ method_field('PUT') }}
-                <input type="hidden" name="old_pic" value="{{ $workSample->photo }}">
+                <input type="hidden" id="rmPhoto" name="old_pic" value="{{ $workSample->photo }}">
                 <div class="row">
 
                 <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">

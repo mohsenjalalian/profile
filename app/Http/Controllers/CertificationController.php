@@ -57,7 +57,6 @@ class CertificationController extends Controller
     public function show($id)
     {
         Certification::findOrfail($id);
-
     }
 
     /**
@@ -94,12 +93,17 @@ class CertificationController extends Controller
             return redirect()->back()->withErrors('اطلاعات وارد شده اشتباه است');
         } else {
             $file = request()->file('photo');
-            if ($file) {
+            if (!empty($file)) {
                 $old_photo = \request('old_pic');
                 //Move Upload File
                 $photo = $file->move('images/certificate', $old_photo);
+            } elseif(\request('old_pic') == null){
+                $old_photo = \request('old_pic');
+                $this->deletePhoto($old_photo);
 
-                ///
+                $certification = Certification::find($id);
+                $certification->photo = null;
+                $certification->save();
             }
             // store
             $certificate = Certification::find($id);
@@ -128,12 +132,20 @@ class CertificationController extends Controller
     {
         $certificate = Certification::find($id);
         if ($certificate->photo) {
-            unlink(public_path($certificate->photo));
+            $this->deletePhoto($certificate->photo);
         }
         if ($certificate->delete()) {
             return redirect()->back()->with('success', 'گواهی با موفقیت حذف شد');
         }
 
         return redirect()->back()->withErrors('متاسفانه گواهی حذف نشد');
+    }
+
+
+    public function deletePhoto($photo)
+    {
+        if (file_exists(public_path($photo))) {
+            @unlink(public_path($photo));
+        }
     }
 }

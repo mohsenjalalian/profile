@@ -62,10 +62,10 @@
                 </p>
             </div>
             <div class="web"><i class="fa fa-phone" aria-hidden="true"></i>
-                <p class="text-for"> تلفن</p>
+                <p class="text-for"> تلفن دفتر</p>
                 <p class="text-for2">
-                @if(!empty($contact->phone_number))
-                    {{$translate::toPersianNum($contact->phone_number)}}
+                @if(!empty($contact->office_number))
+                    {{$translate::toPersianNum($contact->office_number)}}
                 @else
                     ۰۲۱-۲۲۰۳۵۹۷۶
                  @endif
@@ -82,10 +82,10 @@
                 </p>
             </div>
             <div class="web"><i class="fa fa-tty" aria-hidden="true"></i>
-                <p class="text-for">تلفن دفتر</p>
+                <p class="text-for">تلفن </p>
                 <p class="text-for2">
-                  @if(!empty($contact->office_number))
-                        {{$translate::toPersianNum($contact->office_number)}}
+                  @if(!empty($contact->phone_number))
+                        {{$translate::toPersianNum($contact->phone_number)}}
                   @else
                      ۰۲۱-۶۶۵۶۴۶۱۲
                   @endif
@@ -101,7 +101,7 @@
                             </p>
                         </div>
                         <div class="web"><i class="fa fa-phone" aria-hidden="true"></i>
-                            <p class="text-for"> تلفن</p>
+                            <p class="text-for"> تلفن دفتر</p>
                             <p class="text-for2">
 
                                     ۰۲۱-۲۲۰۳۵۹۷۶
@@ -117,7 +117,7 @@
                             </p>
                         </div>
                         <div class="web"><i class="fa fa-tty" aria-hidden="true"></i>
-                            <p class="text-for">تلفن دفتر</p>
+                            <p class="text-for">تلفن </p>
                             <p class="text-for2">
 
                                     ۰۲۱-۶۶۵۶۴۶۱۲

@@ -9,7 +9,7 @@
                   method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
                 {{ method_field('PUT') }}
-                <input type="hidden" name="old_pic" value="{{ $education->photo }}">
+                <input type="hidden" id="rmPhoto" name="old_pic" value="{{ $education->photo }}">
 <div class="row">
     <div style="margin-top: 20px;" class="col-md-3">
                 <div class="form-group{{ $errors->has('university_name') ? ' has-error': ''}}">
@@ -90,17 +90,20 @@
                                 @else
                                     <h4 style="margin-top: 60px;">شما هیچ عکسی آپلود نکرده اید</h4>
                                 @endif
-                            <div style="width: 280px; margin-right: 15px;" class="fileinput fileinput-new input-group" data-provides="fileinput">
-                                <div class="form-control" data-trigger="fileinput">
-                                    <p class="fileinput-exists" style="color: #2aca76;">بارگذاری شد</p>
-                                </div>
-                                <span style="border: 1px solid #e5e6e7;" class="input-group-addon btn btn-default btn-file">
+                                    <button type="button" id="btnremove" class="btn btn-danger">پاک کردن</button>
+                                    <div style="width: 280px; margin-right: 15px;" class="fileinput fileinput-new input-group" data-provides="fileinput">
+                                        <div class="form-control" data-trigger="fileinput">
+                                            <p class="fileinput-exists" style="color: #2aca76;">بارگذاری شد</p>
+                                        </div>
+
+                                        <span style="border: 1px solid #e5e6e7;" class="input-group-addon btn btn-default btn-file">
                                                     <span class="fileinput-new">بارگذاری</span>
                                                     <span class="fileinput-exists">عوض کردن</span>
-                                                    <input type="file" value="{{$education->logo}}" name="logo">
+                                                    <input type="file" id="rmPhoto" value="{{$education->logo}}" name="logo">
                                                 </span>
-                                <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">پاک کردن</a>
-                            </div>
+
+                                        <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">پاک کردن</a>
+                                    </div>
                                 @if($errors->has('logo'))
                                     <span class="help-block">{{ $errors->first('logo')}}</span>
                                 @endif
@@ -116,4 +119,12 @@
     </div>
     <script src="js/cheouts.js"></script>
     <script src="js/time.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('#btnremove').click(function(){
+                $('#rmPhoto').attr("value", "");
+            });
+        });
+    </script>
 @endsection

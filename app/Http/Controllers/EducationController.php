@@ -94,11 +94,18 @@ class EducationController extends Controller
             return redirect()->back()->withErrors('اطلاعات وارد شده اشتباه است');
         } else {
             $file = request()->file('logo');
-            if ($file) {
+            if (!empty($file)) {
                 //Change File name
                 $old_photo =\request('old_pic');
                 //Move Upload File
                 $photo = $file->move('images/education', $old_photo);
+            }elseif(\request('old_pic') == null){
+                $old_photo = \request('old_pic');
+                $this->deletePhoto($old_photo);
+
+                $education = Education::find($id);
+                $education->logo = null;
+                $education->save();
             }
 
             $certificate = Education::find($id);
@@ -130,12 +137,19 @@ class EducationController extends Controller
     {
         $education = Education::find($id);
         if ($education->photo) {
-            unlink(public_path($education->photo));
+            $this->deletePhoto($education->photo);
         }
         if ($education->delete()) {
             return redirect()->back()->with('success', 'تحصیلات با موفقیت حذف شد');
         }
 
         return redirect()->back()->withErrors('متاسفانه تحصیلات حذف نشد');
+    }
+
+    public function deletePhoto($photo)
+    {
+        if(file_exists(public_path($photo))){
+            @unlink(public_path($photo));
+        }
     }
 }

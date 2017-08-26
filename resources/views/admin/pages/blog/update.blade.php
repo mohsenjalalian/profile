@@ -70,8 +70,17 @@
                             <span class="help-block">{{ $errors->first('description')}}</span>
                         @endif
                     </div>
+
                     <div class="row">
+
                         @for($i=0;$i<3;$i++)
+                            @if (isset($blog->album[$i]))
+
+                            <input type="hidden"
+                                   id="photo_{{$blog->album[$i]->id}}"
+                                   class="rmPhoto" name="old_pic[{{ $blog->album[$i]->id }}]"
+                                   value="{{ $blog->album[$i]->id }}">
+@endif
                             <div class="col-md-2">
                                 <div class="ibox float-e-margins">
                                     <div class="form-group{{ $errors->has('photo') ? 'has-error': ''}}">
@@ -82,15 +91,29 @@
                                              alt="{{$blog->album[$i]->photo}}"
                                                 @endif
                                         >
+                                        @if (isset($blog->album[$i]))
 
-                                        <div class="fileinput fileinput-new" data-provides="fileinput">
-                                          <span class="btn btn-default btn-file"><span
-                                                      class="fileinput-new">عکس </span> <span
-                                                      class="fileinput-exists"><span class="fileinput-exists"><span
-                                                              style="color: #2aca76;">بارگذاری شد</span></span> </span>
-                                            <input type="file" class="upload-photo"
-                                                   name="photo[{{ isset($blog->album[$i]) ? $blog->album[$i]->id : ''}}]">
-                                          </span>
+                                        <button type="button"  class="btn btn-danger btnremove"
+                                            id="btn_{{$blog->album[$i]->id}}">پاک کردن</button>
+                                        @endif
+                                        <div style="width: 280px; margin-right: 15px;" class="fileinput fileinput-new input-group" data-provides="fileinput">
+                                            <div class="form-control" data-trigger="fileinput">
+                                                <p class="fileinput-exists" style="color: #2aca76;">بارگذاری شد</p>
+                                            </div>
+
+                                            <span style="border: 1px solid #e5e6e7;" class="input-group-addon btn btn-default btn-file">
+                                                    <span class="fileinput-new">بارگذاری</span>
+                                                    <span class="fileinput-exists">عوض کردن</span>
+                                                    <input type="file"
+                                                           class="rmPhoto"
+                                                           @if (isset($blog->album[$i]))
+
+                                                           value="{{ $blog->album[$i]->photo }}"
+        @endif
+                                                           name="photo[{{isset($blog->album[$i]) ? $blog->album[$i]->id : ''}}]">
+                                                </span>
+
+                                            <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">پاک کردن</a>
                                         </div>
 
                                         @if($errors->has('photo'))
@@ -117,4 +140,12 @@
     </div>
     <script src="js/cheouts.js"></script>
     <script src="js/time.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.btnremove').click(function(){
+                var id = $(this).attr('id').replace('btn_','');
+                $("#photo_"+id).val('');
+            });
+        });
+    </script>
 @endsection
