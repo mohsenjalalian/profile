@@ -4,7 +4,6 @@ namespace App\Http\Requests;
 
 use App\Model\Album;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\Auth;
 
 class AlbumForm extends FormRequest
 {

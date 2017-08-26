@@ -5,9 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\BlogForm;
 use App\Model\Album;
 use App\Model\Blog;
-use Illuminate\Http\Request;
-use Illuminate\Http\UploadedFile;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 
@@ -175,7 +172,7 @@ class BlogController extends Controller
         return redirect()->back()->withErrors('متاسفانه بلاگ حذف نشد');
     }
 
-    public function deletePhoto($photo)
+    private function deletePhoto($photo)
     {
         if (file_exists(public_path($photo))) {
             @unlink(public_path($photo));

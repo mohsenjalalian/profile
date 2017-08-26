@@ -18,7 +18,6 @@ use App\Model\SkillType;
 use App\Model\SocialNetwork;
 use App\Model\WorkExperince;
 use App\Model\WorkSample;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
