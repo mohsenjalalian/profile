@@ -71,7 +71,7 @@
                  @endif
                 </p>
             </div>
-            <div class="web"><i class="fa fa-phone" aria-hidden="true"></i>
+            <div class="web"><i style="font-size: 30px; margin-top: 3px; margin-right: 12px;" class="fa fa-mobile" aria-hidden="true"></i>
                 <p class="text-for"> تلفن همراه</p>
                 <p class="text-for2">
                 @if(!empty($contact->mobile))
@@ -108,7 +108,7 @@
 
                             </p>
                         </div>
-                        <div class="web"><i class="fa fa-phone" aria-hidden="true"></i>
+                        <div class="web"><i style="font-size: 30px; margin-top: 3px; margin-right: 12px;" class="fa fa-mobile" aria-hidden="true"></i>
                             <p class="text-for"> تلفن همراه</p>
                             <p class="text-for2">
 
@@ -177,14 +177,14 @@
                     <img class="img-qr hidden-xs" src="{{$contact->qr_code}}" alt="{{$contact->qr_code}}"
                          width="130px">
                   @else
-                    <img class="img-qr hidden-xs" src="image/admin.png" alt=""
+                    <img class="img-qr hidden-xs" src="images/front/Cotint.png" alt=""
                          width="130px">
                 @endif
             </div>
             @endforeach
                  @else
                     <div class="pull-left">
-                    <img class="img-qr hidden-xs" src="image/admin.png" alt=""
+                    <img class="img-qr hidden-xs" src="images/front/Cotint.png" alt="cotint"
                          width="130px">
                     </div>
                  @endif

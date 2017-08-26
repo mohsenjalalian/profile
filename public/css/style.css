@@ -8645,6 +8645,31 @@ body.md-skin {
     display: none;
   }
 }
+
+@media (max-width: 460px) {
+  .btn-su{
+    position: relative;
+    right: 150px;
+  }
+  .btn-core{
+    position: relative;
+    right: 150px;
+  }
+  .img-cir{
+    margin-right: 20px;
+  }
+.img-cir2{
+  margin-right: -20px;
+}
+.hde{
+  position: relative;
+  right:20px;
+}
+.qr-mg{
+  position: relative;
+  right: 20px;
+}
+}
 @media print {
   nav.navbar-static-side {
     display: none;

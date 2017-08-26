@@ -60,7 +60,7 @@
         <img class="cover-img" src="{{$profile->cover}}"
              alt="cover" height="480px" width="100%">
     @else
-        <img class="cover-img" height="480px" width="100%"  src="/image/a4.jpg"
+        <img class="cover-img" height="480px" width="100%"  src="/images/front/background.jpg"
              alt="cover">
     @endif
 
@@ -122,10 +122,10 @@
     </div>
 @endforeach
     @else
-    <img class="cover-img" height="480px" width="100%"  src="/image/a4.jpg"
+    <img class="cover-img" height="480px" width="100%"  src="/images/front/background.jpg"
          alt="cover">
     <section class="pull-right col-sm-6 col-xs-12 col-md-5">
-        <img class="me img-responsive" width="370px;"  height="200px" src="/image/profile.png" alt="me">
+        <img class="me img-responsive" width="370px;"  height="200px" src="/images/front/Avatar2.png" alt="me">
     </section>
 
     <div class="row">

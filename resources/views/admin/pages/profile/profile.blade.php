@@ -434,7 +434,7 @@
                                                 <img style="width: 50px;height: 50px; position: relative; right: 25px;"
                                                      id="photo1"
                                                      src="{{asset($profile->photo)}}" alt="{{$profile->photo}}">
-                                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                <div class="fileinput fileinput-new img-cir" data-provides="fileinput">
                                         <span class="btn btn-default btn-file"><span
                                                     class="fileinput-new"> بارگذاری عکس</span>
                                           <span class="fileinput-exists"><span
@@ -459,7 +459,7 @@
                                                     <i style="font-size: 52px; position: relative; right: 20px; display: none;"
                                                        class="fa fa-book"></i>
                                                 @endif
-                                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                <div class="fileinput fileinput-new img-cir" data-provides="fileinput">
                                         <span class="btn btn-default btn-file"><span
                                                     class="fileinput-new"> بارگذاری pdf</span><span
                                                     class="fileinput-exists"><span
@@ -473,13 +473,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 img-cir">
                                         <div class="ibox float-e-margins">
                                             <div class="form-group{{ $errors->has('cover') ? ' has-error': ''}}">
                                                 <img style="width: 50px;height: 50px; position: relative; right: 20px;"
                                                      id="photo2"
                                                      src="{{asset($profile->cover)}}" alt="{{$profile->cover}}">
-                                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                <div class="fileinput fileinput-new img-cir" data-provides="fileinput">
                                         <span class="btn btn-default btn-file"><span class="fileinput-new"> بارگذاری کاور</span><span
                                                     class="fileinput-exists"><span
                                                         style="color: #2aca76;">بارگذاری شد</span></span>
@@ -492,8 +492,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button style="margin-top: 20px; font-family: webmdesign; margin-left: 330px; float: left !important;"
-                                            class="btn btn-primary col-md-4" name="submit" type="submit"
+                                    <button style="margin-top: 20px; font-family: webmdesign; margin-left: 300px; float: left !important;"
+                                            class="btn btn-primary col-md-4 btn-su" name="submit" type="submit"
                                             id="contact-submit"
                                             data-submit="...Sending">
                                         اصلاح
@@ -504,8 +504,8 @@
                                     {{ csrf_field() }}
 
                                     <span class="text-center"><button
-                                                style="width: 30px; float: left; height: 33px; margin-top: -34px; margin-left: 290px;"
-                                                class="btn btn-danger"><i style="margin-right: -5px" class="fa fa-trash"
+                                                style="width: 30px; float: left; height: 33px; margin-top: -34px; margin-left: 260px;"
+                                                class="btn btn-danger btn-core"><i style="margin-right: -5px" class="fa fa-trash"
                                                                           aria-hidden="true"></i></button></span>
 
                                 </form>

@@ -9,11 +9,11 @@
                 {{ method_field('PUT') }}
                 <input type="hidden" name="old_pic" value="{{ $workSample->photo }}">
                 <div class="row">
-
+                    <div class="col-md-3">
                 <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
                     <label>نام</label>
                     <fieldset>
-                        <input class="form-control m-b col-md-2"
+                        <input class="form-control m-b"
                                placeholder="نام"
                                value="{{$workSample->name}}" type="text" name="name" tabindex="1"
                                 autofocus>
@@ -22,11 +22,12 @@
                         <span class="help-block">{{ $errors->first('name')}}</span>
                     @endif
                 </div>
-
+                    </div>
+                    <div class="col-md-3">
                     <div class="form-group{{ $errors->has('link') ? ' has-error': ''}}">
                         <label>لینک</label>
                         <fieldset>
-                            <input class="form-control m-b col-md-2" placeholder="نام"
+                            <input class="form-control m-b" placeholder="نام"
                                    value="{{$workSample->link}}" type="text" name="link" tabindex="1"
                                     autofocus>
                         </fieldset>
@@ -34,16 +35,20 @@
                             <span class="help-block">{{ $errors->first('link')}}</span>
                         @endif
                     </div>
-
-                    <div style="position: absolute; top: -2px; right: 255px;" class="col-md-5">
-                        <div class="ibox float-e-margins">
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                    @if(isset($workSample->photo))
+                        <img id="btnrm" width="50" height="50" src="{{asset($workSample->photo)}}">
+                    @endif
+                    </div>
+                    <div style="margin-right: 0px;" class="col-md-1">
+                    <button style="font-family: webmdesign; margin-right: 0px; margin-top: 0px; background-color: #fff; border: 1px solid #e5e6e7; color: #333;" type="button" id="btnremove" class="btn">پاک کردن</button>
+                    </div>
+                    <div style="margin-right: 0px;" class="col-md-1">
+                        <div style=" margin-top: 0px;" class="ibox float-e-margins">
                             <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
-                                @if(isset($workSample->photo))
-                                    <img style="position: relative; top: 40px; right: -50px;" width="50" height="50" src="{{asset($workSample->photo)}}">
-                                @else
-                                    <h4 style="margin-top: 22px;">شما هیچ عکسی آپلود نکرده اید</h4>
-                                @endif
-                                    <button type="button" id="btnremove" class="btn btn-danger">پاک کردن</button>
                                     <div style="width: 280px; margin-right: 15px;" class="fileinput fileinput-new input-group" data-provides="fileinput">
                                     <div class="form-control" data-trigger="fileinput">
                                         <p class="fileinput-exists" style="color: #2aca76;">بارگذاری شد</p>
@@ -54,8 +59,8 @@
                                                     <span class="fileinput-exists">عوض کردن</span>
                                                     <input type="file" id="rmPhoto" value="{{$workSample->photo}}" name="photo">
                                                 </span>
+                                        <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">پاک کردن</a>
 
-                                    <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">پاک کردن</a>
                                 </div>
                                 @if($errors->has('photo'))
                                     <span class="help-block">{{ $errors->first('photo')}}</span>
@@ -70,7 +75,7 @@
                     <p style="position:relative; height: 22px; top: 0px; right: 15px;">دسته بندی</p>
                     <div style="margin-top: 0px;"
                          class="form-group{{ $errors->has('category_id[]') ? ' has-error': ''}}">
-                        <div style="margin-top: 0px; margin-right: 15px; width: 520px;"
+                        <div style=" position: relative; top: -20px; margin-right: 15px; width: 520px;"
                              class="ibox float-e-margins">
                             <div class="form-group">
                                 <label class="font-noraml text-center"></label>
@@ -109,9 +114,9 @@
                 @endif
 
                 @if(count($skills) > 0)
-                    <p style="position: relative; top: 2px; right: 15px;">مهارت ها</p>
+                    <p style="position: relative; top: -20px; right: 15px;">مهارت ها</p>
                     <div class="form-group{{ $errors->has('skill_id[]') ? ' has-error': ''}}">
-                        <div style="margin-top: -15px; margin-right: 15px; width: 520px; "
+                        <div style="margin-top: -30px; margin-right: 15px; width: 520px; "
                              class="ibox float-e-margins">
                             <div class="form-group">
                                 <label class="font-noraml text-center"></label>
@@ -173,9 +178,13 @@
                 $('#rmPhoto').attr("value", "");
             });
         });
-
-
-
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#btnremove").click(function () {
+                $("#btnrm").fadeOut(2000)
+            });
+        });
     </script>
 
 @endsection

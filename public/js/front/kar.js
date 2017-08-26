@@ -206,7 +206,7 @@ $(document).scroll(function(e) {
     }
 		w = $(document).scrollTop();
     if(about3 != undefined) {
-        if (w > about3.position().top && j < about3.position().top + about3.height()) {
+        if (w > about3.position().top && w < about3.position().top + about3.height()) {
             $("#icon4").css("background-color", "#fff");
         } else {
             $("#icon4").css("background-color", "#ffd93e");
@@ -264,7 +264,7 @@ $(document).scroll(function(e) {
     }
 
 	k = $(document).scrollTop();
-    if(about6 != undefined) {
+    if(about7 != undefined) {
         if (k > about6.position().top && k < about7.position().top + about6.height()) {
             $("#icon8").css("background-color", "#fff");
         } else {
