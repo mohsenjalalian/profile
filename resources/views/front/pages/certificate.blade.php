@@ -4,6 +4,7 @@
         <h2 class="text-ex">گواهی و مدارک</h2>
         @if($certifications->count() == 1)
             @foreach($certifications as $certification)
+
                 <div style="direction: rtl;" class="col-md-6">
                 <div class="item">
                     <div  class="grid-go">
