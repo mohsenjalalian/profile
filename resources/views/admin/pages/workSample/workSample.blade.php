@@ -77,7 +77,7 @@
                                                     @endforeach
                                                 </select>
                                             </div>
-                                            <p style="padding-top:20px;">بیش از ۳ کاراکتر وارد نشود</p>
+                                            <p style="padding-top:8px;">بیش از ۳ کاراکتر وارد نشود</p>
                                         </div>
                                     </div>
                                     @if($errors->has('category_id[]'))
@@ -107,7 +107,7 @@
                                                     @endforeach
                                                 </select>
                                             </div>
-                                         <p style="padding-top:20px;">بیش از ۵ کاراکتر وارد نشود</p>
+                                         <p style="padding-top:8px;">بیش از ۵ کاراکتر وارد نشود</p>
                                         </div>
                                     </div>
                                     @if($errors->has('skill_id[]'))

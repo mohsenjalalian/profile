@@ -132,38 +132,38 @@
             <div class="texti">
                 @foreach($socialNetworks as $socialNetwork)
                     @if(!empty($socialNetwork->google_plus))
-                    <a href="{{$socialNetwork->google_plus}}">
+                    <a href="{{$socialNetwork->google_plus}}" target="_blank">
                         <i id="social-fo1" class="fa fa-google-plus"
                            aria-hidden="true"></i>
                     </a>
                     @endif
                         @if(!empty($socialNetwork->twitter))
-                    <a href="{{$socialNetwork->twitter}}"><i id="social-fo2" class="fa fa-twitter"
+                    <a href="{{$socialNetwork->twitter}}" target="_blank"><i id="social-fo2" class="fa fa-twitter"
                                                              aria-hidden="true"></i>
                     </a>
                      @endif
                         @if(!empty($socialNetwork->facebook))
-                    <a href="{{$socialNetwork->facebook}}"><i id="social-fo3" class="fa fa-facebook"
+                    <a href="{{$socialNetwork->facebook}}" target="_blank"><i id="social-fo3" class="fa fa-facebook"
                                                               aria-hidden="true"></i></a>
                         @endif
                         @if(!empty($socialNetwork->site))
-                    <a href="{{$socialNetwork->site}}"><i id="social-fo4" class="fa fa-book"
+                    <a href="{{$socialNetwork->site}}" target="_blank"><i id="social-fo4" class="fa fa-book"
                                                               aria-hidden="true"></i></a>
                         @endif
                         @if(!empty($socialNetwork->skype))
-                    <a href="{{$socialNetwork->skype}}"><i id="social-fo5" class="fa fa-skype"
+                    <a href="{{$socialNetwork->skype}}" target="_blank"><i id="social-fo5" class="fa fa-skype"
                                                           aria-hidden="true"></i></a>
                         @endif
                         @if(!empty($socialNetwork->telegram))
-                    <a href="{{$socialNetwork->telegram}}"><i id="social-fo6" class="fa fa-paper-plane"
+                    <a href="{{$socialNetwork->telegram}}" target="_blank"><i id="social-fo6" class="fa fa-paper-plane"
                                                            aria-hidden="true"></i></a>
                         @endif
                         @if(!empty($socialNetwork->linkedin))
-                    <a href="{{$socialNetwork->linkedin}}"><i id="social-fo7" class="fa fa-linkedin"
+                    <a href="{{$socialNetwork->linkedin}}" target="_blank"><i id="social-fo7" class="fa fa-linkedin"
                                                            aria-hidden="true"></i></a>
                         @endif
                         @if(!empty($socialNetwork->instagram))
-                    <a href="{{$socialNetwork->instagram}}"><i id="social-fo8" class="fa fa-instagram"
+                    <a href="{{$socialNetwork->instagram}}" target="_blank"><i id="social-fo8" class="fa fa-instagram"
                                                            aria-hidden="true"></i></a>
                         @endif
                 @endforeach
