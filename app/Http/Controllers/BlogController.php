@@ -130,9 +130,20 @@ class BlogController extends Controller
                             );
                     }
                 }
+
+                $oldPhoto = \request('old_pic');
+                if (isset($oldPhoto)) {
+                    foreach ($oldPhoto as $id => $old) {
+                        if ($old == null) {
+                            $album = Album::find($id);
+                            $this->deletePhoto($album->photo);
+                            $album->delete();
+                        }
+                    }
+                }
             }
         }
-        
+
         // redirect
         return redirect()->route('blog')->with('success', 'بلاگ شما با موفقیت اصلاح شد');
     }
@@ -162,5 +173,12 @@ class BlogController extends Controller
         }
 
         return redirect()->back()->withErrors('متاسفانه بلاگ حذف نشد');
+    }
+
+    public function deletePhoto($photo)
+    {
+        if (file_exists(public_path($photo))) {
+            @unlink(public_path($photo));
+        }
     }
 }

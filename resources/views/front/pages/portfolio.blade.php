@@ -1,4 +1,5 @@
 <!--portfolio-->
+@if(!$workSamples->isEmpty())
 <main id="about4" class="container-fluid background-four">
     <section class="container">
         <h2 style="font-size:25px; margin-top: 30px;"><strong>نمونه کار</strong></h2>
@@ -19,9 +20,9 @@
                                             <figure>
                                                 <div>
                                                     @if ($work->photo)
-                                                        <img src="{{$work->photo}}" alt="img05">
+                                                        <img src="{{$work->photo}}" alt="عکس نمونه کار">
                                                     @else
-                                                        <img src="images/front/site.png" alt="img05">
+                                                        <img src="images/front/site.png" alt="عکس نمونه کار">
                                                     @endif
                                                 </div>
                                                 <figcaption>
@@ -45,3 +46,4 @@
         </main>
     </section>
 </main>
+@endif

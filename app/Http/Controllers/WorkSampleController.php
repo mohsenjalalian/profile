@@ -97,6 +97,7 @@ class WorkSampleController extends Controller
         $rules = array(
             'name' => 'required|min:3|regex:/^[\pL\s\-\0-9]+$/u',
             'photo' => 'file|mimes:jpeg,bmp,png|max:5000|nullable',
+            'photo' => 'file|mimes:jpeg,bmp,png|max:5000|nullable',
         );
 
         $validator = Validator::make(Input::all(), $rules);
@@ -110,9 +111,10 @@ class WorkSampleController extends Controller
                 $old_photo = \request('old_pic');
                 //Move Upload File
                 $photo = $file->move('images/workSample', $old_photo);
-            }else{
+            }elseif(\request('old_pic') == null){
 
                 $old_photo = \request('old_pic');
+
                 $this->deletePhoto($old_photo);
 
                 $workSample = WorkSample::find($id);

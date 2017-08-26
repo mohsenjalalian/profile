@@ -12,7 +12,6 @@
                   enctype="multipart/form-data">
                 {{csrf_field()}}
                 {{ method_field('PUT') }}
-                <input type="hidden" name="old_pic" value="{{ $recommend->photo }}">
                 <div class="row">
                 <div style="margin-top: 3px;" class="col-md-3">
                 <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
@@ -73,10 +72,11 @@
                                         <div class="form-control" data-trigger="fileinput">
                                             <p class="fileinput-exists" style="color: #2aca76;">بارگذاری </p>
                                         </div>
-                                        <span style="border: 1px solid #e5e6e7;" class="input-group-addon btn btn-default btn-file">
+                                            <input type="hidden" id="rmPhoto" name="old_pic" value="{{ $recommend->photo }}">
+                                            <span style="border: 1px solid #e5e6e7;" class="input-group-addon btn btn-default btn-file">
                                                     <span class="fileinput-new">بارگذاری</span>
                                                     <span class="fileinput-exists">عوض کردن</span>
-                                                    <input type="file"  value="{{$recommend->photo}}" name="photo">
+                                                    <input type="file" name="photo" value="{{$recommend->photo}}" >
                                                 </span>
                                         <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">پاک کردن</a>
                                     </div>

@@ -11,7 +11,7 @@
                   enctype="multipart/form-data">
                 {{csrf_field()}}
                 {{ method_field('PUT') }}
-                <input type="hidden" name="old_pic" value="{{ $certificate->photo }}">
+                <input type="hidden" id="rmPhoto" name="old_pic" value="{{ $certificate->photo }}">
                 <div class="row">
                     <div style="margin-top: 0px; margin-right: 150px;" class="col-md-3">
                 <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
@@ -62,17 +62,22 @@
                                 @else
                                     <h4 style="width: 200px; margin-top: 50px;">شما هیچ عکسی آپلود نکرده اید</h4>
                                 @endif
-                                <div style="width: 280px; margin-right: 15px;" class="fileinput fileinput-new input-group" data-provides="fileinput">
-                                    <div class="form-control" data-trigger="fileinput">
-                                        <p class="fileinput-exists" style="color: #2aca76;">بارگذاری شد</p>
-                                    </div>
-                                    <span style="border: 1px solid #e5e6e7;" class="input-group-addon btn btn-default btn-file">
+
+                                    <button type="button" id="btnremove" class="btn btn-danger">پاک کردن</button>
+                                    <div style="width: 280px; margin-right: 15px;" class="fileinput fileinput-new input-group" data-provides="fileinput">
+                                        <div class="form-control" data-trigger="fileinput">
+                                            <p class="fileinput-exists" style="color: #2aca76;">بارگذاری شد</p>
+                                        </div>
+
+                                        <span style="border: 1px solid #e5e6e7;" class="input-group-addon btn btn-default btn-file">
                                                     <span class="fileinput-new">بارگذاری</span>
                                                     <span class="fileinput-exists">عوض کردن</span>
-                                                    <input type="file" value="{{$certificate->photo}}" name="photo">
+                                                    <input type="file" id="rmPhoto" value="{{$certificate->photo}}" name="photo">
                                                 </span>
-                                    <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">پاک کردن</a>
-                                </div>
+
+                                        <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">پاک کردن</a>
+                                    </div>
+
                                     @if($errors->has('photo'))
                                         <span class="help-block">{{ $errors->first('photo')}}</span>
                                     @endif
@@ -110,6 +115,11 @@
         });
     });
 
+    $(document).ready(function(){
+        $('#btnremove').click(function(){
+            $('#rmPhoto').attr("value", "");
+        });
+    });
 </script>
 @endsection
 

@@ -93,10 +93,17 @@ class DocsController extends Controller
             return redirect()->back()->withErrors('اطلاعات وارد شده اشتباه است');
         } else {
             $file = request()->file('photo');
-            if ($file) {
+            if (!empty($file)) {
                 $old_photo = \request('old_pic');
                 //Move Upload File
                 $photo = $file->move('images/docs', $old_photo);
+            } elseif(\request('old_pic') == null){
+                $old_photo = \request('old_pic');
+                $this->deletePhoto($old_photo);
+
+                $docs = Docs::find($id);
+                $docs->photo = null;
+                $docs->save();
             }
 
             // store
@@ -128,7 +135,7 @@ class DocsController extends Controller
         $docs = Docs::find($id);
 
         if ($docs->photo) {
-            unlink(public_path($docs->photo));
+            $this->deletePhoto($docs->photo);
         }
 
         if ($docs->delete()) {
@@ -136,5 +143,12 @@ class DocsController extends Controller
         }
 
         return redirect()->back()->withErrors('متاسفانه مقاله حذف نشد');
+    }
+
+    public function deletePhoto($photo)
+    {
+        if (file_exists(public_path($photo))) {
+            @unlink(public_path($photo));
+        }
     }
 }

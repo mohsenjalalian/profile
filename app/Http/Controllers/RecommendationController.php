@@ -95,19 +95,20 @@ class RecommendationController extends Controller
             return redirect()->back()->withErrors('اطلاعات وارد شده اشتباه است');
         } else {
             $file = request()->file('photo');
+
             if (!empty($file)) {
                 //Change File name
                 $old_photo = \request('old_pic');
                 //Move Upload File
                 $photo = $file->move('images/recommend', $old_photo);
                 ///
-            } else {
+            } elseif (\request('old_pic') == null) {
                 $old_photo = \request('old_pic');
                 $this->deletePhoto($old_photo);
 
-                $workSample = Recommendation::find($id);
-                $workSample->photo = null;
-                $workSample->save();
+                $recommend = Recommendation::find($id);
+                $recommend->photo = null;
+                $recommend->save();
             }
             $certificate = Recommendation::find($id);
 

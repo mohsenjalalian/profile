@@ -167,6 +167,7 @@ return [
         'description' => 'توضیحات',
         'date' => 'تاریخ',
         'answer' => 'پاسخ',
+        'category_id' => 'دسته بندی',
 
     ],
 
