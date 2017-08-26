@@ -81,22 +81,28 @@
                                    class="rmPhoto" name="old_pic[{{ $blog->album[$i]->id }}]"
                                    value="{{ $blog->album[$i]->id }}">
 @endif
-                            <div class="col-md-2">
+                        <div class="row">
+
                                 <div class="ibox float-e-margins">
                                     <div class="form-group{{ $errors->has('photo') ? 'has-error': ''}}">
-
-                                        <img style="width: 50px;height: 50px" id="photo1"
+<div class="col-md-1">
+                                        <img style="width: 50px; height: 50px; position: relative;  top: -10px;"
                                              @if (isset($blog->album[$i]))
+                                             id="img_{{$blog->album[$i]->id}}"
                                              src="{{asset(\App\Http\Controllers\BlogController::ALBUM_PATH.'/'.$blog->album[$i]->photo)}}"
                                              alt="{{$blog->album[$i]->photo}}"
-                                                @endif
-                                        >
+                                                @endif>
+</div>
+                                        <div class="-col-md-1">
                                         @if (isset($blog->album[$i]))
 
-                                        <button type="button"  class="btn btn-danger btnremove"
-                                            id="btn_{{$blog->album[$i]->id}}">پاک کردن</button>
+                                        {{--<button type="button"  class="btn btn-danger btnremove"--}}
+                                            {{--id="btn_{{$blog->album[$i]->id}}">پاک کردن</button>--}}
+                                            <button style="font-family: webmdesign; margin-right: 60px; margin-top: 0px; position: relative; right: 300px;  background-color: #fff; border: 1px solid #e5e6e7; color: #333;" type="button" id="btn_{{$blog->album[$i]->id}}" class="btn btnremove">پاک کردن</button>
                                         @endif
-                                        <div style="width: 280px; margin-right: 15px;" class="fileinput fileinput-new input-group" data-provides="fileinput">
+                                        </div>
+                                        <div style="position: relative; top: -40px; margin-top: 30px;" class="col-md-1">
+                                        <div style="width: 280px;" class="fileinput fileinput-new input-group" data-provides="fileinput">
                                             <div class="form-control" data-trigger="fileinput">
                                                 <p class="fileinput-exists" style="color: #2aca76;">بارگذاری شد</p>
                                             </div>
@@ -109,7 +115,7 @@
                                                            @if (isset($blog->album[$i]))
 
                                                            value="{{ $blog->album[$i]->photo }}"
-        @endif
+                                                           @endif
                                                            name="photo[{{isset($blog->album[$i]) ? $blog->album[$i]->id : ''}}]">
                                                 </span>
 
@@ -120,6 +126,7 @@
                                             <span class="help-block">{{ $errors->first('photo')}}</span>
                                         @endif
                                     </div>
+                                    </div>
 
                                 </div>
                             </div>
@@ -127,7 +134,7 @@
                         @endfor
 
                     </div>
-                    <div style="margin-top: -20px;" class="modal-footer col-md-5">
+                    <div style="margin-top: 0px;" class="modal-footer col-md-5">
                         <button style="font-family: webmdesign;" type="button" class="btn btn-white" data-dismiss="modal">بستن</button>
                         <button style="font-family: webmdesign;" name="submit" type="submit" id="contact-submit" data-submit="...Sending"
                                 class="btn btn-primary">اعمال تغیرات
@@ -144,8 +151,10 @@
         $(document).ready(function(){
             $('.btnremove').click(function(){
                 var id = $(this).attr('id').replace('btn_','');
+                $("#img_"+id).fadeOut(2000);
                 $("#photo_"+id).val('');
             });
         });
     </script>
+
 @endsection

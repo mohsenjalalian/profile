@@ -81,16 +81,19 @@
                         </div>
                     </div>
                 </div>
+<div class="row">
 
-                <div style="position: absolute; top: 263px; right: 155px;" class="col-md-5">
                     <div class="ibox float-e-margins">
                             <div class="form-group{{ $errors->has('logo') ? ' has-error': ''}}">
+                                <div style="position: relative; top: -40px; right: 20px;" class="col-md-1">
                                 @if(isset($education->logo))
-                                    <img style="position: relative; top: 40px; right: -35px; " width="50" height="50" src="{{asset($education->logo)}}">
-                                @else
-                                    <h4 style="margin-top: 60px;">شما هیچ عکسی آپلود نکرده اید</h4>
+                                    <img id="btnrm" style="position: relative; top: 40px; right: -35px; " width="50" height="50" src="{{asset($education->logo)}}">
                                 @endif
-                                    <button type="button" id="btnremove" class="btn btn-danger">پاک کردن</button>
+                                </div>
+                                <div style="position: relative; right: 140px;" class="col-md-1">
+                                    <button style="font-family: webmdesign; margin-right: -60px; margin-top: 0px; background-color: #fff; border: 1px solid #e5e6e7; color: #333;" type="button" id="btnremove" class="btn">پاک کردن</button>
+                                </div>
+                                <div style="position: relative; right: 60px;" class="col-md-1">
                                     <div style="width: 280px; margin-right: 15px;" class="fileinput fileinput-new input-group" data-provides="fileinput">
                                         <div class="form-control" data-trigger="fileinput">
                                             <p class="fileinput-exists" style="color: #2aca76;">بارگذاری شد</p>
@@ -98,7 +101,7 @@
 
                                         <span style="border: 1px solid #e5e6e7;" class="input-group-addon btn btn-default btn-file">
                                                     <span class="fileinput-new">بارگذاری</span>
-                                                    <span class="fileinput-exists">عوض کردن</span>
+                                                <span class="fileinput-exists">عوض کردن</span>
                                                     <input type="file" id="rmPhoto" value="{{$education->logo}}" name="logo">
                                                 </span>
 
@@ -108,9 +111,11 @@
                                     <span class="help-block">{{ $errors->first('logo')}}</span>
                                 @endif
                         </div>
-                    </div>
+                            </div>
+
                 </div>
-                <div style="margin-top: 100px;" class="modal-footer col-md-5">
+</div>
+                <div style="margin-top: 10px;" class="modal-footer col-md-5">
                     <button  style="font-family: webmdesign;" type="button" class="btn btn-white" data-dismiss="modal">بستن</button>
                     <button style="font-family: webmdesign;" name="submit" type="submit" id="contact-submit" data-submit="...Sending" class="btn btn-primary">اعمال تغییرات</button>
                 </div>
@@ -124,6 +129,13 @@
         $(document).ready(function(){
             $('#btnremove').click(function(){
                 $('#rmPhoto').attr("value", "");
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#btnremove").click(function () {
+                $("#btnrm").fadeOut(2000)
             });
         });
     </script>

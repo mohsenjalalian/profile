@@ -69,15 +69,17 @@
     </div>
 </div>
                 <div class="row">
-                <div style="margin-top: -20px; margin-right: 130px;" class="col-md-5">
                     <div class="ibox float-e-margins">
                         <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
+                            <div style="position: relative; top: -40px; right: 40px;" class="col-md-1">
                             @if(isset($docs->photo))
-                                <img style="position: relative; top: 40px; right: -39px;" width="50" height="50" src="{{asset($docs->photo)}}">
-                            @else
-                                <h4 style="margin-top: 20px;">شما هیچ عکسی آپلود نکرده اید</h4>
+                                <img id="btnrm" style="position: relative; top: 40px; right: -39px;" width="50" height="50" src="{{asset($docs->photo)}}">
                             @endif
-                                <button type="button" id="btnremove" class="btn btn-danger">پاک کردن</button>
+                            </div>
+                            <div style="position: relative; right: 80px;" class="col-md-1">
+                                <button style="font-family: webmdesign; margin-right: -60px; margin-top: 0px; background-color: #fff; border: 1px solid #e5e6e7; color: #333;" type="button" id="btnremove" class="btn">پاک کردن</button>
+                            </div>
+                            <div style="position: relative; right: 60px;" class="col-md-1">
                                 <div style="width: 280px; margin-right: 15px;" class="fileinput fileinput-new input-group" data-provides="fileinput">
                                     <div class="form-control" data-trigger="fileinput">
                                         <p class="fileinput-exists" style="color: #2aca76;">بارگذاری شد</p>
@@ -95,8 +97,8 @@
                                     <span class="help-block">{{ $errors->first('photo')}}</span>
                                 @endif
                         </div>
+                        </div>
                     </div>
-                </div>
                 </div>
                 <div class="row">
                     <div style="margin-top: 20px;" class="modal-footer col-md-5">
@@ -117,5 +119,12 @@
             });
         });
 
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#btnremove").click(function () {
+                $("#btnrm").fadeOut(2000)
+            });
+        });
     </script>
 @endsection
