@@ -15,7 +15,7 @@
 </head>
 <body style="height: 97%; background-color: #ffd93e; overflow: hidden;">
 
-<p style="text-align: center;"><img class="img-responsive" src="images/front/profile404.jpg" width="400px" height="auto" alt="salam"></p>
+<p style="text-align: center;"><img class="img-responsive" src="images/front/profile404.jpg" width="400px" height="auto" alt="404"></p>
 <p style="font-family: webmdesign; font-size: 25px; text-align: center; margin-top: 50px; color: #222;">متاسفانه صفحه مورد نظر شما یافت نشد</p>
 <p style="text-align: center;">
     <a href="{{route('profile')}}">

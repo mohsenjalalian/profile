@@ -200,7 +200,7 @@
         <section class="col-md-4 pull-left web-footer"><span class="pull-left text-fo">۰۲۱-۲۲۷۴۸۵۴۳<i
                         class="fa fa-phone" aria-hidden="true"></i></span></section>
         <section class="col-md-4 pull-left web-footer">
-            <p class="text-center text-fo2">Power By <span style="color:#245c43;"><a class="text-fo3"
+            <p class="text-center text-fo2">Powerd By <span style="color:#245c43;"><a class="text-fo3"
                                                                                      href="http://cotint.ir/"
                                                                                      target="_blank"><strong>Cotint</strong></a></span>
             </p>

@@ -11,7 +11,7 @@ body {
     line-height: 28px;
     font-size: 13px;
     font-family: webmdesign, tahoma;
-    overflow-x: hidden;
+
 }
 
 a {
@@ -937,6 +937,7 @@ a:hover {
     color: #FFFFFF;
     font-size: 16px;
     margin-top: 50px;
+    margin-right: 20px;
 }
 
 .p-text {
@@ -960,6 +961,8 @@ a:hover {
     font-size: 14px;
     margin-top: -5px;
     color: #fff;
+    position: relative;
+    right: -10px;
 }
 
 .btn-head:hover {
@@ -2305,8 +2308,8 @@ figure.effect-ming:hover img {
 
 @media only screen and (max-width: 1268px) {
     .texth1 {
-        margin-top: 140px;
-        margin-right: 15px;
+        /*margin-top: 140px;*/
+        /*margin-right: 15px;*/
     }
 
     .mouse {
@@ -2320,8 +2323,8 @@ figure.effect-ming:hover img {
     }
 
     .texth1 {
-        margin-top: 10px;
-        margin-right: 10px;
+        /*margin-top: 10px;*/
+        /*margin-right: 10px;*/
     }
 
     .mouse {
@@ -2781,8 +2784,7 @@ figure.effect-ming:hover img {
 
 @media only screen and (max-width: 480px) {
     .texth1 {
-        margin-top: 10px;
-        margin-right: 10px;
+        margin-top: 20px;
     }
     .me {
         width: 90%;
@@ -2792,7 +2794,7 @@ figure.effect-ming:hover img {
         height: 440px;
         clear: both;
         position: absolute;
-        top: -700px;
+        top: -750px;
         right: 20px;
 
     }
@@ -2800,7 +2802,7 @@ figure.effect-ming:hover img {
         color: #ffd93e;
         position: absolute;
         right: 0px;
-        top:550px;
+        top:500px;
 
     }
     /*.me {*/
@@ -2945,7 +2947,7 @@ figure.effect-ming:hover img {
         text-align: right;
         text-align: right;
         font-size: 14px;
-        width: 150px;
+        width: 200px;
         float: right !important;
         padding-right: 25px;
     }
@@ -2980,9 +2982,8 @@ figure.effect-ming:hover img {
     }
 
     .background-five {
-
-        margin-top: 1000px !important;
-        min-height: 140px !important;
+        margin-top: 999px !important;
+        min-height: 200px !important;
         height: auto;
     }
 
@@ -3013,14 +3014,14 @@ figure.effect-ming:hover img {
     position: relative;
 
 }
-    .text-book {
-        width: 100%;
-        text-align: right;
-        float: right;
-        position: relative;
-        top:80px;
-        right: 200px;
-    }
+    /*.text-book {*/
+        /*width: 100%;*/
+        /*text-align: right;*/
+        /*float: right;*/
+        /*position: relative;*/
+        /*top:80px;*/
+        /*right: 500px;*/
+    /*}*/
     .book {
         position: relative;
         width: 160px;
@@ -3042,7 +3043,7 @@ figure.effect-ming:hover img {
         width: 100%;
         position: relative;
         top:-190px;
-        right: -80px;
+        right: -30px;
     }
 
     figcaption h1{
@@ -3055,13 +3056,13 @@ figure.effect-ming:hover img {
         width: 100%;
         position: relative;
         top:-200px;
-        right: -80px;
+        right: -30px;
     }
     .text-book{
         position: relative;
         top:-160px;
         width: 100%;
-        right: -80px;
+        right: -40px;
     }
     .grid {
         max-width: 100%;
@@ -3073,7 +3074,7 @@ figure.effect-ming:hover img {
         display: inline-block;
         width: 350px;
         margin: 0;
-        margin-right: -50px;
+        margin-right: -75px;
         padding: 0px;
         text-align: left;
         position: relative;
@@ -3172,7 +3173,7 @@ figure.effect-ming:hover img {
         margin-right: 0px;
     }
     .cover-img{
-        height: 800px;
+        height: 850px;
     }
 
     .sociales {
@@ -3317,11 +3318,11 @@ figure.effect-ming:hover img {
         opacity: 0.2;
     }
     .text-fe {
-        width: 100%;
+        width: 113%;
         font-size: 16px !important;
         text-align: right;
         position: relative;
-        right: -180px;
+        right: -140px;
         border: none;
     }
     .text-fe i{

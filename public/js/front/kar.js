@@ -238,15 +238,15 @@ $(document).scroll(function(e) {
     }
     m = $(document).scrollTop();
     if (about56 != undefined && about56.position() !=undefined) {
-        if (m > about55.position().top && m < about56.position().top + about55.height()) {
+        if (m > about56.position().top && m < about56.position().top + about56.height()) {
             $("#icon56").css("background-color", "#fff");
         } else {
             $("#icon56").css("background-color", "#ffd93e");
         }
     }
     w = $(document).scrollTop();
-    if (box1 != undefined && about6.position() !=undefined) {
-        if (m > box1.position().top && m < about6.position().top + box1.height()) {
+    if (box1 != undefined && box1.position() !=undefined) {
+        if (w > box1.position().top && w < box1.position().top + box1.height()) {
             $("#icon6").css("background-color", "#fff");
         } else {
             $("#icon6").css("background-color", "#ffd93e");
@@ -262,7 +262,7 @@ $(document).scroll(function(e) {
         }
 	k = $(document).scrollTop();
     if(about7 != undefined && about6.position() !=undefined) {
-        if (k > about6.position().top && k < about7.position().top + about6.height()) {
+        if (k + 300 > about7.position().top ) {
             $("#icon8").css("background-color", "#fff");
         } else {
             $("#icon8").css("background-color", "#ffd93e");

@@ -1,7 +1,7 @@
 @if(!$recommendations->isEmpty())
 <main id="about55" class="container-fluid background-six">
     <section class="container">
-        <h2 class="text-ex">گواهی و مدارک</h2>
+        <h2 class="text-ex">گواهی ها و مدارک</h2>
         @if($certifications->count() == 1)
             @foreach($certifications as $certification)
                 <div style="direction: rtl;" class="col-md-6">
@@ -60,5 +60,4 @@
         @endif
     </section>
 </main>
-<p></p>
 @endif

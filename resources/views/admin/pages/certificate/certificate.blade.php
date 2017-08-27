@@ -47,7 +47,7 @@
 
                                 <div class="form-group{{ $errors->has('info') ? ' has-error': ''}}">
                                     <div class="col-sm-10 col-md-12">
-                                        <textarea maxlength="330" class="demo" oninvalid="return chek(this)" oninput="return chek2(this)" style="max-width: 280px; width: 275px; height: 70px; max-height: 70px;" type="text" placeholder="توضیحات" class="form-control m-b" name="info"
+                                        <textarea maxlength="330" class="demo" oninvalid="return chek(this)" oninput="return chek2(this)" style="max-width: 280px; width: 280px; height: 70px; max-height: 70px; border: 1px solid #e5e6e7;" type="text" placeholder="توضیحات" class="form-control m-b" name="info"
                                                   tabindex="1" required autofocus>{{ Request::old('info') ?: ''}}</textarea>
                                         @if($errors->has('info'))
                                             <span class="help-block">{{ $errors->first('info')}}</span>
@@ -135,10 +135,10 @@
                         <table class="footable table table-stripped" data-page-size="3" data-filter=#filter>
                             <thead>
                             <tr>
-                                <th class="text-center">عکس</th>
+                                <th class="text-center hidden-sm hidden-xs">عکس</th>
                                 <th  class="text-center">نام</th>
                                 <th class="text-center">نوع</th>
-                                <th class="text-center">توضیحات</th>
+                                <th class="text-center hidden-sm hidden-xs">توضیحات</th>
                                 <th style="width: 30px;" class="text-center">تغییرات</th>
                             </tr>
                             </thead>
@@ -146,7 +146,7 @@
                             @foreach($certificates as $certificate)
 
                                 <tr>
-                                    <td style="vertical-align: middle; width: 30px;" class="text-center">
+                                    <td style="vertical-align: middle; width: 30px;" class="text-center hidden-sm hidden-xs">
                                     @if(empty($certificate->photo))
                                             <img style="height: 50px;"
                                                  src="/images/front/certificate2.png"
@@ -162,7 +162,7 @@
                                         class="text-center">{{$certificate->name}}</td>
                                     <td style="vertical-align: middle;"
                                         class="text-center">{{$certificate->type}}</td>
-                                    <td style="vertical-align: middle;" class="text-center">
+                                    <td style="vertical-align: middle;" class="text-center hidden-sm hidden-xs">
                                             <i style="color: #239963; font-size: 22px;" class="fa fa-check"></i>
                                     </td>
                                     <td style="display: flex; border: none;">

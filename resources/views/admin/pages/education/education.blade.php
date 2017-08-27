@@ -129,19 +129,19 @@
                     <table class="footable table table-stripped" data-page-size="3" data-filter=#filter>
                         <thead>
                         <tr>
-                            <th class="text-center">لوگو</th>
+                            <th class="text-center hidden-sm hidden-xs">لوگو</th>
                             <th class="text-center">دانشگاه</th>
                             <th class="text-center">رشته</th>
-                            <th class="text-center">گرایش</th>
-                            <th class="text-center">سال و ماه شروع</th>
-                            <th class="text-center">سال و ماه پایان</th>
+                            <th class="text-center hidden-sm hidden-xs">گرایش</th>
+                            <th class="text-center hidden-sm hidden-xs">سال و ماه شروع</th>
+                            <th class="text-center hidden-sm hidden-xs">سال و ماه پایان</th>
                             <th class="text-center">تغییرات</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($educations as $education)
                             <tr>
-                                <td style="vertical-align: middle;" class="text-center">
+                                <td style="vertical-align: middle;" class="text-center hidden-sm hidden-xs">
                                     @if(empty($education->logo))
                                         <img style="width: 50px;height: 50px;" src="/images/front/uni.png"
                                              alt="تحصیلات">
@@ -152,9 +152,9 @@
                                 </td>
                                 <td style="vertical-align: middle;" class="text-center">{{$education->university_name}}</td>
                                 <td style="vertical-align: middle" class="text-center">{{$education->field}}</td>
-                                <td style="vertical-align: middle" class="text-center">{{$education->tendency}}</td>
-                                <td style="vertical-align: middle" class="text-center">{{$education->start_date}}</td>
-                                <td style="vertical-align: middle" class="text-center">{{$education->finish_date}}</td>
+                                <td style="vertical-align: middle" class="text-center hidden-sm hidden-xs">{{$education->tendency}}</td>
+                                <td style="vertical-align: middle" class="text-center hidden-sm hidden-xs">{{$education->start_date}}</td>
+                                <td style="vertical-align: middle" class="text-center hidden-sm hidden-xs">{{$education->finish_date}}</td>
                                 <td style="border: none; width: 20px;">
                                         <button style="margin-top: 12px; margin-right: 10px; width:30px; height: 30px;" data-toggle="modal" data-target="#myModal4"
                                                 data-href="{{ route('education.edit', $education->id) }}"

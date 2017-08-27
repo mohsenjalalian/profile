@@ -1,12 +1,25 @@
 @extends('admin.layouts.master')
 @section('content')
+    <div class="content-wrapper clearfix">
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-10">
+                <h2>گالری</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="{{route('profile')}}">خانه</a>
+                    </li>
+                    <li class="active">
+                        <strong>گالری</strong>
+                    </li>
+                </ol>
+            </div>
+        </div>
     <div class="content-wrapper">
         <div class="wrapper wrapper-content">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
                         <div class="ibox-content">
-                            <h2>گالری </h2>
                             <div class="lightBoxGallery">
                                 @foreach($albums as $album)
                                     <a href="{{\App\Http\Controllers\BlogController::ALBUM_PATH.'/'.$album->photo}}"

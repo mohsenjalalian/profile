@@ -166,10 +166,10 @@
                     <table class="footable table table-stripped" data-page-size="3" data-filter=#filter>
                         <thead>
                         <tr>
-                            <th class="text-center">عکس </th>
+                            <th class="text-center hidden-sm hidden-xs">عکس </th>
                             <th class="text-center">تیتر</th>
-                            <th class="text-center">تاریخ</th>
-                            <th class="text-center">توضیحات</th>
+                            <th class="text-center hidden-sm hidden-xs">تاریخ</th>
+                            <th class="text-center hidden-sm hidden-xs">توضیحات</th>
                             <th style="width: 20px;" class="text-center">تغییرات</th>
                         </tr>
                         </thead>
@@ -177,7 +177,7 @@
 
                         @foreach($blogs as $blog)
                             <tr>
-                                <td class="text-center">
+                                <td class="text-center hidden-sm hidden-xs">
                                      @if($blog->album->first())
                                             <img width="50" height="50"
                                                  src="{{$photo::ALBUM_PATH.'/'. $blog->album->first()->photo}}"
@@ -190,9 +190,9 @@
 
                                 <td style="padding-top: 25px;"
                                     class="text-center">{{$blog->title}}</td>
-                                <td style="padding-top: 25px;" class="text-center">{{$blog->date}}</td>
+                                <td style="padding-top: 25px;" class="text-center hidden-sm hidden-xs">{{$blog->date}}</td>
                                 <td style="padding-top: 25px;"
-                                    class="text-center">
+                                    class="text-center hidden-sm hidden-xs">
                                         <i style="color: #239963; font-size: 22px;" class="fa fa-check"></i>
 
                                 </td>

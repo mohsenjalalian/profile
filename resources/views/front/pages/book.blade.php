@@ -33,9 +33,9 @@
                                 <li></li>
                             </ul>
                             <figcaption style="direction:rtl;">
-                                <h1 style="margin-right: 10px;">{{$doc->name}}</h1>
-                                <span style="margin-right: 10px;">انتشارات: {{$doc->published_place}}</span>
-                                <p style="margin-right: 10px;" class="text-book">{{$doc->published_year}}</p>
+                                {{--<h1 style="margin-right: 10px;">{{$doc->name}}</h1>--}}
+                                {{--<span style="margin-right: 10px;">انتشارات: {{$doc->published_place}}</span>--}}
+                                {{--<p style="margin-right: 10px;" class="text-book">{{$doc->published_year}}</p>--}}
                             </figcaption>
                         </figure>
                     </li>

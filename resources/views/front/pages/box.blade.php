@@ -1,5 +1,5 @@
 @if(!$recommendations->isEmpty())
-    <div id="box1"></div>
+    <div id="box1">
 <div id="owl2" class="owl-carousel" style="direction:ltr">
     @foreach($recommendations as $recommendation)
     <div class="item-tunel">
@@ -29,5 +29,6 @@
         </aside>
     </div>
     @endforeach
+</div>
 </div>
 @endif

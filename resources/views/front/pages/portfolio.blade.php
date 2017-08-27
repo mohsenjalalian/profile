@@ -15,7 +15,7 @@
                         <div  id="{{$category->id}}" class="tab-pane fade in firest">
                             <ul class="grid cs-style-4">
                                 @foreach($category->workSample as $work)
-                                <section class="col-md-4">
+                                <section class="col-xs-12 col-sm-12 col-md-4">
                                         <li>
                                             <figure>
                                                 <div>

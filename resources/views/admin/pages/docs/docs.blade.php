@@ -138,10 +138,10 @@
                         <table class="footable table table-stripped" data-page-size="3" data-filter=#filter>
                             <thead>
                             <tr>
-                                <th style="width: 30px;" class="text-center">عکس</th>
+                                <th style="width: 30px;" class="text-center hidden-sm hidden-xs">عکس</th>
                                 <th class="text-center">نام</th>
-                                <th class="text-center">انتشارات</th>
-                                <th class="text-center">تاریخ انتشار</th>
+                                <th class="text-center hidden-sm hidden-xs">انتشارات</th>
+                                <th class="text-center hidden-sm hidden-xs">تاریخ انتشار</th>
                                 <th class="text-center">لینک</th>
                                 <th style="width: 30px;" class="text-center">تغییرات</th>
                             </tr>
@@ -150,7 +150,7 @@
                             @foreach($docs as $doc)
 
                                 <tr>
-                                    <td class="text-center">
+                                    <td class="text-center hidden-sm hidden-xs">
                                         @if(empty($doc->photo))
                                             <img width="50" height="50" src="/images/front/books.png" alt="مقالات و کتب">
                                          @else
@@ -158,8 +158,8 @@
                                         @endif
                                     </td>
                                     <td style="padding-top: 22px;" class="text-center">{{$doc->name}}</td>
-                                    <td style="padding-top: 22px;" class="text-center">{{$doc->published_place}}</td>
-                                    <td style="padding-top: 20px;" class="text-center">{{$doc->published_year}}</td>
+                                    <td style="padding-top: 22px;" class="text-center hidden-sm hidden-xs">{{$doc->published_place}}</td>
+                                    <td style="padding-top: 20px;" class="text-center hidden-sm hidden-xs">{{$doc->published_year}}</td>
                                     <td style="padding-top: 22px;" class="text-center"><a href="{{$doc->link}}" target="_blank"><i
                                                     style="color: #222; font-size: 20px;" class="fa fa-link"
                                                     aria-hidden="true"></i> </a></td>

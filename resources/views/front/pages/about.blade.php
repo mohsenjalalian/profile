@@ -50,7 +50,7 @@
                 مجرد
                     @endif
                     </span></h3>
-                <h3 class="texth3">وضعیت نظام وظیفه: <span class="span2">
+                <h3 class="texth3">نظام وظیفه: <span class="span2">
                     @if(!empty($profile->military))
                         {{$profile->military}}
                     @else
