@@ -164,11 +164,11 @@
                         <table class="footable table table-stripped" data-page-size="3" data-filter=#filter>
                             <thead>
                             <tr>
-                                <td style="width: 30px;" class="text-center">عکس</td>
+                                <td style="width: 30px;" class="text-center hidden-sm hidden-xs">عکس</td>
                                 <td class="text-center">نام</td>
                                 <td class="text-center">لینک</td>
-                                <td class="text-center">دسته بندی</td>
-                                <td class="text-center">مهارت</td>
+                                <td class="text-center hidden-sm hidden-xs">دسته بندی</td>
+                                <td class="text-center hidden-sm hidden-xs">مهارت</td>
                                 <th style="width: 30px;" class="text-center">تغییرات</th>
                             </tr>
                             </thead>
@@ -178,7 +178,7 @@
 
                                 <tr>
 
-                                    <td style="vertical-align: middle;" class="text-center">
+                                    <td style="vertical-align: middle;" class="text-center hidden-sm hidden-xs">
                                         @if(empty($workSample->photo))
                                             <img width="50" height="50" src="/images/front/site.png"
                                                  alt="نمونه کار">
@@ -192,20 +192,20 @@
                                         class="text-center">{{$workSample->name}}
                                     </td>
 
-                                    <td style="vertical-align: middle;"
-                                        class="text-center">{{$workSample->link}}
+                                    <td style="vertical-align: middle;" class="text-center">
+                                        <i style="font-size: 20px;" class="fa fa-link"></i>
                                     </td>
 
 
 
-                                    <td style="vertical-align: middle;" class="text-center">
+                                    <td style="vertical-align: middle;" class="text-center hidden-sm hidden-xs">
                                         @foreach($workSample->category as $cat)
 
                                             {{$cat->name}}
 
                                         @endforeach
                                     </td>
-                                    <td style="vertical-align: middle;" class="text-center">
+                                    <td style="vertical-align: middle;" class="text-center hidden-sm hidden-xs">
                                         @foreach($workSample->skills as $skill)
                                             {{$skill->name}}
                                         @endforeach

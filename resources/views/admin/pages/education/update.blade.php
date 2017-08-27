@@ -87,30 +87,47 @@
                             <div class="form-group{{ $errors->has('logo') ? ' has-error': ''}}">
                                 <div style="position: relative; top: -40px; right: 20px;" class="col-md-1">
                                 @if(isset($education->logo))
-                                    <img id="btnrm" style="position: relative; top: 40px; right: -35px; " width="50" height="50" src="{{asset($education->logo)}}">
+                                    <img id="btnrm" style="position: relative; top: 33px; right: 100px; " width="50" height="50" src="{{asset($education->logo)}}">
                                 @endif
                                 </div>
-                                <div style="position: relative; right: 140px;" class="col-md-1">
+                                <div style="position: relative; right: 150px;" class="col-md-1">
                                     <button style="font-family: webmdesign; margin-right: -60px; margin-top: 0px; background-color: #fff; border: 1px solid #e5e6e7; color: #333;" type="button" id="btnremove" class="btn">پاک کردن</button>
                                 </div>
-                                <div style="position: relative; right: 60px;" class="col-md-1">
-                                    <div style="width: 280px; margin-right: 15px;" class="fileinput fileinput-new input-group" data-provides="fileinput">
-                                        <div class="form-control" data-trigger="fileinput">
-                                            <p class="fileinput-exists" style="color: #2aca76;">بارگذاری شد</p>
+                                <div style="position: relative; right: 80px;" class="col-md-1">
+                                    <div class="ibox float-e-margins">
+                                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <span class="btn btn-default btn-file"><span
+                                                    class="fileinput-new"> بارگذاری عکس</span>
+                                           <span class="fileinput-exists"><span class="fileinput-exists"><span
+                                                           style="color: #2aca76;">بارگذاری شد</span></span></span>
+
+
+                                            <input type="file" id="rmPhoto" value="{{$education->logo}}" name="logo"
+                                                   onchange="readURL1(this)"></span>
                                         </div>
-
-                                        <span style="border: 1px solid #e5e6e7;" class="input-group-addon btn btn-default btn-file">
-                                                    <span class="fileinput-new">بارگذاری</span>
-                                                <span class="fileinput-exists">عوض کردن</span>
-                                                    <input type="file" id="rmPhoto" value="{{$education->logo}}" name="logo">
-                                                </span>
-
-                                        <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">پاک کردن</a>
+                                        @if($errors->has('logo'))
+                                            <span class="help-block">{{ $errors->first('logo')}}</span>
+                                        @endif
                                     </div>
-                                @if($errors->has('logo'))
-                                    <span class="help-block">{{ $errors->first('logo')}}</span>
-                                @endif
-                        </div>
+                                </div>
+                                {{--<div style="position: relative; right: 60px;" class="col-md-1">--}}
+                                    {{--<div style="width: 280px; margin-right: 15px;" class="fileinput fileinput-new input-group" data-provides="fileinput">--}}
+                                        {{--<div class="form-control" data-trigger="fileinput">--}}
+                                            {{--<p class="fileinput-exists" style="color: #2aca76;">بارگذاری شد</p>--}}
+                                        {{--</div>--}}
+
+                                        {{--<span style="border: 1px solid #e5e6e7;" class="input-group-addon btn btn-default btn-file">--}}
+                                                    {{--<span class="fileinput-new">بارگذاری</span>--}}
+                                                {{--<span class="fileinput-exists">عوض کردن</span>--}}
+                                                    {{--<input type="file" id="rmPhoto" value="{{$education->logo}}" name="logo">--}}
+                                                {{--</span>--}}
+
+                                        {{--<a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">پاک کردن</a>--}}
+                                    {{--</div>--}}
+                                {{--@if($errors->has('logo'))--}}
+                                    {{--<span class="help-block">{{ $errors->first('logo')}}</span>--}}
+                                {{--@endif--}}
+                        {{--</div>--}}
                             </div>
 
                 </div>

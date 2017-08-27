@@ -62,84 +62,84 @@
                     <div class="form-group{{ $errors->has('description') ? ' has-error': ''}}">
                         <label>توضیحات</label>
                         <fieldset>
-                            <textarea style="height: 160px !important; max-height: 160px; width: 555px; max-width: 555px;"
-                                      class="form-control m-b col-md-4" name="description" rows="8" cols="80"
-                                      placeholder="توضیحات" tabindex="1" required>{{$blog->description}}</textarea>
+                            <textarea
+                                    style="height: 160px !important; max-height: 160px; width: 555px; max-width: 555px;"
+                                    class="form-control m-b col-md-4" name="description" rows="8" cols="80"
+                                    placeholder="توضیحات" tabindex="1" required>{{$blog->description}}</textarea>
                         </fieldset>
                         @if($errors->has('description'))
                             <span class="help-block">{{ $errors->first('description')}}</span>
                         @endif
                     </div>
-
                     <div class="row">
-
                         @for($i=0;$i<3;$i++)
                             @if (isset($blog->album[$i]))
 
-                            <input type="hidden"
-                                   id="photo_{{$blog->album[$i]->id}}"
-                                   class="rmPhoto" name="old_pic[{{ $blog->album[$i]->id }}]"
-                                   value="{{ $blog->album[$i]->id }}">
-@endif
-                        <div class="row">
+                                <input type="hidden"
+                                       id="photo_{{$blog->album[$i]->id}}"
+                                       class="rmPhoto" name="old_pic[{{ $blog->album[$i]->id }}]"
+                                       value="{{ $blog->album[$i]->id }}">
+                            @endif
 
                                 <div class="ibox float-e-margins">
                                     <div class="form-group{{ $errors->has('photo') ? 'has-error': ''}}">
-<div class="col-md-1">
-                                        <img style="width: 50px; height: 50px; position: relative;  top: -10px;"
-                                             @if (isset($blog->album[$i]))
-                                             id="img_{{$blog->album[$i]->id}}"
-                                             src="{{asset(\App\Http\Controllers\BlogController::ALBUM_PATH.'/'.$blog->album[$i]->photo)}}"
-                                             alt="{{$blog->album[$i]->photo}}"
-                                                @endif>
-</div>
-                                        <div class="-col-md-1">
-                                        @if (isset($blog->album[$i]))
-
-                                        {{--<button type="button"  class="btn btn-danger btnremove"--}}
-                                            {{--id="btn_{{$blog->album[$i]->id}}">پاک کردن</button>--}}
-                                            <button style="font-family: webmdesign; margin-right: 60px; margin-top: 0px; position: relative; right: 300px;  background-color: #fff; border: 1px solid #e5e6e7; color: #333;" type="button" id="btn_{{$blog->album[$i]->id}}" class="btn btnremove">پاک کردن</button>
-                                        @endif
+                                        <div class="col-md-1">
+                                            <img style="width: 50px; height: 50px; margin-top: -10px;" @if (isset($blog->album[$i]))id="img_{{$blog->album[$i]->id}}" src="{{asset(\App\Http\Controllers\BlogController::ALBUM_PATH.'/'.$blog->album[$i]->photo)}}" alt="{{$blog->album[$i]->photo}}"@endif>
                                         </div>
-                                        <div style="position: relative; top: -40px; margin-top: 30px;" class="col-md-1">
-                                        <div style="width: 280px;" class="fileinput fileinput-new input-group" data-provides="fileinput">
-                                            <div class="form-control" data-trigger="fileinput">
-                                                <p class="fileinput-exists" style="color: #2aca76;">بارگذاری شد</p>
+                                    <div class="col-md-1">
+                                            @if (isset($blog->album[$i]))
+                                                {{--<button type="button"  class="btn btn-danger btnremove"--}}
+                                                {{--id="btn_{{$blog->album[$i]->id}}">پاک کردن</button>--}}
+                                                <button style="font-family: webmdesign;  background-color: #fff; border: 1px solid #e5e6e7; color: #333;"
+                                                        type="button" id="btn_{{$blog->album[$i]->id}}"
+                                                        class="btn btnremove">پاک کردن
+                                                </button>
+                                                @endif
+                                    </div>
+                                        <div style="position: relative; top: 4px;" class="col-md-1">
+                                            <div class="ibox float-e-margins">
+                                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                        <span class="btn btn-default btn-file">
+                                                           <span class="fileinput-new">
+                                                               بارگذاری عکس
+                                                           </span>
+                                                           <span class="fileinput-exists">
+                                                               <span class="fileinput-exists">
+                                                                   <span style="color: #2aca76;">بارگذاری شد</span>
+                                                               </span>
+                                                           </span>
+                                                        <input type="file"
+                                                               class="rmPhoto"
+                                                               @if (isset($blog->album[$i]))
+                                                               value="{{ $blog->album[$i]->photo }}"
+                                                               @endif
+                                                               name="photo[{{isset($blog->album[$i]) ? $blog->album[$i]->id : ''}}]">
+                                                        </span>
+                                                </div>
+                                                @if($errors->has('photo'))
+                                                    <span class="help-block">{{ $errors->first('photo')}}</span>
+                                                @endif
                                             </div>
-
-                                            <span style="border: 1px solid #e5e6e7;" class="input-group-addon btn btn-default btn-file">
-                                                    <span class="fileinput-new">بارگذاری</span>
-                                                    <span class="fileinput-exists">عوض کردن</span>
-                                                    <input type="file"
-                                                           class="rmPhoto"
-                                                           @if (isset($blog->album[$i]))
-
-                                                           value="{{ $blog->album[$i]->photo }}"
-                                                           @endif
-                                                           name="photo[{{isset($blog->album[$i]) ? $blog->album[$i]->id : ''}}]">
-                                                </span>
-
-                                            <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">پاک کردن</a>
                                         </div>
-
-                                        @if($errors->has('photo'))
-                                            <span class="help-block">{{ $errors->first('photo')}}</span>
-                                        @endif
                                     </div>
-                                    </div>
-
                                 </div>
+                                @endfor
                             </div>
 
-                        @endfor
 
-                    </div>
-                    <div style="margin-top: 0px;" class="modal-footer col-md-5">
-                        <button style="font-family: webmdesign;" type="button" class="btn btn-white" data-dismiss="modal">بستن</button>
-                        <button style="font-family: webmdesign;" name="submit" type="submit" id="contact-submit" data-submit="...Sending"
-                                class="btn btn-primary">اعمال تغیرات
-                        </button>
-                    </div>
+
+
+
+
+                            <div style="margin-top: 0px;" class="modal-footer col-md-5">
+                                <button style="font-family: webmdesign;" type="button" class="btn btn-white"
+                                        data-dismiss="modal">بستن
+                                </button>
+                                <button style="font-family: webmdesign;" name="submit" type="submit" id="contact-submit"
+                                        data-submit="...Sending"
+                                        class="btn btn-primary">اعمال تغییرات
+                                </button>
+                            </div>
                 </fieldset>
             </form>
 
@@ -148,11 +148,11 @@
     <script src="js/cheouts.js"></script>
     <script src="js/time.js"></script>
     <script>
-        $(document).ready(function(){
-            $('.btnremove').click(function(){
-                var id = $(this).attr('id').replace('btn_','');
-                $("#img_"+id).fadeOut(2000);
-                $("#photo_"+id).val('');
+        $(document).ready(function () {
+            $('.btnremove').click(function () {
+                var id = $(this).attr('id').replace('btn_', '');
+                $("#img_" + id).fadeOut(2000);
+                $("#photo_" + id).val('');
             });
         });
     </script>

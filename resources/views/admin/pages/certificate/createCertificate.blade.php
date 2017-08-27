@@ -26,7 +26,7 @@
 
                 <div class="form-group{{ $errors->has('info') ? ' has-error': ''}}">
                     <fieldset>
-                        <input placeholder="توضیحات" type="text" name="info"
+                        <input  placeholder="توضیحات" type="text" name="info"
                                value="{{ Request::old('info') ?: ''}}" tabindex="1" required autofocus>
                     </fieldset>
                     @if($errors->has('info'))

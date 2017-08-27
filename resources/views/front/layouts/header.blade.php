@@ -128,7 +128,7 @@
         <img class="me img-responsive" width="370px;"  height="200px" src="/images/front/Avatar2.png" alt="me">
     </section>
 
-    <div class="row">
+
         <section class="pull-left col-xs-12 col-md-6 texth1">
             <h1>سعید محمدی  </h1>
             <p class="textp">            فردایی وجود ندارد
@@ -145,7 +145,7 @@
             </button>
             </p>
         </section>
-    </div>
+
 @endif
 <main id="home11" class="container-fluid background">
 
@@ -246,9 +246,9 @@
 @foreach($profiles as $profile)
 <main class="container-fluid">
     <section class="pull-left col-xs-12 col-md-8 nav-bottom">
-        <aside class="pull-left top-th"><a href="#"> <i class="fa fa-eye" aria-hidden="true"></i>
+        <aside class="pull-left top-th"><a href="#"> <i class="fa fa-eye icon-animate" aria-hidden="true"></i>
                 <p class="icon-animate">اطلاعات تماس</p>
-            </a> <a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+            </a> <a href="#"><i class="fa fa-envelope-o icon-animate" aria-hidden="true"></i>
                 <p class="icon-animate">پیام فرستادن</p>
             </a>
             @if(!empty($profile->pdf))
@@ -269,14 +269,15 @@
     @else
     <main class="container-fluid">
         <section class="pull-left col-xs-12 col-md-8 nav-bottom">
-            <aside class="pull-left top-th"><a href="#"> <i class="fa fa-eye" aria-hidden="true"></i>
+            <aside class="pull-left top-th"><a href="#"> <i class="fa fa-eye icon-animate" aria-hidden="true"></i>
                     <p class="icon-animate">اطلاعات تماس</p>
-                </a> <a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+                </a> <a href="#"><i class="fa fa-envelope-o icon-animate" aria-hidden="true"></i>
                     <p class="icon-animate">پیام فرستادن</p>
                 </a> <a style="border-right:none;" href="#" download><i class="fa fa-diamond"
                                                                                         aria-hidden="true"></i>
                     <p> دانلود رزومه</p>
-                </a></aside>
+                </a>
+            </aside>
         </section>
     </main>
 @endif

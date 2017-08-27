@@ -233,7 +233,7 @@
                                                             style="color: #2aca76;">بارگذاری شد</span></span> </span>
                                             <input value="{{ Request::old('cover') ?: ''}}" type="file" name="cover"
                                                    onchange="readURL2(this)"></span>
-                                                <p style="font-size: 10px;" class="-warning text-center">۴۸۰ * ۱۰۰٪</p>
+                                                <p style="font-size: 10px;" class="-warning text-center">۴۸۰ * ۱۹۲۰</p>
                                             </div>
                                             @if($errors->has('cover'))
                                                 <span class="help-block">{{ $errors->first('cover')}}</span>

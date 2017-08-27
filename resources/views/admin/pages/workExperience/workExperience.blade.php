@@ -182,11 +182,11 @@
                         <thead>
                         <tr>
                             <th class="text-center">موقعیت</th>
-                            <th class="text-center">شرکت</th>
+                            <th class="text-center hidden-sm hidden-xs">شرکت</th>
                             <th class="text-center">شهر</th>
-                            <th class="text-center">سال شروع</th>
-                            <th class="text-center">سال پایان</th>
-                            <th class="text-center">توضیحات</th>
+                            <th class="text-center hidden-sm hidden-xs">سال شروع</th>
+                            <th class="text-center hidden-sm hidden-xs">سال پایان</th>
+                            <th class="text-center hidden-sm hidden-xs">توضیحات</th>
                             <th style="width: 20px;" class="text-center">تغییرات</th>
                         </tr>
                         </thead>
@@ -196,13 +196,13 @@
                             <tr>
                                 <td style="vertical-align: middle;" class="text-center">{{$workExperience->title}}</td>
                                 <td style="vertical-align: middle;"
-                                    class="text-center">{{$workExperience->company}}</td>
+                                    class="text-center hidden-sm hidden-xs">{{$workExperience->company}}</td>
                                 <td style="vertical-align: middle;" class="text-center">{{$workExperience->city}}</td>
                                 <td style="vertical-align: middle;"
-                                    class="text-center">{{$workExperience->start_date}}</td>
+                                    class="text-center hidden-sm hidden-xs">{{$workExperience->start_date}}</td>
                                 <td style="vertical-align: middle;"
-                                    class="text-center">{{$workExperience->finish_date}}</td>
-                                <td style="vertical-align: middle;" class="text-center">
+                                    class="text-center hidden-sm hidden-xs">{{$workExperience->finish_date}}</td>
+                                <td style="vertical-align: middle;" class="text-center hidden-sm hidden-xs">
                                     <i style="color: #239963; font-size: 22px;" class="fa fa-check"></i>
                                 </td>
 

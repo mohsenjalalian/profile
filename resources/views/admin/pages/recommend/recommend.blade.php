@@ -119,18 +119,18 @@
                     <table class="footable table table-stripped" data-page-size="4" data-filter=#filter>
                         <thead>
                         <tr>
-                            <th class="text-center">عکس</th>
+                            <th class="text-center hidden-sm hidden-xs">عکس</th>
                             <th class="text-center">نام</th>
                             <th class="text-center">شغل</th>
-                            <th class="text-center">شرکت</th>
-                            <th class="text-center">توضیحات</th>
+                            <th class="text-center hidden-sm hidden-xs">شرکت</th>
+                            <th class="text-center hidden-sm hidden-xs">توضیحات</th>
                             <th style="width: 20px;" class="text-center">تغییرات</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($recommends as $recommend)
                             <tr>
-                                <td style="vertical-align: middle; width: 50px;" class="text-center">
+                                <td style="vertical-align: middle; width: 50px;" class="text-center hidden-sm hidden-xs">
                                     @if(empty($recommend->photo))
                                         <img style="width: 50px;height: 50px" src="/images/front/manager.png"
                                              alt="نظرات مدیران">
@@ -145,10 +145,10 @@
                                 <td style="vertical-align: middle; width: 100px;" class="text-center">
                                     {{$recommend->position}}
                                 </td>
-                                <td style="vertical-align: middle; width: 100px;" class="text-center">
+                                <td style="vertical-align: middle; width: 100px;" class="text-center hidden-sm hidden-xs">
                                     {{$recommend->company}}
                                 </td>
-                                <td style="text-align: center; vertical-align: middle; width: 30px">
+                                <td class="hidden-sm hidden-xs" style="text-align: center; vertical-align: middle; width: 30px">
                                     <i style="color: #239963; font-size: 22px;" class="fa fa-check"></i>
                                 </td>
                                 <td style="border: none; display: flex; width: 20px;">

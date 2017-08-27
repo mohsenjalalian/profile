@@ -139,7 +139,7 @@
                     </li>
                     <li class="@if (\Request::route()->getName() == "certification") active @endif">
                         <a class="menu" href="{{route('certification')}}"><i class="fa fa-diamond"></i> <span
-                                    class="nav-label"></span>گواهی و مدارک</a>
+                                    class="nav-label"></span>گواهی ها و مدارک</a>
                     </li>
 
                 </ul>
