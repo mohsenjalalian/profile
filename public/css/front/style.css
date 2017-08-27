@@ -11,6 +11,7 @@ body {
     line-height: 28px;
     font-size: 13px;
     font-family: webmdesign, tahoma;
+    overflow-x: hidden;
 
 }
 
