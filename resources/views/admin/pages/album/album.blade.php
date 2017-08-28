@@ -24,10 +24,9 @@
                                 @foreach($albums as $album)
                                     <a href="{{\App\Http\Controllers\BlogController::ALBUM_PATH.'/'.$album->photo}}"
                                        data-gallery="">
-                                        <img src="{{\App\Http\Controllers\BlogController::ALBUM_PATH.'/'.$album->photo}}"
-                                             width="100" height="100" alt="{{$album->photo}}">
+                                        <img src="{{\App\Http\Controllers\BlogController::ALBUM_PATH.'/'.$album->photo}}" width="100" height="100" alt="{{$album->photo}}">
                                     </a>
-                            @endforeach
+                                @endforeach
                                 <div id="blueimp-gallery" class="blueimp-gallery">
                                     <div class="slides"></div>
                                     <h3 class="title"></h3>
