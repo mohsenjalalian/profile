@@ -933,7 +933,24 @@ a:hover {
     top:150px;
     right: 520px;
 }
+.textbookh1{
+width: 100%;
+    clear: both;
+    text-align: right;
 
+}
+.textbookspan{
+width: 100%;
+    clear: both;
+    text-align: right;
+}
+.textbookp{
+    width: 100%;
+    clear: both;
+    position: relative;
+    top:100px;
+    text-align: right;
+}
 .texth1 p {
     color: #FFFFFF;
     font-size: 16px;
@@ -3036,35 +3053,35 @@ figure.effect-ming:hover img {
         transform-style: preserve-3d;
     }
 
-    figcaption span {
-        margin: 0;
-        float:right;
-        font-size:20px !important;
-        text-align: right;
-        width: 100%;
-        position: relative;
-        top:-190px;
-        right: -30px;
-    }
+    /*figcaption span {*/
+        /*margin: 0;*/
+        /*float:right;*/
+        /*font-size:20px !important;*/
+        /*text-align: right;*/
+        /*width: 100%;*/
+        /*position: relative;*/
+        /*top:-190px;*/
+        /*right: -30px;*/
+    /*}*/
 
-    figcaption h1{
-        color: #ffd93e;
-        display: block;
-        font-size:20px;
-        display: block;
-        float: right;
-        text-align: right;
-        width: 100%;
-        position: relative;
-        top:-200px;
-        right: -30px;
-    }
-    .text-book{
-        position: relative;
-        top:-160px;
-        width: 100%;
-        right: -40px;
-    }
+    /*figcaption h1{*/
+        /*color: #ffd93e;*/
+        /*display: block;*/
+        /*font-size:20px;*/
+        /*display: block;*/
+        /*float: right;*/
+        /*text-align: right;*/
+        /*width: 100%;*/
+        /*position: relative;*/
+        /*top:-200px;*/
+        /*right: -30px;*/
+    /*}*/
+    /*.text-book{*/
+        /*position: relative;*/
+        /*top:-160px;*/
+        /*width: 100%;*/
+        /*right: -40px;*/
+    /*}*/
     .grid {
         max-width: 100%;
         list-style: none;
