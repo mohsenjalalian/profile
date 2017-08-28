@@ -28,7 +28,7 @@
                                     @endif
                                 </div>
                                 <h2 class="text-bl">{{$blog->title}}</h2>
-                                <p class="text-bl2 mCustomScrollbar content-a44" data-mcs-theme="minimal-dark">{{$blog->description}}</p>
+                                <p style="font-size: 12px;" class="text-bl2 mCustomScrollbar content-a44" data-mcs-theme="minimal-dark">{{$blog->description}}</p>
                                 <hr style="border:1px solid #DFDFDF; width:100%;">
                                 <span class="blog-mg2">{{$blog->date}}</span>
                                 <p class="text-fe"><span class="hidden-xs" style="text-align: right; float: right; font-size: 20px; padding-left: 20px;">اشتراک :</span>
@@ -78,7 +78,7 @@
                                 </div>
 
                                 <h2 class="text-bl">{{$blog->title}}</h2>
-                                <p class="text-bl2 mCustomScrollbar content-a44" data-mcs-theme="minimal-dark">{{$blog->description}}</p>
+                                <p style="font-size: 12px;" class="text-bl2 mCustomScrollbar content-a44" data-mcs-theme="minimal-dark">{{$blog->description}}</p>
                                 <hr style="border:1px solid #DFDFDF; width:100%;">
                                 <span class="blog-mg2">{{$blog->date}}</span>
                                 <p class="text-fe"><span class="hidden-xs" style="text-align: right; float: right; font-size: 20px; padding-left: 20px;">: اشتراک</span>

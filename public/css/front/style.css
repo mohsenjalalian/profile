@@ -63,22 +63,24 @@ a.selected {
 #dates a {
     line-height: 38px;
     padding-bottom: 10px;
-}
+    }
 
-#dates .selected {
-    font-size: 23px;
-}
+    #dates .selected {
+        font-size: 23px;
+    }
 
-#issues {
+    #issues {
     min-height: 200px;
     text-align: right;
     overflow: hidden;
 }
 
 #issues li {
-    width: 800px;
+    width: 853px;
     min-height: 200px;
     height:auto;
+    padding-right: 0px;
+    padding-left: 0px;
     list-style: none;
     float: left;
 }
@@ -115,7 +117,8 @@ a.selected {
 }
 #issues li p {
     font-size: 14px;
-    margin-left: 70px;
+    padding-right: 30px;
+    padding-left: 30px;
     font-weight: normal;
     line-height: 22px;
 }
@@ -129,7 +132,7 @@ a.selected {
 }
 
 #grad_left {
-    left: 0;
+    left:  0px;
 }
 
 #grad_right {
@@ -158,19 +161,33 @@ a.selected {
 
 #next {
     right: 0;
-    background-color: rgba(0,0,0,0.4);
+    background-color:#ffcc00;
 
 }
 
 #prev {
     left: 0;
-    background-color: rgba(0,0,0,0.4);
+    background-color:#ffcc00;
 
 }
 
 #next.disabled,
 #prev.disabled {
     opacity: 0.2;
+}
+
+
+#box1 .owl-pagination{
+    position: relative;
+    top: 0px;
+    margin-top: -43px;
+    z-index: 1000;
+}
+#about6 .owl-pagination{
+    position: relative;
+    top: 0px;
+    margin-top: -30px;
+    z-index: 1000;
 }
 /*.timeline > li {*/
     /*overflow: hidden;*/
@@ -201,6 +218,7 @@ a.selected {
 }
 
 .content-a2 {
+    width: 825px !important;
     height: 120px !important;
     direction: rtl !important;
 }
@@ -218,7 +236,7 @@ a.selected {
     direction: rtl !important;
 }
 .content-a44{
-    height: 140px;
+    height: 240px;
     direction: rtl;
 }
 
@@ -1512,7 +1530,7 @@ width: 100%;
 }
 
 .box-small2 {
-    min-height:520px;
+    min-height:580px;
     height: auto;
     box-shadow: 0px 30px 120px 0px #dde5ee;
     margin-top: 10px;
@@ -3315,18 +3333,18 @@ figure.effect-ming:hover img {
     #prev:hover {
         background-position: 0 -76px;
     }
-
     #next {
         right: 0;
-        background-color: rgba(0,0,0,0.4);
+        background-color:#ffcc00;
 
     }
 
     #prev {
         left: 0;
-        background-color: rgba(0,0,0,0.4);
+        background-color:#ffcc00;
 
     }
+
 
     #next.disabled,
     #prev.disabled {
@@ -3360,4 +3378,9 @@ figure.effect-ming:hover img {
         height: 200px;
     }
 
+    .content-a2 {
+        width: 100% !important;
+        height: 120px !important;
+        direction: rtl !important;
+    }
 }

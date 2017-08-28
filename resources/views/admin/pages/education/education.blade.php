@@ -31,7 +31,7 @@
 
                             <div class="form-group{{ $errors->has('university_name') ? ' has-error': ''}}">
                                 <div class="col-sm-10 col-md-12">
-                                    <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="نام دانشگاه"
+                                    <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text" placeholder="تحصیلات"
                                            value="{{ Request::old('university_name') ?: ''}}" class="form-control m-b"
                                            name="university_name" tabindex="1" required>
                                     @if($errors->has('university_name'))
@@ -110,8 +110,8 @@
                                         </div>
                                     </div>
                                 </div>
-
-                            <button style="font-family: webmdesign; margin-top: 10px; margin-left: 90px;" class="btn btn-primary col-md-4" name="submit" type="submit" id="contact-submit"
+                            </div>
+                            <button style="font-family: webmdesign; margin-top: 10px; margin-right: 10px;" class="btn btn-primary col-md-4" name="submit" type="submit" id="contact-submit"
                                     data-submit="...Sending">ارسال
                             </button>
 
@@ -130,7 +130,7 @@
                         <thead>
                         <tr>
                             <th class="text-center hidden-sm hidden-xs">لوگو</th>
-                            <th class="text-center">دانشگاه</th>
+                            <th class="text-center">تحصیلات</th>
                             <th class="text-center">رشته</th>
                             <th class="text-center hidden-sm hidden-xs">گرایش</th>
                             <th class="text-center hidden-sm hidden-xs">سال و ماه شروع</th>

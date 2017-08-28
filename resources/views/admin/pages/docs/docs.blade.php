@@ -6,7 +6,7 @@
     <div class="content-wrapper clearfix">
         <div class="row wrapper border-bottom white-bg page-heading">
             <div class="col-lg-10">
-                <h2>مقالات کتاب</h2>
+                <h2>مقالات و کتاب</h2>
                 <ol class="breadcrumb">
                     <li>
                         <a href="{{route('profile')}}">خانه</a>
@@ -43,7 +43,7 @@
                             <div class="form-group{{ $errors->has('published_place') ? ' has-error': ''}}">
                                 <div class="col-sm-10 col-md-12">
                                     <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text"
-                                           placeholder="شرکت انتشاراتی"
+                                           placeholder="انتشارات"
                                            value="{{ Request::old('published_place') ?: ''}}" class="form-control m-b"
                                            name="published_place" tabindex="1" required>
                                     @if($errors->has('published_place'))
@@ -87,7 +87,7 @@
                             <div class="form-group{{ $errors->has('link') ? ' has-error': ''}}">
                                 <div class="col-sm-10 col-md-12">
                                     <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text"
-                                           placeholder="لینک به مقاله"
+                                           placeholder="لینک به اثر"
                                            value="{{ Request::old('link') ?: ''}}" class="form-control m-b" name="link"
                                            tabindex="1"  autofocus>
                                     @if($errors->has('link'))
