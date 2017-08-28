@@ -19,11 +19,9 @@
 
         <div style="margin-top: 20px;" class="col-lg-4">
             <div class="panel panel-primary">
-                <div class="panel-heading">
-                    افزودن
-                </div>
-                <div class="panel-body">
-                    <form id="contact" action="{{route('blog.store')}}" method="post" enctype="multipart/form-data">
+                <div class="panel-heading">افزودن</div>
+                    <div class="panel-body">
+                        <form id="contact" action="{{route('blog.store')}}" method="post" enctype="multipart/form-data">
                         {{csrf_field()}}
                         <div class="form-group{{ $errors->has('title') ? ' has-error': ''}}">
                             <div class="col-sm-10 col-md-12">
@@ -63,7 +61,6 @@
                             </div>
                         </div>
 
-
                         <div class="form-group{{ $errors->has('description') ? ' has-error': ''}}">
                             <div class="col-sm-10 col-md-12">
                                     <textarea oninvalid="return chek(this)" oninput="return chek2(this)" style="height: 70px; max-height: 80px; max-width: 280px;" type="text" class="form-control m-b"
@@ -76,7 +73,7 @@
                                 @endif
                             </div>
                         </div>
-<div class="row">
+                    <div class="row">
                         <div  class="col-md-5">
                             <div class="ibox float-e-margins">
                                 <div class="form-group{{ $errors->has('photo1') ? ' has-error': ''}}">
@@ -85,11 +82,11 @@
                                             <p class="fileinput-exists" style="color: #2aca76;">بارگذاری شد</p>
                                         </div>
                                         <span style="border: 1px solid #e5e6e7;" class="input-group-addon btn btn-default btn-file">
-                                                    <span class="fileinput-new">بارگذاری</span>
-                                                    <span class="fileinput-exists">عوض کردن</span>
-                                                    <input type="file" name="photo[]"
-                                                           value="{{ Request::old('photo1') ?: ''}}" onchange="readURL1(this)">
-                                                </span>
+                                            <span class="fileinput-new">بارگذاری</span>
+                                            <span class="fileinput-exists">عوض کردن</span>
+                                            <input type="file" name="photo[]"
+                                            value="{{ Request::old('photo1') ?: ''}}" onchange="readURL1(this)">
+                                        </span>
                                         <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">پاک کردن</a>
                                     </div>
                                     <p style="font-size: 12px; margin-left: -170px;" class="pull-right colorpicker">۲۰۰ * ۳۷۰</p>
@@ -99,12 +96,12 @@
                                 </div>
                             </div>
                         </div>
-</div>
+                    </div>
                         <div class="row">
-                        <div  class="col-md-5">
-                            <div class="ibox float-e-margins">
-                                <div class="form-group{{ $errors->has('photo2') ? ' has-error': ''}}">
-                                    <div style="width: 280px; margin-right:15px;" class="fileinput fileinput-new input-group" data-provides="fileinput">
+                            <div  class="col-md-5">
+                                <div class="ibox float-e-margins">
+                                    <div class="form-group{{ $errors->has('photo2') ? ' has-error': ''}}">
+                                        <div style="width: 280px; margin-right:15px;" class="fileinput fileinput-new input-group" data-provides="fileinput">
                                         <div class="form-control" data-trigger="fileinput">
                                             <p class="fileinput-exists" style="color: #2aca76;">بارگذاری شد</p>
                                         </div>
@@ -113,10 +110,10 @@
                                                     <span class="fileinput-exists">عوض کردن</span>
                                                     <input type="file" name="photo[]"
                                                            value="{{ Request::old('photo2') ?: ''}}" onchange="readURL2(this)">
-                                                </span>
+                                        </span>
                                         <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">پاک کردن</a>
                                     </div>
-                                    <p style="font-size: 12px; margin-left: -170px;" class="pull-right colorpicker">۲۰۰ * ۳۷۰</p>
+                                        <p style="font-size: 12px; margin-left: -170px;" class="pull-right colorpicker">۲۰۰ * ۳۷۰</p>
                                     @if($errors->has('photo2'))
                                         <span class="help-block">{{ $errors->first('photo2')}}</span>
                                     @endif
@@ -134,14 +131,14 @@
                                                 <p class="fileinput-exists" style="color: #2aca76;">بارگذاری شد</p>
                                             </div>
                                             <span style="border: 1px solid #e5e6e7;" class="input-group-addon btn btn-default btn-file">
-                                                    <span class="fileinput-new">بارگذاری</span>
-                                                    <span class="fileinput-exists">عوض کردن</span>
-                                                    <input type="file" name="photo[]"
+                                                <span class="fileinput-new">بارگذاری</span>
+                                                <span class="fileinput-exists">عوض کردن</span>
+                                                <input type="file" name="photo[]"
                                                            value="{{ Request::old('photo3') ?: ''}}" onchange="readURL3(this)">
-                                                </span>
+                                            </span>
                                             <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">پاک کردن</a>
                                         </div>
-                                        <p style="font-size: 12px; margin-left: -170px;" class="pull-right colorpicker">۲۰۰ * ۳۷۰</p>
+                                            <p style="font-size: 12px; margin-left: -170px;" class="pull-right colorpicker">۲۰۰ * ۳۷۰</p>
                                         @if($errors->has('photo3'))
                                             <span class="help-block">{{ $errors->first('photo3')}}</span>
                                         @endif
@@ -152,7 +149,6 @@
                         <button style="font-family: webmdesign;" class="btn btn-primary col-md-3" name="submit" type="submit" id="contact-submit"
                                 data-submit="...Sending">ارسال
                         </button>
-
                     </form>
                 </div>
             </div>
@@ -160,64 +156,45 @@
         <div style="margin-top:20px" class="col-lg-8">
             <div class="ibox float-e-margins">
                 <div class="ibox-content">
-                    <input type="text" class="form-control input-sm m-b-xs" id="filter"
-                           placeholder="سرچ کردن">
-
-                    <table class="footable table table-stripped" data-page-size="3" data-filter=#filter>
-                        <thead>
-                        <tr>
+                    <input type="text" class="form-control input-sm m-b-xs" id="filter" placeholder="سرچ کردن">
+                        <table class="footable table table-stripped" data-page-size="3" data-filter=#filter>
+                            <thead>
+                            <tr>
                             <th class="text-center hidden-sm hidden-xs">عکس </th>
                             <th class="text-center">تیتر</th>
                             <th class="text-center hidden-sm hidden-xs">تاریخ</th>
                             <th class="text-center hidden-sm hidden-xs">توضیحات</th>
                             <th style="width: 20px;" class="text-center">تغییرات</th>
-                        </tr>
-                        </thead>
+                            </tr>
+                            </thead>
                         <tbody>
-
                         @foreach($blogs as $blog)
                             <tr>
                                 <td class="text-center hidden-sm hidden-xs">
                                      @if($blog->album->first())
-                                            <img width="50" height="50"
+                                         <img width="50" height="50"
                                                  src="{{$photo::ALBUM_PATH.'/'. $blog->album->first()->photo}}"
                                                  alt="{{$blog->album->first()->photo}}">
                                         @else
-                                            <img width="50" height="50"
-                                                 src="/images/front/bloge.png" alt="">
+                                            <img width="50" height="50" src="/images/front/bloge.png" alt="">
                                         @endif
                                 </td>
-
-                                <td style="padding-top: 25px;"
-                                    class="text-center">{{$blog->title}}</td>
+                                <td style="padding-top: 25px;" class="text-center">{{$blog->title}}</td>
                                 <td style="padding-top: 25px;" class="text-center hidden-sm hidden-xs">{{$blog->date}}</td>
-                                <td style="padding-top: 25px;"
-                                    class="text-center hidden-sm hidden-xs">
-                                        <i style="color: #239963; font-size: 22px;" class="fa fa-check"></i>
-
-                                </td>
-
+                                <td style="padding-top: 25px;" class="text-center hidden-sm hidden-xs"><i style="color: #239963; font-size: 22px;" class="fa fa-check"></i></td>
                                 <td style="display: flex; border: none;">
-
                                     <button style="margin-top: 12px; width:30px; height: 30px;" data-toggle="modal" data-target="#myModal4"
                                             data-href="{{route('blog.edit',$blog->id)}}"
                                             class="btn btn-warning edit md-trigger">
-                                        <i style="margin-right: -5px; position: relative; top: -2px;" class="fa fa-paint-brush" aria-hidden="true">
-                                        </i>
+                                        <i style="margin-right: -5px; position: relative; top: -2px;" class="fa fa-paint-brush" aria-hidden="true"></i>
                                     </button>
-                                    <form action="{{ route('blog.destroy', $blog->id) }}"
-                                          method="POST" class="frm">
+                                    <form action="{{ route('blog.destroy', $blog->id) }}" method="POST" class="frm">
                                         {{ method_field('DELETE') }}
                                         {{ csrf_field() }}
-
-                                        <button style=" margin-top: 12px; margin-right: 10px; width: 30px; height: 30px"
-                                                class="btn btn-danger"><i style="margin-right: -4px; position: relative; top: -2px;" class="fa fa-trash"
-                                                                          aria-hidden="true"></i></button>
-
+                                        <button style=" margin-top: 12px; margin-right: 10px; width: 30px; height: 30px" class="btn btn-danger"><i style="margin-right: -4px; position: relative; top: -2px;" class="fa fa-trash" aria-hidden="true"></i></button>
                                     </form>
                                 </td>
                             </tr>
-
                         @endforeach
                         </tbody>
                         <tfoot>
@@ -232,30 +209,20 @@
             </div>
         </div>
     </div>
-    <div class="modal inmodal" id="myModal4" tabindex="-1" role="dialog"
-         aria-hidden="true">
+    <div class="modal inmodal" id="myModal4" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content animated fadeIn">
                 <div class="modal-header">
-                    <button type="button" class="close"
-                            data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                                class="sr-only">Close</span></button>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                     <h4 class="modal-title">ویرایش فرم</h4>
-                    <small class="font-bold">این فرم در صفحه اصلی شما نشان
-                        داده میشود
-                    </small>
+                    <small class="font-bold">این فرم در صفحه اصلی شما نشان داده میشود</small>
                 </div>
                 <div style="background-color: #fff !important; height:auto;" class="modal-body col-md-12">
-                    <div class="container">
-
-                    </div>
+                    <div class="container"></div>
                 </div>
-
             </div>
         </div>
     </div>
-
-
 
     @include('admin.layouts.success')
     @include('admin.layouts.errors')
@@ -265,9 +232,5 @@
 @section('script')
     <script src="js/cheouts.js"></script>
     <script src="js/time.js"></script>
-    <script>
-
-    </script>
-
 @endsection
 

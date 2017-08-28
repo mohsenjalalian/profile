@@ -19,14 +19,10 @@
             </div>
         </div>
         <div class="content-wrapper">
-
             <div style="margin-top: 50px;" class="col-lg-6">
                 <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        نظرات مدیران
-                    </div>
-
-                    <div class="panel-body">
+                    <div class="panel-heading">نظرات مدیران</div>
+                        <div class="panel-body">
                         <form id="contact" action="{{route('storeCategory')}}" method="post">
                             {{csrf_field()}}
                             <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
@@ -38,12 +34,9 @@
                                     @endif
                                 </div>
                             </div>
-
-
                             <fieldset class="col-md-12">
                                 <button style="font-family: webmdesign;" class="btn btn-primary col-md-4" name="submit" type="submit" id="contact-submit" data-submit="...Sending">ارسال</button>
                             </fieldset>
-
                         </form>
                     </div>
                 </div>
@@ -51,9 +44,7 @@
             <div style="margin-top:20px" class="col-lg-6">
                 <div class="ibox float-e-margins">
                     <div class="ibox-content">
-                        <input type="text" class="form-control input-sm m-b-xs" id="filter"
-                               placeholder="سرچ کردن">
-
+                        <input type="text" class="form-control input-sm m-b-xs" id="filter" placeholder="سرچ کردن">
                         <table class="footable table table-stripped" data-page-size="3" data-filter=#filter>
                             <thead>
                             <tr>
@@ -63,31 +54,21 @@
                             </thead>
                             <tbody>
                             @foreach($categories as $category)
-
                                 <tr>
                                     <td style="padding-top: 22px;" class="text-center">{{$category->name}}</td>
-
                                     <td style="display: flex;">
-                                        <button style="margin-top: 12px; width:30px; height: 30px;" data-toggle="modal" data-target="#myModal4"
-                                                data-href="{{ route('category.edit', $category->id) }}"
+                                        <button style="margin-top: 12px; width:30px; height: 30px;" data-toggle="modal" data-target="#myModal4" data-href="{{ route('category.edit', $category->id) }}"
                                                 class="btn btn-warning edit md-trigger">
-                                            <i style="margin-right: -5px; position: relative; top: -2px;" class="fa fa-paint-brush" aria-hidden="true">
-                                            </i>
+                                            <i style="margin-right: -5px; position: relative; top: -2px;" class="fa fa-paint-brush" aria-hidden="true"></i>
                                         </button>
-
                                         <p class="text-center">
                                         <form action="{{ route('category.destroy', $category->id) }}" method="POST" class="frm">
                                             {{ method_field('DELETE') }}
                                             {{ csrf_field() }}
-
-                                            <button style=" margin-top: 12px; margin-right: 10px; width: 30px; height: 30px"
-                                                    class="btn btn-danger"><i style="margin-right: -4px; position: relative; top: -2px;" class="fa fa-trash"
-                                                                              aria-hidden="true"></i></button>
-
+                                            <button style=" margin-top: 12px; margin-right: 10px; width: 30px; height: 30px" class="btn btn-danger"><i style="margin-right: -4px; position: relative; top: -2px;" class="fa fa-trash" aria-hidden="true"></i></button>
                                         </form>
                                     </td>
                                 </tr>
-
                             @endforeach
                             </tbody>
                             <tfoot>
@@ -102,25 +83,18 @@
                 </div>
             </div>
         </div>
-        <div class="modal inmodal" id="myModal4" tabindex="-1" role="dialog"
-             aria-hidden="true">
+        <div class="modal inmodal" id="myModal4" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content animated fadeIn">
                     <div class="modal-header">
-                        <button type="button" class="close"
-                                data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                                    class="sr-only">Close</span></button>
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                         <h4 class="modal-title">ویرایش فرم</h4>
-                        <small class="font-bold">این فرم در صفحه اصلی شما نشان
-                            داده میشود
-                        </small>
+                        <small class="font-bold">این فرم در صفحه اصلی شما نشان داده میشود</small>
                     </div>
                     <div style="background-color: #fff !important; height: 270px;" class="modal-body col-md-12">
                         <div class="container">
-
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
