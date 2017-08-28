@@ -2,35 +2,32 @@
     <div class="sidebar-collapse">
         <ul class="nav metismenu" id="side-menu">
             <li class="nav-header">
-                <div class="dropdown profile-element"> <span>
+                <div class="dropdown profile-element">
+                    <span>
                         @if(!empty($profiles->photo))
                             <p class="text-center">
-                                  <img alt="{{$profiles->photo}}" style="width: 100px; height:100px"
-                                       class="img-circle" src="{{asset($profiles->photo)}}"/>
+                                <img alt="{{$profiles->photo}}" style="width: 100px; height:100px" class="img-circle" src="{{asset($profiles->photo)}}"/>
                             </p>
                         @else
-                            <p class="text-center"> <img alt="image/admin.png" style="width: 100px; height:100px"
-                                                         class="img-circle"
-                                                         src="{{asset('/image/profile.png')}}"/>
+                            <p class="text-center">
+                                <img alt="image/admin.png" style="width: 100px; height:100px" class="img-circle" src="{{asset('/image/profile.png')}}"/>
                             </p>
                         @endif
-                             </span>
+                    </span>
                         @if(!empty($profiles))
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <span class="clear">
-                            <span class="block m-t-xs"> <strong class="font-bold text-center">
-                                    <p class="text-center">{{$profiles->first_name}} {{$profiles->last_name}}</p></strong>
-                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            </span>
-
-                            <span class="text-muted text-xs block text-center">
-                                {{$profiles->job}}
-                                <b class="caret"></b>
-                            </span>
-                        </span>
-                        </a>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="clear">
+                                    <span class="block m-t-xs"> <strong class="font-bold text-center">
+                                        <p class="text-center">{{$profiles->first_name}} {{$profiles->last_name}}</p></strong>
+                                              <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                    </span>
+                                <span class="text-muted text-xs block text-center">
+                                      {{$profiles->job}}
+                                           <b class="caret"></b>
+                                </span>
+                                </span>
+                                              </a>
                     @else
-
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="clear">
                             <span class="block m-t-xs">
@@ -163,23 +160,15 @@
                 </ul>
             </li>
 
-            <a style="color: #fff; position: relative; top: 130px; right: 50px;" class="menu" href="#">
-               <span class="nav-label">Powerd By <a style="color: #fff; position: relative; top: 130px; right: 50px;"
-                                                    class="menu" href="http://cotint.ir" target="_blank">
-                       <span class="nav-label" style="color: #239963;"><strong>CO </strong></span><strong
-                               class="nav-label">|</strong>
-                       <span class="nav-label" style="color:#fff;"><strong> tint</strong>
-                       </span>
+            <a style="color: #fff; position: relative; top: 130px; right: 50px;" class="menu" href="#"><span class="nav-label">Powerd By
+                    <a style="color: #fff; position: relative; top: 130px; right: 50px;" class="menu" href="http://cotint.ir" target="_blank">
+                       <span class="nav-label" style="color: #239963;"><strong>CO </strong></span><strong class="nav-label">|</strong>
+                       <span class="nav-label" style="color:#fff;"><strong> tint</strong></span>
                    </a>
                </span>
             </a>
-
         </ul>
     </div>
-    {{--<p id="hiden" style="color: #fff; margin-top: 120px;" class="text-center">Powerd By <a href="http://cotint.ir"--}}
-    {{--target="_blank"><span--}}
-    {{--style="color: #239963;"><strong>CO </strong></span><strong>|</strong><span--}}
-    {{--style="color:#fff;"><strong> tint</strong></span></a></p>--}}
 </nav>
 
 
