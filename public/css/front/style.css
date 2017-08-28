@@ -1280,20 +1280,17 @@ width: 100%;
     background-color: #ffd93e;
 }
 progress {
-    background-color: #eee;
+    background-color: #000;
     width: 200px;
     height: 3px;
     margin-right: 10px;
 }
-
 progress::-webkit-progress-value {
     background-color: #000;
 }
-
 progress::-webkit-progress-bar {
     background-color: #eee;
 }
-
 progress::-moz-progress-bar {
     background-color: #eee;
 }

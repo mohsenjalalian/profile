@@ -52,7 +52,7 @@
                                                 <select oninvalid="return chek(this)" oninput="return chek2(this)"
                                                         style="width: 279px; margin-right: 15px;" name="type_id"
                                                         class="select2_demo_1 form-control">
-                                                    <option value="{{ Request::old('type') ?: '0'}}">نوع را انتخاب کنید</option>
+                                                    <option disabled selected value="{{ Request::old('type') ?: '0'}}">نوع را انتخاب کنید</option>
                                                     @foreach($types as $type)
                                                     <option value="{{$type->id}}">{{$type->name}}</option>
                                                     @endforeach
@@ -75,7 +75,7 @@
                                         <select oninvalid="return chek(this)" oninput="return chek2(this)" required
                                                 style="margin-right: 15px; width: 280px;" name="point"
                                                 class="select2_demo_1 form-control">
-                                            <option value="{{ Request::old('point') ?: ''}}">امتیاز</option>
+                                            <option disabled selected value="{{ Request::old('point') ?: ''}}">امتیاز</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>

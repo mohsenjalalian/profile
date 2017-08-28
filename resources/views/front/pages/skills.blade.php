@@ -26,9 +26,6 @@
             @endforeach
         </div>
     </main>
-
-
-
    @if(!$languages->isEmpty())
     <section style="margin-bottom: 10px;" class="col-xs-12 col-md-4 pull-left">
         <div class="box2">
@@ -36,9 +33,7 @@
                 <div id="owl3" class="owl-carousel" style="direction: ltr;">
                     @foreach($languages as $language)
                         <div  style="float: left !important;" class="item test5">
-
                             <h2>{{$language->name}}</h2>
-                            {{--<progress class="progress3" value="{{$language->reading}}" max="10"</progress>--}}
                             <div class="progress">
                                 <div class="progress-bar progress-bar-success progress-bar-striped active"
                                      role="progressbar" value="" aria-valuemin="3" aria-valuemax="10"
@@ -51,7 +46,6 @@
                                      style="width:{{$language->writing * 20}}%"> {{$language->writing *20}}% نوشتن
                                 </div>
                             </div>
-                            {{--<progress class="progress3" value="{{$language->writing}}" max="10">dfsfdsf</progress>--}}
                             <div class="progress">
                                 <div class="progress-bar progress-bar-success progress-bar-striped active"
                                      role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="10"
@@ -66,12 +60,9 @@
                             </div>
                         </div>
                     @endforeach
-
-
                 </div>
             </section>
         </div>
     </section>
     @endif
-
 </main>
