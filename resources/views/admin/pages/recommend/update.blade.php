@@ -58,15 +58,15 @@
                     <div style="position: absolute; top: 110px; right: 355px;" class="col-md-5">
                             <div class="ibox float-e-margins">
                                 <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
-                                    <div class="col-md-1">
+                                    <div class="col-md-1 axs">
                                     @if(isset($recommend->photo))
                                         <img id="btnrm" style="position: relative; top: -10px; right: -100px;" width="50" height="50" src="{{asset($recommend->photo)}}">
                                     @endif
                                     </div>
-                                    <div class="col-md-1">
+                                    <div class="col-md-1 axs2">
                                         <button style="font-family: webmdesign; margin-right: -60px; margin-top: 0px; background-color: #fff; border: 1px solid #e5e6e7; color: #333;" type="button" id="btnremove" class="btn">پاک کردن</button>
                                     </div>
-                                    <div class="col-md-1">
+                                    <div class="col-md-1 axs3">
                                         <div class="ibox float-e-margins">
                                                 <div class="fileinput fileinput-new" data-provides="fileinput">
                                         <span class="btn btn-default btn-file"><span
@@ -109,7 +109,7 @@
                     <div style="margin-top: -20px;" class="col-md-12">
                 <label>توضیحات</label>
                 <div class="form-group{{ $errors->has('info') ? ' has-error': ''}}">
-                        <textarea style="max-width: 555px; height: 190px; max-height: 190px;" class="form-control m-b" placeholder="توضیحات" type="text" name="info"
+                        <textarea style="max-width: 555px; height: 190px; max-height: 190px;" class="form-control m-b textmb" placeholder="توضیحات" type="text" name="info"
                                    tabindex="1" required autofocus>{{$recommend->info}}
                         </textarea>
                     @if($errors->has('info'))
@@ -120,7 +120,7 @@
                 </div>
 
 
-                        <div style="margin-top: 10px;" class="modal-footer col-md-5">
+                        <div style="margin-top: 10px;" class="modal-footer col-md-5 btnup">
                             <button  style="font-family: webmdesign;" type="button" class="btn btn-white" data-dismiss="modal">بستن</button>
                             <button style="font-family: webmdesign;" name="submit" type="submit" id="contact-submit" data-submit="...Sending" class="btn btn-primary">اعمال تغییرات</button>
                         </div>

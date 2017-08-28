@@ -88,7 +88,7 @@
                     </div>
 </div>
                     <div class="row">
-                        <div style="margin-right: 100px;" class="col-md-4">
+                        <div style="margin-right: 100px;" class="col-md-4 dest">
                             <label>شهر</label>
                             <div class="form-group{{ $errors->has('city') ? ' has-error': ''}}">
                                 <select name="city" class="select2_demo_1 form-control">
@@ -134,7 +134,7 @@
                 <div class="form-group{{ $errors->has('about') ? ' has-error': ''}}">
                     <label>توضیحات</label>
                     <fieldset>
-                        <textarea style="width: 555px; height: 130px; max-height: 130px; max-width: 555px;" placeholder="توضیحات" type="text" name="about" tabindex="1"
+                        <textarea class="textw" style="width: 555px; height: 130px; max-height: 130px; max-width: 555px;" placeholder="توضیحات" type="text" name="about" tabindex="1"
                                   required autofocus>{{$work->about}}</textarea>
                     </fieldset>
                     @if($errors->has('about'))

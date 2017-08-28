@@ -56,15 +56,15 @@
 
                         <div class="ibox float-e-margins">
                             <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
-                                <div style="position: relative; right: 155px; top: -50px;" class="col-md-1">
+                                <div style="position: relative; right: 155px; top: -50px;" class="col-md-1 col-xs-4 img1">
                                 @if(isset($certificate->photo))
                                     <img id="btnrm" style="position: relative; top: 40px; right: -50px;" width="50" height="50" src="{{asset($certificate->photo)}}">
                                 @endif
                                 </div>
-                                <div style="position: relative; right: 135px;" class="col-md-1">
+                                <div style="position: relative; right: 135px;" class="col-md-1 col-xs-4 img2">
                                     <button style="font-family: webmdesign; margin-right: -60px; margin-top: 0px; background-color: #fff; border: 1px solid #e5e6e7; color: #333;" type="button" id="btnremove" class="btn">پاک کردن</button>
                                 </div>
-                                <div style="position: relative; right:75px;" class="col-md-1">
+                                <div style="position: relative; right:75px;" class="col-md-1 col-xs-4 img3">
                                     <div class="ibox float-e-margins">
                                         <div class="fileinput fileinput-new" data-provides="fileinput">
                                         <span class="btn btn-default btn-file"><span
@@ -108,7 +108,7 @@
                         <div class="form-group{{ $errors->has('info') ? ' has-error': ''}}">
                             <fieldset>
                                 <label>توضیحات</label>
-                        <textarea maxlength="330" class="demo" style="width: 555px; height: 170px; max-width: 555px; max-height: 170px;" class="form-control m-b" placeholder="توضیحات" type="text" name="info" tabindex="1"
+                        <textarea maxlength="330" class="demo" style="width: 555px; height: 170px; max-width: 555px; max-height: 170px;" class="form-control m-b textw" placeholder="توضیحات" type="text" name="info" tabindex="1"
                                   required autofocus>{{$certificate->info}}</textarea>
                             </fieldset>
                             @if($errors->has('info'))

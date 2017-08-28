@@ -57,15 +57,10 @@
                             </div>
                         </div>
                     </div>
-
-
                     <div class="form-group{{ $errors->has('description') ? ' has-error': ''}}">
                         <label>توضیحات</label>
                         <fieldset>
-                            <textarea
-                                    style="height: 160px !important; max-height: 160px; width: 555px; max-width: 555px;"
-                                    class="form-control m-b col-md-4" name="description" rows="8" cols="80"
-                                    placeholder="توضیحات" tabindex="1" required>{{$blog->description}}</textarea>
+                            <textarea style="height: 160px !important; max-height: 160px; width: 555px; max-width: 555px;" class="form-control m-b col-md-4" name="description" rows="8" cols="80" placeholder="توضیحات" tabindex="1" required>{{$blog->description}}</textarea>
                         </fieldset>
                         @if($errors->has('description'))
                             <span class="help-block">{{ $errors->first('description')}}</span>

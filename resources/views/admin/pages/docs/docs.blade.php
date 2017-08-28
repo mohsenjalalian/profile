@@ -216,7 +216,7 @@
                             داده میشود
                         </small>
                     </div>
-                    <div style="background-color: #fff !important; height: 470px;" class="modal-body col-md-12">
+                    <div style="background-color: #fff !important; height: 470px;" class="modal-body docss col-md-12">
                         <div class="container">
 
                         </div>

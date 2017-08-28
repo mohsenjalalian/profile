@@ -107,7 +107,7 @@
                                 <div class="form-group{{ $errors->has('city') ? ' has-error': ''}}">
                                     <select oninvalid="return chek(this)" oninput="return chek2(this)"
                                             style="width: 279px; margin-right: 15px;" name="city"
-                                            class="select2_demo_1 form-control">
+                                            class="select2_demo_1 form-control selecte">
                                         <option value="{{ Request::old('city') ?: '0'}}">استان را انتخاب کنید</option>
                                         <option value="آذربایجان شرقی">آذربایجان شرقی</option>
                                         <option value="آذربایجان غربی">آذربایجان غربی</option>
@@ -155,7 +155,7 @@
                                           type="text"
                                           value="{{ Request::old('about') ?: ''}}" name="about" placeholder="توضیحات"
                                           tabindex="1" required autofocus
-                                          class="form-control m-b"></textarea>
+                                          class="form-control m-b texweb"></textarea>
                                     @if($errors->has('about'))
                                         <span class="help-block">{{ $errors->first('about')}}</span>
                                     @endif
@@ -254,7 +254,7 @@
                         داده میشود
                     </small>
                 </div>
-                <div style="background-color: #fff !important; height: 490px;" class="modal-body col-md-12">
+                <div style="background-color: #fff !important; height: 480px" class="modal-body profile col-md-12">
                     <div class="container">
 
                     </div>

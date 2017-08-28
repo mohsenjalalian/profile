@@ -13,7 +13,7 @@
                 {{ method_field('PUT') }}
                 <input type="hidden" name="old_pic" id="rmPhoto" value="{{ $docs->photo }}">
 <div class="row">
-    <div style="margin-top: 20px;" class="col-md-3">
+    <div style="margin-top: 20px;" class="col-md-3 ">
                 <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
                     <label>نام</label>
                     <fieldset>
@@ -71,15 +71,15 @@
                 <div class="row">
                     <div class="ibox float-e-margins">
                         <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
-                            <div style="position: relative; top: -50px; right: 140px;" class="col-md-1">
+                            <div style="position: relative; top: -50px; right: 140px;" class="col-md-1 col-xs-4 pages1">
                             @if(isset($docs->photo))
                                 <img id="btnrm" style="position: relative; top: 40px; right: -39px;" width="50" height="50" src="{{asset($docs->photo)}}">
                             @endif
                             </div>
-                            <div style="position: relative; right: 80px;" class="col-md-1">
+                            <div style="position: relative; right: 80px;" class="col-md-1 col-xs-4 pages2">
                                 <button style="font-family: webmdesign; margin-right: 0px; margin-top: 0px; background-color: #fff; border: 1px solid #e5e6e7; color: #333;" type="button" id="btnremove" class="btn">پاک کردن</button>
                             </div>
-                            <div style="position: relative; right:75px;" class="col-md-1">
+                            <div style="position: relative; right:75px;" class="col-md-1 col-xs-4 pages3">
                                 <div class="ibox float-e-margins">
                                     <div class="fileinput fileinput-new" data-provides="fileinput">
                                         <span class="btn btn-default btn-file"><span
