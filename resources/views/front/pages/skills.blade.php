@@ -1,3 +1,4 @@
+@if(!$types->isEmpty() or !$languages->isEmpty())
 <main id="about57" class="container skill">
     <h2 class="text-sk3">مهارت ها و زبان</h2>
     <main class="container tabs-tunel col-md-8">
@@ -66,3 +67,4 @@
     </section>
     @endif
 </main>
+@endif
