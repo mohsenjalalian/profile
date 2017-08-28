@@ -77,7 +77,7 @@
                                                     @endforeach
                                                 </select>
                                             </div>
-                                            <p style="padding-top:8px;">بیش از ۳ کاراکتر وارد نشود</p>
+                                            <p style="padding-top:8px;">بیش از ۳ ایتم وارد نشود</p>
                                         </div>
                                     </div>
                                     @if($errors->has('category_id[]'))
@@ -107,7 +107,7 @@
                                                     @endforeach
                                                 </select>
                                             </div>
-                                         <p style="padding-top:8px;">بیش از ۵ کاراکتر وارد نشود</p>
+                                         <p style="padding-top:8px;">بیش از ۵ ایتم وارد نشود</p>
                                         </div>
                                     </div>
                                     @if($errors->has('skill_id[]'))
@@ -193,7 +193,7 @@
                                     </td>
 
                                     <td style="vertical-align: middle;" class="text-center">
-                                        <i style="font-size: 20px;" class="fa fa-link"></i>
+                                        <a style="color: #666;" href="{{$workSample->link}}"><i style="font-size: 20px;" class="fa fa-link"></i></a>
                                     </td>
 
 

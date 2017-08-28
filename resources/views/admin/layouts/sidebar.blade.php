@@ -96,14 +96,14 @@
                                     class="nav-label"></span>زبان
                         </a>
                     </li>
+                    <li class="@if (\Request::route()->getName() == "type") active @endif">
+                        <a class="menu" href="{{route('type')}}"><i class="fa fa-check"></i> <span
+                                    class="nav-label"></span> نوع مهارت
+                            ها</a>
+                    </li>
                     <li class="@if (\Request::route()->getName() == "skills") active @endif">
                         <a class="menu" href="{{route('skills')}}"><i class="fa fa-flask"></i> <span
                                     class="nav-label"></span>مهارت
-                            ها</a>
-                    </li>
-                    <li class="@if (\Request::route()->getName() == "type") active @endif">
-                        <a class="menu" href="{{route('type')}}"><i class="fa fa-check"></i> <span
-                                    class="nav-label"></span>نوع مهارت
                             ها</a>
                     </li>
                     <li class="@if (\Request::route()->getName() == "education") active @endif">
@@ -119,19 +119,20 @@
                 <a><i class="fa fa-book"></i> <span class="nav-label">نمونه کار</span><span
                             class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
+                    <li class="@if (\Request::route()->getName() == "category") active @endif">
+                        <a href="{{route('category')}}"><i class="fa fa-files-o"></i> <span
+                                    class="nav-label"></span>نوع نمونه کار
+                        </a>
+                    </li>
+
                     <li class="@if (\Request::route()->getName() == "work-sample") active @endif">
                         <a href="{{route('work-sample')}}"><i class="fa fa-globe"></i> <span
                                     class="nav-label"></span>نمونه کار</a>
 
                     </li>
-                    <li class="@if (\Request::route()->getName() == "category") active @endif">
-                        <a href="{{route('category')}}"><i class="fa fa-files-o"></i> <span
-                                    class="nav-label"></span>دسته بندی
-                        </a>
-                    </li>
                     <li class="@if (\Request::route()->getName() == "docs") active @endif">
                         <a href="{{route('docs')}}"><i class="fa fa-edit"></i> <span
-                                    class="nav-label"></span>مقالات کتاب</a>
+                                    class="nav-label"></span>مقالات و کتاب</a>
 
                     </li>
                     <li class="@if (\Request::route()->getName() == "certification") active @endif">

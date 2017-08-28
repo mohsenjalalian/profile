@@ -14,7 +14,7 @@
             @endif
         </p>
     </section>
-    <section style="margin-bottom: 30px;" class="col-xs-12 col-md-6 pull-left">
+    <section style="margin-bottom: 25px;" class="col-xs-12 col-md-6 pull-left">
         <div class="box">
             <p>اطلاعات شخصی</p>
             <section class="col-xs-6 col-md-6">
@@ -66,7 +66,7 @@
                 بک گراند ذهنی من هوشمندی کسب و کار و طراحی سیستم های اطلاعاتی است، ایجاد محیطی پویا، یادگیری روز افزون آمال محیط کاری و شخصی من است و سعی میکنم با استفاده از هوش تعاملی و هیجانی و ایجاد ارتباط با همکاران و مخاطبانم بیشتر از آنچه به من سپرده اند انجام دهم و کمتر از آنچه به من متعهد شدند، دریافت کنم
             </p>
     </section>
-    <section class="col-xs-12 col-md-6 pull-left">
+    <section style="margin-bottom: 15px;" class="col-xs-12 col-md-6 pull-left">
         <div class="box">
             <p>اطلاعات شخصی</p>
             <section class="col-xs-6 col-md-6">

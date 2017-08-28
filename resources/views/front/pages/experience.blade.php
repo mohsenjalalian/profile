@@ -1,7 +1,7 @@
 @if(!$workExperiences->isEmpty())
 <main id="about2" class="container-fluid products">
     <section class="container">
-        <h2 style="color: #fff;">تجربه ها</h2>
+        <h2 style="color: #fff;">سوابق کاری</h2>
         <div style="direction: ltr !important;" id="timeline">
             <ul id="dates">
                 @foreach($workExperiences as $experience )
@@ -20,7 +20,7 @@
             <ul id="issues">
                 @foreach($workExperiences as $experience )
                 <li id="{{$experience->id}}">
-                    <h4 style="float: right; color: #ffd93e;  text-align: right; width: 100%"><strong>{{$experience->title}}</strong></h4>
+                    <h4 style="float: right; color: #ffd93e; margin-right: 30px;  text-align: right; width: 100%"><strong>{{$experience->title}}</strong></h4>
                     <p style="font-size: 11px; color: #fff;"><strong>{{$experience->company}}</strong></p>
                     <p style="text-align: right; float: right; width: 100%; color: #fff;" class="mCustomScrollbar content-a2" data-mcs-theme="minimal-dark">
                         @php

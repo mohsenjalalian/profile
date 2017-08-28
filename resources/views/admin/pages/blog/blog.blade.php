@@ -25,7 +25,7 @@
                         {{csrf_field()}}
                         <div class="form-group{{ $errors->has('title') ? ' has-error': ''}}">
                             <div class="col-sm-10 col-md-12">
-                                <input oninvalid="return chek(this)" oninput="return chek2(this)" value="{{ Request::old('title') ?: ''}}" type="text" placeholder="تیتر"
+                                <input oninvalid="return chek(this)" oninput="return chek2(this)" value="{{ Request::old('title') ?: ''}}" type="text" placeholder="خبر"
                                        class="form-control m-b" name="title"
                                        tabindex="1" required autofocus>
                                 @if($errors->has('title'))
@@ -161,7 +161,7 @@
                             <thead>
                             <tr>
                             <th class="text-center hidden-sm hidden-xs">عکس </th>
-                            <th class="text-center">تیتر</th>
+                            <th class="text-center">خبر</th>
                             <th class="text-center hidden-sm hidden-xs">تاریخ</th>
                             <th class="text-center hidden-sm hidden-xs">توضیحات</th>
                             <th style="width: 20px;" class="text-center">تغییرات</th>
