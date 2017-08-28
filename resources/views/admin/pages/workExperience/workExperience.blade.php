@@ -108,7 +108,7 @@
                                     <select oninvalid="return chek(this)" oninput="return chek2(this)"
                                             style="width: 279px; margin-right: 15px;" name="city"
                                             class="select2_demo_1 form-control selecte">
-                                        <option value="{{ Request::old('city') ?: '0'}}">استان را انتخاب کنید</option>
+                                        <option disabled selected value="{{ Request::old('city') ?: '0'}}">استان را انتخاب کنید</option>
                                         <option value="آذربایجان شرقی">آذربایجان شرقی</option>
                                         <option value="آذربایجان غربی">آذربایجان غربی</option>
                                         <option value="اردبیل">اردبیل</option>

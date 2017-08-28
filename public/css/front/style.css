@@ -1267,18 +1267,18 @@ width: 100%;
     margin-bottom: 0px !important;
     margin-top: 30px;
 }
-.progress3{
-    background-color: #ffd93e;
-    width: 240px;
-    height: 25px;
-    margin-right: 10px;
-}
-.progress3::-webkit-progress-bar {
-    background-color: #eee !important;
-}
-.progress3::-webkit-progress-value {
-    background-color: #ffd93e;
-}
+/*.progress3{*/
+    /*background-color: #ffd93e;*/
+    /*width: 240px;*/
+    /*height: 25px;*/
+    /*margin-right: 10px;*/
+/*}*/
+/*.progress3::-webkit-progress-bar {*/
+    /*background-color: #eee !important;*/
+/*}*/
+/*.progress3::-webkit-progress-value {*/
+    /*background-color: #ffd93e;*/
+/*}*/
 progress {
     background-color: #000;
     width: 200px;
