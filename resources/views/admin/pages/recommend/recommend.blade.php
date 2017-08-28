@@ -78,7 +78,7 @@
                                 <div class="ibox float-e-margins">
                                     <div class="form-group{{ $errors->has('photo') ? ' has-error': ''}}">
                                         <div style="width: 280px; margin-right: 15px;"
-                                             class="fileinput fileinput-new input-group" data-provides="fileinput">
+                                             class="fileinput fileinput-new input-group imgs" data-provides="fileinput">
                                             <div class="form-control" data-trigger="fileinput">
                                                 <p class="fileinput-exists" style="color: #2aca76;">بارگذاری شد</p>
                                             </div>
@@ -200,7 +200,7 @@
                         داده میشود
                     </small>
                 </div>
-                <div style="background-color: #fff !important; height: 470px;" class="modal-body col-md-12">
+                <div style="background-color: #fff !important; height: 470px;" class="modal-body profile col-md-12">
                     <div class="container">
 
                     </div>

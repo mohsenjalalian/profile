@@ -20,7 +20,7 @@
                     @endif
                 </div>
 
-                <div style="margin-top: 20px; width: 550px; " class="modal-footer col-md-5">
+                <div style="margin-top: 20px; width: 550px; " class="modal-footer mode col-md-5">
                     <button  style="font-family: webmdesign;" type="button" class="btn btn-white" data-dismiss="modal">بستن</button>
                     <button style="font-family: webmdesign;" name="submit" type="submit" id="contact-submit" data-submit="...Sending" class="btn btn-primary">اعمال تغییرات</button>
                 </div>

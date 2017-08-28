@@ -8674,6 +8674,104 @@ body.md-skin {
   position: relative;
   right: 20px;
 }
+.profile{
+  height: 700px !important;
+}
+.textmb{
+  width: 280px !important;
+}
+.axs{
+  position: relative;
+  top:400px;
+  right: -250px;
+}
+  .axs2{
+    position: relative;
+    top:370px;
+    right: -200px;
+  }
+  .axs3{
+    position: relative;
+    top:330px;
+    right: -175px;
+  }
+  .btnup{
+    margin-top: 100px !important;
+  }
+  .imgs{
+    width: 230px !important;
+  }
+  .selecte{
+    width: 250px !important;
+  }
+  .texweb{
+    width: 250px !important;
+  }
+  .modct{
+    width: 900px !important;
+  }
+  .dest{
+    width: 230px !important;
+    margin-right: 0px !important;
+  }
+  .textw{
+    width: 300px !important;
+  }
+  .profile2{
+    height: 400px !important;
+  }
+  .mds{
+    height: 800px !important;
+  }
+  .gerayesh{
+    margin-right: 0px !important;
+    width: 240px !important;
+  }
+  .pastg1{
+    position: relative;
+    right: -80px !important;
+  }
+  .pastg2{
+    position: relative;
+    right: 25px !important;
+  }
+  .pastg3{
+    position: relative;
+    right: -50px !important;
+  }
+  .mode{
+    width: 280px !important;
+  }
+  .docss{
+    height: 620px !important;
+  }
+  .pages1{
+    position: relative;
+    right: 20px !important;
+  }
+  .pages2{
+    position: relative;
+    right: -60px !important;
+  }
+  .pages3{
+    position: relative;
+    right: -80px !important;
+  }
+  .boxmode{
+    height: 700px !important;
+  }
+.img1{
+  position: relative;
+  right: 50px !important;
+}
+  .img2{
+    position: relative;
+    right: 30px !important;
+  }
+  .img3{
+    position: relative;
+    right: -50px !important;
+  }
 }
 @media print {
   nav.navbar-static-side {

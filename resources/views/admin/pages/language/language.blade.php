@@ -124,10 +124,10 @@
                             <thead>
                             <tr>
                                 <th class="text-center">نام</th>
-                                <th class="text-center">خواندن</th>
+                                <th class="text-center hidden-xs">خواندن</th>
                                 <th class="text-center">نوشتن</th>
                                 <th class="text-center">صحبت کردن</th>
-                                <th class="text-center">شنیدن</th>
+                                <th class="text-center hidden-xs">شنیدن</th>
                                 <th style="width: 40px;" class="text-center">تغییرات</th>
                             </tr>
                             </thead>
@@ -135,10 +135,10 @@
                             @foreach($languages as $language)
                                 <tr>
                                     <td style="padding-top: 22px;" class="text-center">{{$language->name}}</td>
-                                    <td style="padding-top: 22px;" class="text-center">{{$language->reading}}</td>
+                                    <td style="padding-top: 22px;" class="text-center hidden-xs">{{$language->reading}}</td>
                                     <td style="padding-top: 22px;" class="text-center">{{$language->writing}}</td>
                                     <td style="padding-top: 22px;" class="text-center">{{$language->speaking}}</td>
-                                    <td style="padding-top: 22px;" class="text-center">{{$language->listening}}</td>
+                                    <td style="padding-top: 22px;" class="text-center hidden-xs">{{$language->listening}}</td>
 
                                     <td style="border: none; display: flex;">
                                         <button style="margin-top: 12px; width:30px; height: 30px;" data-toggle="modal"
@@ -189,7 +189,7 @@
                             داده میشود
                         </small>
                     </div>
-                    <div style="background-color: #fff !important; height: 300px;" class="modal-body col-md-12">
+                    <div style="background-color: #fff !important; height: 300px;" class="modal-body profile2 col-md-12">
                         <div class="container">
 
                         </div>
