@@ -7,6 +7,8 @@ use App\Model\Messages;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Mockery\Exception;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class MessageController
@@ -36,15 +38,14 @@ class MessageController extends Controller
            'message' => 'required|min:3|max:120|regex:/^[\pL\s\-\0-9]+$/u',
         ]);
         $data = Messages::create([
-           'name' => $request->input('name'),
-           'email' => $request->input('email'),
-           'message' => $request->input('message'),
+           'name' => $request->get('name'),
+           'email' => $request->get('email'),
+           'message' => $request->get('message'),
         ]);
 
         if ($data) {
-            return redirect()->back()->with('success', 'با سپاس پیغام ارسال شد');
+            return new JsonResponse([], Response::HTTP_OK);
         }
-        return redirect()->back()->withErrors( 'متاسفانه پیغام شما ارسال نشد');
     }
 
     /**

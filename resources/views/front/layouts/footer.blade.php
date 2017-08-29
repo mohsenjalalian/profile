@@ -8,7 +8,7 @@
             <section class="content bgcolor-1">
                 <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
             <span class="input input--nao">
-      <input oninvalid="return chek(this)" oninput="return chek2(this)" class="input__field input__field--nao" required name="name"
+      <input on invalid="return chek(this)" oninput="return chek2(this)" class="input__field input__field--nao name-field" required name="name"
              value="{{ Request::old('name') ?: ''}}" type="text" id="input-1"/>
       <label class="input__label input__label--nao" for="input-1">
           <span class="input__label-content input__label-content--nao">نام</span>
@@ -21,7 +21,7 @@
 
                 <div class="form-group{{ $errors->has('email') ? ' has-error': ''}}">
                 <span class="input input--nao">
-      <input oninvalid="return chek(this)" oninput="return chek2(this)" class="input__field input__field--nao" required name="email"
+      <input oninvalid="return chek(this)" oninput="return chek2(this)" class="input__field input__field--nao email-field" required name="email"
              value="{{ Request::old('email') ?: ''}}" type="text" id="input-2"/>
       <label class="input__label input__label--nao" for="input-2">
           <span class="input__label-content input__label-content--nao">ایمیل</span>
@@ -34,7 +34,7 @@
 
                 <div class="form-group{{ $errors->has('message') ? ' has-error': ''}}">
                     <span class="input input--nao">
-      <input oninvalid="return chek(this)" oninput="return chek2(this)" class="input__field input__field--nao" required name="message"
+      <input oninvalid="return chek(this)" oninput="return chek2(this)" class="input__field input__field--nao message-field" required name="message"
              value="{{ Request::old('message') ?: ''}}" type="text" id="input-3"/>
       <label class="input__label input__label--nao" for="input-3">
           <span class="input__label-content input__label-content--nao">پیام</span>
@@ -44,7 +44,8 @@
       </svg>
       </span>
                 </div>
-                <button class="btn btn-form">ارسال</button>
+                <meta class="token" name="_token" content="{!! csrf_token() !!}" />
+                <button id="message-form" class="btn btn-form">ارسال</button>
             </section>
         </form>
     </section>
@@ -218,4 +219,3 @@
 
 @include('front.layouts.success')
 @include('admin.layouts.errors')
-
