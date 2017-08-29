@@ -13,7 +13,31 @@
 
 
 ( function( window ) {
+    $(document).ready(function (e) {
+        $('#message-form').click(function (e) {
+            var csrf = $('.token').attr('content');
+            var name = $('.name-field').val();
+            var email = $('.email-field').val();
+            var message = $('.message-field').val();
 
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': csrf
+                }
+            });
+            e.preventDefault();
+            $.ajax({
+                type:'POST',
+                url:'/message/save',
+                data: {name: name, email: email, message: message},
+                success:function(data){
+                    $('#message-form').append("<div id='message-ajax' style='position: absolute; left: 175px; bottom: -25px;display: none;' class='alert alert-success'> پیام با موفقیت ثبت شد</div>");
+                    $('#message-ajax').fadeIn(2000);
+                    $('#message-ajax').fadeOut(2000);
+                }
+            });
+        });
+    });
 'use strict';
 
 // class helper functions from bonzo https://github.com/ded/bonzo
