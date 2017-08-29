@@ -16,10 +16,10 @@
                             <tbody>
                             @foreach($messages as $message)
                             <tr class="unread">
-                                <td class="mail-ontact">{{$message->name}}</td>
-                                <td class="mail-subject">{{$message->subject}}</td>
-                                <td class="text-right mail-date">{{$message->email}}</td>
-                                <td class="text-right mail-date" style="direction: ltr">{{$message->created_at->diffForHumans()}}</td>
+                                <td style="vertical-align: middle;" class="mail-ontact">{{$message->name}}</td>
+                                <td style="vertical-align: middle;" class="mail-subject">{{$message->subject}}</td>
+                                <td style="vertical-align: middle;" class="text-right mail-date">{{$message->email}}</td>
+                                <td class="text-right mail-date" style="direction: ltr; vertical-align: middle;">{{$message->created_at->diffForHumans()}}</td>
                                 <td><a href="{{route('message.show',$message->id)}}"><button style="font-family: webmdesign;" class="btn btn-primary">مشاهده </button></a></td>
                             </tr>
                                 @endforeach

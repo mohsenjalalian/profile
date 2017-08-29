@@ -2,7 +2,7 @@
 @inject('translate',\App\Http\Controllers\ContactController)
 <main id="about7">
     <section id="scrollcontact" class="pull-left col-xs-12 col-sm-6 col-md-6 contact1">
-        <h2>پیام برسان</h2>
+        <h2>ارتباط با من</h2>
         <form action="{{route('saveMessage')}}" method="post">
             {{csrf_field()}}
             <section class="content bgcolor-1">
@@ -53,13 +53,13 @@
             @foreach($contacts as $contact)
             <div class="web"><i class="fa fa-envelope-o" aria-hidden="true"></i>
                 <p class="text-for"> ایمیل</p>
-                <p class="text-for2">
+                <a href="{{$contact->email}}"><p class="text-for2">
                     @if(!empty($contact->email))
                     {{$contact->email}}
                     @else
                         info@cotint.com
                     @endif
-                </p>
+                    </p></a>
             </div>
             <div class="web"><i class="fa fa-phone" aria-hidden="true"></i>
                 <p class="text-for"> تلفن دفتر</p>
@@ -71,24 +71,24 @@
                  @endif
                 </p>
             </div>
+                    <div class="web"><i class="fa fa-tty" aria-hidden="true"></i>
+                        <p class="text-for">تلفن </p>
+                        <p class="text-for2">
+                            @if(!empty($contact->$contact->mobile))
+                                {{$translate::toPersianNum($contact->phone_number)}}
+                            @else
+                                ۰۲۱-۶۶۵۶۴۶۱۲
+                            @endif
+                        </p>
+                    </div>
             <div class="web"><i style="font-size: 30px; margin-top: 3px; margin-right: 12px;" class="fa fa-mobile" aria-hidden="true"></i>
                 <p class="text-for"> تلفن همراه</p>
                 <p class="text-for2">
-                @if(!empty($contact->mobile))
+                @if(!empty($phone_number))
                         {{$translate::toPersianNum($contact->mobile)}}
                 @else
                    ۰۹۱۲۲۱۰۵۲۷۱
                 @endif
-                </p>
-            </div>
-            <div class="web"><i class="fa fa-tty" aria-hidden="true"></i>
-                <p class="text-for">تلفن </p>
-                <p class="text-for2">
-                  @if(!empty($contact->phone_number))
-                        {{$translate::toPersianNum($contact->phone_number)}}
-                  @else
-                     ۰۲۱-۶۶۵۶۴۶۱۲
-                  @endif
                 </p>
             </div>
                 @endforeach
@@ -96,9 +96,10 @@
 
                         <div class="web"><i class="fa fa-envelope-o" aria-hidden="true"></i>
                             <p class="text-for"> ایمیل</p>
-                            <p class="text-for2">
+
+                            <a href="info@cotint.com"><p class="text-for2">
                                     info@cotint.com
-                            </p>
+                                </p></a>
                         </div>
                         <div class="web"><i class="fa fa-phone" aria-hidden="true"></i>
                             <p class="text-for"> تلفن دفتر</p>
@@ -108,19 +109,22 @@
 
                             </p>
                         </div>
+
+                <div class="web"><i class="fa fa-tty" aria-hidden="true"></i>
+                    <p class="text-for">تلفن </p>
+                    <p class="text-for2">
+
+                        ۰۲۱-۶۶۵۶۴۶۱۲
+
+                    </p>
+                </div>
+
+
                         <div class="web"><i style="font-size: 30px; margin-top: 3px; margin-right: 12px;" class="fa fa-mobile" aria-hidden="true"></i>
                             <p class="text-for"> تلفن همراه</p>
                             <p class="text-for2">
 
                                     ۰۹۱۲۲۱۰۵۲۷۱
-
-                            </p>
-                        </div>
-                        <div class="web"><i class="fa fa-tty" aria-hidden="true"></i>
-                            <p class="text-for">تلفن </p>
-                            <p class="text-for2">
-
-                                    ۰۲۱-۶۶۵۶۴۶۱۲
 
                             </p>
                         </div>
@@ -147,8 +151,7 @@
                                                               aria-hidden="true"></i></a>
                         @endif
                         @if(!empty($socialNetwork->site))
-                    <a href="{{$socialNetwork->site}}" target="_blank"><i id="social-fo4" class="fa fa-book"
-                                                              aria-hidden="true"></i></a>
+                    <a href="{{$socialNetwork->site}}" target="_blank"><i id="social-fo4" class="fa fa-globe" aria-hidden="true"></i>
                         @endif
                         @if(!empty($socialNetwork->skype))
                     <a href="{{$socialNetwork->skype}}" target="_blank"><i id="social-fo5" class="fa fa-skype"
@@ -197,16 +200,16 @@
 
 <footer class="container-fluid background-five">
     <section class="container">
-        <section class="col-md-4 pull-left web-footer"><span class="pull-left text-fo">۰۲۱-۲۲۷۴۸۵۴۳<i
-                        class="fa fa-phone" aria-hidden="true"></i></span></section>
-        <section class="col-md-4 pull-left web-footer">
+        {{--<section class="col-md-4 pull-left web-footer"><span class="pull-left text-fo">۰۲۱-۲۲۷۴۸۵۴۳<i--}}
+                        {{--class="fa fa-phone" aria-hidden="true"></i></span></section>--}}
+        <section class="col-md-12 web-footer">
             <p class="text-center text-fo2">Powerd By <span style="color:#245c43;"><a class="text-fo3"
                                                                                      href="http://cotint.ir/"
                                                                                      target="_blank"><strong>Cotint</strong></a></span>
             </p>
         </section>
-        <section class="col-md-4 pull-right web-footer"><img class="pull-right img-fo" src="images/front/co.png"
-                                                             height="28px"></section>
+        {{--<section class="col-md-4 pull-right web-footer"><img class="pull-right img-fo" src="images/front/co.png"--}}
+                                                             {{--height="28px"></section>--}}
     </section>
 </footer>
 

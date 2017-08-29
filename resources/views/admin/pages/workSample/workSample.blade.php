@@ -48,7 +48,7 @@
                                 <div class="col-sm-10 col-md-12">
                                     <label>لینک</label>
                                     <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text"
-                                           placeholder="لینک"
+                                           placeholder="لطفا با http وارد کنید"
                                            value="{{ Request::old('link') ?  : ''}}" class="form-control m-b"
                                            name="link"
                                            tabindex="1"  autofocus>
@@ -77,7 +77,7 @@
                                                     @endforeach
                                                 </select>
                                             </div>
-                                            <p style="padding-top:8px;">بیش از ۳ ایتم وارد نشود</p>
+                                            <p style="padding-top:8px;">بیش از ۳ آیتم وارد نشود</p>
                                         </div>
                                     </div>
                                     @if($errors->has('category_id[]'))
@@ -107,7 +107,7 @@
                                                     @endforeach
                                                 </select>
                                             </div>
-                                         <p style="padding-top:8px;">بیش از ۵ ایتم وارد نشود</p>
+                                         <p style="padding-top:8px;">بیش از ۵ آیتم وارد نشود</p>
                                         </div>
                                     </div>
                                     @if($errors->has('skill_id[]'))
@@ -193,7 +193,7 @@
                                     </td>
 
                                     <td style="vertical-align: middle;" class="text-center">
-                                        <a style="color: #666;" href="{{$workSample->link}}"><i style="font-size: 20px;" class="fa fa-link"></i></a>
+                                        <a style="color: #666;" href="{{$workSample->link}}" target="_blank"><i style="font-size: 20px;" class="fa fa-link"></i></a>
                                     </td>
 
 

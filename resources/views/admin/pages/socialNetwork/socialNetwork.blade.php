@@ -155,7 +155,7 @@
                                 <div class="col-md-6">
                                     <div class="input-group m-b">
                         <span class="input-group-addon">
-                            <i class="fa fa-book" aria-hidden="true"></i></span>
+                            <i class="fa fa-globe" aria-hidden="true"></i></span>
                                         <input placeholder="سایت" type="text"
                                                value="{{ Request::old('site') ?: ''}}" class="form-control" name="site"
                                                tabindex="1" autofocus>
@@ -303,7 +303,7 @@
                                     <div class="col-md-6">
                                         <div class="input-group m-b">
                         <span class="input-group-addon">
-                            <i class="fa fa-book" aria-hidden="true"></i></span>
+                            <i class="fa fa-globe" aria-hidden="true"></i></span>
                                             <input placeholder="سایت" type="text"
                                                    value="{{$social->site}}" class="form-control" name="site"
                                                    tabindex="1" autofocus>
@@ -348,7 +348,7 @@
                             @foreach($socials as $social)
                                 @if($social->twitter)
                                     <a style="color: #222222;" href="{{$social->twitter}}" target="_blank">
-                                        <button style="width: 40px !important;" type="button"
+                                        <button style="width: 40px !important; background-color: #1da1f2" type="button"
                                                 class="btn btn-info m-r-sm">
                                             <i style="font-size: 18px; margin-right: -2px; vertical-align: middle;"
                                                class="fa fa-twitter"></i>
@@ -369,7 +369,7 @@
                             @foreach($socials as $social)
                                 @if($social->instagram)
                                     <a style="color: #222222;" href="{{$social->instagram}}" target="_blank">
-                                        <button style="width: 40px !important;" type="button"
+                                        <button style="width: 40px !important; background-color: #895a4d; border: 1px solid #895a4d;" type="button"
                                                 class="btn btn-warning m-r-sm">
 
                                             <i style="font-size: 18px; margin-right: -2px; vertical-align: middle;;"
@@ -395,7 +395,7 @@
                             @foreach($socials as $social)
                                 @if($social->google_plus)
                                 <a style="color: #222222;" href="{{$social->google_plus}}" target="_blank">
-                                    <button style="width: 40px !important;" type="button" class="btn btn-danger m-r-sm">
+                                    <button style="width: 40px !important; background-color: #c73011; border: none;" type="button" class="btn btn-danger m-r-sm">
                                         <i style="font-size: 18px; margin-right: -2px; vertical-align: middle"
                                            class="fa fa-google-plus"></i>
                                     </button>
@@ -419,8 +419,8 @@
                             @foreach($socials as $social)
                                 @if($social->skype)
                                 <a style="color: #222222;" href="{{$social->skype}}" target="_blank">
-                                    <button style="width: 40px !important;" type="button"
-                                            class="btn btn-primary m-r-sm">
+                                    <button style="width: 40px !important; background-color: #00aff0" type="button"
+                                            class="btn m-r-sm">
                                         <i style="font-size: 18px; margin-right: -2px; vertical-align: middle;" class="fa fa-skype"></i>
                                     </button>
                                     اسکایپ
@@ -438,7 +438,7 @@
                             @foreach($socials as $social)
                                 @if($social->facebook)
                                 <a style="color: #222222;" href="{{$social->facebook}}" target="_blank">
-                                    <button style="width: 40px !important;" type="button"
+                                    <button style="width: 40px !important; background-color: #4867aa; border: none;" type="button"
                                             class="btn btn-success m-r-sm">
                                         <i style="font-size: 18px; vertical-align: middle;" class="fa fa-facebook"></i>
                                     </button>
@@ -458,9 +458,9 @@
                             @foreach($socials as $social)
                                 @if($social->telegram)
                                 <a style="color: #222222;" href="{{$social->telegram}}" target="_blank">
-                                    <button style="width: 40px !important;" type="button"
+                                    <button style="width: 40px !important; background-color: #33aae0; border: none;" type="button"
                                             class="btn btn-success m-r-sm">
-                                        <i style="font-size: 18px; margin-right: -2px; vertical-align: middle;"
+                                        <i style="font-size: 18px; margin-right: 0px; vertical-align: middle;"
                                            class="fa fa-paper-plane"></i>
                                     </button>
                                     تلگرام
@@ -481,7 +481,7 @@
                             @foreach($socials as $social)
                                 @if($social->linkedin)
                                 <a style="color: #222222;" href="{{$social->linkedin}}" target="_blank">
-                                    <button style="width: 40px !important;" type="button" class="btn btn-info m-r-sm">
+                                    <button style="width: 40px !important; background-color: #2670ac; border: 1px solid #2670ac;" type="button" class="btn btn-info m-r-sm">
                                         <i style="font-size: 18px; margin-right: -2px; vertical-align: middle;" class="fa fa-linkedin"></i>
                                     </button>
                                     لینکدین
@@ -498,14 +498,14 @@
                             @foreach($socials as $social)
                                 @if($social->site)
                                 <a style="color: #222222;" href="{{$social->site}}" target="_blank">
-                                    <button style="width: 40px !important;" type="button" class="btn btn-danger m-r-sm">
-                                        <i style="font-size: 18px; margin-right: -2px; vertical-align: middle;" class="fa fa-book"></i>
+                                    <button style="width: 40px !important; background-color: #3d6983" type="button" class="btn m-r-sm">
+                                        <i class="fa fa-globe" aria-hidden="true"></i>
                                     </button>
                                     سایت
                                 </a>
                                     @else
                                         <button style="width: 40px !important; border: 1px solid #ddd; background-color:#ddd" type="button" class="btn btn-danger m-r-sm">
-                                            <i style="font-size: 18px; margin-right: -2px; vertical-align: middle;" class="fa fa-book"></i>
+                                            <i class="fa fa-globe" aria-hidden="true"></i>
                                         </button>
                                         سایت
                                 @endif

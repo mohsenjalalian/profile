@@ -1102,7 +1102,10 @@ width: 100%;
     color: #777;
     margin-right: 40px
 }
-
+.span22 {
+    color: #777;
+    margin-right: 12px
+}
 .span2 {
     color: #777;
     margin-right: 20px
@@ -1110,7 +1113,7 @@ width: 100%;
 
 .span3 {
     color: #777;
-    margin-right: 30px
+    margin-right: 12px
 }
 
 .products {
@@ -1345,6 +1348,7 @@ progress::-moz-progress-bar {
 }
 
 .port-n {
+    cursor: default;
     display: inline-block;
     border: 1px solid #2F4A64;
     border-radius: 5px;
@@ -1560,8 +1564,8 @@ width: 100%;
 
 .contact1 h2 {
     font-size: 25px;
-    padding-left: 40px;
     margin-top: 70px;
+    padding-left: 70px;
     margin-right: 80px;
 }
 
@@ -1748,7 +1752,6 @@ width: 100%;
     transition: all 1s;
     background-color: #ffd93e;
     color: #fff;
-    cursor: pointer;
 }
 
 .web i {
@@ -1787,7 +1790,7 @@ width: 100%;
     transition: all 1.2s;
 }
 #social-fo4:hover {
-    color: red;
+    color: #3d6983;
     transition: all 1.2s;
 }
 #social-fo5:hover {
@@ -1803,7 +1806,7 @@ width: 100%;
     transition: all 1.2s;
 }
 #social-fo8:hover {
-    color: brown;
+    color: #895a4d;
     transition: all 1.2s;
 }
 .text-fo {
