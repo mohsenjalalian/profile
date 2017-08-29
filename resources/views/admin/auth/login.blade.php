@@ -51,7 +51,7 @@
 
                     </form>
                     <p class="m-t">
-                    <p id="hiden" style="color: #222; margin-top: 30px;" class="text-center">Design By<a href="http://cotint.ir"
+                    <p id="hiden" style="color: #222; margin-top: 30px;" class="text-center">Designed By<a href="http://cotint.ir"
                                                                                                           target="_blank"><span
                                     style="color: #239963; margin-left: 10px;"><strong>CO </strong></span><strong>|</strong><span
                                     style="color:#222;"><strong> tint</strong></span></a></p>

@@ -6,13 +6,13 @@
     <div class="content-wrapper clearfix">
         <div class="row wrapper border-bottom white-bg page-heading">
             <div class="col-lg-10">
-                <h2>مقالات و کتاب</h2>
+                <h2>مقالات و کتب</h2>
                 <ol class="breadcrumb">
                     <li>
                         <a href="{{route('profile')}}">خانه</a>
                     </li>
                     <li class="active">
-                        <strong>مقالات کتاب</strong>
+                        <strong>مقالات کتب</strong>
                     </li>
                 </ol>
             </div>
@@ -32,7 +32,7 @@
                             <div class="form-group{{ $errors->has('name') ? ' has-error': ''}}">
                                 <div class="col-sm-10 col-md-12">
                                     <input oninvalid="return chek(this)" oninput="return chek2(this)" type="text"
-                                           placeholder="نام کتاب"
+                                           placeholder="نام اثر"
                                            value="{{ Request::old('name') ?: ''}}" class="form-control m-b" name="name"
                                            tabindex="1" required autofocus>
                                     @if($errors->has('name'))

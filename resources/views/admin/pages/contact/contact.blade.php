@@ -118,6 +118,7 @@
                         </div>
                         <div class="form-group{{ $errors->has('phone_number') ? ' has-error': ''}}">
                             <div class="col-sm-10 col-md-12">
+                                <label>موبایل</label>
                                 <input type="text" placeholder="موبایل" value="{{$contact->phone_number}}" class="form-control m-b" name="phone_number" tabindex="1" required autofocus>
                                 @if($errors->has('phone_number'))
                                     <span class="help-block">{{ $errors->first('phone_number')}}</span>
@@ -126,6 +127,7 @@
                         </div>
                         <div class="form-group{{ $errors->has('mobile') ? ' has-error': ''}}">
                             <div class="col-sm-10 col-md-12">
+                                <label>تلفن</label>
                                 <input type="text" placeholder="تلفن" value="{{$contact->mobile}}" class="form-control m-b" name="mobile" tabindex="1" required autofocus>
                                 @if($errors->has('mobile'))
                                     <span class="help-block">{{ $errors->first('mobile')}}</span>
@@ -134,6 +136,7 @@
                         </div>
                         <div class="form-group{{ $errors->has('office_number') ? ' has-error': ''}}">
                             <div class="col-sm-10 col-md-12">
+                                <label>تلفن دفتر</label>
                                 <input type="text" placeholder="تلفن دفتر" value="{{$contact->office_number}}" class="form-control m-b" name="office_number" tabindex="1" required autofocus>
                                 @if($errors->has('office_number'))
                                     <span class="help-block">{{ $errors->first('office_number')}}</span>

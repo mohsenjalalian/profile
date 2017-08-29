@@ -24,18 +24,18 @@
                 </li>
                 <li>
                     <a href="{{route('home')}}" target="_blank">
-                        <i class="fa fa-home" title="سایت"></i><span
+                        <i style="position: relative; top: 1px; right: 5px;" class="fa fa-home" title="سایت"></i><span
                                 class="m-r-sm text-muted welcome-message">سایت</span>
                     </a>
                 </li>
                 <li>
                     <a href="{{route('profile')}}">
-                        <i class="fa fa-user" title="پروفایل"></i><span class="m-r-sm text-muted welcome-message">به پنل خوش امدید</span>
+                        <i style="position: relative; top: 1px; right: 8px;" class="fa fa-user" title="پروفایل"></i><span class="m-r-sm text-muted welcome-message"> خوش آمدید</span>
                     </a>
                 </li>
                 <li>
                     <a href="{{route('logout')}}">
-                        <i class="fa fa-sign-out"></i></i><span
+                        <i style="position: relative; top: 2px; right: 5px;" class="fa fa-sign-out"></i></i><span
                                 class="m-r-sm text-muted welcome-message">بیرون رفتن</span>
                     </a>
                 </li>

@@ -168,7 +168,7 @@
                 @if(!$workExperiences->isEmpty())
                 <div id="icon3" class="web-icon">
                     <li><img src="images/front/briefcase (1).png" alt="taj" width="23px"> <span class="tooltip3">
-            <p class="text-center">تجربه</p>
+            <p class="text-center">سوابق کاری</p>
             <i class="fa fa-caret-right" aria-hidden="true"></i> </span></li>
                 </div>
                 @endif
