@@ -7,13 +7,13 @@
     <div class="content-wrapper clearfix">
         <div class="row wrapper border-bottom white-bg page-heading">
             <div class="col-lg-10">
-                <h2>دسته بندی</h2>
+                <h2>نوع نمونه کار</h2>
                 <ol class="breadcrumb">
                     <li>
                         <a href="{{route('profile')}}">خانه</a>
                     </li>
                     <li class="active">
-                        <strong>دسته بندی</strong>
+                        <strong>نوع نمونه کار</strong>
                     </li>
                 </ol>
             </div>

@@ -15,11 +15,12 @@
                 </p>
                 <p class="text-center text-yellow">{{$recommendation->name}}</p>
                 <p class="text-yellow2 mCustomScrollbar content-a4" data-mcs-theme="minimal-dark">
+                    <i style="position: relative; left: 5px;" class="fa fa-quote-left" aria-hidden="true"></i>
                     @php
                         $des =  nl2br(e($recommendation->info));
                     echo $des;
                     @endphp
-
+                    <i style="position: relative; right: 5px;" class="fa fa-quote-right" aria-hidden="true"></i>
                 </p>
                 <br>
                 <hr style="width: 85px; border:1px solid #555; margin-right: 55px; float: right;">

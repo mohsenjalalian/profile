@@ -43,7 +43,7 @@
                     </span></h3>
             </section>
             <section class="col-xs-6 col-md-6">
-                <h3 class="texth3">وضعیت تاهل: <span class="span1">
+                <h3 class="texth3">وضعیت تاهل: <span class="span22">
                     @if(!empty($profile->marriage))
                         {{$profile->marriage}}
                     @else
@@ -78,7 +78,7 @@
                 <h3 class="texth3">محل تولد: <span class="span3">تهران</span></h3>
             </section>
             <section class="col-xs-6 col-md-6">
-                <h3 class="texth3">وضعیت تاهل: <span class="span1">مجرد</span></h3>
+                <h3 class="texth3">وضعیت تاهل: <span class="span22">مجرد</span></h3>
                 <h3 class="texth3"> نظام وظیفه: <span class="span2">                       معافیت تحصیلی</span></h3>
             </section>
         </div>

@@ -132,7 +132,7 @@
                     </li>
                     <li class="@if (\Request::route()->getName() == "docs") active @endif">
                         <a href="{{route('docs')}}"><i class="fa fa-edit"></i> <span
-                                    class="nav-label"></span>مقالات و کتاب</a>
+                                    class="nav-label"></span>مقالات و کتب</a>
 
                     </li>
                     <li class="@if (\Request::route()->getName() == "certification") active @endif">
@@ -149,7 +149,7 @@
                             class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
                     <li class="@if (\Request::route()->getName() == "blog") active @endif">
-                        <a href="{{route('blog')}}"><i class="fa fa-globe"></i> <span
+                        <a href="{{route('blog')}}"><i class="fa fa-newspaper-o" aria-hidden="true"></i> <span
                                     class="nav-label"></span>بلاگ</a>
 
                     </li>

@@ -2,7 +2,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>tarnama</title>
+    <title>تارنمای شخصی احمدرضا نیکک کار</title>
     <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/front/bootstrap.css" rel="stylesheet">
     <link href="/css/front/bootstrap-rtl.min.css" rel="stylesheet">
