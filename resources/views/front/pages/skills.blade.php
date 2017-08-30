@@ -10,7 +10,7 @@
         <div class="tab-content">
             @foreach($types as $type)
                 @foreach($type->skill as $skill)
-                    <div id="type{{$skill->type_id}}" class="tab-pane fade in">
+                    <div id="type{{$type->id}}" class="tab-pane fade in">
                         <div class="mCustomScrollbar content-a3" data-mcs-theme="minimal-dark">
                             @foreach($type->skill as $skill)
                                 @if(!empty($skill))
