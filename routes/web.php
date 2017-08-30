@@ -25,6 +25,7 @@ Route::group(['middleware' => 'guest'], function () {
     Route::post('forget_password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('sendResetLinkEmail');
     Route::get('forget_password/reset/{token}', 'ResetPasswordController@showResetForm')->name('showResetForm');
     Route::post('forget_password/reset', 'ResetPasswordController@reset')->name('reset');
+    Route::post('message/save', 'MessageController@save')->name('saveMessage');
 
 });
 
@@ -91,8 +92,6 @@ Route::group(['middleware' => 'auth'], function () {
             'store' => 'storeLanguage',
         ]
     ]);
-
-    Route::post('message/save', 'MessageController@save')->name('saveMessage');
 
     Route::resource('message', 'MessageController', [
         'names' => [

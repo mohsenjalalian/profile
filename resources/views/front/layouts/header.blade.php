@@ -180,12 +180,13 @@
             <i class="fa fa-caret-right" aria-hidden="true"></i> </span></li>
                 </div>
                     @endif
-
+                @if(!$types->isEmpty() or !$languages->isEmpty())
                 <div id="icon57" class="web-icon">
                     <li><img src="images/front/skills.png" alt="portfolio" width="23px"> <span class="tooltip57">
             <p class="text-center">مهارت ها</p>
             <i class="fa fa-caret-right" aria-hidden="true"></i> </span></li>
                 </div>
+                @endif
 
             @if(!$workSamples->isEmpty())
                 <div id="icon5" class="web-icon">
