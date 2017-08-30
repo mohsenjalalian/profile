@@ -14,6 +14,8 @@
 
 //Home Page
 Route::get('/', 'HomeController@index')->name('home');
+Route::post('message/save', 'MessageController@save')->name('saveMessage');
+
 //login
 Route::get('login', 'UserController@login')->name('login');
 Route::post('login', 'UserController@store')->name('storeAdmin');
@@ -25,8 +27,6 @@ Route::group(['middleware' => 'guest'], function () {
     Route::post('forget_password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('sendResetLinkEmail');
     Route::get('forget_password/reset/{token}', 'ResetPasswordController@showResetForm')->name('showResetForm');
     Route::post('forget_password/reset', 'ResetPasswordController@reset')->name('reset');
-    Route::post('message/save', 'MessageController@save')->name('saveMessage');
-
 });
 
 

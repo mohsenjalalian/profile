@@ -6,13 +6,13 @@
         <main class="container tabs-tunel">
             <ul class="nav nav-pills">
                 @foreach($categories as $cat)
-                    <li><a data-toggle="pill" href="#{{$cat->id}}">{{$cat->name}}</a></li>
+                    <li><a data-toggle="pill" href="#{{$cat->id}}{{$cat->name}}">{{$cat->name}}</a></li>
                 @endforeach
             </ul>
 
             <div class="tab-content">
                 @foreach($categories as $category)
-                        <div  id="{{$category->id}}" class="tab-pane fade in firest">
+                        <div  id="{{$category->id}}{{$category->name}}" class="tab-pane fade in firest">
                             <ul class="grid cs-style-4">
                                 @foreach($category->workSample as $work)
                                 <section class="col-xs-12 col-sm-12 col-md-4">

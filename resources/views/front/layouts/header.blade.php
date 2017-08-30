@@ -196,7 +196,7 @@
                 </div>
                 @endif
 
-                @if(!$recommendations->isEmpty())
+                @if(!$certifications->isEmpty())
                 <div id="icon55" class="web-icon">
                     <li><img src="images/front/quality (1).png" alt="portfolio" width="23px"> <span class="tooltip55">
             <p class="text-center">گواهی</p>

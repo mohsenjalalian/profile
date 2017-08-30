@@ -4,13 +4,13 @@
     <main class="container tabs-tunel col-md-8">
         <ul class="nav nav-pills">
             @foreach($types as $type)
-                <li><a data-toggle="pill" href="#{{$type->id}}">{{$type->name}}</a></li>
+                <li><a data-toggle="pill" href="#{{$type->id}}{{$type->name}}">{{$type->name}}</a></li>
             @endforeach
         </ul>
         <div class="tab-content">
             @foreach($types as $type)
                 @foreach($type->skill as $skill)
-                    <div id="{{$skill->type_id}}" class="tab-pane fade in">
+                    <div id="{{$skill->type_id}}{{$type->name}}" class="tab-pane fade in">
                         <div class="mCustomScrollbar content-a3" data-mcs-theme="minimal-dark">
                             @foreach($type->skill as $skill)
                                 @if(!empty($skill))
