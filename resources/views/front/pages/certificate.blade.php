@@ -1,4 +1,4 @@
-@if(!$recommendations->isEmpty())
+@if(!$certifications->isEmpty())
 <main id="about55" class="container-fluid background-six">
     <section class="container">
         <h2 class="text-ex">گواهی ها و مدارک</h2>
