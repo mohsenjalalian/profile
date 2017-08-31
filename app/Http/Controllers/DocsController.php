@@ -20,7 +20,7 @@ class DocsController extends Controller
      */
     public function index()
     {
-        $docs = Docs::all();
+        $docs = Docs::all()->sortByDesc('created_at');
         return view('admin.pages.docs.docs', compact('docs'));
     }
 

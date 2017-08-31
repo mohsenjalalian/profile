@@ -22,8 +22,8 @@ class SkillsController extends Controller
      */
     public function index()
     {
-        $skills = Skills::all();
-        $types = SkillType::all();
+        $skills = Skills::all()->sortByDesc('created_at');
+        $types = SkillType::all()->sortByDesc('created_at');
         return view('admin.pages.skills.skills', compact('skills', 'types'));
     }
 

@@ -20,7 +20,7 @@ class CertificationController extends Controller
      */
     public function index()
     {
-        $certificates = Certification::all();
+        $certificates = Certification::all()->sortByDesc('created_at');
         return view('admin.pages.certificate.certificate', compact('certificates'));
     }
 

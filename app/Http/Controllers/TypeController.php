@@ -21,7 +21,7 @@ class TypeController extends Controller
      */
     public function index()
     {
-        $types = SkillType::all();
+        $types = SkillType::all()->sortByDesc('created_at');
         return view('admin.pages.types.types', compact('types'));
     }
 

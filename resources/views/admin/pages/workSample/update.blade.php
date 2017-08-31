@@ -91,8 +91,7 @@
                     {{--</div>--}}
                 </div>
 
-
-                @if(count($categories) > 0)
+                @if(count($usedCategories) > 0)
                     <p style="position:relative; height: 22px; top: 0px; right: 15px;">دسته بندی</p>
                     <div style="margin-top: 0px;"
                          class="form-group{{ $errors->has('category_id[]') ? ' has-error': ''}}">
@@ -109,12 +108,10 @@
                                             {{--{{dump($workSample->category)}}--}}
                                             <option name="category_id[]"
                                                     value="{{$cat->id}}" selected>{{$cat->name}}</option>
-                                            @foreach($categories as $category )
-                                                @if($category->id != $cat->id)
-                                                    <option name="category_id[]"
-                                                            value="{{$category->id}}">{{$category->name}}</option>
-                                                @endif
-                                            @endforeach
+                                        @endforeach
+                                        @foreach($categories as $category )
+                                                <option name="category_id[]"
+                                                        value="{{$category->id}}">{{$category->name}}</option>
                                         @endforeach
                                         @else
                                             @foreach($categories as $category)

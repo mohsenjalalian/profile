@@ -21,7 +21,7 @@ class RecommendationController extends Controller
      */
     public function index()
     {
-        $recommends = Recommendation::all();
+        $recommends = Recommendation::all()->sortByDesc('created_at');
         return view('admin.pages.recommend.recommend', compact('recommends'));
     }
 

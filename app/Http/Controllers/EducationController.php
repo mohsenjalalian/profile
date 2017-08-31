@@ -21,7 +21,7 @@ class EducationController extends Controller
      */
     public function index()
     {
-        $educations = Education::all();
+        $educations = Education::all()->sortByDesc('created_at');
         return view('admin.pages.education.education', compact('educations'));
     }
 

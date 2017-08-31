@@ -20,7 +20,7 @@ class AlbumController extends Controller
      */
     public function index()
     {
-        $albums = Album::all();
+        $albums = Album::all()->sortByDesc('created_at');
         return view('admin.pages.album.album', compact('albums'));
     }
 

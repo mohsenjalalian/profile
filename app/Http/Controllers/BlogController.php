@@ -26,8 +26,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::all();
-        $albums = Album::all();
+        $blogs = Blog::all()->sortByDesc('created_at');
+        $albums = Album::all()->sortByDesc('created_at');
         return view('admin.pages.blog.blog', compact('blogs', 'albums'));
     }
 
