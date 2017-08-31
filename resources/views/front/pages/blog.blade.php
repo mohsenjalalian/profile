@@ -32,16 +32,16 @@
                                 <hr style="border:1px solid #DFDFDF; width:100%;">
                                 <span class="blog-mg2">{{$blog->date}}</span>
                                 <p class="text-fe"><span class="hidden-xs" style="text-align: right; float: right; font-size: 20px; padding-left: 20px;">اشتراک :</span>
-                                    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('home')}}#blog">
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u={{route('home')}}">
                                         <span class="face-bl"><i style="font-size: 22px;" class="fa fa-facebook"></i></span>
                                     </a>
-                                    <a href="https://plus.google.com/share?url={{route('home')}}#blog">
+                                    <a href="https://plus.google.com/share?url={{route('home')}}">
                                         <span class="google"><i style="font-size: 22px;" class="fa fa-google-plus"></i> </span>
                                     </a>
-                                    <a href="https://twitter.com/home?status={{route('home')}}#blog">
+                                    <a href="https://twitter.com/home?status={{route('home')}}">
                                         <span class="twit"><i style="font-size: 22px;" class="fa fa-twitter"></i> </span>
                                     </a>
-                                    <a href="https://twitter.com/home?status={{route('home')}}#blog">
+                                    <a href="https://t.me/share/url?url={{route('home')}}">
                                         <span class="telegram"><i style="font-size: 22px;" class="fa fa-paper-plane"></i> </span>
                                     </a>
                                 </p>
