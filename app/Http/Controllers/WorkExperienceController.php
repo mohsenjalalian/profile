@@ -23,7 +23,7 @@ class WorkExperienceController extends Controller
      */
     public function index()
     {
-        $workExperiences = WorkExperince::all();
+        $workExperiences = WorkExperince::all()->sortByDesc('created_at');
         return view('admin.pages.workExperience.workExperience', compact('workExperiences'));
     }
 

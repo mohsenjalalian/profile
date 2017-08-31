@@ -16,7 +16,7 @@
                                 @if(!empty($skill))
                                 <p style="font-size: 16px; padding-top: 10px;" class="col-md-6">{{$skill->name}}
                                     <span>
-                                        <progress value="{{$skill->point}}" max="10"></progress>
+                                        <progress value="{{$skill->point}}" max="5"></progress>
                                     </span>
                                 </p>
                                @endif

@@ -21,7 +21,7 @@ class LanguageController extends Controller
      */
     public function index()
     {
-        $languages = Language::all();
+        $languages = Language::all()->sortByDesc('created_at');
         return view('admin.pages.language.language', compact('languages'));
     }
 

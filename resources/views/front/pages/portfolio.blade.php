@@ -27,7 +27,6 @@
                                                 </div>
                                                 <figcaption>
                                                     <h3 class="pull-right">{{$work->name}}</h3>
-                                                    <p style="margin-top:30px;" class="port-n">{{$category->name}}</p>
                                                     @foreach($work->skills as $skill)
                                                         <p class="port-n">{{$skill->name}}</p>
                                                     @endforeach

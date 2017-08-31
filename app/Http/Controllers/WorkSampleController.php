@@ -24,9 +24,9 @@ class WorkSampleController extends Controller
      */
     public function index()
     {
-        $workSamples = WorkSample::all();
-        $categories = Category::all();
-        $skills = Skills::all();
+        $workSamples = WorkSample::all()->sortByDesc('created_at');
+        $categories = Category::all()->sortByDesc('created_at');
+        $skills = Skills::all()->sortByDesc('created_at');
         return view('admin.pages.workSample.workSample', compact('workSamples','categories','skills'));
     }
 
@@ -73,7 +73,8 @@ class WorkSampleController extends Controller
     public function edit($id)
     {
         $workSample = WorkSample::find($id);
-        $categories = Category::all();
+        $categories = Category::doesntHave('WorkSample')->get();
+        $usedCategories = Category::has('WorkSample')->get();
         $skills = Skills::all();
         $ws = [];
         $sw = [];
@@ -83,7 +84,7 @@ class WorkSampleController extends Controller
         foreach ($workSample->skills as $skill) {
             $sw[$skill['id']] = $skill;
         }
-        return view('admin.pages.workSample.update', compact('workSample', 'ws','sw','categories', 'skills'))->renderSections()['content'];
+        return view('admin.pages.workSample.update', compact('workSample', 'ws','sw','categories', 'skills', 'usedCategories'))->renderSections()['content'];
     }
 
     /**

@@ -19,7 +19,7 @@
 
                             <ul class="page">
                                 <li></li>
-                                <li><a class="btn btn-book" href="#">بیشتر</a></li>
+                                <li><a class="btn btn-book" href="{{$doc->link}}">بیشتر</a></li>
                                 <li></li>
                                 <li></li>
                                 <li></li>
@@ -60,7 +60,7 @@
 
                             <ul class="page">
                                 <li></li>
-                                <li><a class="btn btn-book" href="#">بیشتر</a></li>
+                                <li><a class="btn btn-book" href="{{$doc->link}}">بیشتر</a></li>
                                 <li></li>
                                 <li></li>
                                 <li></li>

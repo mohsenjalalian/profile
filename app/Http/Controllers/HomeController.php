@@ -30,21 +30,21 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $albums = Album::all();
-        $blogs = Blog::all();
-        $categories = Category::all();
-        $certifications = Certification::all();
-        $contacts = Contacts::all();
-        $docs = Docs::all();
-        $educations = Education::all();
-        $languages = Language::all();
-        $profiles = Profile::all();
-        $recommendations = Recommendation::all();
-        $skills = Skills::all();
-        $socialNetworks = SocialNetwork::all();
-        $workExperiences = WorkExperince::all();
-        $workSamples = WorkSample::all();
-        $types = SkillType::all();
+        $albums = Album::all()->sortByDesc('created_at');
+        $blogs = Blog::all()->sortByDesc('created_at');
+        $categories = Category::all()->sortByDesc('created_at');
+        $certifications = Certification::all()->sortByDesc('created_at');
+        $contacts = Contacts::all()->sortByDesc('created_at');
+        $docs = Docs::all()->sortByDesc('created_at');
+        $educations = Education::all()->sortByDesc('created_at');
+        $languages = Language::all()->sortByDesc('created_at');
+        $profiles = Profile::all()->sortByDesc('created_at');
+        $recommendations = Recommendation::all()->sortByDesc('created_at');
+        $skills = Skills::all()->sortByDesc('created_at');
+        $socialNetworks = SocialNetwork::all()->sortByDesc('created_at');
+        $workExperiences = WorkExperince::all()->sortByDesc('created_at');
+        $workSamples = WorkSample::all()->sortByDesc('created_at');
+        $types = SkillType::all()->sortByDesc('created_at');
 
         return view('front.index', compact([
             'albums',
